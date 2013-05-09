@@ -1,5 +1,5 @@
 #include <string>
-#include <stdexcep>
+#include <stdexcept>
 
 ///A base de derivação de todas as classes de tipos básicos.
 /**	Suas diferentes instâncias servem de base para a construção de todos os outros tipos básicos.
@@ -9,7 +9,7 @@ template <typename baseType>
 class UnitBase
 {
 	private:
-		virtual validate(const baseType& value) throw (invalid_argument) = 0;
+		virtual void validate(const baseType& value) throw (invalid_argument) = 0;
 	protected:
 		baseType value;
 	public:
@@ -31,7 +31,7 @@ inline baseType UnitBase<baseType>::getValue()
 ///	Define o nome de um User (Customer ou Manager)
 /**	Este tipo serve para regular o login de usuários em geral.
 */
-class Name:public UnitBase<string>
+class UsrName:public UnitBase<string>
 {
 	private:
 		void validate(const string&) throw (invalid_argument);
@@ -43,7 +43,7 @@ class Name:public UnitBase<string>
 /// 	Define a senha de um User (Customer ou Manager)
 /**	Este tipo básico tem a função de controlar o login de usuários em geral.
 */
-class Password:public UnitBase<int>
+class UsrPassword:public UnitBase<int>
 {
 	private:
 		void validate(const& int) throw (invalid_argument);
@@ -55,7 +55,7 @@ class Password:public UnitBase<int>
 ///	Define o ID de um Customer.
 /**	Tem a função de identificar de forma única um Customer, independentemente do seu tipo de conta.
 */
-class Id: public UnitBase<int>
+class UsrId: public UnitBase<int>
 {
 	private:
 		void validate(const& int) throw (invalid_argument);
@@ -67,7 +67,7 @@ class Id: public UnitBase<int>
 /// 	Define a matrícula de um Manager.
 /** 	Tem a função de identificar de forma única um Manager, seja ele Administrador ou Gerente.
 */
-class Matric:public UnitBase<int>
+class UsrMatric:public UnitBase<int>
 {
 	private:
 		void validate(const& int) throw (invalid_argument);
@@ -81,7 +81,7 @@ class Matric:public UnitBase<int>
 *	AccType: Codifica tipos de conta (Normal / Especial)
 * 	ManType: Codifica tipos de manager (Gerente / Administrador)
 */
-class GType : public UnitBase<bool>
+class UsrType : public UnitBase<bool>
 {
 	private:
 		void validate(const bool& value) throw (invalid_argument);
@@ -90,8 +90,8 @@ class GType : public UnitBase<bool>
 		GType(bool);
 };
 
-typedef GType AccType; ///\typedef Instancia GType para contas.
-typedef GType ManType; ///\typedef Instancia GType para Managers.
+typedef UsrType AccType; ///\typedef Instancia GType para contas.
+typedef UsrType ManType; ///\typedef Instancia GType para Managers.
 
 ///	Define o número da conta de um Customer (Cliente).
 /**	Este tipo básico tem a função de atribuir a cada conta um numero unico, identificando-a.
