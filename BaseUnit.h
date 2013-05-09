@@ -1,7 +1,10 @@
 #include <string>
 #include <stdexcep>
 
-/// Template é a base de derivação de todas as classes de tipos básicos.
+///A base de derivação de todas as classes de tipos básicos.
+/**	Suas diferentes instâncias servem de base para a construção de todos os outros tipos básicos.
+	Seus métodos serValue() e getValue() garantem o acesso ao seu parâmetro Value.
+*/
 template <typename baseType>
 class UnitBase
 {
@@ -11,7 +14,7 @@ class UnitBase
 		baseType value;
 	public:
 		inline void setValue(const baseType& value) throw (invalid_argument);
-		inline baseType getValue();
+		inline baseType getValue() const;
 };
 
 inline void UnitBase<baseType>::setValue(const baseType& value) throw (invalid_argument)
@@ -25,10 +28,59 @@ inline baseType UnitBase<baseType>::getValue()
 	return value;
 }
 
-/// GType codifica tipos de conta.
-/// Possui duas utilizações:
-/// 	AccType: Codifica tipos de conta (Normal / Especial)
-/// 	ManType: Codifica tipos de manager (Gerente / Administrador)
+///	Define o nome de um User (Customer ou Manager)
+/**	Este tipo serve para regular o login de usuários em geral.
+*/
+class Name:public UnitBase<string>
+{
+	private:
+		void validate(const string&) throw (invalid_argument);
+	public:
+		Name() {};
+		Name(string) throw (invalid_argument);
+};
+
+/// 	Define a senha de um User (Customer ou Manager)
+/**	Este tipo básico tem a função de controlar o login de usuários em geral.
+*/
+class Password:public UnitBase<int>
+{
+	private:
+		void validate(const& int) throw (invalid_argument);
+	public:
+		Password() {};
+		Password(int) throw (invalid_argument);
+};
+
+///	Define o ID de um Customer.
+/**	Tem a função de identificar de forma única um Customer, independentemente do seu tipo de conta.
+*/
+class Id: public UnitBase<int>
+{
+	private:
+		void validate(const& int) throw (invalid_argument);
+	public:
+		Id() {};
+		Id(int) throw (invalid_argument);
+};
+
+/// 	Define a matrícula de um Manager.
+/** 	Tem a função de identificar de forma única um Manager, seja ele Administrador ou Gerente.
+*/
+class Matric:public UnitBase<int>
+{
+	private:
+		void validate(const& int) throw (invalid_argument);
+	public:
+		Matric() {};
+		Matric(int) throw (invalid_argument);
+};
+
+///	Codifica tipos de conta.
+/**	Possui duas utilizações:
+*	AccType: Codifica tipos de conta (Normal / Especial)
+* 	ManType: Codifica tipos de manager (Gerente / Administrador)
+*/
 class GType : public UnitBase<bool>
 {
 	private:
@@ -38,50 +90,83 @@ class GType : public UnitBase<bool>
 		GType(bool);
 };
 
-typedef GType AccType;
-typedef GType ManType;
+typedef GType AccType; ///\typedef Instancia GType para contas.
+typedef GType ManType; ///\typedef Instancia GType para Managers.
 
-/// Name define o nome de um User (Customer ou Manager)
-/// Este tipo serve para regular o login de usuários em geral.
-class Name:public UnitBase<string>
-{
-		private:
-				void validate(const string&) throw (invalid_argument);
-		public:
-				Name() {};
-				Name(string) throw (invalid_argument);
-};
-
-/// Matric define a matrícula de um Manager.
-/// Ela tem a função de identificar de forma única um Manager, seja ele Administrador ou Gerente.
-class Matric:public UnitBase<int>
-{
-		private:
-				void validate(const& int) throw (invalid_argument);
-		public:
-				Matric() {};
-				Matric(int) throw (invalid_argument);
-};
-
-/// Password define a senha de um User (Customer ou Manager)
-/// Este tipo básico tem a função de controlar o login de usuários em geral.
-class Password:public UnitBase<int>
-{
-		private:
-				void validate(const& int) throw (invalid_argument);
-		public:
-				Password() {};
-				Password(int) throw (invalid_argument);
-};
-//--------------------------------------------------------------------------------------
-
-/// AccNumber define o número da conta de um Customer (Cliente).
-/// Este tipo básico tem a função de atribuir a cada conta um numero unico, identificando-a.
+///	Define o número da conta de um Customer (Cliente).
+/**	Este tipo básico tem a função de atribuir a cada conta um numero unico, identificando-a.
+*/
 class AccNumber:public UnitBase<int>
 {
-		private:
-				void validate(const& int) throw (invalid_argument);
-		public:
-				AccNumber() {};
-				AccNumbere(int) throw (invalid_argument);
+	private:
+		void validate(const& int) throw (invalid_argument);
+	public:
+		AccNumber() {};
+		AccNumber(int) throw (invalid_argument);
+};
+
+///	Define o limite da conta de um Customer (Clinete).
+/**	Atribui a cada conta um limite, limitando a utilização do crédito junto ao banco.
+*/
+class AccLimit:public UnitBase<float>
+{
+	private:
+		void validate(const& float) throw (invalid_argument);
+	public:
+		AccLimit() {};
+		AccLimit(float) throw (invalid_argument);
+};
+
+///	Define um número de identificação para cada pagamento.
+/**	Atribui a cada pagamento um código, de forma a identificá-lo.
+*/
+class PayCode:public UnitBase<int>
+{
+	private:
+		void validate(const& int) throw (invalid_argument);
+	public:
+		PayCode() {};
+		PayCode(int) throw (invalid_argument);
+};
+
+///	Define a data do pagamento.
+/**	Guarda a data de um pagamento. Dia, mês e ano devem ser acessados através dos atributos day, month, year.
+*/
+class PayDay:public UnitBase<int>
+{
+	private:
+		void validate(const& int) throw (invalid_argument);
+	public:
+		PayDay() {};
+		PayDay(int) throw (invalid_argument);
+		inline int day();
+		inline int month();
+		inline int year();
+};
+
+inline int PayDay::year()
+{
+	return value%10000; //Retorna os quatro ultimos digitos de value.
+}
+
+inline int PayDay::month()
+{
+	return (value/10000)%100; // Retorna os dois digitos correspondentes ao mês.
+}
+
+inline int PayDay::day()
+{
+	return value/1000000; //Retorna os dois primeiros dígitos.
+}
+
+///	Define o valor do pagamento.
+/**	Recorda o valor de um pagamento.
+*/
+class PayValue:public UnitBase<float>
+{
+	private:
+		void validate(const& float) throw (invalid_argument);
+	public:
+		PayValue() {};
+		PayValue(float) throw (invalid_argument);
 };
