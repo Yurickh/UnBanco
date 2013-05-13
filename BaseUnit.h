@@ -1,9 +1,12 @@
+#ifndef _BASEUNIT_H_
+#define _BASEUNIT_H_
+
 #include <string>
 #include <stdexcept>
 
 /**	A base de derivação de todas as classes de tipos básicos.
 	Suas diferentes instâncias servem de base para a construção de todos os outros tipos básicos.
-	Seus métodos serValue() e getValue() garantem o acesso ao seu parâmetro Value.
+	Seus métodos setValue() e getValue() garantem o acesso ao seu parâmetro Value.
 */
 template <typename baseType>
 class UnitBase
@@ -36,7 +39,7 @@ class UsrName:public UnitBase<string>
 	private:
 		void validate(const string&) throw (invalid_argument);
 	public:
-		Name() {};
+		Name();
 		Name(string) throw (invalid_argument);
 };
 
@@ -48,7 +51,7 @@ class UsrPassword:public UnitBase<int>
 	private:
 		void validate(const& int) throw (invalid_argument);
 	public:
-		Password() {};
+		Password();
 		Password(int) throw (invalid_argument);
 };
 
@@ -60,7 +63,7 @@ class UsrId: public UnitBase<int>
 	private:
 		void validate(const& int) throw (invalid_argument);
 	public:
-		Id() {};
+		Id(){ value = 0; }
 		Id(int) throw (invalid_argument);
 };
 
@@ -72,7 +75,7 @@ class UsrMatric:public UnitBase<int>
 	private:
 		void validate(const& int) throw (invalid_argument);
 	public:
-		Matric() {};
+		Matric();
 		Matric(int) throw (invalid_argument);
 };
 
@@ -86,7 +89,7 @@ class UsrType : public UnitBase<bool>
 	private:
 		void validate(const bool& value) throw (invalid_argument);
 	public:
-		GType() {}
+		GType();
 		GType(bool);
 };
 
@@ -101,20 +104,20 @@ class AccNumber:public UnitBase<int>
 	private:
 		void validate(const& int) throw (invalid_argument);
 	public:
-		AccNumber() {};
+		AccNumber();
 		AccNumber(int) throw (invalid_argument);
 };
 
-/**	Define o limite da conta de um Customer (Clinete).
+/**	Define o limite da conta de um Customer (Cliente).
 	Atribui a cada conta um limite, limitando a utilização do crédito junto ao banco.
 */
-class AccLimit:public UnitBase<float>
+class Money:public UnitBase<float>
 {
 	private:
 		void validate(const& float) throw (invalid_argument);
 	public:
-		AccLimit() {};
-		AccLimit(float) throw (invalid_argument);
+		Money();
+		Money(float) throw (invalid_argument);
 };
 
 /**	Define um número de identificação para cada pagamento.
@@ -125,7 +128,7 @@ class PayCode:public UnitBase<int>
 	private:
 		void validate(const& int) throw (invalid_argument);
 	public:
-		PayCode() {};
+		PayCode();
 		PayCode(int) throw (invalid_argument);
 };
 
@@ -137,12 +140,13 @@ class PayDay:public UnitBase<int>
 	private:
 		void validate(const& int) throw (invalid_argument);
 	public:
-		PayDay() {};
+		PayDay();
 		PayDay(int) throw (invalid_argument);
-		inline int day();
-		inline int month();
-		inline int year();
+		inline int day();//\function retorna o dia.
+		inline int month();//\function retorna o mês.
+		inline int year();//\function Retorna o ano.
 };
+
 
 inline int PayDay::year()
 {
@@ -167,6 +171,8 @@ class PayValue:public UnitBase<float>
 	private:
 		void validate(const& float) throw (invalid_argument);
 	public:
-		PayValue() {};
+		PayValue();
 		PayValue(float) throw (invalid_argument);
 };
+
+#endif
