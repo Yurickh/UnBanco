@@ -1,8 +1,8 @@
 #include <string>
 #include <stdexcept>
 
-///A base de derivação de todas as classes de tipos básicos.
-/**	Suas diferentes instâncias servem de base para a construção de todos os outros tipos básicos.
+/**	A base de derivação de todas as classes de tipos básicos.
+	Suas diferentes instâncias servem de base para a construção de todos os outros tipos básicos.
 	Seus métodos serValue() e getValue() garantem o acesso ao seu parâmetro Value.
 */
 template <typename baseType>
@@ -28,8 +28,8 @@ inline baseType UnitBase<baseType>::getValue()
 	return value;
 }
 
-///	Define o nome de um User (Customer ou Manager)
-/**	Este tipo serve para regular o login de usuários em geral.
+/**	Define o nome de um User (Customer ou Manager).
+	Este tipo serve para regular o login de usuários em geral.
 */
 class UsrName:public UnitBase<string>
 {
@@ -40,8 +40,8 @@ class UsrName:public UnitBase<string>
 		Name(string) throw (invalid_argument);
 };
 
-/// 	Define a senha de um User (Customer ou Manager)
-/**	Este tipo básico tem a função de controlar o login de usuários em geral.
+/** 	Define a senha de um User (Customer ou Manager).
+	Este tipo básico tem a função de controlar o login de usuários em geral.
 */
 class UsrPassword:public UnitBase<int>
 {
@@ -52,8 +52,8 @@ class UsrPassword:public UnitBase<int>
 		Password(int) throw (invalid_argument);
 };
 
-///	Define o ID de um Customer.
-/**	Tem a função de identificar de forma única um Customer, independentemente do seu tipo de conta.
+/**	Define o ID de um Customer.
+	Tem a função de identificar de forma única um Customer, independentemente do seu tipo de conta.
 */
 class UsrId: public UnitBase<int>
 {
@@ -64,8 +64,8 @@ class UsrId: public UnitBase<int>
 		Id(int) throw (invalid_argument);
 };
 
-/// 	Define a matrícula de um Manager.
-/** 	Tem a função de identificar de forma única um Manager, seja ele Administrador ou Gerente.
+/** 	Define a matrícula de um Manager.
+ 	Tem a função de identificar de forma única um Manager, seja ele Administrador ou Gerente.
 */
 class UsrMatric:public UnitBase<int>
 {
@@ -76,10 +76,10 @@ class UsrMatric:public UnitBase<int>
 		Matric(int) throw (invalid_argument);
 };
 
-///	Codifica tipos de conta.
-/**	Possui duas utilizações:
-*	AccType: Codifica tipos de conta (Normal / Especial)
-* 	ManType: Codifica tipos de manager (Gerente / Administrador)
+/**	Codifica tipos de conta.
+	Possui duas utilizações:
+	AccType: Codifica tipos de conta (Normal / Especial)
+ 	ManType: Codifica tipos de manager (Gerente / Administrador)
 */
 class UsrType : public UnitBase<bool>
 {
@@ -93,8 +93,8 @@ class UsrType : public UnitBase<bool>
 typedef UsrType AccType; ///\typedef Instancia GType para contas.
 typedef UsrType ManType; ///\typedef Instancia GType para Managers.
 
-///	Define o número da conta de um Customer (Cliente).
-/**	Este tipo básico tem a função de atribuir a cada conta um numero unico, identificando-a.
+/**	Define o número da conta de um Customer (Cliente).
+	Este tipo básico tem a função de atribuir a cada conta um numero unico, identificando-a.
 */
 class AccNumber:public UnitBase<int>
 {
@@ -105,8 +105,8 @@ class AccNumber:public UnitBase<int>
 		AccNumber(int) throw (invalid_argument);
 };
 
-///	Define o limite da conta de um Customer (Clinete).
-/**	Atribui a cada conta um limite, limitando a utilização do crédito junto ao banco.
+/**	Define o limite da conta de um Customer (Clinete).
+	Atribui a cada conta um limite, limitando a utilização do crédito junto ao banco.
 */
 class AccLimit:public UnitBase<float>
 {
@@ -117,8 +117,8 @@ class AccLimit:public UnitBase<float>
 		AccLimit(float) throw (invalid_argument);
 };
 
-///	Define um número de identificação para cada pagamento.
-/**	Atribui a cada pagamento um código, de forma a identificá-lo.
+/**	Define um número de identificação para cada pagamento.
+	Atribui a cada pagamento um código, de forma a identificá-lo.
 */
 class PayCode:public UnitBase<int>
 {
@@ -129,8 +129,8 @@ class PayCode:public UnitBase<int>
 		PayCode(int) throw (invalid_argument);
 };
 
-///	Define a data do pagamento.
-/**	Guarda a data de um pagamento. Dia, mês e ano devem ser acessados através dos atributos day, month, year.
+/**	Define a data do pagamento.
+	Guarda a data de um pagamento. Dia, mês e ano devem ser acessados através dos atributos day, month, year.
 */
 class PayDay:public UnitBase<int>
 {
@@ -159,8 +159,8 @@ inline int PayDay::day()
 	return value/1000000; //Retorna os dois primeiros dígitos.
 }
 
-///	Define o valor do pagamento.
-/**	Recorda o valor de um pagamento.
+/**	Define o valor do pagamento.
+	Recorda o valor de um pagamento.
 */
 class PayValue:public UnitBase<float>
 {
