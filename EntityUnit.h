@@ -1,7 +1,7 @@
 #ifndef ENTITY_UNIT_H
 #define ENTITY_UNIT_H
 
-/** Usuário. Base de derivação das classes Customer e Manager.
+/** Usuário; Base de derivação das classes Customer e Manager.
 Herdam dessa classe as duas maiores classes de usuários do sistema, os Clientes e os Gerentes.
 */
 class User{
@@ -25,7 +25,7 @@ inline UsrPassword User::getPassword() const{
 		return password;
 }
 
-/** Cliente. Onde ficarão armazenados os dados do usuário padrão do sistema.
+/** Cliente; Onde ficarão armazenados os dados do usuário padrão do sistema.
 O Customer (Cliente) terá acesso a uma ou mais contas através de um UsrId único. Através dessa(s) conta(s), é capaz de realizar transações.
 */
 class Customer:public User{
@@ -43,10 +43,10 @@ inline UsrId Customer::getUsrId ()const{
 		return usrId;
 }
 
-/** Conta. Onde ficarão armazenados os dados de conta de um cliente.
+/** Conta; Onde ficarão armazenados os dados de conta de um cliente.
 Através de uma conta é possível acessar o módulo de Transações.
 */
-class Account:public Customer{
+class Account{
 	private:
 		AccNumber accNumber;
 		AccType accType;
@@ -93,7 +93,7 @@ inline AccNumber Account::getAccNumber() const{
 		return accNumber;
 }
 
-/** Gerente. Onde ficarão armazenados os dados de usuários com privilégios administrativos sobre o sistema.
+/** Gerente; Onde ficarão armazenados os dados de usuários com privilégios administrativos sobre o sistema.
 Através desta classe é possível acessar o módulo de UsrManage e modificar dados de outros usuários.
 */
 class Manager:public User{
@@ -119,7 +119,7 @@ inline UsrMatric Manager::getUsrMatric() const{
 		return usrMatric;
 }
 
-/** Pagamento. Onde ficarão armazenados dados sobre pagamentos a serem realizados.
+/** Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.
 Esta classe armazenará os dados de conta bem como a data agendada de pagamentos futuros.
 */
 class Payment{
