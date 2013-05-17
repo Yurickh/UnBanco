@@ -12,24 +12,20 @@ template <typename baseType>
 class UnitBase
 {
 	private:
-		virtual void validate(const baseType& value) throw (invalid_argument) = 0;
+		virtual void validate(const baseType& value) throw (invalid_argument a) = 0;
 	protected:
 		baseType value;
 	public:
-		inline void setValue(const baseType& value) throw (invalid_argument);
-		inline baseType getValue() const;
+		void setValue(const baseType& value) throw (invalid_argument)
+		{
+			validate(value);
+			this->value = value;
+		}
+		inline baseType getValue() const
+		{
+			return value;
+		}
 };
-
-inline void UnitBase<baseType>::setValue(const baseType& value) throw (invalid_argument)
-{
-	validate(value);
-	this->value = value;
-}
-
-inline baseType UnitBase<baseType>::getValue()
-{
-	return value;
-}
 
 /**	Define o nome de um User (Customer ou Manager).
 	Este tipo serve para regular o login de usuários em geral.
@@ -39,7 +35,6 @@ class UsrName:public UnitBase<string>
 	private:
 		void validate(const string&) throw (invalid_argument);
 	public:
-		Name();
 		Name(string) throw (invalid_argument);
 };
 
@@ -49,9 +44,8 @@ class UsrName:public UnitBase<string>
 class UsrPassword:public UnitBase<int>
 {
 	private:
-		void validate(const& int) throw (invalid_argument);
+		void validate(int) throw (invalid_argument);
 	public:
-		Password();
 		Password(int) throw (invalid_argument);
 };
 
@@ -61,9 +55,8 @@ class UsrPassword:public UnitBase<int>
 class UsrId: public UnitBase<int>
 {
 	private:
-		void validate(const& int) throw (invalid_argument);
+		void validate(int) throw (invalid_argument);
 	public:
-		Id(){ value = 0; }
 		Id(int) throw (invalid_argument);
 };
 
@@ -73,9 +66,8 @@ class UsrId: public UnitBase<int>
 class UsrMatric:public UnitBase<int>
 {
 	private:
-		void validate(const& int) throw (invalid_argument);
+		void validate(int) throw (invalid_argument);
 	public:
-		Matric();
 		Matric(int) throw (invalid_argument);
 };
 
@@ -87,9 +79,8 @@ class UsrMatric:public UnitBase<int>
 class UsrType : public UnitBase<bool>
 {
 	private:
-		void validate(const bool& value) throw (invalid_argument);
+		void validate(bool value) throw (invalid_argument);
 	public:
-		GType();
 		GType(bool);
 };
 
@@ -102,9 +93,8 @@ typedef UsrType ManType; ///\typedef Instancia GType para Managers.
 class AccNumber:public UnitBase<int>
 {
 	private:
-		void validate(const& int) throw (invalid_argument);
+		void validate(int) throw (invalid_argument);
 	public:
-		AccNumber();
 		AccNumber(int) throw (invalid_argument);
 };
 
@@ -114,9 +104,8 @@ class AccNumber:public UnitBase<int>
 class Money:public UnitBase<float>
 {
 	private:
-		void validate(const& float) throw (invalid_argument);
+		void validate(float) throw (invalid_argument);
 	public:
-		Money();
 		Money(float) throw (invalid_argument);
 };
 
@@ -126,9 +115,8 @@ class Money:public UnitBase<float>
 class PayCode:public UnitBase<int>
 {
 	private:
-		void validate(const& int) throw (invalid_argument);
+		void validate(int) throw (invalid_argument);
 	public:
-		PayCode();
 		PayCode(int) throw (invalid_argument);
 };
 
@@ -140,11 +128,10 @@ class PayDay:public UnitBase<int>
 	private:
 		void validate(const& int) throw (invalid_argument);
 	public:
-		PayDay();
 		PayDay(int) throw (invalid_argument);
-		inline int day();//\function retorna o dia.
-		inline int month();//\function retorna o mês.
-		inline int year();//\function Retorna o ano.
+		inline int day();//\fn retorna o dia.
+		inline int month();//\fn retorna o mês.
+		inline int year();//\fn Retorna o ano.
 };
 
 
@@ -169,9 +156,8 @@ inline int PayDay::day()
 class PayValue:public UnitBase<float>
 {
 	private:
-		void validate(const& float) throw (invalid_argument);
+		void validate(float) throw (invalid_argument);
 	public:
-		PayValue();
 		PayValue(float) throw (invalid_argument);
 };
 
