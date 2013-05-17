@@ -1,9 +1,5 @@
 #include "BaseUnit.h"
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-//Classe Nome
-
 		Name::Name (string name) throw (invali_argument)
 		{
 				validate(name);
@@ -13,7 +9,6 @@
 		void Name::validate (const string& name) throw (invalid_argument)
 		{
 				int i;
-				//teste do nome
 				if (name.size() == 0)
 						throw invalid_argument ("Nenhum caractere digitado em nome.");
 				if (name.size() > 20)
@@ -25,12 +20,8 @@
 							name.at(i) != '.' )
 								throw invalid_argument ("Nome com caracteres invalidos.")
 				}
-				//fim do teste
 		}	
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-//Classe Matricula
 		UsrMatric::UsrMatric (int matric) throw (invalid_argument)
 		{
 				validate(matric);
@@ -39,13 +30,10 @@
 
 		void UsrMatric::validate(const int& matric) throw (invalid_argument)
 		{
-				//teste da matricula
 				if (matric < 0 || matric > 99999)
 						throw invalid_argument ("Matricula invalida, numero fora do alcance.")
 		}
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//Classe Senha
 		UsrPassword::UsrPassword (string password) throw (invalid_argument)
 		{
 				validate (password);
@@ -67,8 +55,6 @@
 				}
 		}
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//Classe Numero da Conta
 		AccNumber::AccNumber (int accNumber) throw (invalid_argument)
 		{
 				validate (accNumber);
@@ -81,8 +67,6 @@
 						throw invalid_argument ("Numero da conta com numero fora do alcance.");
 		}
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//Classe numero do pagamento
 		PayCode::PayCode (int payNumber) throw (invalid_argument)
 		{
 				validate (payNumber);
@@ -94,9 +78,6 @@
 				if(payNumber <0 || payNumber > 999999)
 						throw invalid_argument("Numero do pagamento com numero fora do alcance.");
 		}
-
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//Classe valor do pagamento
 
 		PayValue::PayValue (float payValue) throw (invalid_argument)
 		{
@@ -111,9 +92,6 @@
 
 		}
 
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//Classe tipo de conta
-
 		UsrType::UsrType (bool usrType) throw (invalid_argument)
 		{
 				validate (usrType);
@@ -123,9 +101,6 @@
 			void UsrType::validate (const bool& usrType) throw (invalid_argument)
 		{
 		}
-
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>.
-// Classe Id
 
 		UsrId::UserId (int usrId) throw (inalid_argument)
 		{
@@ -138,28 +113,9 @@
 				if(usrId < 0)
 						throw invalid_argument ("A Id do usuário não pode ser menor que zero.")
 		}
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-//Classe Data
 
-		PayDay::PayDay (int date) throw (invalid_argument)
+		/*PayDay::PayDay (int date) throw (invalid_argument)
 		{
 				validate (date);
 				this->date = date;
-		}
-
-		void PayDay::validate (int dae) throw (invalid_argument)
-		{
-				if(date > )
-
-		}
-
-
-
-		
-
-
-
-
-
-
-
+		}*/

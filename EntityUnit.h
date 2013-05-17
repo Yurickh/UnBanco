@@ -1,29 +1,21 @@
-/*
-User: Nome, Senha
-	Cliente: ID
-		Conta: Numero, Tipo, Limite, ID
-			Pagamento: Codigo, numero, data, valor
-	Gerente: Tipo, Matricula
-
-*/
 #ifndef Entity_Unit_H
 #define Entity_Unit_H
 
+#include "BaseUnit.h"
 /** Define a Entidade Usuario.
 Define os atributos de um usuario.
 */
 class User{
 		private:
-				Name name;
-				Password password;
+				UsrName name;
+				UsrPassword password;
 		public:
-				User () {}
-				User (name, password);
+				User(UsrName, UsrPassword);
 				Name getName() const;
-				void setName(const Name&);
+				void setName(const UsrName&);
 				Password getPassword() const;
-				void setPassword(const Password&);				
-}
+				void setPassword(const UsrPassword&);				
+};
 /*Define a Entidade Cliente.
 Cliente e uma classe herdada de Usuario que serve para definir um cliente e o que um cliente pode fazer.
 */
@@ -31,11 +23,10 @@ class Client:public User{
 		private:
 				UsrId usrId;
 		public:
-				Client () {}
-				Client (userId);
+				Client (UserId);
 				UsrId getUsrId () const;
 				void setUsrId (const UsrId&);
-}
+};
 /** Classe da entidade Conta.
 Serve para definir uma conta e seus atributos para manipulacoes em geral.
 */
@@ -46,8 +37,7 @@ class Account:public Client{
 				Money limit;
 				UsrId usrId;
 		public:
-				Account account;
-				Account (accNumber, accType, limit, usrId);
+				Account (AccNumber, AccType, Money, UsrId);
 				AccNumber getAccNumber () const;
 				void setAccNumber (const AccNumber&);
 				AccType getAccType () const;
@@ -56,22 +46,21 @@ class Account:public Client{
 				void setMoney (const Money&);
 				UsrId getUsrId() const;
 				void UsrId(const UsrId&);
-}
+};
 /** Define a Entidade Gerente.
-Definir os atibutos relacionados aos gerentes, que sao um tipo de usuario.
+Definir os atibutos relacionados aos gerentes, que são um tipo de usuario.
 */
 class Manager:public User{
 		private:
 				AccType	accType;
-				UsrMaric usrMatric;
+				UsrMatric usrMatric;
 		public:
-				Manager () {}
-				Manager (accType, usrMatric);
+				Manager (AccType, UsrMatric);
 				AccType getAccType () const;
 				void AccType setAccType (const AccType&);
 				UsrMatric getUsrMatric() const;
 				void UsrMatric setUsrMatric (const UsrMatric&);
-}
+};
 /** Classe da Entidade Pagamento.
 Serve para definir um Pagamento e seus atributos para manipulacoes em geral.
 */
@@ -80,11 +69,10 @@ class Payment:public Account{
 				PayNumber payNumber;
 				PayCode payCode;
 				PayDay payDay;
-				PayValue payValue;						
+				PayValue payValue;				
 				
 		public:
-				Payment () {}
-				Payment (payNumber, payDay, payValue);
+				Payment (PayNumber, PayDay, PayValue);
 				PayCode getPayCode () const;
 				const PayCode setPayCode (const PayCode&);
 				PayNumber getPayNumber () const;
@@ -93,11 +81,7 @@ class Payment:public Account{
 				void setPayDay (const PayDay&);
 				PayValue getPayValue () const;
 				void setPayValue (const PayValue&);
-}
-
-/**Define os gets.
-Os gets servem para retornar o valor assimilado em uma determinada variavel privada.
-*/
+};
 
 inline Name User::getName() const{
 		return name;
