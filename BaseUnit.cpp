@@ -1,6 +1,15 @@
+#define NORMAL_MAN	false
+#define ADMIN_MAN	true
+#define NORMAL_ACC	false
+#define SPECIAL_ACC	true
 #include "BaseUnit.h"
 
 using namespace std;
+
+UsrName::UsrName ()
+{
+	this->value = "";
+}
 
 UsrName::UsrName (const string& name) throw (invalid_argument)
 {
@@ -17,11 +26,15 @@ void UsrName::validate (const string& name) throw (invalid_argument)
 		throw invalid_argument ("Nome com mais de 20 caracteres.");
 	for (i=0; i<name.size() ;i++)
 	{
-		if ( !isspace (name.at(i)) &&
-		!isalpha (name.at(i)) && name.at(i) != '.' )
+		if ( !isspace (name.at(i)) && !isalpha (name.at(i)) && name.at(i) != '.' )
 			throw invalid_argument ("Nome com caracteres invalidos.");
 	}
-}	
+}
+
+UsrMatric::UsrMatric ()
+{
+	this->value = -1;
+}
 
 UsrMatric::UsrMatric (const int& matric) throw (invalid_argument)
 {
@@ -35,6 +48,11 @@ void UsrMatric::validate(const int& matric) throw (invalid_argument)
 		throw invalid_argument ("Matricula invalida, numero fora do alcance.");
 }
 
+UsrPassword::UsrPassword ()
+{
+	this->value = "";
+}
+
 UsrPassword::UsrPassword (const string& password) throw (invalid_argument)
 {
 	validate (password);
@@ -44,13 +62,20 @@ UsrPassword::UsrPassword (const string& password) throw (invalid_argument)
 void UsrPassword::validate (const string& password) throw (invalid_argument)
 {
 	int i;
-	if (password.size() != 6)
-		throw invalid_argument ("A senha deve ter seis caracteres.");
+	if (password.size() > 6)
+		throw invalid_argument ("A senha deve ter ate seis caracteres.");
+	if (password.size() == 0)
+		throw invalid_argument ("A senha deve conter pelo menos um caractere.");
 	for (i=0; i<6; i++)
 	{
 		if (!isdigit(password.at(i)) && !isalpha(password.at(i)))
 			throw invalid_argument("A senha deve ser formada apenas por caracteres alfanumericos.");
 	}
+}
+
+AccNumber::AccNumber()
+{
+	this->value = -1;
 }
 
 AccNumber::AccNumber (const int& accNumber) throw (invalid_argument)
@@ -65,6 +90,11 @@ void AccNumber::validate (const int& accNumber) throw (invalid_argument)
 		throw invalid_argument ("Numero da conta com numero fora do alcance.");
 }
 
+Money::Money()
+{
+	this->value = -1;
+}
+
 Money::Money (const float& money) throw (invalid_argument)
 {
 	validate (money);
@@ -75,6 +105,11 @@ void Money::validate (const float& money) throw (invalid_argument)
 {
 	if(!(std::isnormal(money)) || money < 0)
 		throw invalid_argument ("Nao e possivel executar esta operacao com a dada quantidade de dinheiro");
+}
+
+PayCode::PayCode()
+{
+	this->value = -1;
 }
 
 PayCode::PayCode (const int& payNumber) throw (invalid_argument)
@@ -89,6 +124,11 @@ void PayCode::validate (const int& payNumber) throw (invalid_argument)
 		throw invalid_argument("Numero do pagamento com numero fora do alcance.");
 }
 
+UsrType::UsrType()
+{
+	this->value = NORMAL_ACC;
+}
+
 UsrType::UsrType (const bool& usrType) throw (invalid_argument)
 {
 	validate (usrType);
@@ -97,8 +137,13 @@ UsrType::UsrType (const bool& usrType) throw (invalid_argument)
 
 void UsrType::validate (const bool& usrType) throw (invalid_argument)
 {
-	if(usrType != true || usrType != false)
+	if(usrType != NORMAL_ACC || usrType != SPECIAL_ACC)
 		throw invalid_argument("Valor inesperado para UsrType");
+}
+
+UsrId::UsrId()
+{
+	this->value = -1;
 }
 
 UsrId::UsrId (const int& usrId) throw (invalid_argument)
@@ -111,6 +156,11 @@ void UsrId::validate (const int& usrId) throw (invalid_argument)
 {
 	if(usrId < 0)
 		throw invalid_argument ("A Id do usuário não pode ser menor que zero.");
+}
+
+PayDay::PayDay()
+{
+	this->value = -1;
 }
 
 PayDay::PayDay (const int& date) throw (invalid_argument)

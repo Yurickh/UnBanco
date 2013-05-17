@@ -5,12 +5,12 @@
 Herdam dessa classe as duas maiores classes de usuários do sistema, os Clientes e os Gerentes.
 */
 class User{
-	private:
+	protected:
 		UsrName name;
 		UsrPassword password;
+
+		User();
 	public:
-		User(){}
-		User(const UsrName&, const UsrPassword&);
 		UsrName getName() const;
 		void setName(const UsrName&);
 		UsrPassword getPassword() const;
@@ -32,8 +32,7 @@ class Customer:public User{
 	private:
 		UsrId usrId;
 	public:
-		Customer(){}
-		Customer (const UsrId&);
+		Customer (const UsrName& name, const UsrPassword& password, const UsrId&) throw (invalid_argument);
 
 		UsrId getUsrId () const;
 		void setUsrId (const UsrId&);
@@ -54,8 +53,7 @@ class Account{
 		Money balance;
 		UsrId usrId;
 	public:
-		Account(){}
-		Account (const AccNumber&, const AccType&, const Money&, const UsrId&);
+		Account (const AccNumber&, const AccType&, const Money&, const UsrId&) throw (invalid_argument);
 
 		AccNumber getAccNumber () const;
 		void setAccNumber (const AccNumber&);
@@ -74,23 +72,23 @@ class Account{
 };
 
 inline UsrId Account::getUsrId() const{
-		return usrId;
+	return usrId;
 }
 
 inline AccType Account::getAccType() const{
-		return accType;
+	return accType;
 }
 
 inline Money Account::getLimit() const{
-		return limit;
+	return limit;
 }
 
 inline Money Account::getBalance() const{
-		return balance;
+	return balance;
 }
 
 inline AccNumber Account::getAccNumber() const{
-		return accNumber;
+	return accNumber;
 }
 
 /** Gerente; Onde ficarão armazenados os dados de usuários com privilégios administrativos sobre o sistema.
@@ -101,8 +99,7 @@ class Manager:public User{
 		ManType	manType;
 		UsrMatric usrMatric;
 	public:
-		Manager(){}
-		Manager (const ManType&, const UsrMatric&);
+		Manager (const UsrName&, const UsrPassword&, const ManType&, const UsrMatric&) throw (invalid_argument);
 
 		ManType getManType () const;
 		void setManType (const ManType&);
@@ -112,11 +109,11 @@ class Manager:public User{
 };
 
 inline ManType Manager::getManType() const{
-		return manType;
+	return manType;
 }
 
 inline UsrMatric Manager::getUsrMatric() const{
-		return usrMatric;
+	return usrMatric;
 }
 
 /** Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.
@@ -130,8 +127,7 @@ class Payment{
 		Money payValue;				
 
 	public:
-		Payment(){}
-		Payment (const AccNumber&, const PayDay&, const Money&);
+		Payment (const AccNumber&, const PayDay&, const Money&) throw (invalid_argument);
 
 		PayCode getPayCode () const;
 		const PayCode setPayCode (const PayCode&);
@@ -147,15 +143,15 @@ class Payment{
 };
 
 inline AccNumber Payment::getAccNumber() const{
-		return accNumber;
+	return accNumber;
 }
 
 inline PayCode Payment::getPayCode() const{
-		return payCode;
+	return payCode;
 }
 
 inline PayDay Payment::getPayDay() const{
-		return payDay;
+	return payDay;
 }
 
 #endif

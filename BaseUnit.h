@@ -38,7 +38,7 @@ class UsrName:public UnitBase<string>
 	private:
 		void validate(const string&) throw (invalid_argument);
 	public:
-		UsrName(){}
+		UsrName();
 		UsrName(const string&) throw (invalid_argument);
 };
 
@@ -50,7 +50,7 @@ class UsrPassword:public UnitBase<string>
 	private:
 		void validate(const string&) throw (invalid_argument);
 	public:
-		UsrPassword(){}
+		UsrPassword();
 		UsrPassword(const string&) throw (invalid_argument);
 };
 
@@ -62,7 +62,7 @@ class UsrId: public UnitBase<int>
 	private:
 		void validate(const int&) throw (invalid_argument);
 	public:
-		UsrId(){}
+		UsrId();
 		UsrId(const int&) throw (invalid_argument);
 };
 
@@ -74,7 +74,7 @@ class UsrMatric:public UnitBase<int>
 	private:
 		void validate(const int&) throw (invalid_argument);
 	public:
-		UsrMatric(){}
+		UsrMatric();
 		UsrMatric(const int&) throw (invalid_argument);
 };
 
@@ -88,7 +88,7 @@ class UsrType : public UnitBase<bool>
 	private:
 		void validate(const bool& value) throw (invalid_argument);
 	public:
-		UsrType(){}
+		UsrType();
 		UsrType(const bool&) throw (invalid_argument);
 };
 
@@ -103,7 +103,7 @@ class AccNumber:public UnitBase<int>
 	private:
 		void validate(const int&) throw (invalid_argument);
 	public:
-		AccNumber(){}
+		AccNumber();
 		AccNumber(const int&) throw (invalid_argument);
 };
 
@@ -115,7 +115,7 @@ class Money:public UnitBase<float>
 	private:
 		void validate(const float&) throw (invalid_argument);
 	public:
-		Money(){}
+		Money();
 		Money(const float&) throw (invalid_argument);
 };
 
@@ -127,7 +127,7 @@ class PayCode:public UnitBase<int>
 	private:
 		void validate(const int&) throw (invalid_argument);
 	public:
-		PayCode(){}
+		PayCode();
 		PayCode(const int&) throw (invalid_argument);
 };
 
@@ -139,7 +139,7 @@ class PayDay:public UnitBase<int>
 	private:
 		void validate(const int&) throw (invalid_argument);
 	public:
-		PayDay(){}
+		PayDay();
 		PayDay(const int&) throw (invalid_argument);
 		inline int day();//\fn retorna o dia.
 		inline int month();//\fn retorna o mês.
