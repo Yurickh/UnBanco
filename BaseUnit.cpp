@@ -1,121 +1,145 @@
 #include "BaseUnit.h"
 
-		Name::Name (string name) throw (invali_argument)
-		{
-				validate(name);
-				this->name = name;
-		}
+using namespace std;
 
-		void Name::validate (const string& name) throw (invalid_argument)
-		{
-				int i;
-				if (name.size() == 0)
-						throw invalid_argument ("Nenhum caractere digitado em nome.");
-				if (name.size() > 20)
-						throw invalid_argument ("Nome com mais de 20 caracteres.");
-				for (i=0; i<name.size() ;i++)
-				{
-						if ( !isspace (name.at(i)) &&
-							!isalpha (name.at(i)) && 
-							name.at(i) != '.' )
-								throw invalid_argument ("Nome com caracteres invalidos.")
-				}
-		}	
+UsrName::UsrName (const string& name) throw (invalid_argument)
+{
+	validate(name);
+	this->value = name;
+}
 
-		UsrMatric::UsrMatric (int matric) throw (invalid_argument)
-		{
-				validate(matric);
-				this->matric = matric;
-		}
+void UsrName::validate (const string& name) throw (invalid_argument)
+{
+	int i;
+	if (name.size() == 0)
+		throw invalid_argument ("Nenhum caractere digitado em nome.");
+	if (name.size() > 20)
+		throw invalid_argument ("Nome com mais de 20 caracteres.");
+	for (i=0; i<name.size() ;i++)
+	{
+		if ( !isspace (name.at(i)) &&
+		!isalpha (name.at(i)) && name.at(i) != '.' )
+			throw invalid_argument ("Nome com caracteres invalidos.");
+	}
+}	
 
-		void UsrMatric::validate(const int& matric) throw (invalid_argument)
-		{
-				if (matric < 0 || matric > 99999)
-						throw invalid_argument ("Matricula invalida, numero fora do alcance.")
-		}
+UsrMatric::UsrMatric (const int& matric) throw (invalid_argument)
+{
+	validate(matric);
+	this->value = matric;
+}
 
-		UsrPassword::UsrPassword (string password) throw (invalid_argument)
-		{
-				validate (password);
-				this->password = password;
-		}
+void UsrMatric::validate(const int& matric) throw (invalid_argument)
+{
+	if (matric < 0 || matric > 99999)
+		throw invalid_argument ("Matricula invalida, numero fora do alcance.");
+}
 
-		void UsrPasword::validate (const string& password) throw (invalid_argument)
-		{
-				int i;
-				if (password.size() == 0)
-						throw invalid_argument ("Nenhum caractere digitado em senha.")
-				if (password.size() > 6)
-						thorw invalid_argument ("Senha com mais de 6 caracteres.")
-				for (i=0; i<password.size(); i++)
-				{
-						if (!isdigit(password.at(i) &&
-							!isalpha(password.at(i)))
-									throw invalid_argument("Senha em formato inesperado.")
-				}
-		}
+UsrPassword::UsrPassword (const string& password) throw (invalid_argument)
+{
+	validate (password);
+	this->value = password;
+}
 
-		AccNumber::AccNumber (int accNumber) throw (invalid_argument)
-		{
-				validate (accNumber);
-				this->accNumber = accNumber;
-		}
+void UsrPassword::validate (const string& password) throw (invalid_argument)
+{
+	int i;
+	if (password.size() != 6)
+		throw invalid_argument ("A senha deve ter seis caracteres.");
+	for (i=0; i<6; i++)
+	{
+		if (!isdigit(password.at(i)) && !isalpha(password.at(i)))
+			throw invalid_argument("A senha deve ser formada apenas por caracteres alfanumericos.");
+	}
+}
 
-		void AccNUmber::validate (const int& accNumber) throw (invalid_argument)
-		{
-				if(accNumber < 0 || accNumber > 9999)
-						throw invalid_argument ("Numero da conta com numero fora do alcance.");
-		}
+AccNumber::AccNumber (const int& accNumber) throw (invalid_argument)
+{
+	validate (accNumber);
+	this->value = accNumber;
+}
 
-		PayCode::PayCode (int payNumber) throw (invalid_argument)
-		{
-				validate (payNumber);
-				this->payNumber = payNumber;
-		}
+void AccNumber::validate (const int& accNumber) throw (invalid_argument)
+{
+	if(accNumber < 0 || accNumber > 9999)
+		throw invalid_argument ("Numero da conta com numero fora do alcance.");
+}
 
-		void PayCode::validate (const int& payNumber) throw (invalid_argument)
-		{
-				if(payNumber <0 || payNumber > 999999)
-						throw invalid_argument("Numero do pagamento com numero fora do alcance.");
-		}
+Money::Money (const float& money) throw (invalid_argument)
+{
+	validate (money);
+	this->value = money;
+}
 
-		PayValue::PayValue (float payValue) throw (invalid_argument)
-		{
-				validate(payValue);
-				this->payValue = payValue;
-		}
+void Money::validate (const float& money) throw (invalid_argument)
+{
+	if(!(std::isnormal(money)) || money < 0)
+		throw invalid_argument ("Nao e possivel executar esta operacao com a dada quantidade de dinheiro");
+}
 
-		void PayValue::validate (const float& payValue) throw (invalid_argument)
-		{
-				if(payValue< )
-						throw invalid_argument ("");
+PayCode::PayCode (const int& payNumber) throw (invalid_argument)
+{
+	validate (payNumber);
+	this->value = payNumber;
+}
 
-		}
+void PayCode::validate (const int& payNumber) throw (invalid_argument)
+{
+	if(payNumber <0 || payNumber > 999999)
+		throw invalid_argument("Numero do pagamento com numero fora do alcance.");
+}
 
-		UsrType::UsrType (bool usrType) throw (invalid_argument)
-		{
-				validate (usrType);
-				this->usrType = usrType;
-		}
+UsrType::UsrType (const bool& usrType) throw (invalid_argument)
+{
+	validate (usrType);
+	this->value = usrType;
+}
 
-			void UsrType::validate (const bool& usrType) throw (invalid_argument)
-		{
-		}
+void UsrType::validate (const bool& usrType) throw (invalid_argument)
+{
+	if(usrType != true || usrType != false)
+		throw invalid_argument("Valor inesperado para UsrType");
+}
 
-		UsrId::UserId (int usrId) throw (inalid_argument)
-		{
-				validate (usrId);
-				this->usrId = usrId;
-		}
+UsrId::UsrId (const int& usrId) throw (invalid_argument)
+{
+	validate (usrId);
+	this->value = usrId;
+}
 
-		void UsrId::validate (const int& usrId) throw (invalid_argument)
-		{
-				if(usrId < 0)
-						throw invalid_argument ("A Id do usuário não pode ser menor que zero.")
-		}
+void UsrId::validate (const int& usrId) throw (invalid_argument)
+{
+	if(usrId < 0)
+		throw invalid_argument ("A Id do usuário não pode ser menor que zero.");
+}
 
-		/*PayDay::PayDay (int date) throw (invalid_argument)
-		{
-				validate (date);
-				this->date = date;
-		}*/
+PayDay::PayDay (const int& date) throw (invalid_argument)
+{
+	validate (date);
+	this->value = date;
+}
+
+void PayDay::validate (const int& date) throw (invalid_argument)
+{
+	int day, month, year;
+
+	day = date/1000000;
+	year = date%10000;
+	month = (value/10000)%100;
+
+	if(day <= 0 || day>31)
+		throw invalid_argument("Dia invalido");
+	else
+	{
+		if(month == 2 && day > 29)
+				throw invalid_argument("Dia invalido");
+		else if((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+				throw invalid_argument("Dia invalido");
+	}
+
+	if(month <=0 || month >12)
+		throw invalid_argument("Mes invalido");
+
+	if(year<=2012)
+		throw invalid_argument("Ano invalido");
+}
