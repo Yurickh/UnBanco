@@ -1,6 +1,7 @@
+#include "BaseUnit.h"
 #include "EntityUnit.h"
  
-User::User (UsrName name, UsrPassword password)
+User::User(const UsrName& name, const UsrPassword& password)
 {
 		this->name = name;
 		this->password = password;
@@ -15,17 +16,17 @@ void User::setPassword (const UsrPassword& password){
 }
 
 
-Client::Client (UsrId usrId)
+Customer::Customer (const UsrId& usrId)
 {
 		this->usrId = usrId;
 }
 
-void Client::setUsrId(const UsrId& usrId){
+void Customer::setUsrId(const UsrId& usrId){
 		this->usrId = usrId;
 }
 
 
-Account::Account (AccNumber accNumber, AccType accType, Money limit, UsrId usrId)
+Account::Account (const AccNumber& accNumber, const AccType& accType, const Money& limit, const UsrId& usrId)
 {
 		this->accNumber = accNumber;
 		this->accType = accType;
@@ -42,9 +43,14 @@ void Account::setAccType (const AccType& accType)
 		this->accType = accType;
 }
 
-void Account::setMoney (const Money& limit)
+void Account::setLimit (const Money& limit)
 {
 		this->limit = limit;
+}
+
+void Account::setBalance (const Money& balance)
+{
+		this->balance = balance;
 }
 
 void Account::setUsrId (const UsrId& usrId)
@@ -53,14 +59,14 @@ void Account::setUsrId (const UsrId& usrId)
 }
 
 
-Manager::Manager (AccType accType, UsrMatric usrMatric)
+Manager::Manager (const ManType& manType, const UsrMatric& usrMatric)
 {
-		this->accType = accType;
-		this->usrMatric = usrType;
+		this->manType = manType;
+		this->usrMatric = usrMatric;
 }
 
-void Manager::setAccType (const AccType& accType){
-		this->accType = accType;
+void Manager::setManType (const ManType& manType){
+		this->manType = manType;
 }
 
 void Manager::setUsrMatric (const UsrMatric& usrMatric){
@@ -68,20 +74,20 @@ void Manager::setUsrMatric (const UsrMatric& usrMatric){
 }
 
 
-Payment::Payment (PayNumber payNumber, PayDay payDay, PayValue payValue){
-		this->payNumber = payNumber;
+Payment::Payment (const AccNumber& accNumber, const PayDay& payDay, const Money& payValue){
+		this->accNumber = accNumber;
 		this->payDay = payDay;
 		this->payValue = payValue;
 }
 
-void Payment::setPayNumber (const PayNumber& payNumber){
-		this->payNumber = payNumber;
+void Payment::setAccNumber (const AccNumber& accNumber){
+		this->accNumber = accNumber;
 }
 
 void Payment::setPayDay (const PayDay& payDay){
 		this->payDay = payDay;
 }
 
-void Payment::setPayValue (const PayDay& payDay){
-		this->payValeu = payValue;
+void Payment::setPayValue (const Money& money){
+		this->payValue = payValue;
 }

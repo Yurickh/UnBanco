@@ -1,10 +1,10 @@
 all:
 
-BaseUnit: BaseUnit.cpp BaseUnit.h
-	g++ BaseUnit.cpp BaseUnit.h -c
+EntityUnit.o: EntityUnit.cpp EntityUnit.h BaseUnit.h
+	g++ EntityUnit.cpp -c
 
-EntityUnit: EntityUnit.cpp EntityUnit.h
-	g++ EntityUnit.cpp EntityUnit.h -c
+BaseUnit.o: BaseUnit.cpp BaseUnit.h
+	g++ BaseUnit.cpp -c
 
 clean:
 	rm *.o
