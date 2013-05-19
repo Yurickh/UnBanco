@@ -2,85 +2,86 @@
 #define TESTUNIT_H
 
 #include "BaseUnit.h"
-using namespace std;
 
+template <typename infotype, typename classtype>
 class Test{
 	protected:
-		virtual static setup();
-		virtual static run();
-		virtual static tearDown;
+		virtual static void test(infotype);
+		virtual static void setup() = 0;
+		virtual static void tearDown() = 0;
+	public:
+		static void run() = 0;
+
+	protected:
+		static classtype *object;
+		static infotype testValue;
 }
 
-class TestUsrName{
+class TestUsrName:public Test{
 	private:
-		UsrName* usrName;
-		string testStr;
-	public:
-		static execute(string);
-};
+		static void test(string);
+		static UsrName *usrName;
+		static string valid;
+		static string invalid;
+}
 
 class TestUsrPassword:public Test{
 	private:
-		UsrPassword* usrPassword;
-		string testStr;
-	public:
-		static execute(string);
-);
+		static void test(string);
+		static UsrPassword *usrPassword;
+		static string valid;
+		static string invalid;
+}
 
 class TestUsrId{
 	private:
-		UsrId* usrId;
-		int testInt;
-	public:
-		static execute(int);
-};
+		static void test(string);
+		static UsrId *usrId;
+		static int valid;
+		static int invalid;
+}
 
 class TestUsrMatric{
 	private:
-		UsrMatric* usrMatric;
-		int testInt;
-	public:
-		static execute(int);
-};
+		static void test(int);
+		static UsrMatric *usrMatric;
+		static int valid;
+		static int invalid;
+}
 
 class TestUsrType{
 	private:
-		UsrType* usrType;
-		bool tesBool;
-	public:
-		static execute(bool);
-};
+		static UsrType *usrType;
+		static bool valid;
+		static bool invalid;
+}
 
 class TestAccNumber{
 	private:
-		AccNumber* accNumber;
-		int testInt;
-	public:
-		static execute(int);
-};
+		static AccNumber *accNumber;
+		static int valid;
+		static int invalid;
+}
 
 class TestMoney{
 	private:
-		Money* money;
-		float testFloat;
-	public:
-		static execute(float);
-};
+		static Money *money;
+		static float valid;
+		static float invalid;
+}
 
-class PayCode{
+class TestPayCode{
 	private:
-		PayCode* payCode;
-		int testInt;
-	public:
-		static execute(int);
-};
+		static PayCode *payCode;
+		static int valid;
+		static int invalid;
+}
 
 class TestPayDay{
 	private:
-		PayDay* payDay;
-		int testInt;
-	public:
-		static execute(int);
-};
+		static PayDay *payDay;
+		static int valid;
+		static int invalid;
+}
 
 #endif
