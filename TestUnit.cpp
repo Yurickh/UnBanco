@@ -1,118 +1,45 @@
 #include "TestUnit.h"
 
-static void TestUsrName::test(string usrName)
+int main()
 {
-	cout << "Testado valor " << usrName << " em UsrName." << endl;
-	try
-	{
-		object->setValue(usrName);
-	}
-	catch(invalid_argument except)
-	{
-		cout << "\tErro: " << except << endl;
-	}
-}
+	Test<string, UsrName> 		usrName;
+	Test<string, UsrPassword> 	usrPassword;
+	Test<int, UsrId> 		usrId;
+	Test<int, UsrMatric>		usrMatric;
+	Test<bool, UsrType>		usrType;
+	Test<int, AccNumber>		accNumber;
+	Test<float, Money>		money;
+	Test<int, PayCode>		payCode;
+	Test<int, PayDay>		payDay;
 
-static void TestUsrPassword::test(string usrPassword)
-{
-	cout << "Testado valor " << usrPassword << " em UsrPassword." << endl;
-	try
-	{
-		object->setValue(usrPassword);
-	}
-	catch(invalid_argument except)
-	{
-		cout << "\tErro: " << except << endl;
-	}
-}
+	cout << "Unidade UsrName:" << endl;
+	usrName.run("Yurick.Hauschild C", "Andre@Accioly-Lima");
 
-static void TestUsrId::test(int usrId)
-{
-	cout << "Testado valor " << usrId << " em UsrId." << endl;
-	try
-	{
-		object->setValue(usrId);
-	}
-	catch(invalid_argument)
-	{
-		cout << "\tErro: " << except << endl;
-	}
-}
+	cout << endl << "Unidade UsrPassword:" << endl;
+	usrPassword.run("andre0", "yurick66'@#$%6543");
+	
+	cout << endl << "Unidade UsrId:" << endl;
+	usrId.run(500, -200);
 
-static void TestUsrMatric::test(int usrMatric)
-{
-	cout << "Testado valor " << usrMatric << " em UsrMatric." << endl;
-	try
-	{
-		object->setValue(usrMatric);
-	}
-	catch(invalid_argument)
-	{
-		cout << "\tErro: " << except << endl;
-	}
-}
+	cout << endl << "Unidade UsrMatric:" << endl;
+	usrMatric.run(12345, 987654321);
 
-static void TestUsrType::test(bool usrType)
-{
-	cout << "Testado valor " << ((!usrType)? "False" : "True") << " em UsrType." << endl;
-	try
-	{
-		object->setValue(usrType);
-	}
-	catch(invalid_argument)
-	{
-		cout << "\tErro: " << except << endl;
-	}
-}
+	cout << endl << "Unidade UsrType:" << endl;
+	usrType.run(false, "independe o que eu for colocar aqui, sempre irá passar no teste, porque equivale a true ou false.");
 
-static void TestAccNumber::test(int accNumber)
-{
-	cout << "Testado valor " << accNumber << " em AccNumber." << endl;
-	try
-	{
-		object->setValue(accNumber);
-	}
-	catch(invalid_argument)
-	{
-		cout << "\tErro: " << except << endl;
-	}
-}
+	cout << endl << "Unidade AccNumber:" << endl;
+	accNumber.run(1234, -12);
 
-static void TestMoney::test(float money)
-{
-	cout << "Testado valor " << money << " em Money." << endl;
-	try
-	{
-		object->setValue(money);
-	}
-	catch(invalid_argument)
-	{
-		cout << "\tErro: " << except << endl;
-	}
-}
+	cout << endl << "Unidade Money:" << endl;
+	money.run(14.79, 1.0/0.0);
 
-static void TestPayCode::test(int payCode)
-{
-	cout << "Testado valor " << payCode << " em PayCode." << endl;
-	try
-	{
-		object->setValue(payCode);
-	}
-	catch(invalid_argument)
-	{
-		cout << "\tErro: " << except << endl;
-	}
-}
+	cout << endl << "Unidade PayCode:" << endl;
+	payCode.run(200, -50);
 
-static void TestPayDay::test(int PayDay)
-{
-	cout << "Testado valor " << usrId << " em UsrId." << endl;
-	try
-	{
-		object->setValue(usrId);
-	}
-	catch(invalid_argument)
-	{
-		cout << "\tErro: " << except << endl;
-	}
+	cout << endl << "Unidade PayDay:" << endl;
+	payDay.run(4122015, 31022015);
+
+	cout << endl << "Finalizando unidade de testes." << endl;
+
+	return 0;
 }

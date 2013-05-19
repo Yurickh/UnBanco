@@ -1,7 +1,6 @@
-#define NORMAL_MAN	false
-#define ADMIN_MAN	true
-#define NORMAL_ACC	false
-#define SPECIAL_ACC	true
+#define NORMAL		false
+#define ADMIN		true
+#define SPECIAL		true
 #include "BaseUnit.h"
 
 using namespace std;
@@ -93,7 +92,7 @@ void UsrMatric::validate(const int& matric) throw (invalid_argument)
 
 UsrType::UsrType()
 {
-	this->value = NORMAL_ACC;
+	this->value = NORMAL;
 }
 
 UsrType::UsrType (const bool& usrType) throw (invalid_argument)
@@ -104,7 +103,7 @@ UsrType::UsrType (const bool& usrType) throw (invalid_argument)
 
 void UsrType::validate (const bool& usrType) throw (invalid_argument)
 {
-	if(usrType != NORMAL_ACC || usrType != SPECIAL_ACC)
+	if(usrType != NORMAL && usrType != SPECIAL)
 		throw invalid_argument("Valor inesperado para UsrType");
 }
 
@@ -179,21 +178,18 @@ void PayDay::validate (const int& date) throw (invalid_argument)
 
 	day = date/1000000;
 	year = date%10000;
-	month = (value/10000)%100;
+	month = (date/10000)%100;
 
-	if(day <= 0 || day>31)
-		throw invalid_argument("Dia invalido");
-	else
-	{
-		if(month == 2 && day > 29)
-				throw invalid_argument("Dia invalido");
-		else if((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
-				throw invalid_argument("Dia invalido");
-	}
+	if(year<2013)
+		throw invalid_argument("Ano invalido");
 
 	if(month <=0 || month >12)
 		throw invalid_argument("Mes invalido");
 
-	if(year<=2012)
-		throw invalid_argument("Ano invalido");
+	if(day <= 0 || day>31)
+		throw invalid_argument("Dia invalido");
+	if(month == 2 && day > 29)
+		throw invalid_argument("Dia invalido");
+	if((month == 4 || month == 6 || month == 9 || month == 11) && day > 30)
+		throw invalid_argument("Dia invalido");
 }

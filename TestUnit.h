@@ -1,40 +1,55 @@
 #ifndef TESTUNIT_H
 #define TESTUNIT_H
 
+#include <iostream>
 #include "BaseUnit.h"
 
-template <typename infotype, typename classtype>
+template <typename infoType, typename classType>
 class Test{
-	protected:
-		virtual static void test(infotype) =0;
-		static void setup()
-		{
-			object = new classtype;
-		}
-		static void tearDown()
-		{
-			delete object;
-		}
+	private:
+		void test(infoType);
+		void setup();
+		void tearDown();
 	public:
-		static void run(infotype testValue)
-		{
-			setup();
-			test(testValue);
-			tearDown();
-		}
+		void run(const infoType&, const infoType&);
 
 	protected:
-		static classtype *object;
+		classType *object;
+};
+
+template <typename infoType, typename classType>
+void Test<infoType, classType>::test(infoType test)
+{
+	cout << "Testando valor " << test << "." << endl;
+	try
+	{
+		object->setValue(test);
+	}
+	catch(invalid_argument except)
+	{
+		cout << "\tErro: " << except.what() << endl;
+	}
 }
 
-class TestUsrName	:public Test<string, UsrName>;
-class TestUsrPassword	:public Test<string, UsrPassword>;
-class TestUsrId		:public Test<int, UsrId>;
-class TestUsrMatric	:public Test<int, UsrMatric>;
-class TestUsrType	:public Test<bool, UsrType>;
-class TestAccNumber	:public Test<int, AccNumber>;
-class TestMoney		:public Test<float, Money>;
-class TestPayCode	:public Test<int, PayCode>;
-class TestPayDay	:public Test<int, PayDay>;
+template <typename infoType, typename classType>
+void Test<infoType, classType>::setup()
+{
+	object = new classType;
+}
+
+template <typename infoType, typename classType>
+void Test<infoType, classType>::tearDown()
+{
+	delete object;
+}
+
+template <typename infoType, typename classType>
+void Test<infoType, classType>::run(const infoType& testValue1, const infoType& testValue2)
+{			
+	setup();
+	test(testValue1);
+	test(testValue2);
+	tearDown();
+}
 
 #endif
