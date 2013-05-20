@@ -4,6 +4,9 @@
 #include <iostream>
 #include "BaseUnit.h"
 
+/**Template que irá gerar todas as classes de teste.
+A partir desse template, todas as classes de teste podem ser modeladas, com seus respectivos métodos setup(), tearDown() e run().
+*/
 template <typename infoType, typename classType>
 class Test{
 	private:
