@@ -6,7 +6,7 @@ teste: TestUnit.o BaseUnit.o
 TestUnit.o: TestUnit.cpp TestUnit.h
 	g++ TestUnit.cpp -c
 
-EntityUnit.o: EntityUnit.cpp EntityUnit.h BaseUnit.h
+EntityUnit.o: EntityUnit.cpp EntityUnit.h
 	g++ EntityUnit.cpp -c
 
 BaseUnit.o: BaseUnit.cpp BaseUnit.h
