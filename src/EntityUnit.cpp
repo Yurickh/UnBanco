@@ -1,17 +1,16 @@
-#include "BaseUnit.h"
 #include "EntityUnit.h"
 
 User::User()
 {
-	this->name.setValue("");
-	this->password.setValue("");
+	this->name.setValue(" ");
+	this->password.setValue(" ");
 }
 
-void User::setName (const UsrName& name) {
+void User::setUsrName (const UsrName& name) {
 	this->name = name;
 }
 
-void User::setPassword (const UsrPassword& password){
+void User::setUsrPassword (const UsrPassword& password){
 	this->password = password;
 }
 

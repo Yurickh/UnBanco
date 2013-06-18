@@ -1,18 +1,39 @@
 all:
 
-teste: TestUnit.o BaseUnit.o
-	g++ TestUnit.o BaseUnit.o -o teste
+base_test: BaseTestUnit.o BaseUnit.o
+	g++ BaseTestUnit.o BaseUnit.o -o teste
 
-TestUnit.o: TestUnit.cpp TestUnit.h
-	g++ TestUnit.cpp -c
+login_test: InterTestUnit.o MainUnit.o UserUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o
+	g++ InterTestUnit.o MainUnit.o UserUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o -o teste
+
+BaseTestUnit.o: BaseTestUnit.cpp BaseTestUnit.h
+	g++ -ansi -Wall -g BaseTestUnit.cpp -c
+
+InterTestUnit.o: InterTestUnit.cpp
+	g++ -ansi -Wall -g InterTestUnit.cpp -c
+
+MainUnit.o: MainUnit.cpp MainUnit.h
+	g++ -ansi -Wall -g MainUnit.cpp -c
+
+UserUnit.o: UserUnit.cpp UserUnit.h
+	g++ -ansi -Wall -g UserUnit.cpp -c
+
+PersUnit.o: PersUnit.cpp PersUnit.h
+	g++ -ansi -Wall -g PersUnit.cpp -c
 
 EntityUnit.o: EntityUnit.cpp EntityUnit.h
-	g++ EntityUnit.cpp -c
+	g++ -ansi -Wall -g EntityUnit.cpp -c
 
 BaseUnit.o: BaseUnit.cpp BaseUnit.h
-	g++ BaseUnit.cpp -c
+	g++ -ansi -Wall -g BaseUnit.cpp -c
 
-clean: clean~ clean.o clean.gch
+EngineUnit.o: EngineUnit.cpp EngineUnit.h
+	g++ -ansi -Wall -g EngineUnit.cpp -c
+
+clean: clean_teste clean~ clean.o clean.gch
+
+clean_teste:
+	rm teste
 
 clean~:
 	rm *~
