@@ -82,8 +82,18 @@ list<Manager*> StubUserManAdm :: fetchManager() throw (PersError)
 	return manList;
 }
 
-void StubUserManAdm :: editManName(UsrMatric* usrMatric, UsrName* usrName) throw (PersError)
+void StubUserManAdm :: editManName(UsrMatric* usrMatric, UsrName* usrName) throw (invalid_argument, PersError)
 {
+	if(usrMatric->getValue() == 1)
+		throw invalid_argument("O Gerente requisitado nao existe");
+	if(usrMatric->getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void StubUserManAdm :: deleteManager(UsrMatric* usrMatric) throw (invalid_argument, PersError)
+{
+	if(usrMatric->getValue() == 1)
+		throw invalid_argument("O Gerente requisitado nao existe");
 	if(usrMatric->getValue() == 2)
 		throw PersError(PERS_ERROR_MSG);
 }

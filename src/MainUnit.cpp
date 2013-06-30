@@ -432,6 +432,9 @@ void MainAdmMenu::changeManager()
 		} catch (PersError except)
 		{
 			win->error(except.what());
+		} catch (invalid_argument except)
+		{
+			win->error(except.what());
 		}
 	} while(invalidEnd);
 
@@ -439,7 +442,48 @@ void MainAdmMenu::changeManager()
 	win->cont();
 }
 
-void MainAdmMenu::deleteManager(){}
+void MainAdmMenu::deleteManager()
+{
+	int manMatricInt;
+	UsrMatric* manMatric;
+
+	bool invalidMatric, invalidEnd;
+
+	do
+	{
+		invalidEnd = true;
+		do
+		{
+			invalidMatric = true;
+			win->print("Insira a matrícula do Gerente a ser deletado:");
+			win->read(manMatricInt);
+
+			try
+			{
+				manMatric = new UsrMatric(manMatricInt);
+				invalidMatric = false;
+			}catch(invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		}while(invalidMatric);
+
+		try
+		{
+			userAdm->deleteManager(manMatric);
+			invalidEnd = false;
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		} catch (invalid_argument except)
+		{
+			win->error(except.what());
+		}
+	}while(invalidEnd);
+
+	win->success("Gerente devidamente deletado");
+	win->cont();
+}
 
 //======================MainManMenu===============================
 void MainManMenu::execute(){
