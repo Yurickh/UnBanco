@@ -35,6 +35,7 @@ class UserManAdm
 		virtual void changePassword(UsrPassword*) throw (PersError) = 0;
 		virtual void createManager(UsrName*, UsrPassword*) throw (PersError) = 0;
 		virtual list<Manager*> fetchManager(void) throw (PersError) = 0;
+		virtual void editManName(UsrMatric*, UsrName*) throw (PersError) = 0;
 };
 
 class StubUserManAdm : public UserManAdm
@@ -43,6 +44,7 @@ class StubUserManAdm : public UserManAdm
 		void changePassword(UsrPassword*) throw (PersError);
 		void createManager(UsrName*, UsrPassword*) throw (PersError);
 		list<Manager*> fetchManager(void) throw (PersError);
+		void editManName(UsrMatric*, UsrName*) throw (PersError);
 };
 
 class UserCusAdm

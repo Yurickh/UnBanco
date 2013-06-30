@@ -386,10 +386,57 @@ void MainAdmMenu::listManager()
 
 void MainAdmMenu::changeManager()
 {
-	/*int manMatricInt;
+	int manMatricInt;
+	UsrMatric* manMatric;
+	string manNameStr;
+	UsrName* manName;
 
-	win->print("Insira a matricula do Gerente a ser renomeado:");
-	win->read(manMatricInt);*/
+	bool invalidMatric, invalidName, invalidEnd;
+
+	do{
+		invalidEnd = true;
+		do{
+			invalidMatric = true;
+			win->print("Insira a matricula do Gerente a ser renomeado:");
+			win->read(manMatricInt);
+
+			try
+			{
+				manMatric = new UsrMatric(manMatricInt);
+				invalidMatric = false;
+			} catch (invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		} while (invalidMatric);
+
+		do{
+			invalidName = true;
+			win->print("Insira o novo nome do Gerente em questão.");
+			win->read(manNameStr);
+
+			try
+			{
+				manName = new UsrName(manNameStr);
+				invalidName = false;
+			} catch (invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		} while (invalidName);
+
+		try
+		{
+			userAdm->editManName(manMatric, manName);
+			invalidEnd = false;
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+	} while(invalidEnd);
+
+	win->success("Nome devidamente editado.");
+	win->cont();
 }
 
 void MainAdmMenu::deleteManager(){}

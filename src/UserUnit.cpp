@@ -82,6 +82,12 @@ list<Manager*> StubUserManAdm :: fetchManager() throw (PersError)
 	return manList;
 }
 
+void StubUserManAdm :: editManName(UsrMatric* usrMatric, UsrName* usrName) throw (PersError)
+{
+	if(usrMatric->getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+}
+
 void StubUserCusAdm :: changePassword(UsrPassword* newPassword) throw (PersError)
 {
 	if(newPassword->getValue() == "2")
