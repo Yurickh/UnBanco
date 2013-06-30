@@ -30,7 +30,7 @@ class StubUserAccAdm : public UserAccAdm
 class UserManAdm
 {
 	public:
-		virtual void changePassword(UsrPassword*) throw (invalid_argument, PersError) = 0;
+		virtual void changePassword(UsrPassword*) throw (PersError) = 0;
 };
 
 class StubUserManAdm : public UserManAdm
@@ -41,10 +41,14 @@ class StubUserManAdm : public UserManAdm
 
 class UserCusAdm
 {
+	public:
+		virtual void changePassword(UsrPassword*) throw (PersError) = 0;
 };
 
 class StubUserCusAdm : public UserCusAdm
 {
+	public:
+		void changePassword(UsrPassword*) throw (PersError);
 };
 
 #endif

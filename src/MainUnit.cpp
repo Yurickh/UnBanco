@@ -481,7 +481,63 @@ void MainCusMenu::managePayment()
 		}
 	}
 }
-void MainCusMenu::changePassword(){}
+void MainCusMenu::changePassword()
+{
+	string oldPassStr;
+	string newPassStr1;
+	string newPassStr2;
+	UsrPassword* newPass;
+
+	bool invalidOld, invalidNew, invalidEnd;
+
+	do
+	{
+		invalidEnd = true;
+		do
+		{
+			invalidOld = true;
+			win->print("Insira a senha atual:");
+			win->read(oldPassStr);
+			if(oldPassStr != session->getUsrPassword().getValue())
+				win->error("Senha invalida.");
+			else
+				invalidOld = false;
+		} while(invalidOld);
+
+		do
+		{
+			invalidNew = true;
+			win->print("Insira a nova senha:");
+			win->read(newPassStr1);
+			win->print("Insira a nova senha novamente:");
+			win->read(newPassStr2);
+			if(newPassStr1 == newPassStr2)
+			{
+				try
+				{
+					newPass = new UsrPassword(newPassStr1);
+					invalidNew = false;
+				} catch (invalid_argument except)
+				{
+					win->error(except.what());
+				}
+			}
+			else
+				win->error("As senhas nao batem.");
+		}while(invalidNew);
+
+		try
+		{
+			userAdm->changePassword(newPass);
+			session->setUsrPassword(newPass);
+			win->success("Senha modificada com sucesso.");
+			invalidEnd = false;
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+	}while(invalidEnd);
+}
 void MainCusMenu::listCustomer(){}
 void MainCusMenu::showBalance(){}
 void MainCusMenu::withdraw(){}
