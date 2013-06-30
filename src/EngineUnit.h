@@ -32,6 +32,8 @@ class Window
 		virtual void error(string)=0;
 		/** Mostra a mensagem de sucesso formatada na tela. */
 		virtual void success(string)=0;
+		/** Botão de continue */
+		virtual void cont(void) = 0;
 };
 
 class Textual: public Window
@@ -44,6 +46,7 @@ class Textual: public Window
 		void read(int&);
 		void error(string);
 		void success(string);
+		void cont();
 };
 
 #endif

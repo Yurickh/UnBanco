@@ -13,23 +13,23 @@ Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPayment_a91b7742c5f9b4617e4a3bce6507cce49}{Payment} (const \hyperlink{classAccNumber}{Acc\-Number} \&, const \hyperlink{classPayDay}{Pay\-Day} \&, const \hyperlink{classMoney}{Money} \&)  throw (invalid\-\_\-argument)
+\hyperlink{classPayment_ab39bbaa53eb3f58106d8f40e2f0b8a0f}{Payment} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$\&, \hyperlink{classPayDay}{Pay\-Day} $\ast$\&, \hyperlink{classMoney}{Money} $\ast$\&)  throw (invalid\-\_\-argument)
 \begin{DoxyCompactList}\small\item\em Construtor base de \hyperlink{classPayment}{Payment}. \end{DoxyCompactList}\item 
-\hyperlink{classPayCode}{Pay\-Code} \hyperlink{classPayment_a1d71998fa33e757bb350eb40895865ae}{get\-Pay\-Code} () const 
+\hyperlink{classPayCode}{Pay\-Code} $\ast$ \hyperlink{classPayment_ad8f162a6ae938095d78ec969a8f18a65}{get\-Pay\-Code} () const 
 \begin{DoxyCompactList}\small\item\em Método que recupera o valor contido no atributo pay\-Code. \end{DoxyCompactList}\item 
-const \hyperlink{classPayCode}{Pay\-Code} \hyperlink{classPayment_adf458db6331e53948a473a04a0d622a4}{set\-Pay\-Code} (const \hyperlink{classPayCode}{Pay\-Code} \&)
+const \hyperlink{classPayCode}{Pay\-Code} \hyperlink{classPayment_a30c735ed3046ed79d6d683d137857215}{set\-Pay\-Code} (\hyperlink{classPayCode}{Pay\-Code} $\ast$\&)
 \begin{DoxyCompactList}\small\item\em Método que define o valor no atributo pay\-Code. \end{DoxyCompactList}\item 
-\hyperlink{classAccNumber}{Acc\-Number} \hyperlink{classPayment_a66c51330aef2e045884e25618a194904}{get\-Acc\-Number} () const 
+\hyperlink{classAccNumber}{Acc\-Number} $\ast$ \hyperlink{classPayment_a890339672666de9bdce1a165b9fb6caa}{get\-Acc\-Number} () const 
 \begin{DoxyCompactList}\small\item\em Método que recupera o valor contido no atributo acc\-Number. \end{DoxyCompactList}\item 
-void \hyperlink{classPayment_a5d0e83f83f090acf4b33bc81f5391ca0}{set\-Acc\-Number} (const \hyperlink{classAccNumber}{Acc\-Number} \&)
+void \hyperlink{classPayment_a296c7bac32e094e6fd6176e5fea5dead}{set\-Acc\-Number} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$\&)
 \begin{DoxyCompactList}\small\item\em Método que define o valor no atributo pay\-Code. \end{DoxyCompactList}\item 
-\hyperlink{classPayDay}{Pay\-Day} \hyperlink{classPayment_a22ee22d04f3f5757f115386aa3337c51}{get\-Pay\-Day} () const 
+\hyperlink{classPayDay}{Pay\-Day} $\ast$ \hyperlink{classPayment_af9338882685e12f00ae665a45ed32545}{get\-Pay\-Day} () const 
 \begin{DoxyCompactList}\small\item\em Método que recupera o valor contido no atributo pay\-Day. \end{DoxyCompactList}\item 
-void \hyperlink{classPayment_aaadd94e11ab24629d536809da691efc5}{set\-Pay\-Day} (const \hyperlink{classPayDay}{Pay\-Day} \&)
+void \hyperlink{classPayment_ab38a43aec480364b87fb4b936e3f939d}{set\-Pay\-Day} (\hyperlink{classPayDay}{Pay\-Day} $\ast$\&)
 \begin{DoxyCompactList}\small\item\em Método que define o valor no atributo pay\-Code. \end{DoxyCompactList}\item 
-\hyperlink{classMoney}{Money} \hyperlink{classPayment_a3a2d6a8dc3f6b63e924504e1994ae556}{get\-Pay\-Value} () const 
+\hyperlink{classMoney}{Money} $\ast$ \hyperlink{classPayment_a4a68506667eb91d99d1bb67a1f3bec2a}{get\-Pay\-Value} () const 
 \begin{DoxyCompactList}\small\item\em Método que recupera o valor contido no atributo pay\-Value. \end{DoxyCompactList}\item 
-void \hyperlink{classPayment_ace63ad77804d5a19ace50aa1a7335050}{set\-Pay\-Value} (const \hyperlink{classMoney}{Money} \&)
+void \hyperlink{classPayment_aa3c69f9962d25ed056ee2a673240e1e0}{set\-Pay\-Value} (\hyperlink{classMoney}{Money} $\ast$\&)
 \begin{DoxyCompactList}\small\item\em Método que define o valor no atributo pay\-Code. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -39,15 +39,15 @@ Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.
 Esta classe armazenará os dados de conta bem como a data agendada de pagamentos futuros. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classPayment_a91b7742c5f9b4617e4a3bce6507cce49}{\index{Payment@{Payment}!Payment@{Payment}}
+\hypertarget{classPayment_ab39bbaa53eb3f58106d8f40e2f0b8a0f}{\index{Payment@{Payment}!Payment@{Payment}}
 \index{Payment@{Payment}!Payment@{Payment}}
 \subsubsection[{Payment}]{\setlength{\rightskip}{0pt plus 5cm}Payment\-::\-Payment (
 \begin{DoxyParamCaption}
-\item[{const {\bf Acc\-Number} \&}]{acc\-Number, }
-\item[{const {\bf Pay\-Day} \&}]{pay\-Day, }
-\item[{const {\bf Money} \&}]{pay\-Value}
+\item[{{\bf Acc\-Number} $\ast$\&}]{acc\-Number, }
+\item[{{\bf Pay\-Day} $\ast$\&}]{pay\-Day, }
+\item[{{\bf Money} $\ast$\&}]{pay\-Value}
 \end{DoxyParamCaption}
-)  throw (invalid\-\_\-argument)}}\label{d5/d5e/classPayment_a91b7742c5f9b4617e4a3bce6507cce49}
+)  throw (invalid\-\_\-argument)}}\label{d5/d5e/classPayment_ab39bbaa53eb3f58106d8f40e2f0b8a0f}
 
 
 Construtor base de \hyperlink{classPayment}{Payment}. 
@@ -55,90 +55,90 @@ Construtor base de \hyperlink{classPayment}{Payment}.
 Define todos os atributos internos à classe automaticamente. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classPayment_a66c51330aef2e045884e25618a194904}{\index{Payment@{Payment}!get\-Acc\-Number@{get\-Acc\-Number}}
+\hypertarget{classPayment_a890339672666de9bdce1a165b9fb6caa}{\index{Payment@{Payment}!get\-Acc\-Number@{get\-Acc\-Number}}
 \index{get\-Acc\-Number@{get\-Acc\-Number}!Payment@{Payment}}
-\subsubsection[{get\-Acc\-Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Acc\-Number} Payment\-::get\-Acc\-Number (
+\subsubsection[{get\-Acc\-Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Acc\-Number} $\ast$ Payment\-::get\-Acc\-Number (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d5e/classPayment_a66c51330aef2e045884e25618a194904}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d5e/classPayment_a890339672666de9bdce1a165b9fb6caa}
 
 
 Método que recupera o valor contido no atributo acc\-Number. 
 
-O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classPayment_a1d71998fa33e757bb350eb40895865ae}{\index{Payment@{Payment}!get\-Pay\-Code@{get\-Pay\-Code}}
+O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classPayment_ad8f162a6ae938095d78ec969a8f18a65}{\index{Payment@{Payment}!get\-Pay\-Code@{get\-Pay\-Code}}
 \index{get\-Pay\-Code@{get\-Pay\-Code}!Payment@{Payment}}
-\subsubsection[{get\-Pay\-Code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pay\-Code} Payment\-::get\-Pay\-Code (
+\subsubsection[{get\-Pay\-Code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pay\-Code} $\ast$ Payment\-::get\-Pay\-Code (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d5e/classPayment_a1d71998fa33e757bb350eb40895865ae}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d5e/classPayment_ad8f162a6ae938095d78ec969a8f18a65}
 
 
 Método que recupera o valor contido no atributo pay\-Code. 
 
-O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classPayment_a22ee22d04f3f5757f115386aa3337c51}{\index{Payment@{Payment}!get\-Pay\-Day@{get\-Pay\-Day}}
+O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classPayment_af9338882685e12f00ae665a45ed32545}{\index{Payment@{Payment}!get\-Pay\-Day@{get\-Pay\-Day}}
 \index{get\-Pay\-Day@{get\-Pay\-Day}!Payment@{Payment}}
-\subsubsection[{get\-Pay\-Day}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pay\-Day} Payment\-::get\-Pay\-Day (
+\subsubsection[{get\-Pay\-Day}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pay\-Day} $\ast$ Payment\-::get\-Pay\-Day (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d5e/classPayment_a22ee22d04f3f5757f115386aa3337c51}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d5e/classPayment_af9338882685e12f00ae665a45ed32545}
 
 
 Método que recupera o valor contido no atributo pay\-Day. 
 
-O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classPayment_a3a2d6a8dc3f6b63e924504e1994ae556}{\index{Payment@{Payment}!get\-Pay\-Value@{get\-Pay\-Value}}
+O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classPayment_a4a68506667eb91d99d1bb67a1f3bec2a}{\index{Payment@{Payment}!get\-Pay\-Value@{get\-Pay\-Value}}
 \index{get\-Pay\-Value@{get\-Pay\-Value}!Payment@{Payment}}
-\subsubsection[{get\-Pay\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Money} Payment\-::get\-Pay\-Value (
+\subsubsection[{get\-Pay\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Money}$\ast$ Payment\-::get\-Pay\-Value (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{d5/d5e/classPayment_a3a2d6a8dc3f6b63e924504e1994ae556}
+) const}}\label{d5/d5e/classPayment_a4a68506667eb91d99d1bb67a1f3bec2a}
 
 
 Método que recupera o valor contido no atributo pay\-Value. 
 
-O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classPayment_a5d0e83f83f090acf4b33bc81f5391ca0}{\index{Payment@{Payment}!set\-Acc\-Number@{set\-Acc\-Number}}
+O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classPayment_a296c7bac32e094e6fd6176e5fea5dead}{\index{Payment@{Payment}!set\-Acc\-Number@{set\-Acc\-Number}}
 \index{set\-Acc\-Number@{set\-Acc\-Number}!Payment@{Payment}}
 \subsubsection[{set\-Acc\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void Payment\-::set\-Acc\-Number (
 \begin{DoxyParamCaption}
-\item[{const {\bf Acc\-Number} \&}]{acc\-Number}
+\item[{{\bf Acc\-Number} $\ast$\&}]{acc\-Number}
 \end{DoxyParamCaption}
-)}}\label{d5/d5e/classPayment_a5d0e83f83f090acf4b33bc81f5391ca0}
+)}}\label{d5/d5e/classPayment_a296c7bac32e094e6fd6176e5fea5dead}
 
 
 Método que define o valor no atributo pay\-Code. 
 
-\hypertarget{classPayment_adf458db6331e53948a473a04a0d622a4}{\index{Payment@{Payment}!set\-Pay\-Code@{set\-Pay\-Code}}
+\hypertarget{classPayment_a30c735ed3046ed79d6d683d137857215}{\index{Payment@{Payment}!set\-Pay\-Code@{set\-Pay\-Code}}
 \index{set\-Pay\-Code@{set\-Pay\-Code}!Payment@{Payment}}
 \subsubsection[{set\-Pay\-Code}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Pay\-Code} Payment\-::set\-Pay\-Code (
 \begin{DoxyParamCaption}
-\item[{const {\bf Pay\-Code} \&}]{}
+\item[{{\bf Pay\-Code} $\ast$\&}]{}
 \end{DoxyParamCaption}
-)}}\label{d5/d5e/classPayment_adf458db6331e53948a473a04a0d622a4}
+)}}\label{d5/d5e/classPayment_a30c735ed3046ed79d6d683d137857215}
 
 
 Método que define o valor no atributo pay\-Code. 
 
-\hypertarget{classPayment_aaadd94e11ab24629d536809da691efc5}{\index{Payment@{Payment}!set\-Pay\-Day@{set\-Pay\-Day}}
+\hypertarget{classPayment_ab38a43aec480364b87fb4b936e3f939d}{\index{Payment@{Payment}!set\-Pay\-Day@{set\-Pay\-Day}}
 \index{set\-Pay\-Day@{set\-Pay\-Day}!Payment@{Payment}}
 \subsubsection[{set\-Pay\-Day}]{\setlength{\rightskip}{0pt plus 5cm}void Payment\-::set\-Pay\-Day (
 \begin{DoxyParamCaption}
-\item[{const {\bf Pay\-Day} \&}]{pay\-Day}
+\item[{{\bf Pay\-Day} $\ast$\&}]{pay\-Day}
 \end{DoxyParamCaption}
-)}}\label{d5/d5e/classPayment_aaadd94e11ab24629d536809da691efc5}
+)}}\label{d5/d5e/classPayment_ab38a43aec480364b87fb4b936e3f939d}
 
 
 Método que define o valor no atributo pay\-Code. 
 
-\hypertarget{classPayment_ace63ad77804d5a19ace50aa1a7335050}{\index{Payment@{Payment}!set\-Pay\-Value@{set\-Pay\-Value}}
+\hypertarget{classPayment_aa3c69f9962d25ed056ee2a673240e1e0}{\index{Payment@{Payment}!set\-Pay\-Value@{set\-Pay\-Value}}
 \index{set\-Pay\-Value@{set\-Pay\-Value}!Payment@{Payment}}
 \subsubsection[{set\-Pay\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Payment\-::set\-Pay\-Value (
 \begin{DoxyParamCaption}
-\item[{const {\bf Money} \&}]{pay\-Value}
+\item[{{\bf Money} $\ast$\&}]{pay\-Value}
 \end{DoxyParamCaption}
-)}}\label{d5/d5e/classPayment_ace63ad77804d5a19ace50aa1a7335050}
+)}}\label{d5/d5e/classPayment_aa3c69f9962d25ed056ee2a673240e1e0}
 
 
 Método que define o valor no atributo pay\-Code. 

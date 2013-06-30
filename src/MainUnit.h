@@ -11,13 +11,19 @@ extern Window* win;
 /** Classe que armazena, monitora e administra os dados de sessão. */
 class Session
 {
+	/** Armazena a matrícula de login, no caso de administradores ou gerentes. */
 	UsrMatric 	usrMatric;
+	/** Armazena o número de conta, no caso de clientes. */
 	AccNumber	accNumber;
+	/** Armazena a senha do usuário, independentemente do tipo. */
 	UsrPassword 	usrPassword;
 
 	public:
+		/** Construtor para gerentes ou administradores */
 		Session(UsrMatric*, UsrPassword*);
+		/** Construtor para clientes. */
 		Session(AccNumber*, UsrPassword*);
+
 		void setUsrMatric(UsrMatric*);
 		void setAccNumber(AccNumber*);
 		void setUsrPassword(UsrPassword*);

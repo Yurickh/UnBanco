@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <cstdio>
 
 using namespace std;
 
@@ -89,6 +90,18 @@ void Textual::error(string error)
 void Textual::success(string succ)
 {
 	CLRSCR;
+
 	cout << "Sucesso! ";
 	print(succ);
+}
+
+void Textual :: cont()
+{
+	char c;
+
+	cout << "Pressione ENTER para continuar.";
+	do {
+		getchar();
+		c = getchar();
+	} while (c != '\n');
 }

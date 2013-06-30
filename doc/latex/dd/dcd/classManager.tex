@@ -19,15 +19,15 @@ Inheritance diagram for Manager\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classManager_ad2ee8089f5e80bc03fabcf9a493d045b}{Manager} (const \hyperlink{classUsrName}{Usr\-Name} \&, const \hyperlink{classUsrPassword}{Usr\-Password} \&, const \hyperlink{classUsrType}{Man\-Type} \&, const \hyperlink{classUsrMatric}{Usr\-Matric} \&)  throw (invalid\-\_\-argument)
+\hyperlink{classManager_a8407145c4ec5fdca8ca79981f45f8512}{Manager} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$, \hyperlink{classUsrType}{Man\-Type} $\ast$, \hyperlink{classUsrMatric}{Usr\-Matric} $\ast$)  throw (invalid\-\_\-argument)
 \begin{DoxyCompactList}\small\item\em Construtor base de \hyperlink{classManager}{Manager}. \end{DoxyCompactList}\item 
-\hyperlink{classUsrType}{Man\-Type} \hyperlink{classManager_a255ac6a7e2112631001296fa8db3811b}{get\-Man\-Type} () const 
+\hyperlink{classUsrType}{Man\-Type} $\ast$ \hyperlink{classManager_ab433b11c8a6fc8316863bc25c1561269}{get\-Man\-Type} () const 
 \begin{DoxyCompactList}\small\item\em Método que recupera o valor contido no atributo man\-Type. \end{DoxyCompactList}\item 
-void \hyperlink{classManager_a3d4e9cb6cc0e8d9be47fcc086b4e584e}{set\-Man\-Type} (const \hyperlink{classUsrType}{Man\-Type} \&)
+void \hyperlink{classManager_ae3089b6e0061dd543adecd7bb73c365b}{set\-Man\-Type} (\hyperlink{classUsrType}{Man\-Type} $\ast$\&)
 \begin{DoxyCompactList}\small\item\em Método que define o valor do atributo man\-Type. \end{DoxyCompactList}\item 
-\hyperlink{classUsrMatric}{Usr\-Matric} \hyperlink{classManager_a462f3704b016b57e087db417df73f07a}{get\-Usr\-Matric} () const 
+\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$ \hyperlink{classManager_acc54618fecef4917e827459539c9e54b}{get\-Usr\-Matric} () const 
 \begin{DoxyCompactList}\small\item\em Método que recupera o valor contido no atributo usr\-Matric. \end{DoxyCompactList}\item 
-void \hyperlink{classManager_a93309a0dde84dd0b5fe90d9e1da49822}{set\-Usr\-Matric} (const \hyperlink{classUsrMatric}{Usr\-Matric} \&)
+void \hyperlink{classManager_a8927ba1187ab6ba16ef9ae73fd145b1a}{set\-Usr\-Matric} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$\&)
 \begin{DoxyCompactList}\small\item\em Método que define o valor do atributo usr\-Matric. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -38,16 +38,16 @@ Gerente; Onde ficarão armazenados os dados de usuários com privilégios admini
 Através desta classe é possível acessar o módulo de Usr\-Manage e modificar dados de outros usuários. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classManager_ad2ee8089f5e80bc03fabcf9a493d045b}{\index{Manager@{Manager}!Manager@{Manager}}
+\hypertarget{classManager_a8407145c4ec5fdca8ca79981f45f8512}{\index{Manager@{Manager}!Manager@{Manager}}
 \index{Manager@{Manager}!Manager@{Manager}}
 \subsubsection[{Manager}]{\setlength{\rightskip}{0pt plus 5cm}Manager\-::\-Manager (
 \begin{DoxyParamCaption}
-\item[{const {\bf Usr\-Name} \&}]{name, }
-\item[{const {\bf Usr\-Password} \&}]{password, }
-\item[{const {\bf Man\-Type} \&}]{man\-Type, }
-\item[{const {\bf Usr\-Matric} \&}]{usr\-Matric}
+\item[{{\bf Usr\-Name} $\ast$}]{name, }
+\item[{{\bf Usr\-Password} $\ast$}]{password, }
+\item[{{\bf Man\-Type} $\ast$}]{man\-Type, }
+\item[{{\bf Usr\-Matric} $\ast$}]{usr\-Matric}
 \end{DoxyParamCaption}
-)  throw (invalid\-\_\-argument)}}\label{dd/dcd/classManager_ad2ee8089f5e80bc03fabcf9a493d045b}
+)  throw (invalid\-\_\-argument)}}\label{dd/dcd/classManager_a8407145c4ec5fdca8ca79981f45f8512}
 
 
 Construtor base de \hyperlink{classManager}{Manager}. 
@@ -55,46 +55,46 @@ Construtor base de \hyperlink{classManager}{Manager}.
 Define automaticamente os valores internos da classe. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classManager_a255ac6a7e2112631001296fa8db3811b}{\index{Manager@{Manager}!get\-Man\-Type@{get\-Man\-Type}}
+\hypertarget{classManager_ab433b11c8a6fc8316863bc25c1561269}{\index{Manager@{Manager}!get\-Man\-Type@{get\-Man\-Type}}
 \index{get\-Man\-Type@{get\-Man\-Type}!Manager@{Manager}}
-\subsubsection[{get\-Man\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Man\-Type} Manager\-::get\-Man\-Type (
+\subsubsection[{get\-Man\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Man\-Type} $\ast$ Manager\-::get\-Man\-Type (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dcd/classManager_a255ac6a7e2112631001296fa8db3811b}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dcd/classManager_ab433b11c8a6fc8316863bc25c1561269}
 
 
 Método que recupera o valor contido no atributo man\-Type. 
 
-O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classManager_a462f3704b016b57e087db417df73f07a}{\index{Manager@{Manager}!get\-Usr\-Matric@{get\-Usr\-Matric}}
+O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classManager_acc54618fecef4917e827459539c9e54b}{\index{Manager@{Manager}!get\-Usr\-Matric@{get\-Usr\-Matric}}
 \index{get\-Usr\-Matric@{get\-Usr\-Matric}!Manager@{Manager}}
-\subsubsection[{get\-Usr\-Matric}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usr\-Matric} Manager\-::get\-Usr\-Matric (
+\subsubsection[{get\-Usr\-Matric}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usr\-Matric} $\ast$ Manager\-::get\-Usr\-Matric (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dcd/classManager_a462f3704b016b57e087db417df73f07a}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{dd/dcd/classManager_acc54618fecef4917e827459539c9e54b}
 
 
 Método que recupera o valor contido no atributo usr\-Matric. 
 
-O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classManager_a3d4e9cb6cc0e8d9be47fcc086b4e584e}{\index{Manager@{Manager}!set\-Man\-Type@{set\-Man\-Type}}
+O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \hypertarget{classManager_ae3089b6e0061dd543adecd7bb73c365b}{\index{Manager@{Manager}!set\-Man\-Type@{set\-Man\-Type}}
 \index{set\-Man\-Type@{set\-Man\-Type}!Manager@{Manager}}
 \subsubsection[{set\-Man\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void Manager\-::set\-Man\-Type (
 \begin{DoxyParamCaption}
-\item[{const {\bf Man\-Type} \&}]{man\-Type}
+\item[{{\bf Man\-Type} $\ast$\&}]{man\-Type}
 \end{DoxyParamCaption}
-)}}\label{dd/dcd/classManager_a3d4e9cb6cc0e8d9be47fcc086b4e584e}
+)}}\label{dd/dcd/classManager_ae3089b6e0061dd543adecd7bb73c365b}
 
 
 Método que define o valor do atributo man\-Type. 
 
-\hypertarget{classManager_a93309a0dde84dd0b5fe90d9e1da49822}{\index{Manager@{Manager}!set\-Usr\-Matric@{set\-Usr\-Matric}}
+\hypertarget{classManager_a8927ba1187ab6ba16ef9ae73fd145b1a}{\index{Manager@{Manager}!set\-Usr\-Matric@{set\-Usr\-Matric}}
 \index{set\-Usr\-Matric@{set\-Usr\-Matric}!Manager@{Manager}}
 \subsubsection[{set\-Usr\-Matric}]{\setlength{\rightskip}{0pt plus 5cm}void Manager\-::set\-Usr\-Matric (
 \begin{DoxyParamCaption}
-\item[{const {\bf Usr\-Matric} \&}]{usr\-Matric}
+\item[{{\bf Usr\-Matric} $\ast$\&}]{usr\-Matric}
 \end{DoxyParamCaption}
-)}}\label{dd/dcd/classManager_a93309a0dde84dd0b5fe90d9e1da49822}
+)}}\label{dd/dcd/classManager_a8927ba1187ab6ba16ef9ae73fd145b1a}
 
 
 Método que define o valor do atributo usr\-Matric. 

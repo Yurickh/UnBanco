@@ -3,8 +3,20 @@
 #define SIZEOF(a) sizeof(a)/sizeof(a[0])
 
 #include <cstdlib>
+#include <ctime>
+#include <list>
 
 Session* session;
+
+string randomPassword()
+{
+	string pass;
+
+	for(int i=0; i<6; ++i)
+		pass.push_back(rand() % 10 + '0');
+
+	return pass;
+}
 
 Session :: Session(UsrMatric* usrMatric, UsrPassword* usrPassword)
 {
@@ -276,6 +288,7 @@ void MainAdmMenu::changePassword()
 			userAdm->changePassword(newPass);
 			session->setUsrPassword(newPass);
 			win->success("Senha modificada com sucesso.");
+			win->cont();
 			invalidEnd = false;
 		} catch (PersError except)
 		{
@@ -283,9 +296,102 @@ void MainAdmMenu::changePassword()
 		}
 	}while(invalidEnd);
 }
-void MainAdmMenu::newManager(){}
-void MainAdmMenu::listManager(){}
-void MainAdmMenu::changeManager(){}
+
+
+void MainAdmMenu::newManager()
+{
+	string newManNameStr;
+	string newManPassStr;
+	UsrName* newManName;
+	UsrPassword* newManPass;
+
+	bool invalidName, invalidEnd;
+
+	srand(time(NULL));
+
+	do
+	{
+		invalidEnd = true;
+
+		do
+		{
+			invalidName = true;
+
+			win->print("Digite o nome do novo Gerente: ");
+			win->read(newManNameStr);
+
+			newManPassStr = randomPassword();
+
+			try
+			{
+				newManName = new UsrName(newManNameStr);
+				newManPass = new UsrPassword(newManPassStr);
+				invalidName = false;
+			}
+			catch(invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		} while(invalidName);
+
+		try
+		{
+			userAdm->createManager(newManName, newManPass);
+			invalidEnd = false;
+		}
+		catch(PersError except)
+		{
+			win->error(except.what());
+		}
+	} while(invalidEnd);
+
+	win->success("Gerente devidamente registrado.");
+	win->print("Dados do novo gerente:");
+	win->print("Nome: " + newManNameStr);
+	win->print("Senha: " + newManPassStr);
+	win->cont();
+}
+
+void MainAdmMenu::listManager()
+{
+	list<Manager*>::iterator it;
+	list<Manager*> manList;
+
+	bool invalidList;
+
+	invalidList = true;
+	try
+	{
+		manList = userAdm->fetchManager();
+		invalidList = false;
+	} catch (PersError except)
+	{
+		win->error(except.what());
+		win->cont();
+	}
+
+	if(invalidList) return;
+
+	for(it = manList.begin(); it!=manList.end(); ++it)
+	{
+		win->print("Nome: ");
+		win->print((*it)->getName()->getValue());
+		win->print("Matricula: ");
+		win->print((*it)->getUsrMatric()->getValue());
+		win->print("\n");
+	}
+	win->cont();
+}
+
+
+void MainAdmMenu::changeManager()
+{
+	/*int manMatricInt;
+
+	win->print("Insira a matricula do Gerente a ser renomeado:");
+	win->read(manMatricInt);*/
+}
+
 void MainAdmMenu::deleteManager(){}
 
 //======================MainManMenu===============================
@@ -402,6 +508,7 @@ void MainManMenu::changePassword()
 			userAdm->changePassword(newPass);
 			session->setUsrPassword(newPass);
 			win->success("Senha modificada com sucesso.");
+			win->cont();
 			invalidEnd = false;
 		} catch (PersError except)
 		{

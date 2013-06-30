@@ -26,7 +26,7 @@ class UnitBase
 	public:
 		/** Método que define o valor do atributo value. 
 			A validação ocorre no processo, e o valor não será setado no caso do argumento deste método ser inválido. */
-		void setValue(const baseType& value) throw (invalid_argument)
+		void setValue(baseType value) throw (invalid_argument)
 		{
 			validate(value);
 			this->value = value;
