@@ -24,3 +24,9 @@ void StubUserLogin::autent(AccNumber* accNumber, UsrPassword* usrPassword) throw
 	if(accNumber->getValue() == 2)
 		throw PersError("Ocorreu um erro ao se conectar ao database. Favor tentar novamente mais tarde.");
 }
+
+void StubUserManAdm::changePassword(UsrPassword* newPassword) throw (PersError)
+{
+	if(newPassword->getValue() == "2")
+		throw PersError("Ocorreu um erro aos e conectar ao database. Favor tentar novamente mais tarde.");
+}

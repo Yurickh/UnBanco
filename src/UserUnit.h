@@ -29,10 +29,14 @@ class StubUserAccAdm : public UserAccAdm
 
 class UserManAdm
 {
+	public:
+		virtual void changePassword(UsrPassword*) throw (invalid_argument, PersError) = 0;
 };
 
 class StubUserManAdm : public UserManAdm
 {
+	public:
+		void changePassword(UsrPassword*) throw (PersError);
 };
 
 class UserCusAdm

@@ -33,7 +33,8 @@ int main()
 	transacAdm	= new TransacAdm;
 
 	admMenu->setUserAdm(userManAdm);
-	manMenu->setUserAdm(userAccAdm);
+	manMenu->setUserAdm(userManAdm);
+	manMenu->setAccAdm(userAccAdm);
 	cusMenu->setUserAdm(userCusAdm);
 	cusMenu->setTransacAdm(transacAdm);
 

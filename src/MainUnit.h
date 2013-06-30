@@ -16,6 +16,8 @@ class Session
 	UsrPassword 	usrPassword;
 
 	public:
+		Session(UsrMatric*, UsrPassword*);
+		Session(AccNumber*, UsrPassword*);
 		void setUsrMatric(UsrMatric*);
 		void setAccNumber(AccNumber*);
 		void setUsrPassword(UsrPassword*);
@@ -72,8 +74,10 @@ inline void MainAdmMenu :: setUserAdm(UserManAdm* userAdm)
 	Através dele tem-se acesso aos dados cadastrais de todas as contas. */
 class MainManMenu : public MainInterface
 {
+	/** Armazena o endereço da classe responsável pelo negócio de administração de dados de gerentes/administradores. */
+	UserManAdm* userAdm;
 	/** Armazena o endereço da classe responsável pelo negócio de administração de dados de contas. */
-	UserAccAdm* userAdm;
+	UserAccAdm* accAdm;
 
 	static const int CHANGE_PASSWORD 	= 0;
 	static const int LIST_MANAGER 		= 1;
@@ -90,8 +94,10 @@ class MainManMenu : public MainInterface
 
 	public:
 		void execute();
-		/** Define o objeto de negócio */
-		inline void setUserAdm(UserAccAdm*);
+		/** Define o objeto de negócio para administração de dados de gerente. */
+		inline void setUserAdm(UserManAdm*);
+		/** Define o objeto de negócio para administração de dados de conta. */
+		inline void setAccAdm(UserAccAdm*);
 	private:
 		/** Modifica a senha do Gerente */
 		void changePassword();
@@ -109,13 +115,18 @@ class MainManMenu : public MainInterface
 		void unblockAccount();
 		/** Gera uma lista com todas as contas */
 		void listAccount();
-		/** Modifica os dados de uma cotna */
+		/** Modifica os dados de uma conta */
 		void changeAccount();
 };
 
-inline void MainManMenu :: setUserAdm(UserAccAdm* userAdm)
+inline void MainManMenu :: setUserAdm(UserManAdm* userAdm)
 {
 	this->userAdm = userAdm;
+}
+
+inline void MainManMenu :: setAccAdm(UserAccAdm* accAdm)
+{
+	this->accAdm = accAdm;
 }
 
 /** Menu principal para Clientes.

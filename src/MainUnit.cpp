@@ -6,6 +6,18 @@
 
 Session* session;
 
+Session :: Session(UsrMatric* usrMatric, UsrPassword* usrPassword)
+{
+	setUsrMatric(usrMatric);
+	setUsrPassword(usrPassword);
+}
+
+Session :: Session(AccNumber* accNumber, UsrPassword* usrPassword)
+{
+	setAccNumber(accNumber);
+	setUsrPassword(usrPassword);
+}
+
 void Session :: setUsrMatric(UsrMatric* usrMatric)
 {
 	this->usrMatric = *usrMatric;
@@ -19,6 +31,21 @@ void Session :: setAccNumber(AccNumber* accNumber)
 void Session :: setUsrPassword(UsrPassword* usrPassword)
 {
 	this->usrPassword = *usrPassword;
+}
+
+UsrMatric Session :: getUsrMatric() const
+{
+	return this->usrMatric;
+}
+
+AccNumber Session :: getAccNumber() const
+{
+	return this->accNumber;
+}
+
+UsrPassword Session :: getUsrPassword() const
+{
+	return this->usrPassword;
 }
 
 void MainLogin :: execute()
@@ -92,6 +119,8 @@ void MainLogin :: manLogin()
 			win->error(except.what());
 		}
 
+		session = new Session(matric, password);
+
 		delete matric;
 		delete password;
 	}while(loginFailed);
@@ -152,10 +181,7 @@ void MainLogin :: cusLogin()
 			win->error(except.what());
 		}
 
-		session = new Session();
-
-		session->setAccNumber(accNumber);
-		session->setUsrPassword(password);
+		session = new Session(accNumber, password);
 
 		delete accNumber;
 		delete password;
@@ -200,7 +226,63 @@ void MainAdmMenu :: execute()
 	}
 }
 
-void MainAdmMenu::changePassword(){}
+void MainAdmMenu::changePassword()
+{
+	string oldPassStr;
+	string newPassStr1;
+	string newPassStr2;
+	UsrPassword* newPass;
+
+	bool invalidOld, invalidNew, invalidEnd;
+
+	do
+	{
+		invalidEnd = true;
+		do
+		{
+			invalidOld = true;
+			win->print("Insira a senha atual:");
+			win->read(oldPassStr);
+			if(oldPassStr != session->getUsrPassword().getValue())
+				win->error("Senha invalida.");
+			else
+				invalidOld = false;
+		} while(invalidOld);
+
+		do
+		{
+			invalidNew = true;
+			win->print("Insira a nova senha:");
+			win->read(newPassStr1);
+			win->print("Insira a nova senha novamente:");
+			win->read(newPassStr2);
+			if(newPassStr1 == newPassStr2)
+			{
+				try
+				{
+					newPass = new UsrPassword(newPassStr1);
+					invalidNew = false;
+				} catch (invalid_argument except)
+				{
+					win->error(except.what());
+				}
+			}
+			else
+				win->error("As senhas nao batem.");
+		}while(invalidNew);
+
+		try
+		{
+			userAdm->changePassword(newPass);
+			session->setUsrPassword(newPass);
+			win->success("Senha modificada com sucesso.");
+			invalidEnd = false;
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+	}while(invalidEnd);
+}
 void MainAdmMenu::newManager(){}
 void MainAdmMenu::listManager(){}
 void MainAdmMenu::changeManager(){}
@@ -270,7 +352,63 @@ void MainManMenu::manageAccounts()
 	}
 }
 
-void MainManMenu::changePassword(){}
+void MainManMenu::changePassword()
+{
+	string oldPassStr;
+	string newPassStr1;
+	string newPassStr2;
+	UsrPassword* newPass;
+
+	bool invalidOld, invalidNew, invalidEnd;
+
+	do
+	{
+		invalidEnd = true;
+		do
+		{
+			invalidOld = true;
+			win->print("Insira a senha atual:");
+			win->read(oldPassStr);
+			if(oldPassStr != session->getUsrPassword().getValue())
+				win->error("Senha invalida.");
+			else
+				invalidOld = false;
+		} while(invalidOld);
+
+		do
+		{
+			invalidNew = true;
+			win->print("Insira a nova senha:");
+			win->read(newPassStr1);
+			win->print("Insira a nova senha novamente:");
+			win->read(newPassStr2);
+			if(newPassStr1 == newPassStr2)
+			{
+				try
+				{
+					newPass = new UsrPassword(newPassStr1);
+					invalidNew = false;
+				} catch (invalid_argument except)
+				{
+					win->error(except.what());
+				}
+			}
+			else
+				win->error("As senhas nao batem.");
+		}while(invalidNew);
+
+		try
+		{
+			userAdm->changePassword(newPass);
+			session->setUsrPassword(newPass);
+			win->success("Senha modificada com sucesso.");
+			invalidEnd = false;
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+	}while(invalidEnd);
+}
 void MainManMenu::listManager(){}
 void MainManMenu::newAccount(){}
 void MainManMenu::deleteAccount(){}
