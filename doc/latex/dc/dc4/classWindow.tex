@@ -1,0 +1,155 @@
+\hypertarget{classWindow}{\section{Window Class Reference}
+\label{dc/dc4/classWindow}\index{Window@{Window}}
+}
+
+
+Responsável pela formatação de tela, entrada e saída básica.  
+
+
+
+
+{\ttfamily \#include $<$Engine\-Unit.\-h$>$}
+
+Inheritance diagram for Window\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{dc/dc4/classWindow}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classWindow_a3b6d7449c7f088f9ce59002573ca82c0}{menu} (int nopt, string options\mbox{[}$\,$\mbox{]}, string text)=0
+\begin{DoxyCompactList}\small\item\em Mostra um menu de opções na tela. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classWindow_a4fd86bca046073b3429f221c2f3bb690}{print} (string)=0
+\begin{DoxyCompactList}\small\item\em Mostra uma string na tela. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classWindow_aa0a1210e72a63332e49722f1f878ea94}{print} (int)=0
+\begin{DoxyCompactList}\small\item\em Mostra um inteiro na tela. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classWindow_abb59602c637907250fd70b1450b85c5c}{read} (string \&)=0
+\begin{DoxyCompactList}\small\item\em Lê uma string da entrada padrão. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classWindow_ab00a4c057aade6ddc2a4bb22b2a6de42}{read} (int \&)=0
+\begin{DoxyCompactList}\small\item\em Lê um inteiro da entrada padrão. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classWindow_a2e661d42cd6e7b9c737530f4e34c87f1}{error} (string)=0
+\begin{DoxyCompactList}\small\item\em Mostra a mensagem de erro formatada na tela. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classWindow_af625e87e68e0510c2fc11f1dc2d42f0e}{success} (string)=0
+\begin{DoxyCompactList}\small\item\em Mostra a mensagem de sucesso formatada na tela. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Responsável pela formatação de tela, entrada e saída básica. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classWindow_a2e661d42cd6e7b9c737530f4e34c87f1}{\index{Window@{Window}!error@{error}}
+\index{error@{error}!Window@{Window}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Window\-::error (
+\begin{DoxyParamCaption}
+\item[{string}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dc/dc4/classWindow_a2e661d42cd6e7b9c737530f4e34c87f1}
+
+
+Mostra a mensagem de erro formatada na tela. 
+
+
+
+Implemented in \hyperlink{classTextual_a42ebc971370c4de20314ee33cd863cb3}{Textual}.
+
+\hypertarget{classWindow_a3b6d7449c7f088f9ce59002573ca82c0}{\index{Window@{Window}!menu@{menu}}
+\index{menu@{menu}!Window@{Window}}
+\subsubsection[{menu}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Window\-::menu (
+\begin{DoxyParamCaption}
+\item[{int}]{nopt, }
+\item[{string}]{options\mbox{[}$\,$\mbox{]}, }
+\item[{string}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dc/dc4/classWindow_a3b6d7449c7f088f9ce59002573ca82c0}
+
+
+Mostra um menu de opções na tela. 
+
+Recebe um inteiro, o número de opções, e um vetor de strings, um vetor com o texto de cada uma das opções. 
+
+Implemented in \hyperlink{classTextual_a8b74c4f42ad3e8109ade0f12db4ccf3a}{Textual}.
+
+\hypertarget{classWindow_a4fd86bca046073b3429f221c2f3bb690}{\index{Window@{Window}!print@{print}}
+\index{print@{print}!Window@{Window}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Window\-::print (
+\begin{DoxyParamCaption}
+\item[{string}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dc/dc4/classWindow_a4fd86bca046073b3429f221c2f3bb690}
+
+
+Mostra uma string na tela. 
+
+
+
+Implemented in \hyperlink{classTextual_a79264d4c405089034447a553cd3859e5}{Textual}.
+
+\hypertarget{classWindow_aa0a1210e72a63332e49722f1f878ea94}{\index{Window@{Window}!print@{print}}
+\index{print@{print}!Window@{Window}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Window\-::print (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dc/dc4/classWindow_aa0a1210e72a63332e49722f1f878ea94}
+
+
+Mostra um inteiro na tela. 
+
+
+
+Implemented in \hyperlink{classTextual_aab79476a2e99375655df0bc3d8738536}{Textual}.
+
+\hypertarget{classWindow_abb59602c637907250fd70b1450b85c5c}{\index{Window@{Window}!read@{read}}
+\index{read@{read}!Window@{Window}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Window\-::read (
+\begin{DoxyParamCaption}
+\item[{string \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dc/dc4/classWindow_abb59602c637907250fd70b1450b85c5c}
+
+
+Lê uma string da entrada padrão. 
+
+Para ler senhas usando ($\ast$), definir password = true. Em outros casos, é possível suprimir este argumento. 
+
+Implemented in \hyperlink{classTextual_a5998864514acbf61ca8d6fa1845d0d22}{Textual}.
+
+\hypertarget{classWindow_ab00a4c057aade6ddc2a4bb22b2a6de42}{\index{Window@{Window}!read@{read}}
+\index{read@{read}!Window@{Window}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Window\-::read (
+\begin{DoxyParamCaption}
+\item[{int \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dc/dc4/classWindow_ab00a4c057aade6ddc2a4bb22b2a6de42}
+
+
+Lê um inteiro da entrada padrão. 
+
+
+
+Implemented in \hyperlink{classTextual_a888e02776648906696eeaea0e8691cd6}{Textual}.
+
+\hypertarget{classWindow_af625e87e68e0510c2fc11f1dc2d42f0e}{\index{Window@{Window}!success@{success}}
+\index{success@{success}!Window@{Window}}
+\subsubsection[{success}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Window\-::success (
+\begin{DoxyParamCaption}
+\item[{string}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dc/dc4/classWindow_af625e87e68e0510c2fc11f1dc2d42f0e}
+
+
+Mostra a mensagem de sucesso formatada na tela. 
+
+
+
+Implemented in \hyperlink{classTextual_ab9edde475ba8687ce2ed448212405e12}{Textual}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+Engine\-Unit.\-h\end{DoxyCompactItemize}
