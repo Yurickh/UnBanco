@@ -1,7 +1,7 @@
 #ifndef ENGINE_UNIT_H
 #define ENGINE_UNIT_H
 
-#ifdef _WIN16
+#ifdef _WIN64
 #define CLRSCR system("cls")
 #elif defined(_WIN32)
 #define CLRSCR system("cls")
@@ -24,7 +24,7 @@ class Window
 		virtual void print(string) = 0;
 		/** Mostra um inteiro na tela. */
 		virtual void print(int) = 0;
-		/** Lê uma string da entrada padrão. */
+		/** Lê uma string da entrada padrão. Para ler senhas usando (*), definir password = true. Em outros casos, é possível suprimir este argumento.*/
 		virtual void read(string&) = 0;
 		/** Lê um inteiro da entrada padrão. */
 		virtual void read(int&) = 0;

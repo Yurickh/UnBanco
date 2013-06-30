@@ -12,14 +12,34 @@ class UserLogin
 		virtual void autent(AccNumber*, UsrPassword*) throw (invalid_argument, PersError) = 0;
 };
 
-class Stub : public UserLogin
+class StubUserLogin : public UserLogin
 {
 	public:
 		ManType autent(UsrMatric*, UsrPassword*) throw (invalid_argument, PersError);
 		void autent(AccNumber*, UsrPassword*) throw (invalid_argument, PersError);
 };
 
-class UserAdm
+class UserAccAdm
+{
+};
+
+class StubUserAccAdm : public UserAccAdm
+{
+};
+
+class UserManAdm
+{
+};
+
+class StubUserManAdm : public UserManAdm
+{
+};
+
+class UserCusAdm
+{
+};
+
+class StubUserCusAdm : public UserCusAdm
 {
 };
 

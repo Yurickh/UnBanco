@@ -4,6 +4,23 @@
 
 #include <cstdlib>
 
+Session* session;
+
+void Session :: setUsrMatric(UsrMatric* usrMatric)
+{
+	this->usrMatric = *usrMatric;
+}
+
+void Session :: setAccNumber(AccNumber* accNumber)
+{
+	this->accNumber = *accNumber;
+}
+
+void Session :: setUsrPassword(UsrPassword* usrPassword)
+{
+	this->usrPassword = *usrPassword;
+}
+
 void MainLogin :: execute()
 {
 	int opt;
@@ -80,13 +97,13 @@ void MainLogin :: manLogin()
 	}while(loginFailed);
 
 	if(manType.getValue() == NORMAL)
-		menu = new MainManMenu();
+	{
+		manMenu->execute();
+	}
 	else
-		menu = new MainAdmMenu();
-
-	menu->execute();
-
-	delete menu;
+	{
+		admMenu->execute();
+	}
 }
 
 void MainLogin :: cusLogin()
@@ -135,15 +152,16 @@ void MainLogin :: cusLogin()
 			win->error(except.what());
 		}
 
+		session = new Session();
+
+		session->setAccNumber(accNumber);
+		session->setUsrPassword(password);
+
 		delete accNumber;
 		delete password;
 	}while(loginFailed);
 
-	menu = new MainCusMenu;
-
-	menu->execute();
-
-	delete menu;
+	cusMenu->execute();
 }
 
 //=======================MainAdmMenu==============================
@@ -176,6 +194,7 @@ void MainAdmMenu :: execute()
 				deleteManager();
 			break;
 			case LOGOUT:
+				delete session;
 			return;
 		}
 	}
@@ -209,6 +228,7 @@ void MainManMenu::execute(){
 				manageAccounts();
 			break;
 			case LOGOUT:
+				delete session;
 			return;
 		}
 	}
@@ -291,6 +311,7 @@ void MainCusMenu::execute()
 				managePayment();
 			break;
 			case LOGOUT:
+				delete session;
 			return;
 		}
 	}

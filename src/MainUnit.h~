@@ -8,7 +8,7 @@
 
 extern Window* win;
 
-/** Classe que armazena, monitora e administra os dados de sessão. */
+/** Classe que armazena, monitora e administra os dados de seção. */
 class Session
 {
 	UsrMatric 	usrMatric;

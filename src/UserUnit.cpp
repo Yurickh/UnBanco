@@ -1,6 +1,6 @@
 #include "UserUnit.h"
 
-ManType Stub::autent(UsrMatric* usrMatric, UsrPassword* usrPassword) throw (invalid_argument, PersError)
+ManType StubUserLogin::autent(UsrMatric* usrMatric, UsrPassword* usrPassword) throw (invalid_argument, PersError)
 {
 	ManType manType(NORMAL);
 
@@ -16,7 +16,7 @@ ManType Stub::autent(UsrMatric* usrMatric, UsrPassword* usrPassword) throw (inva
 	return manType;
 }
 
-void Stub::autent(AccNumber* accNumber, UsrPassword* usrPassword) throw (invalid_argument, PersError)
+void StubUserLogin::autent(AccNumber* accNumber, UsrPassword* usrPassword) throw (invalid_argument, PersError)
 {
 	if(accNumber->getValue() == 1)
 		throw invalid_argument("Login ou Senha incorretos");
