@@ -40,7 +40,7 @@ list<Payment> StubTransacAdm :: fetchPayment(void) throw (PersError)
 
 	AccNumber accNum1(1), accNum2(2), accNum3(3);
 	PayCode   payCode1(1), payCode2(2), payCode3(3);
-	PayDay payDay1(4122017), payDay2(21042017), payDay3(25112017);
+	PayDay payDay1(04122017), payDay2(21042017), payDay3(25112017);
 	Money payVal1(10.25), payVal2(100.0), payVal3(318);
 
 	Payment n1(accNum1, payCode1, payDay1, payVal1);

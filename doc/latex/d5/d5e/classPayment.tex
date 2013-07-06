@@ -13,7 +13,7 @@ Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classPayment_a91b7742c5f9b4617e4a3bce6507cce49}{Payment} (const \hyperlink{classAccNumber}{Acc\-Number} \&, const \hyperlink{classPayDay}{Pay\-Day} \&, const \hyperlink{classMoney}{Money} \&)
+\hyperlink{classPayment_a685b1fb1a327aff7a1f456b5232a1947}{Payment} (const \hyperlink{classAccNumber}{Acc\-Number} \&, const \hyperlink{classPayCode}{Pay\-Code} \&, const \hyperlink{classPayDay}{Pay\-Day} \&, const \hyperlink{classMoney}{Money} \&)
 \begin{DoxyCompactList}\small\item\em Construtor base de \hyperlink{classPayment}{Payment}. \end{DoxyCompactList}\item 
 \hyperlink{classPayCode}{Pay\-Code} \hyperlink{classPayment_a1d71998fa33e757bb350eb40895865ae}{get\-Pay\-Code} () const 
 \begin{DoxyCompactList}\small\item\em Método que recupera o valor contido no atributo pay\-Code. \end{DoxyCompactList}\item 
@@ -39,15 +39,16 @@ Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.
 Esta classe armazenará os dados de conta bem como a data agendada de pagamentos futuros. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classPayment_a91b7742c5f9b4617e4a3bce6507cce49}{\index{Payment@{Payment}!Payment@{Payment}}
+\hypertarget{classPayment_a685b1fb1a327aff7a1f456b5232a1947}{\index{Payment@{Payment}!Payment@{Payment}}
 \index{Payment@{Payment}!Payment@{Payment}}
 \subsubsection[{Payment}]{\setlength{\rightskip}{0pt plus 5cm}Payment\-::\-Payment (
 \begin{DoxyParamCaption}
 \item[{const {\bf Acc\-Number} \&}]{acc\-Number, }
+\item[{const {\bf Pay\-Code} \&}]{pay\-Code, }
 \item[{const {\bf Pay\-Day} \&}]{pay\-Day, }
 \item[{const {\bf Money} \&}]{pay\-Value}
 \end{DoxyParamCaption}
-)}}\label{d5/d5e/classPayment_a91b7742c5f9b4617e4a3bce6507cce49}
+)}}\label{d5/d5e/classPayment_a685b1fb1a327aff7a1f456b5232a1947}
 
 
 Construtor base de \hyperlink{classPayment}{Payment}. 
@@ -94,7 +95,7 @@ O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. \
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{d5/d5e/classPayment_a3a2d6a8dc3f6b63e924504e1994ae556}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d5/d5e/classPayment_a3a2d6a8dc3f6b63e924504e1994ae556}
 
 
 Método que recupera o valor contido no atributo pay\-Value. 

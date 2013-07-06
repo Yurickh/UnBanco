@@ -204,7 +204,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <a class="code" href="../../d7/d9a/classMoney.html" title="Define o limite da conta de um Customer (Cliente).">Money</a> payValue;             </div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="../../d5/d5e/classPayment.html#a91b7742c5f9b4617e4a3bce6507cce49" title="Construtor base de Payment.">Payment</a> (<span class="keyword">const</span> <a class="code" href="../../df/d00/classAccNumber.html" title="Define o número da conta de um Customer (Cliente).">AccNumber</a>&amp;, <span class="keyword">const</span> <a class="code" href="../../dc/d17/classPayDay.html" title="Define a data do pagamento.">PayDay</a>&amp;, <span class="keyword">const</span> <a class="code" href="../../d7/d9a/classMoney.html" title="Define o limite da conta de um Customer (Cliente).">Money</a>&amp;);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <a class="code" href="../../d5/d5e/classPayment.html#a685b1fb1a327aff7a1f456b5232a1947" title="Construtor base de Payment.">Payment</a> (<span class="keyword">const</span> <a class="code" href="../../df/d00/classAccNumber.html" title="Define o número da conta de um Customer (Cliente).">AccNumber</a>&amp;, <span class="keyword">const</span> <a class="code" href="../../d0/d34/classPayCode.html" title="Define um número de identificação para cada pagamento.">PayCode</a>&amp;, <span class="keyword">const</span> <a class="code" href="../../dc/d17/classPayDay.html" title="Define a data do pagamento.">PayDay</a>&amp;, <span class="keyword">const</span> <a class="code" href="../../d7/d9a/classMoney.html" title="Define o limite da conta de um Customer (Cliente).">Money</a>&amp;);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <a class="code" href="../../d0/d34/classPayCode.html" title="Define um número de identificação para cada pagamento.">PayCode</a> <a class="code" href="../../d5/d5e/classPayment.html#a1d71998fa33e757bb350eb40895865ae" title="Método que recupera o valor contido no atributo payCode.">getPayCode</a> () <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d0/d34/classPayCode.html" title="Define um número de identificação para cada pagamento.">PayCode</a> <a class="code" href="../../d5/d5e/classPayment.html#adf458db6331e53948a473a04a0d622a4" title="Método que define o valor no atributo payCode.">setPayCode</a> (<span class="keyword">const</span> <a class="code" href="../../d0/d34/classPayCode.html" title="Define um número de identificação para cada pagamento.">PayCode</a>&amp;);</div>
@@ -231,11 +231,15 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">return</span> payDay;</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;}</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno"><a class="code" href="../../d5/d5e/classPayment.html#a3a2d6a8dc3f6b63e924504e1994ae556">  235</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="../../d7/d9a/classMoney.html" title="Define o limite da conta de um Customer (Cliente).">Money</a> <a class="code" href="../../d5/d5e/classPayment.html#a3a2d6a8dc3f6b63e924504e1994ae556" title="Método que recupera o valor contido no atributo payValue.">Payment::getPayValue</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordflow">return</span> payValue;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;}</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2013 09:23:19 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 6 2013 10:29:12 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

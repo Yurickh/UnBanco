@@ -1492,7 +1492,7 @@ void MainCusMenu::listPayment()
 		win->print("-> Data:");
 		win->print(it->getPayDay().getValue());
 		win->print("-> Valor:");
-		win->print(it->getPayValue().getValue());
+		win->print(it->getPayDay().getValue());
 		win->print("\n");
 	}
 

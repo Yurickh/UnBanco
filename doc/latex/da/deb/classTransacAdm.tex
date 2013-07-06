@@ -15,6 +15,15 @@ Inheritance diagram for Transac\-Adm\-:\begin{figure}[H]
 \item 
 \hypertarget{classTransacAdm_a9b6ffc8a521600094eb13510edcb33d7}{virtual void {\bfseries deposit} (\hyperlink{classAccNumber}{Acc\-Number}, \hyperlink{classMoney}{Money} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{da/deb/classTransacAdm_a9b6ffc8a521600094eb13510edcb33d7}
 
+\item 
+\hypertarget{classTransacAdm_a6f350bc661f1a6460a31a0b02ccb8d3f}{virtual \hyperlink{classPayCode}{Pay\-Code} $\ast$ {\bfseries schedule\-Payment} (\hyperlink{classAccNumber}{Acc\-Number}, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classPayDay}{Pay\-Day} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{da/deb/classTransacAdm_a6f350bc661f1a6460a31a0b02ccb8d3f}
+
+\item 
+\hypertarget{classTransacAdm_a76f27b0fc9e604695c4c601839d3b441}{virtual void {\bfseries delete\-Payment} (\hyperlink{classPayCode}{Pay\-Code} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{da/deb/classTransacAdm_a76f27b0fc9e604695c4c601839d3b441}
+
+\item 
+\hypertarget{classTransacAdm_ab3c02884c14540c1f520339581e88371}{virtual list$<$ \hyperlink{classPayment}{Payment} $>$ {\bfseries fetch\-Payment} (void)=0  throw (\-Pers\-Error)}\label{da/deb/classTransacAdm_ab3c02884c14540c1f520339581e88371}
+
 \end{DoxyCompactItemize}
 
 

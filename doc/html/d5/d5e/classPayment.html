@@ -98,9 +98,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a91b7742c5f9b4617e4a3bce6507cce49"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5e/classPayment.html#a91b7742c5f9b4617e4a3bce6507cce49">Payment</a> (const <a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> &amp;, const <a class="el" href="../../dc/d17/classPayDay.html">PayDay</a> &amp;, const <a class="el" href="../../d7/d9a/classMoney.html">Money</a> &amp;)</td></tr>
-<tr class="memdesc:a91b7742c5f9b4617e4a3bce6507cce49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor base de <a class="el" href="../../d5/d5e/classPayment.html" title="Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.">Payment</a>.  <a href="#a91b7742c5f9b4617e4a3bce6507cce49">More...</a><br/></td></tr>
-<tr class="separator:a91b7742c5f9b4617e4a3bce6507cce49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a685b1fb1a327aff7a1f456b5232a1947"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5e/classPayment.html#a685b1fb1a327aff7a1f456b5232a1947">Payment</a> (const <a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> &amp;, const <a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> &amp;, const <a class="el" href="../../dc/d17/classPayDay.html">PayDay</a> &amp;, const <a class="el" href="../../d7/d9a/classMoney.html">Money</a> &amp;)</td></tr>
+<tr class="memdesc:a685b1fb1a327aff7a1f456b5232a1947"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construtor base de <a class="el" href="../../d5/d5e/classPayment.html" title="Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.">Payment</a>.  <a href="#a685b1fb1a327aff7a1f456b5232a1947">More...</a><br/></td></tr>
+<tr class="separator:a685b1fb1a327aff7a1f456b5232a1947"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d71998fa33e757bb350eb40895865ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d34/classPayCode.html">PayCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d5e/classPayment.html#a1d71998fa33e757bb350eb40895865ae">getPayCode</a> () const </td></tr>
 <tr class="memdesc:a1d71998fa33e757bb350eb40895865ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Método que recupera o valor contido no atributo payCode.  <a href="#a1d71998fa33e757bb350eb40895865ae">More...</a><br/></td></tr>
 <tr class="separator:a1d71998fa33e757bb350eb40895865ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -130,7 +130,7 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados. </p>
 <p>Esta classe armazenará os dados de conta bem como a data agendada de pagamentos futuros. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a91b7742c5f9b4617e4a3bce6507cce49"></a>
+<a class="anchor" id="a685b1fb1a327aff7a1f456b5232a1947"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -139,6 +139,12 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> &amp;&#160;</td>
           <td class="paramname"><em>accNumber</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> &amp;&#160;</td>
+          <td class="paramname"><em>payCode</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -247,6 +253,9 @@ Public Member Functions</h2></td></tr>
 <a class="anchor" id="a3a2d6a8dc3f6b63e924504e1994ae556"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> Payment::getPayValue </td>
@@ -255,6 +264,11 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Método que recupera o valor contido no atributo payValue. </p>
@@ -341,7 +355,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2013 09:23:19 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 6 2013 10:29:12 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -108,6 +108,15 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>withdraw</b> 
 <tr class="memitem:a9b6ffc8a521600094eb13510edcb33d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b6ffc8a521600094eb13510edcb33d7"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deposit</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)=0  throw (invalid_argument, PersError)</td></tr>
 <tr class="separator:a9b6ffc8a521600094eb13510edcb33d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f350bc661f1a6460a31a0b02ccb8d3f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6f350bc661f1a6460a31a0b02ccb8d3f"></a>
+virtual <a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>schedulePayment</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../dc/d17/classPayDay.html">PayDay</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="separator:a6f350bc661f1a6460a31a0b02ccb8d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76f27b0fc9e604695c4c601839d3b441"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76f27b0fc9e604695c4c601839d3b441"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deletePayment</b> (<a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="separator:a76f27b0fc9e604695c4c601839d3b441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3c02884c14540c1f520339581e88371"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab3c02884c14540c1f520339581e88371"></a>
+virtual list&lt; <a class="el" href="../../d5/d5e/classPayment.html">Payment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>fetchPayment</b> (void)=0  throw (PersError)</td></tr>
+<tr class="separator:ab3c02884c14540c1f520339581e88371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../db/d51/TransacUnit_8h_source.html">TransacUnit.h</a></li>
@@ -115,7 +124,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deposit</b> (
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2013 09:23:19 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 6 2013 10:29:12 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

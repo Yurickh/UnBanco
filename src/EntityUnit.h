@@ -193,7 +193,7 @@ class Payment{
 	public:
 		/** Construtor base de Payment.
 			Define todos os atributos internos à classe automaticamente. */
-		Payment (const AccNumber&, const PayDay&, const Money&);
+		Payment (const AccNumber&, const PayCode&, const PayDay&, const Money&);
 
 		/** Método que recupera o valor contido no atributo payCode.
 			O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. */
@@ -230,6 +230,10 @@ inline PayCode Payment::getPayCode() const{
 
 inline PayDay Payment::getPayDay() const{
 	return payDay;
+}
+
+inline Money Payment::getPayValue() const{
+	return payValue;
 }
 
 #endif

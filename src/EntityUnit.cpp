@@ -80,9 +80,10 @@ void Manager::setUsrMatric (const UsrMatric& usrMatric){
 
 //====================Payment======================
 
-Payment::Payment (const AccNumber& accNumber, const PayDay& payDay, const Money& payValue)
+Payment::Payment (const AccNumber& accNumber, const PayCode& payCode, const PayDay& payDay, const Money& payValue)
 {
 	this->accNumber = accNumber;
+	this->payCode = payCode;
 	this->payDay = payDay;
 	this->payValue = payValue;
 }
