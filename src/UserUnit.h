@@ -26,9 +26,13 @@ class UserAccAdm
 	public:
 		virtual void createAccount(AccType*, Money*, Money*) throw (PersError) = 0;
 		virtual void deleteAccount(AccNumber*) throw (invalid_argument, PersError) = 0;
+
 		virtual void blockAccount(AccNumber*) throw (invalid_argument, PersError) = 0;
 		virtual void unblockAccount(AccNumber*) throw (invalid_argument, PersError) = 0;
+
 		virtual list<Account> fetchAccount(void) throw (PersError) = 0;
+		virtual Account fetchAccount(AccNumber) throw (PersError) = 0;
+
 		virtual void editAccType(AccNumber*, AccType*) throw (invalid_argument, PersError) = 0;
 		virtual void editAccLimit(AccNumber*, Money*) throw (invalid_argument, PersError) = 0;
 };
@@ -37,9 +41,13 @@ class StubUserAccAdm : public UserAccAdm
 {
 		void createAccount(AccType*, Money*, Money*) throw (PersError);
 		void deleteAccount(AccNumber*) throw (invalid_argument, PersError);
+
 		void blockAccount(AccNumber*) throw (invalid_argument, PersError);
 		void unblockAccount(AccNumber*) throw (invalid_argument, PersError);
+
 		list<Account> fetchAccount(void) throw (PersError);
+		Account fetchAccount(AccNumber) throw (PersError);
+
 		void editAccType(AccNumber*, AccType*) throw (invalid_argument, PersError);
 		void editAccLimit(AccNumber*, Money*) throw (invalid_argument, PersError);
 };
@@ -76,6 +84,7 @@ class UserCusAdm
 		virtual void changePassword(UsrPassword*) throw (PersError) = 0;
 		virtual void createCustomer(UsrName*, UsrPassword*) throw (invalid_argument, PersError) = 0;
 		virtual void editCusName(AccNumber*, UsrName*) throw (invalid_argument, PersError) = 0;
+		virtual Customer fetchCustomer(UsrId) throw (PersError) = 0;
 };
 
 class StubUserCusAdm : public UserCusAdm
@@ -84,6 +93,7 @@ class StubUserCusAdm : public UserCusAdm
 		void changePassword(UsrPassword*) throw (PersError);
 		void createCustomer(UsrName*, UsrPassword*) throw (invalid_argument, PersError);
 		void editCusName(AccNumber*, UsrName*) throw (invalid_argument, PersError);
+		Customer fetchCustomer(UsrId) throw (PersError);
 };
 
 #endif

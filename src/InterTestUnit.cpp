@@ -30,13 +30,14 @@ int main()
 	userManAdm	= new StubUserManAdm;
 	userAccAdm	= new StubUserAccAdm;
 	userCusAdm	= new StubUserCusAdm;
-	transacAdm	= new TransacAdm;
+	transacAdm	= new StubTransacAdm;
 
 	admMenu->setUserAdm(userManAdm);
 	manMenu->setUserAdm(userManAdm);
 	manMenu->setAccAdm(userAccAdm);
 	manMenu->setCusAdm(userCusAdm);
 	cusMenu->setUserAdm(userCusAdm);
+	cusMenu->setAccAdm(userAccAdm);
 	cusMenu->setTransacAdm(transacAdm);
 
 	mainLogin->setUserLogin(userLogin);

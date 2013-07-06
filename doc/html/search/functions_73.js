@@ -1,7 +1,7 @@
 var searchData=
 [
   ['session',['Session',['../de/d41/classSession.html#a216a4f17b0c16bd7e2e5ace3c5500efa',1,'Session::Session(UsrMatric *, UsrPassword *)'],['../de/d41/classSession.html#ad94e7557f00ffe2abd64acf12d6f79d4',1,'Session::Session(AccNumber *, UsrPassword *)']]],
-  ['setaccadm',['setAccAdm',['../d0/d1d/classMainManMenu.html#a507ebea41371d58e137ece5a11bb63bf',1,'MainManMenu']]],
+  ['setaccadm',['setAccAdm',['../d0/d1d/classMainManMenu.html#a507ebea41371d58e137ece5a11bb63bf',1,'MainManMenu::setAccAdm()'],['../dc/d35/classMainCusMenu.html#acaa0828f9ac38816e5a6068f1781f9be',1,'MainCusMenu::setAccAdm()']]],
   ['setaccnumber',['setAccNumber',['../d7/d10/classAccount.html#a3e669090168f13d2a8269af456546a1e',1,'Account::setAccNumber()'],['../d5/d5e/classPayment.html#a5d0e83f83f090acf4b33bc81f5391ca0',1,'Payment::setAccNumber()']]],
   ['setacctype',['setAccType',['../d7/d10/classAccount.html#a3a8e8aa0094b2af0496d45714f694256',1,'Account']]],
   ['setbalance',['setBalance',['../d7/d10/classAccount.html#a0c54b27c54fd64b93d31aecdf7f3f302',1,'Account']]],

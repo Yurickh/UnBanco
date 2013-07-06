@@ -2,8 +2,6 @@
 
 #include <iostream>
 
-#define PERS_ERROR_MSG "Ocorreu um erro ao se conectar ao database. Favor tentar novamente mais tarde."
-
 //===============StubUserLogin=====================
 
 ManType StubUserLogin::autent(UsrMatric* usrMatric, UsrPassword* usrPassword) throw (invalid_argument, PersError)
@@ -79,6 +77,22 @@ list<Account> StubUserAccAdm :: fetchAccount(void) throw (PersError)
 	accList.push_back(n3);
 
 	return accList;
+}
+
+Account StubUserAccAdm :: fetchAccount(AccNumber number) throw (PersError)
+{
+	AccNumber accNumber(number);
+	AccType accType(NORMAL);
+	Money limit(400.0);
+	Money balance(20.0);
+	UsrId usrId(number.getValue()+1);
+
+	if(number.getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+
+	Account acc(accNumber, accType, limit, balance, usrId);
+
+	return acc;
 }
 
 void StubUserAccAdm :: unblockAccount( AccNumber* accNumber ) throw (invalid_argument, PersError)
@@ -198,4 +212,18 @@ void StubUserCusAdm :: editCusName(AccNumber* accNumber, UsrName*  usrName) thro
 		throw invalid_argument("A conta requisitada nao existe");
 	if(accNumber->getValue() == 2)
 		throw PersError(PERS_ERROR_MSG);
+}
+
+Customer StubUserCusAdm :: fetchCustomer(UsrId id) throw (PersError)
+{
+	UsrName usrName("Yurick");
+	UsrPassword usrPassword("eu");
+	UsrId usrId(id);
+
+	if(id.getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+
+	Customer cus(usrName, usrPassword, usrId);
+
+	return cus;
 }

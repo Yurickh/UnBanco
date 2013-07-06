@@ -3,10 +3,12 @@
 
 #include "EngineUnit.h"
 #include "EntityUnit.h"
-#include "UserUnit.h"
 #include "TransacUnit.h"
+#include "UserUnit.h"
 
-extern Window* win;
+using namespace std;
+
+extern Window *win;
 
 /** Classe que armazena, monitora e administra os dados de sessão. */
 class Session
@@ -150,6 +152,8 @@ class MainCusMenu : public MainInterface
 {
 	/** Armazena o endereço da classe responsável pelo negócio de administração de dados de usuários. */
 	UserCusAdm* userAdm;
+	/** Armazena o endereço da classe responsável pelo negócio de administração de dados de contas. */
+	UserAccAdm* accAdm;
 	/** Armazena o endereço da classe responsável pelo negócio de transações */
 	TransacAdm* transacAdm;
 
@@ -171,6 +175,8 @@ class MainCusMenu : public MainInterface
 
 		/** Define a classe responsável pela edição de dados de clientes */
 		inline void setUserAdm(UserCusAdm*);
+		/** Define a classe responsável pela edição de dados de contas */
+		inline void setAccAdm(UserAccAdm*);
 		/** Define a classe responsável pelo intermédio de transações entre contas */
 		inline void setTransacAdm(TransacAdm*);
 
@@ -203,6 +209,11 @@ inline void MainCusMenu :: setUserAdm(UserCusAdm* userAdm)
 inline void MainCusMenu :: setTransacAdm(TransacAdm* transacAdm)
 {
 	this->transacAdm = transacAdm;
+}
+
+inline void MainCusMenu :: setAccAdm(UserAccAdm* accAdm)
+{
+	this->accAdm = accAdm;
 }
 
 /** Responsável pela execução do login do usuário. */

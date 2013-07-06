@@ -1197,10 +1197,149 @@ void MainCusMenu::changePassword()
 		}
 	}while(invalidEnd);
 }
-void MainCusMenu::listCustomer(){}
-void MainCusMenu::showBalance(){}
-void MainCusMenu::withdraw(){}
-void MainCusMenu::deposit(){}
+void MainCusMenu::listCustomer()
+{
+	Customer* cus;
+	Account* acc;
+
+	try
+	{
+		acc = new Account( accAdm->fetchAccount(session->getAccNumber()) );
+		cus = new Customer( userAdm->fetchCustomer(acc->getUsrId()) );
+
+		win->print("Seus dados sao:");
+		win->print("-> Nome: ");
+		win->print(cus->getName().getValue());
+		win->print("-> Senha: ");
+		win->print(cus->getPassword().getValue());
+		win->print("-> Numero de conta: ");
+		win->print(acc->getAccNumber().getValue());
+		win->print("-> Tipo de conta: ");
+		win->print((acc->getAccType().getValue() == NORMAL)? "Normal" : "Especial");
+		win->print("-> Limite de credito: ");
+		win->print(acc->getLimit().getValue());
+	} catch(PersError except)
+	{
+		win->error(except.what());
+	}
+
+	delete cus;
+	delete acc;
+
+	win->pause();
+}
+
+void MainCusMenu::showBalance()
+{
+	Account* acc;
+
+	try
+	{
+		acc = new Account( accAdm->fetchAccount(session->getAccNumber()) );
+
+		win->print("Seu saldo atual e:");
+		win->print(acc->getBalance().getValue());
+	} catch(PersError except)
+	{
+		win->error(except.what());
+	}
+
+	delete acc;
+
+	win->pause();
+}
+
+void MainCusMenu::withdraw()
+{
+	bool invalidEnd, invalidNumber;
+
+	float withFlt;
+	Money* with;
+
+	do
+	{
+		invalidEnd = true;
+
+		do
+		{
+			invalidNumber = true;
+
+			win->print("Digite o valor que deseja sacar");
+			win->read(withFlt);
+
+			try
+			{
+				with = new Money(withFlt);
+				invalidNumber = false;
+			} catch (invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		} while(invalidNumber);
+
+		try
+		{
+			transacAdm->withdraw(session->getAccNumber(), with);
+			invalidEnd = false;
+		} catch (invalid_argument except)
+		{
+			win->error(except.what());
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+
+	} while (invalidEnd);
+
+	win->success("Saque realizado devidamente");
+	win->pause();
+}
+
+void MainCusMenu::deposit()
+{
+	bool invalidEnd, invalidNumber;
+
+	float depFlt;
+	Money* dep;
+
+	do
+	{
+		invalidEnd = true;
+
+		do
+		{
+			invalidNumber = true;
+
+			win->print("Digite o valor que deseja depositar");
+			win->read(depFlt);
+
+			try
+			{
+				dep = new Money(depFlt);
+				invalidNumber = false;
+			} catch (invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		} while(invalidNumber);
+
+		try
+		{
+			transacAdm->deposit(session->getAccNumber(), dep);
+			invalidEnd = false;
+		} catch (invalid_argument except)
+		{
+			win->error(except.what());
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+
+	} while (invalidEnd);
+
+	win->success("Deposito realizado devidamente");
+	win->pause();
+}
 void MainCusMenu::schedulePayment(){}
 void MainCusMenu::cancelPayment(){}
 void MainCusMenu::listPayment(){}

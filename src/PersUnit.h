@@ -5,6 +5,8 @@
 
 using namespace std;
 
+#define PERS_ERROR_MSG "Ocorreu um erro ao se conectar ao database. Favor tentar novamente mais tarde."
+
 class PersError
 {
 	private:
