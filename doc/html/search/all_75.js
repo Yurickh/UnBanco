@@ -5,7 +5,7 @@ var searchData=
   ['unitbase_3c_20float_20_3e',['UnitBase&lt; float &gt;',['../d5/db5/classUnitBase.html',1,'']]],
   ['unitbase_3c_20int_20_3e',['UnitBase&lt; int &gt;',['../d5/db5/classUnitBase.html',1,'']]],
   ['unitbase_3c_20string_20_3e',['UnitBase&lt; string &gt;',['../d5/db5/classUnitBase.html',1,'']]],
-  ['user',['User',['../d9/dc0/classUser.html',1,'User'],['../d9/dc0/classUser.html#a4a0137053e591fbb79d9057dd7d2283d',1,'User::User()']]],
+  ['user',['User',['../d9/dc0/classUser.html',1,'']]],
   ['useraccadm',['UserAccAdm',['../dd/d35/classUserAccAdm.html',1,'']]],
   ['usercusadm',['UserCusAdm',['../d1/d48/classUserCusAdm.html',1,'']]],
   ['userlogin',['UserLogin',['../d4/de1/classUserLogin.html',1,'']]],

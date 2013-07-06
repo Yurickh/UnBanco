@@ -24,16 +24,20 @@ class Window
 		virtual void print(string) = 0;
 		/** Mostra um inteiro na tela. */
 		virtual void print(int) = 0;
-		/** Lê uma string da entrada padrão. Para ler senhas usando (*), definir password = true. Em outros casos, é possível suprimir este argumento.*/
+		/** Mostra um float na tela. */
+		virtual void print(float) = 0;
+		/** Lê uma string da entrada padrão.*/
 		virtual void read(string&) = 0;
 		/** Lê um inteiro da entrada padrão. */
 		virtual void read(int&) = 0;
+		/** Lê um float da entrada padrão. */
+		virtual void read(float&) = 0;
 		/** Mostra a mensagem de erro formatada na tela. */
 		virtual void error(string)=0;
 		/** Mostra a mensagem de sucesso formatada na tela. */
 		virtual void success(string)=0;
 		/** Botão de continue */
-		virtual void cont(void) = 0;
+		virtual void pause(void) = 0;
 };
 
 class Textual: public Window
@@ -42,11 +46,13 @@ class Textual: public Window
 		int menu(int nopt, string options[], string text);
 		void print(string);
 		void print(int);
+		void print(float);
 		void read(string&);
 		void read(int&);
+		void read(float&);
 		void error(string);
 		void success(string);
-		void cont();
+		void pause();
 };
 
 #endif

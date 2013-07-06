@@ -35,6 +35,7 @@ int main()
 	admMenu->setUserAdm(userManAdm);
 	manMenu->setUserAdm(userManAdm);
 	manMenu->setAccAdm(userAccAdm);
+	manMenu->setCusAdm(userCusAdm);
 	cusMenu->setUserAdm(userCusAdm);
 	cusMenu->setTransacAdm(transacAdm);
 

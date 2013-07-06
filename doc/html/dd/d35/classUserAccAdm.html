@@ -83,8 +83,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="../../de/d23/classUserAccAdm-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">UserAccAdm Class Reference</div>  </div>
+<div class="title">UserAccAdm Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
@@ -96,13 +99,38 @@ Inheritance diagram for UserAccAdm:</div>
 <area href="../../d3/d88/classStubUserAccAdm.html" alt="StubUserAccAdm" shape="rect" coords="0,56,111,80"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a23b313ce179890606746ab3a279bd833"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23b313ce179890606746ab3a279bd833"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>createAccount</b> (<a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)=0  throw (PersError)</td></tr>
+<tr class="separator:a23b313ce179890606746ab3a279bd833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8257788e5e7d125b7482e490a6d71550"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8257788e5e7d125b7482e490a6d71550"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteAccount</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="separator:a8257788e5e7d125b7482e490a6d71550"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9cdd01395ad7dd1b2c0887fe12b71b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9cdd01395ad7dd1b2c0887fe12b71b8"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>blockAccount</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="separator:ad9cdd01395ad7dd1b2c0887fe12b71b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae179b3e21f336b325452eb3c0981b0d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae179b3e21f336b325452eb3c0981b0d9"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>unblockAccount</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="separator:ae179b3e21f336b325452eb3c0981b0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa84b9df92ad9e11b1d9c71e9350efdc7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa84b9df92ad9e11b1d9c71e9350efdc7"></a>
+virtual list&lt; <a class="el" href="../../d7/d10/classAccount.html">Account</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>fetchAccount</b> (void)=0  throw (PersError)</td></tr>
+<tr class="separator:aa84b9df92ad9e11b1d9c71e9350efdc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80d61347b448e3ae9bdca4e02e65bcd1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80d61347b448e3ae9bdca4e02e65bcd1"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>editAccType</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="separator:a80d61347b448e3ae9bdca4e02e65bcd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f0bb580d63a9c782e8c83417562a17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43f0bb580d63a9c782e8c83417562a17"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>editAccLimit</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="separator:a43f0bb580d63a9c782e8c83417562a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 30 2013 20:54:42 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 6 2013 08:08:03 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

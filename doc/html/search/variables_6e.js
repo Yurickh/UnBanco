@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['name',['name',['../d9/dc0/classUser.html#a91c191dfccf48b4f9fcf325a86359cbf',1,'User']]]
+  ['name',['name',['../d9/dc0/classUser.html#a578e38a0fc23375ce19d689f96c6abaa',1,'User']]]
 ];

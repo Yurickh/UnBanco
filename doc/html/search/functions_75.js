@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['user',['User',['../d9/dc0/classUser.html#a4a0137053e591fbb79d9057dd7d2283d',1,'User']]],
   ['usrid',['UsrId',['../d8/dc7/classUsrId.html#a55a05b8f951a218c66c49f09fa6ce374',1,'UsrId::UsrId()'],['../d8/dc7/classUsrId.html#a3be81b6f539c0121803f9d88e9d89553',1,'UsrId::UsrId(const int &amp;)']]],
   ['usrmatric',['UsrMatric',['../d4/d69/classUsrMatric.html#afbc07d30168283743b0c9c5d690dac5f',1,'UsrMatric::UsrMatric()'],['../d4/d69/classUsrMatric.html#acc7320dcfc8978fe9cc142340adb99c1',1,'UsrMatric::UsrMatric(const int &amp;)']]],
   ['usrname',['UsrName',['../da/df7/classUsrName.html#a0b0d5b9167309872d29c60a1946375af',1,'UsrName::UsrName()'],['../da/df7/classUsrName.html#a3028672b21248ef880a01e3621e02827',1,'UsrName::UsrName(const string &amp;)']]],

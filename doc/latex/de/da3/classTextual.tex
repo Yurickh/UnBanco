@@ -16,34 +16,23 @@ void \hyperlink{classTextual_a79264d4c405089034447a553cd3859e5}{print} (string)
 \begin{DoxyCompactList}\small\item\em Mostra uma string na tela. \end{DoxyCompactList}\item 
 void \hyperlink{classTextual_aab79476a2e99375655df0bc3d8738536}{print} (int)
 \begin{DoxyCompactList}\small\item\em Mostra um inteiro na tela. \end{DoxyCompactList}\item 
+void \hyperlink{classTextual_a5558fc2f9db356453e60dbe6fc0e5dba}{print} (float)
+\begin{DoxyCompactList}\small\item\em Mostra um float na tela. \end{DoxyCompactList}\item 
 void \hyperlink{classTextual_a5998864514acbf61ca8d6fa1845d0d22}{read} (string \&)
 \begin{DoxyCompactList}\small\item\em Lê uma string da entrada padrão. \end{DoxyCompactList}\item 
 void \hyperlink{classTextual_a888e02776648906696eeaea0e8691cd6}{read} (int \&)
 \begin{DoxyCompactList}\small\item\em Lê um inteiro da entrada padrão. \end{DoxyCompactList}\item 
+void \hyperlink{classTextual_a2758b8a95187575114d49a528624b79d}{read} (float \&)
+\begin{DoxyCompactList}\small\item\em Lê um float da entrada padrão. \end{DoxyCompactList}\item 
 void \hyperlink{classTextual_a42ebc971370c4de20314ee33cd863cb3}{error} (string)
 \begin{DoxyCompactList}\small\item\em Mostra a mensagem de erro formatada na tela. \end{DoxyCompactList}\item 
 void \hyperlink{classTextual_ab9edde475ba8687ce2ed448212405e12}{success} (string)
 \begin{DoxyCompactList}\small\item\em Mostra a mensagem de sucesso formatada na tela. \end{DoxyCompactList}\item 
-void \hyperlink{classTextual_a8125ca0d5ca9bebf728cc4bfbc4f8de4}{cont} ()
+void \hyperlink{classTextual_a2f7918232cd3b76ccf988bd41a622ec4}{pause} ()
 \begin{DoxyCompactList}\small\item\em Botão de continue. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
-\hypertarget{classTextual_a8125ca0d5ca9bebf728cc4bfbc4f8de4}{\index{Textual@{Textual}!cont@{cont}}
-\index{cont@{cont}!Textual@{Textual}}
-\subsubsection[{cont}]{\setlength{\rightskip}{0pt plus 5cm}void Textual\-::cont (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{de/da3/classTextual_a8125ca0d5ca9bebf728cc4bfbc4f8de4}
-
-
-Botão de continue. 
-
-
-
-Implements \hyperlink{classWindow_a286992c7c1720f5e3e12a6b70364b812}{Window}.
-
 \hypertarget{classTextual_a42ebc971370c4de20314ee33cd863cb3}{\index{Textual@{Textual}!error@{error}}
 \index{error@{error}!Textual@{Textual}}
 \subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void Textual\-::error (
@@ -76,6 +65,21 @@ Recebe um inteiro, o número de opções, e um vetor de strings, um vetor com o 
 
 Implements \hyperlink{classWindow_a3b6d7449c7f088f9ce59002573ca82c0}{Window}.
 
+\hypertarget{classTextual_a2f7918232cd3b76ccf988bd41a622ec4}{\index{Textual@{Textual}!pause@{pause}}
+\index{pause@{pause}!Textual@{Textual}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}void Textual\-::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{de/da3/classTextual_a2f7918232cd3b76ccf988bd41a622ec4}
+
+
+Botão de continue. 
+
+
+
+Implements \hyperlink{classWindow_ad7f70e7264c37772889b38ff4d82c68f}{Window}.
+
 \hypertarget{classTextual_a79264d4c405089034447a553cd3859e5}{\index{Textual@{Textual}!print@{print}}
 \index{print@{print}!Textual@{Textual}}
 \subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void Textual\-::print (
@@ -106,6 +110,21 @@ Mostra um inteiro na tela.
 
 Implements \hyperlink{classWindow_aa0a1210e72a63332e49722f1f878ea94}{Window}.
 
+\hypertarget{classTextual_a5558fc2f9db356453e60dbe6fc0e5dba}{\index{Textual@{Textual}!print@{print}}
+\index{print@{print}!Textual@{Textual}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void Textual\-::print (
+\begin{DoxyParamCaption}
+\item[{float}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{de/da3/classTextual_a5558fc2f9db356453e60dbe6fc0e5dba}
+
+
+Mostra um float na tela. 
+
+
+
+Implements \hyperlink{classWindow_a08f0e967158988de3cf9eb08a7823585}{Window}.
+
 \hypertarget{classTextual_a5998864514acbf61ca8d6fa1845d0d22}{\index{Textual@{Textual}!read@{read}}
 \index{read@{read}!Textual@{Textual}}
 \subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}void Textual\-::read (
@@ -117,7 +136,7 @@ Implements \hyperlink{classWindow_aa0a1210e72a63332e49722f1f878ea94}{Window}.
 
 Lê uma string da entrada padrão. 
 
-Para ler senhas usando ($\ast$), definir password = true. Em outros casos, é possível suprimir este argumento. 
+
 
 Implements \hyperlink{classWindow_abb59602c637907250fd70b1450b85c5c}{Window}.
 
@@ -135,6 +154,21 @@ Lê um inteiro da entrada padrão.
 
 
 Implements \hyperlink{classWindow_ab00a4c057aade6ddc2a4bb22b2a6de42}{Window}.
+
+\hypertarget{classTextual_a2758b8a95187575114d49a528624b79d}{\index{Textual@{Textual}!read@{read}}
+\index{read@{read}!Textual@{Textual}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}void Textual\-::read (
+\begin{DoxyParamCaption}
+\item[{float \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{de/da3/classTextual_a2758b8a95187575114d49a528624b79d}
+
+
+Lê um float da entrada padrão. 
+
+
+
+Implements \hyperlink{classWindow_a2a1c43d55946185d0cee7324c78758fc}{Window}.
 
 \hypertarget{classTextual_ab9edde475ba8687ce2ed448212405e12}{\index{Textual@{Textual}!success@{success}}
 \index{success@{success}!Textual@{Textual}}

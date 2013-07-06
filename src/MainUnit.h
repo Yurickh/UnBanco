@@ -56,7 +56,7 @@ class MainAdmMenu : public MainInterface
 
 	public:
 		void execute();
-		/** Define o objeto de negócio */
+		/** Define o objeto de negócio de gerentes */
 		inline void setUserAdm(UserManAdm*);
 	private:
 		/** Modifica a senha do Administrador */
@@ -84,6 +84,8 @@ class MainManMenu : public MainInterface
 	UserManAdm* userAdm;
 	/** Armazena o endereço da classe responsável pelo negócio de administração de dados de contas. */
 	UserAccAdm* accAdm;
+	/** Armazena o endereço da classe responsável pelo negócio de administração de dados de clientes. */
+	UserCusAdm* cusAdm;
 
 	static const int CHANGE_PASSWORD 	= 0;
 	static const int LIST_MANAGER 		= 1;
@@ -104,6 +106,8 @@ class MainManMenu : public MainInterface
 		inline void setUserAdm(UserManAdm*);
 		/** Define o objeto de negócio para administração de dados de conta. */
 		inline void setAccAdm(UserAccAdm*);
+		/** Define o objeto de negócio para administração de dados de cliente. */
+		inline void setCusAdm(UserCusAdm*);
 	private:
 		/** Modifica a senha do Gerente */
 		void changePassword();
@@ -133,6 +137,11 @@ inline void MainManMenu :: setUserAdm(UserManAdm* userAdm)
 inline void MainManMenu :: setAccAdm(UserAccAdm* accAdm)
 {
 	this->accAdm = accAdm;
+}
+
+inline void MainManMenu :: setCusAdm(UserCusAdm* cusAdm)
+{
+	this->cusAdm = cusAdm;
 }
 
 /** Menu principal para Clientes.

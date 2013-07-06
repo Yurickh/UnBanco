@@ -4,6 +4,8 @@
 
 #define PERS_ERROR_MSG "Ocorreu um erro ao se conectar ao database. Favor tentar novamente mais tarde."
 
+//===============StubUserLogin=====================
+
 ManType StubUserLogin::autent(UsrMatric* usrMatric, UsrPassword* usrPassword) throw (invalid_argument, PersError)
 {
 	ManType manType(NORMAL);
@@ -29,6 +31,84 @@ void StubUserLogin::autent(AccNumber* accNumber, UsrPassword* usrPassword) throw
 		throw PersError(PERS_ERROR_MSG);
 }
 
+//=================StubUserAccAdm======================
+
+void StubUserAccAdm :: createAccount( AccType* accType, Money* limit, Money* balance) throw (PersError)
+{
+	if(limit->getValue() <= 100)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void StubUserAccAdm :: deleteAccount( AccNumber* accNumber ) throw (invalid_argument, PersError)
+{
+	if(accNumber->getValue() == 1)
+		throw invalid_argument("A conta requisitada não existe");
+	if(accNumber->getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void StubUserAccAdm :: blockAccount( AccNumber* accNumber ) throw (invalid_argument, PersError)
+{
+	if(accNumber->getValue() == 1)
+		throw invalid_argument("A conta requisitada não existe");
+	if(accNumber->getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+	if(accNumber->getValue() == 3)
+		throw invalid_argument("A conta requisitada ja esta bloqueada");
+}
+
+list<Account> StubUserAccAdm :: fetchAccount(void) throw (PersError)
+{
+	list<Account> accList;
+
+	AccNumber accNum1(1), accNum2(2), accNum3(3);
+	AccType accType1(NORMAL), accType2(SPECIAL), accType3(NORMAL);
+	Money accLimit1(10), accLimit2(20), accLimit3(-1);
+	Money accBal1(5), accBal2(20), accBal3(15);
+	UsrId accUsrId1(1), accUsrId2(2), accUsrId3(24);
+
+	Account n1(accNum1, accType1, accLimit1, accBal1, accUsrId1);
+	Account n2(accNum2, accType2, accLimit2, accBal2, accUsrId2);
+	Account n3(accNum3, accType3, accLimit3, accBal3, accUsrId3);
+
+	if(!(rand()%2))
+		throw PersError(PERS_ERROR_MSG);
+
+	accList.push_back(n1);
+	accList.push_back(n2);
+	accList.push_back(n3);
+
+	return accList;
+}
+
+void StubUserAccAdm :: unblockAccount( AccNumber* accNumber ) throw (invalid_argument, PersError)
+{
+	if(accNumber->getValue() == 1)
+		throw invalid_argument("A conta requisitada nao existe");
+	if(accNumber->getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+	if(accNumber->getValue() == 3)
+		throw invalid_argument("A conta requisitada ja esta desbloqueada");
+}
+
+void StubUserAccAdm :: editAccType( AccNumber* accNumber, AccType* accType ) throw (invalid_argument, PersError )
+{
+	if(accNumber->getValue() == 1)
+		throw invalid_argument("A conta requisitada nao existe");
+	if(accNumber->getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void StubUserAccAdm :: editAccLimit( AccNumber* accNumber, Money* accLimit ) throw (invalid_argument, PersError )
+{
+	if(accNumber->getValue() == 1)
+		throw invalid_argument("A conta requisitada nao existe");
+	if(accNumber->getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+//=================StubUserManAdm======================
+
 void StubUserManAdm::changePassword(UsrPassword* newPassword) throw (PersError)
 {
 	if(newPassword->getValue() == "2")
@@ -42,44 +122,42 @@ void StubUserManAdm :: createManager(UsrName* usrName, UsrPassword* usrPassword)
 		throw PersError(PERS_ERROR_MSG);
 }
 
-list<Manager*> StubUserManAdm :: fetchManager() throw (PersError)
+list<Manager> StubUserManAdm :: fetchManager() throw (PersError)
 {
-	list<Manager*> manList;
-	Manager *n1, *n2, *n3;
+	list<Manager> manList;
 
-	UsrName *n1Name, *n2Name, *n3Name;
-	UsrPassword *n1Password, *n2Password, *n3Password;
-	UsrMatric *n1Matric, *n2Matric, *n3Matric;
-	ManType *n1Type, *n2Type, *n3Type;
+	UsrName n1Name("Giovana"), n2Name("Yurick"), n3Name("Andre");
+	UsrPassword n1Password("s2"), n2Password("eu"), n3Password("outro");
+	UsrMatric n1Matric(1), n2Matric(2), n3Matric(24);
+	ManType n1Type(NORMAL), n2Type(NORMAL), n3Type(NORMAL);
+
+	Manager n1(n1Name, n1Password, n1Type, n1Matric);
+	Manager n2(n2Name, n2Password, n2Type, n2Matric);
+	Manager n3(n3Name, n3Password, n3Type, n3Matric);
 
 	if(!(rand()%2))
 		throw PersError(PERS_ERROR_MSG);
-	
-	n1Name = new UsrName("Giovana");
-	n2Name = new UsrName("Yurick");
-	n3Name = new UsrName("Andre");
-
-	n1Password = new UsrPassword("s2");
-	n2Password = new UsrPassword("eu");
-	n3Password = new UsrPassword("outro");
-
-	n1Matric = new UsrMatric(1);
-	n2Matric = new UsrMatric(2);
-	n3Matric = new UsrMatric(24);
-
-	n1Type = new ManType(NORMAL);
-	n2Type = new ManType(NORMAL);
-	n3Type = new ManType(NORMAL);
-
-	n1 = new Manager(n1Name, n1Password, n1Type, n1Matric);
-	n2 = new Manager(n2Name, n2Password, n2Type, n2Matric);
-	n3 = new Manager(n3Name, n3Password, n3Type, n3Matric);
 
 	manList.push_back(n1);
 	manList.push_back(n2);
 	manList.push_back(n3);
 
 	return manList;
+}
+
+Manager StubUserManAdm :: fetchManager(UsrMatric matric) throw (PersError)
+{
+	UsrName usrName("Yurick");
+	UsrPassword usrPassword("eu");
+	UsrMatric usrMatric(matric);
+	ManType manType(NORMAL);
+
+	if(matric.getValue() == 2)
+		throw PersError(PERS_ERROR_MSG);
+
+	Manager man(usrName, usrPassword, manType, usrMatric);
+
+	return man;
 }
 
 void StubUserManAdm :: editManName(UsrMatric* usrMatric, UsrName* usrName) throw (invalid_argument, PersError)
@@ -98,8 +176,26 @@ void StubUserManAdm :: deleteManager(UsrMatric* usrMatric) throw (invalid_argume
 		throw PersError(PERS_ERROR_MSG);
 }
 
+//================StubUserCusAdm============================
+
 void StubUserCusAdm :: changePassword(UsrPassword* newPassword) throw (PersError)
 {
 	if(newPassword->getValue() == "2")
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void StubUserCusAdm :: createCustomer(UsrName* name, UsrPassword* pass) throw (invalid_argument, PersError)
+{
+	if(name->getValue() == "A")
+		throw invalid_argument("Este nome de usuario ja esta em uso");
+	if(name->getValue() == "B")
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void StubUserCusAdm :: editCusName(AccNumber* accNumber, UsrName*  usrName) throw (invalid_argument, PersError)
+{
+	if(accNumber->getValue() == 1)
+		throw invalid_argument("A conta requisitada nao existe");
+	if(accNumber->getValue() == 2)
 		throw PersError(PERS_ERROR_MSG);
 }

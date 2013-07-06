@@ -19,11 +19,11 @@ Inheritance diagram for Customer\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classCustomer_a79d3f9de7f2ad3ad994cab4d1f278729}{Customer} (\hyperlink{classUsrName}{Usr\-Name} $\ast$\&\hyperlink{classUser_a91c191dfccf48b4f9fcf325a86359cbf}{name}, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$\&\hyperlink{classUser_a101edbffd592c3254f990671be952758}{password}, \hyperlink{classUsrId}{Usr\-Id} $\ast$\&)  throw (invalid\-\_\-argument)
+\hyperlink{classCustomer_a3f3be282d21b234e1e72f645d8fdc362}{Customer} (const \hyperlink{classUsrName}{Usr\-Name} \&, const \hyperlink{classUsrPassword}{Usr\-Password} \&, const \hyperlink{classUsrId}{Usr\-Id} \&)
 \begin{DoxyCompactList}\small\item\em Construtor base de \hyperlink{classCustomer}{Customer}. \end{DoxyCompactList}\item 
-\hyperlink{classUsrId}{Usr\-Id} $\ast$ \hyperlink{classCustomer_aeade3950e4067d88836ecf345a3d798a}{get\-Usr\-Id} () const 
+\hyperlink{classUsrId}{Usr\-Id} \hyperlink{classCustomer_a76d325591ef27599cb1d7f3e4b77b8d4}{get\-Usr\-Id} () const 
 \begin{DoxyCompactList}\small\item\em Método que recupera o valor contido no campo usr\-Id. \end{DoxyCompactList}\item 
-void \hyperlink{classCustomer_a6ad6b5cedd830d6ead147b57d589dfc7}{set\-Usr\-Id} (\hyperlink{classUsrId}{Usr\-Id} $\ast$\&)
+void \hyperlink{classCustomer_a89b74269a4750193d61b305b13df82fa}{set\-Usr\-Id} (const \hyperlink{classUsrId}{Usr\-Id} \&)
 \begin{DoxyCompactList}\small\item\em Método que define o valor do atributo usr\-Id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -34,15 +34,15 @@ Cliente; Onde ficarão armazenados os dados do usuário padrão do sistema.
 O \hyperlink{classCustomer}{Customer} (Cliente) terá acesso a uma ou mais contas através de um \hyperlink{classUsrId}{Usr\-Id} único. Através dessa(s) conta(s), é capaz de realizar transações. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classCustomer_a79d3f9de7f2ad3ad994cab4d1f278729}{\index{Customer@{Customer}!Customer@{Customer}}
+\hypertarget{classCustomer_a3f3be282d21b234e1e72f645d8fdc362}{\index{Customer@{Customer}!Customer@{Customer}}
 \index{Customer@{Customer}!Customer@{Customer}}
 \subsubsection[{Customer}]{\setlength{\rightskip}{0pt plus 5cm}Customer\-::\-Customer (
 \begin{DoxyParamCaption}
-\item[{{\bf Usr\-Name} $\ast$\&}]{name, }
-\item[{{\bf Usr\-Password} $\ast$\&}]{password, }
-\item[{{\bf Usr\-Id} $\ast$\&}]{usr\-Id}
+\item[{const {\bf Usr\-Name} \&}]{name, }
+\item[{const {\bf Usr\-Password} \&}]{password, }
+\item[{const {\bf Usr\-Id} \&}]{usr\-Id}
 \end{DoxyParamCaption}
-)  throw (invalid\-\_\-argument)}}\label{d9/d12/classCustomer_a79d3f9de7f2ad3ad994cab4d1f278729}
+)}}\label{d9/d12/classCustomer_a3f3be282d21b234e1e72f645d8fdc362}
 
 
 Construtor base de \hyperlink{classCustomer}{Customer}. 
@@ -50,24 +50,24 @@ Construtor base de \hyperlink{classCustomer}{Customer}.
 Define os valores internos da classe automaticamente. 
 
 \subsection{Member Function Documentation}
-\hypertarget{classCustomer_aeade3950e4067d88836ecf345a3d798a}{\index{Customer@{Customer}!get\-Usr\-Id@{get\-Usr\-Id}}
+\hypertarget{classCustomer_a76d325591ef27599cb1d7f3e4b77b8d4}{\index{Customer@{Customer}!get\-Usr\-Id@{get\-Usr\-Id}}
 \index{get\-Usr\-Id@{get\-Usr\-Id}!Customer@{Customer}}
-\subsubsection[{get\-Usr\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usr\-Id} $\ast$ Customer\-::get\-Usr\-Id (
+\subsubsection[{get\-Usr\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usr\-Id} Customer\-::get\-Usr\-Id (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d9/d12/classCustomer_aeade3950e4067d88836ecf345a3d798a}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{d9/d12/classCustomer_a76d325591ef27599cb1d7f3e4b77b8d4}
 
 
 Método que recupera o valor contido no campo usr\-Id. 
 
-O valor é retornado, e o atributo não é modificado no processo. \hypertarget{classCustomer_a6ad6b5cedd830d6ead147b57d589dfc7}{\index{Customer@{Customer}!set\-Usr\-Id@{set\-Usr\-Id}}
+O valor é retornado, e o atributo não é modificado no processo. \hypertarget{classCustomer_a89b74269a4750193d61b305b13df82fa}{\index{Customer@{Customer}!set\-Usr\-Id@{set\-Usr\-Id}}
 \index{set\-Usr\-Id@{set\-Usr\-Id}!Customer@{Customer}}
 \subsubsection[{set\-Usr\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void Customer\-::set\-Usr\-Id (
 \begin{DoxyParamCaption}
-\item[{{\bf Usr\-Id} $\ast$\&}]{usr\-Id}
+\item[{const {\bf Usr\-Id} \&}]{usr\-Id}
 \end{DoxyParamCaption}
-)}}\label{d9/d12/classCustomer_a6ad6b5cedd830d6ead147b57d589dfc7}
+)}}\label{d9/d12/classCustomer_a89b74269a4750193d61b305b13df82fa}
 
 
 Método que define o valor do atributo usr\-Id. 

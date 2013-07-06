@@ -288,7 +288,7 @@ void MainAdmMenu::changePassword()
 			userAdm->changePassword(newPass);
 			session->setUsrPassword(newPass);
 			win->success("Senha modificada com sucesso.");
-			win->cont();
+			win->pause();
 			invalidEnd = false;
 		} catch (PersError except)
 		{
@@ -349,13 +349,13 @@ void MainAdmMenu::newManager()
 	win->print("Dados do novo gerente:");
 	win->print("Nome: " + newManNameStr);
 	win->print("Senha: " + newManPassStr);
-	win->cont();
+	win->pause();
 }
 
 void MainAdmMenu::listManager()
 {
-	list<Manager*>::iterator it;
-	list<Manager*> manList;
+	list<Manager>::iterator it;
+	list<Manager> manList;
 
 	bool invalidList;
 
@@ -367,20 +367,21 @@ void MainAdmMenu::listManager()
 	} catch (PersError except)
 	{
 		win->error(except.what());
-		win->cont();
+		win->pause();
 	}
 
 	if(invalidList) return;
 
 	for(it = manList.begin(); it!=manList.end(); ++it)
 	{
-		win->print("Nome: ");
-		win->print((*it)->getName()->getValue());
-		win->print("Matricula: ");
-		win->print((*it)->getUsrMatric()->getValue());
+		win->print("-> Nome: ");
+		win->print(it->getName().getValue());
+		win->print("-> Matricula: ");
+		win->print(it->getUsrMatric().getValue());
 		win->print("\n");
 	}
-	win->cont();
+
+	win->pause();
 }
 
 
@@ -439,7 +440,7 @@ void MainAdmMenu::changeManager()
 	} while(invalidEnd);
 
 	win->success("Nome devidamente editado.");
-	win->cont();
+	win->pause();
 }
 
 void MainAdmMenu::deleteManager()
@@ -482,7 +483,7 @@ void MainAdmMenu::deleteManager()
 	}while(invalidEnd);
 
 	win->success("Gerente devidamente deletado");
-	win->cont();
+	win->pause();
 }
 
 //======================MainManMenu===============================
@@ -599,7 +600,7 @@ void MainManMenu::changePassword()
 			userAdm->changePassword(newPass);
 			session->setUsrPassword(newPass);
 			win->success("Senha modificada com sucesso.");
-			win->cont();
+			win->pause();
 			invalidEnd = false;
 		} catch (PersError except)
 		{
@@ -607,13 +608,473 @@ void MainManMenu::changePassword()
 		}
 	}while(invalidEnd);
 }
-void MainManMenu::listManager(){}
-void MainManMenu::newAccount(){}
-void MainManMenu::deleteAccount(){}
-void MainManMenu::blockAccount(){}
-void MainManMenu::unblockAccount(){}
-void MainManMenu::listAccount(){}
-void MainManMenu::changeAccount(){}	
+
+void MainManMenu::listManager()
+{
+	Manager* man;
+
+	try
+	{
+		man = new Manager( userAdm->fetchManager(session->getUsrMatric()) );
+
+		win->print("Seus dados sao:");
+		win->print("-> Nome: ");
+		win->print(man->getName().getValue());
+		win->print("-> Senha: ");
+		win->print(man->getPassword().getValue());
+		win->print("-> Matricula: ");
+		win->print(man->getUsrMatric().getValue());
+	} catch(PersError except)
+	{
+		win->error(except.what());
+	}
+
+	delete man;
+
+	win->pause();
+}
+
+void MainManMenu::newAccount()
+{
+	UsrName* cusName;
+	UsrPassword* cusPass;
+
+	AccType* accType;
+	Money* accLim;
+	Money* accBal;
+
+	string accTypeStr, cusNameStr, cusPassStr;
+	float accLimFlt;
+
+	bool invalidType, invalidLim, invalidName, invalidEnd;
+
+	do
+	{
+		invalidEnd = true;
+		win->print("Insira os dados da nova conta:");
+
+		do
+		{
+			invalidType = true;
+			win->print("-> Tipo de conta: (N para Normal / S para Especial)");
+			win->read(accTypeStr);
+
+			try
+			{
+				if(accTypeStr[0] == 'N' || accTypeStr[0] == 'n')
+				{
+					accType = new AccType(NORMAL);
+					invalidType = false;
+				}
+				else if(accTypeStr[0] == 'S' || accTypeStr[0] == 's')
+				{
+					accType = new AccType(SPECIAL);
+					invalidType = false;
+				}
+				else
+					win->error("Opcao invalida.");
+			} catch (invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		} while (invalidType);
+
+		do
+		{
+			invalidLim = true;
+			win->print("-> Limite da conta:");
+			win->read(accLimFlt);
+
+			try
+			{
+				accLim = new Money(accLimFlt);
+				invalidLim = false;
+			} catch ( invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		}while(invalidLim);
+
+		do
+		{
+			invalidName = true;
+			win->print("-> Nome do usuario:");
+			win->read(cusNameStr);
+
+			try
+			{
+				cusName = new UsrName(cusNameStr);
+				invalidName = false;
+			} catch ( invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		}while(invalidName);
+
+		cusPassStr = randomPassword();
+		cusPass = new UsrPassword(cusPassStr);
+
+		accBal = new Money(10.0);
+
+		try
+		{
+			accAdm->createAccount(accType, accLim, accBal);
+			cusAdm->createCustomer(cusName, cusPass);
+			invalidEnd = false;
+		} catch (invalid_argument except)
+		{
+			win->error(except.what());
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+
+	}while(invalidEnd);
+
+	delete accType;
+	delete accLim;
+	delete accBal;
+	delete cusName;
+	delete cusPass;
+
+	win->success("Conta devidamente criada.");
+	win->print("Dados:");
+	win->print("->Nome: " + cusNameStr);
+	win->print("->Senha: " + cusPassStr);
+
+	win->pause();
+	
+}
+void MainManMenu::deleteAccount()
+{
+	int accNumInt;
+	AccNumber* accNum;
+
+	bool invalidEnd, invalidNumber;
+
+	do
+	{
+		invalidEnd = true;
+
+		do
+		{
+			invalidNumber = true;
+
+			win->print("Insira o numero da conta a ser deletada");
+			win->read(accNumInt);
+
+			try
+			{
+				accNum = new AccNumber(accNumInt);
+				invalidNumber = false;
+			} catch(invalid_argument except)
+			{
+				win->error(except.what());
+			}
+
+		}while(invalidNumber);
+
+		try
+		{
+			accAdm->deleteAccount(accNum);
+			invalidEnd = false;
+		} catch(invalid_argument except)
+		{
+			win->error(except.what());
+		} catch(PersError except)
+		{
+			win->error(except.what());
+		}
+
+	}while(invalidEnd);
+
+	delete accNum;
+
+	win->success("Conta devidamente deletada");
+	win->pause();
+}
+
+void MainManMenu::blockAccount()
+{
+	int accNumInt;
+	AccNumber* accNum;
+
+	bool invalidEnd, invalidNum;
+
+	do
+	{
+		invalidEnd = true;
+
+		do
+		{
+			invalidNum = true;
+
+			win->print("Insira o numero da conta a ser bloqueada");
+			win->read(accNumInt);
+
+			try
+			{
+				accNum = new AccNumber(accNumInt);
+				invalidNum = false;
+			} catch(invalid_argument except)
+			{
+				win->error(except.what());
+			}
+
+		} while(invalidNum);
+
+		try
+		{
+			accAdm->blockAccount(accNum);
+			invalidEnd = false;
+		} catch(invalid_argument except)
+		{
+			win->error(except.what());
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+	} while(invalidEnd);
+
+	delete accNum;
+
+	win->success("Conta devidamente bloqueada");
+	win->pause();
+}
+
+void MainManMenu::unblockAccount()
+{
+	int accNumInt;
+	AccNumber* accNum;
+
+	bool invalidEnd, invalidNum;
+
+	do
+	{
+		invalidEnd = true;
+
+		do
+		{
+			invalidNum = true;
+
+			win->print("Insira o numero da conta a ser desbloqueada");
+			win->read(accNumInt);
+
+			try
+			{
+				accNum = new AccNumber(accNumInt);
+				invalidNum = false;
+			} catch(invalid_argument except)
+			{
+				win->error(except.what());
+			}
+
+		} while(invalidNum);
+
+		try
+		{
+			accAdm->unblockAccount(accNum);
+			invalidEnd = false;
+		} catch(invalid_argument except)
+		{
+			win->error(except.what());
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+	} while(invalidEnd);
+
+	delete accNum;
+
+	win->success("Conta devidamente desbloqueada");
+	win->pause();
+}
+
+void MainManMenu::listAccount()
+{
+	list<Account>::iterator it;
+	list<Account> accList;
+
+	bool invalidList;
+
+	invalidList = true;
+	try
+	{
+		accList = accAdm->fetchAccount();
+		invalidList = false;
+	} catch (PersError except)
+	{
+		win->error(except.what());
+		win->pause();
+	}
+
+	if(invalidList) return;
+
+	for(it = accList.begin(); it!=accList.end(); ++it)
+	{
+		win->print("-> Numero de conta:");
+		win->print(it->getAccNumber().getValue());
+		win->print("-> Tipo de conta:");
+		win->print((it->getAccType().getValue())?"Especial" : "Normal");
+		if(it->getLimit().getValue() > 0)
+		{
+			win->print("-> Limite:");
+			win->print(it->getLimit().getValue());
+			win->print("-> Saldo:");
+			win->print(it->getBalance().getValue());
+		}
+		else
+			win->print("CONTA BLOQUEADA");
+		win->print("\n");
+	}
+
+	win->pause();
+}
+
+void MainManMenu::changeAccount()
+{
+	int accNumInt;
+	AccNumber* accNum;
+
+	bool invalidEnd, invalidNumber;
+
+	do
+	{
+		string options[] = {"Nome", "Tipo de conta", "Limite de credito", "Cancelar"};
+		const int EDIT_NAME = 0;
+		const int EDIT_TYPE = 1;
+		const int EDIT_LIMT = 2;
+		const int CANCEL    = 3;
+		int selOpt;
+
+		invalidEnd = true;
+
+		do
+		{
+			invalidNumber = true;
+
+			win->print("Insira o numero da conta a ser editada");
+			win->read(accNumInt);
+
+			try
+			{
+				accNum = new AccNumber(accNumInt);
+				invalidNumber = false;
+			} catch (invalid_argument except)
+			{
+				win->error(except.what());
+			}
+		} while(invalidNumber);
+
+		selOpt = win->menu(SIZEOF(options), options, "Selecione o tipo de edicao");
+
+		try
+		{
+			bool invalidNew;
+			switch(selOpt)
+			{
+				case EDIT_NAME:
+				{
+					UsrName* usrName;
+					string usrNameStr;
+
+					do
+					{
+						invalidNew = true;
+
+						win->print("Insira o novo nome");
+						win->read(usrNameStr);
+
+						try
+						{
+							usrName = new UsrName(usrNameStr);
+							invalidNew = false;
+						} catch (invalid_argument except)
+						{
+							win->error(except.what());
+						}
+					} while (invalidNew);
+
+					cusAdm->editCusName(accNum, usrName);
+					delete usrName;
+				}
+				break;
+
+				case EDIT_TYPE:
+				{
+					AccType* accType;
+					string accTypeStr;
+
+					do
+					{
+						invalidNew = true;
+
+						win->print("Insira o novo tipo (N para Normal / S para Special)");
+						win->read(accTypeStr);
+
+						if(accTypeStr[0] == 'N' or accTypeStr[0] == 'n')
+						{
+							accType = new AccType(NORMAL);
+							invalidNew = false;
+						}
+						else if(accTypeStr[0] == 'S' or accTypeStr[0] == 's')
+						{
+							accType = new AccType(SPECIAL);
+							invalidNew = false;
+						}
+					}while(invalidNew);
+
+					accAdm->editAccType(accNum, accType);
+					delete accType;			
+				}
+				break;
+
+				case EDIT_LIMT:
+				{
+					Money* accLimit;
+					float accLimitFlt;
+
+					do
+					{
+						invalidNew = true;
+
+						win->print("Insira o novo limite");
+						win->read(accLimitFlt);
+
+						try
+						{
+							accLimit = new Money(accLimitFlt);
+							invalidNew = false;
+						} catch (invalid_argument except)
+						{
+							win->error(except.what());
+						}
+					} while (invalidNew);
+
+					accAdm->editAccLimit(accNum, accLimit);
+					delete accLimit;
+				}
+				break;
+
+				case CANCEL:
+					delete accNum;
+				return;
+			}
+			invalidEnd = false;
+		} catch (invalid_argument except)
+		{
+			win->error(except.what());
+		} catch (PersError except)
+		{
+			win->error(except.what());
+		}
+	} while(invalidEnd);
+
+	delete accNum;
+
+	win->success("Conta editada com sucesso");
+	win->pause();
+}
 
 //======================MainCusMenu===============================
 void MainCusMenu::execute()

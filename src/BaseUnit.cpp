@@ -143,7 +143,7 @@ void Money::validate (const float& money) throw (invalid_argument)
 	if(money == 0)
 		throw invalid_argument ("Valor para dinheiro nao inicializado.");
 
-	if(!(std::isnormal(money)) || money < 0)
+	if(!(std::isnormal(money)))
 		throw invalid_argument ("Nao e possivel executar esta operacao com a dada quantidade de dinheiro.");
 
 	if(money*100 - (int)(money*100) != 0)

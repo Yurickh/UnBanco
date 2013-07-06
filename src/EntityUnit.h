@@ -9,31 +9,28 @@ Herdam dessa classe as duas maiores classes de usuários do sistema, os Clientes
 class User{
 	protected:
 		/** Nome do usuário em questão. */
-		UsrName *name;
+		UsrName name;
 		/** Senha do usuário em questão */
-		UsrPassword *password;
+		UsrPassword password;
 
-		/** Construtor padrão do usuário.
-			Define os valores de não-inicialização de seu nome e senha como sendo strings " ". */
-		User();
 	public:
 		/** Método que recupera o valor contido no campo name. 
 			O valor é retornado, e o atributo não é modificado no processo. */
-		UsrName* getName() const;
+		UsrName getName() const;
 		/** Método que define o valor do atributo name. */
-		void setUsrName(UsrName*&);
+		void setUsrName(const UsrName&);
 		/** Método que recupera o valor contido no campo password. 
 			O valor é retornado, e o atributo não é modificado no processo. */
-		UsrPassword* getPassword() const;
+		UsrPassword getPassword() const;
 		/** Método que define o valor do atributo password. */
-		void setUsrPassword( UsrPassword*&);
+		void setUsrPassword(const UsrPassword&);
 };
 
-inline UsrName* User::getName() const{
+inline UsrName User::getName() const{
 		return name;
 } 
 
-inline UsrPassword* User::getPassword() const{
+inline UsrPassword User::getPassword() const{
 		return password;
 }
 
@@ -44,20 +41,22 @@ class Customer:public User{
 	private:
 		/** O ID de um cliente é sua chave de identificação exclusiva dentro do sistema. 
 			Nenhum cliente terá um ID igual a outro. */
-		UsrId *usrId;
+		UsrId usrId;
+
+
 	public:
 		/** Construtor base de Customer.
 			Define os valores internos da classe automaticamente. */
-		Customer (UsrName*& name, UsrPassword*& password, UsrId*&) throw (invalid_argument);
+		Customer (const UsrName&, const UsrPassword&, const UsrId&);
 
 		/** Método que recupera o valor contido no campo usrId. 
 			O valor é retornado, e o atributo não é modificado no processo. */
-		UsrId* getUsrId () const;
+		UsrId getUsrId () const;
 		/** Método que define o valor do atributo usrId. */
-		void setUsrId (UsrId*&);
+		void setUsrId (const UsrId&);
 };
 
-inline UsrId* Customer::getUsrId ()const{
+inline UsrId Customer::getUsrId ()const{
 		return usrId;
 }
 
@@ -68,70 +67,70 @@ class Account{
 	private:
 		/** O número de uma conta é a sua chave de identificação exclusiva dentro do sistema.
 			Contas nunca compartilharão o mesmo número de conta. */
-		AccNumber *accNumber;
+		AccNumber accNumber;
 		/** Define se a conta será normal ou especial.
 			Privilégios especiais serão fornecidos para contas especiais. */
-		AccType *accType;
+		AccType accType;
 		/** Limite da conta. */
-		Money *limit;
+		Money limit;
 		/** Saldo da conta */
-		Money *balance;
+		Money balance;
 		/** ID do usuário que é proprietário desta conta. */
-		UsrId *usrId;
+		UsrId usrId;
 
 	public:
 		/** Construtor base de Account.
 			Define os valores internos da classe automaticamente. */
-		Account (AccNumber*&, AccType*&, Money*&, UsrId*&) throw (invalid_argument);
+		Account (const AccNumber&, const AccType&, const Money&, const Money&, const UsrId&);
 
 		/** Método que retorna o valor contido no atributo accNumber.
 			O valor será retornado e o atributo não será modificado. */
-		AccNumber* getAccNumber () const;
+		AccNumber getAccNumber () const;
 		/** Método que define o valor do atributo accNumber. */
-		void setAccNumber (AccNumber*&);
+		void setAccNumber (const AccNumber&);
 
 		/** Método que retorna o valor contido no atributo accType.
 			O valor será retornado e o atributo não será modificado. */
-		AccType* getAccType () const;
+		AccType getAccType () const;
 		/** Método que define o valor do atributo accType. */
-		void setAccType (AccType*&);
+		void setAccType (const AccType&);
 
 		/** Método que retorna o valor contido no atributo limit.
 			O valor será retornado e o atributo não será modificado. */
-		Money* getLimit () const;
+		Money getLimit () const;
 		/** Método que define o valor do atributo limit. */
-		void setLimit (Money*&);
+		void setLimit (const Money&);
 
 		/** Método que retorna o valor contido no atributo balance.
 			O valor será retornado e o atributo não será modificado. */
-		Money* getBalance() const;
+		Money getBalance() const;
 		/** Método que define o valor do atributo balance. */
-		void setBalance (Money*&);
+		void setBalance (const Money&);
 
 		/** Método que retorna o valor contido no atributo usrId.
 			O valor será retornado e o atributo não será modificado. */
-		UsrId* getUsrId() const;
+		UsrId getUsrId() const;
 		/** Método que define o valor do atributo usrId. */
-		void setUsrId(UsrId*&);
+		void setUsrId(const UsrId&);
 };
 
-inline UsrId* Account::getUsrId() const{
+inline UsrId Account::getUsrId() const{
 	return usrId;
 }
 
-inline AccType* Account::getAccType() const{
+inline AccType Account::getAccType() const{
 	return accType;
 }
 
-inline Money* Account::getLimit() const{
+inline Money Account::getLimit() const{
 	return limit;
 }
 
-inline Money* Account::getBalance() const{
+inline Money Account::getBalance() const{
 	return balance;
 }
 
-inline AccNumber* Account::getAccNumber() const{
+inline AccNumber Account::getAccNumber() const{
 	return accNumber;
 }
 
@@ -142,33 +141,35 @@ class Manager:public User{
 	private:
 		/** Tipo de gerente.
 			Pode ser definido como normal ou especial (administrador). Neste caso, o gerente terá privilégios especiais. */
-		ManType* manType;
+		ManType manType;
 		/** A matrícula do gerente será sua chave de identificação dentro do sistema.
 			Ela será única ao gerente, o que quer dizer que quaisquer dois gerentes nunca terão a mesma matrícula. */
-		UsrMatric* usrMatric;
+		UsrMatric usrMatric;
+
+
 	public:
 		/** Construtor base de Manager.
 			Define automaticamente os valores internos da classe. */
-		Manager (UsrName*, UsrPassword*, ManType*, UsrMatric*) throw (invalid_argument);
+		Manager (const UsrName&, const UsrPassword&, const ManType&, const UsrMatric&);
 
 		/** Método que recupera o valor contido no atributo manType.
 			O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. */
-		ManType* getManType () const;
+		ManType getManType () const;
 		/** Método que define o valor do atributo manType. */
-		void setManType (ManType*&);
+		void setManType (const ManType&);
 
 		/** Método que recupera o valor contido no atributo usrMatric.
 			O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. */
-		UsrMatric* getUsrMatric() const;
+		UsrMatric getUsrMatric() const;
 		/** Método que define o valor do atributo usrMatric. */
-		void setUsrMatric (UsrMatric*&);
+		void setUsrMatric (const UsrMatric&);
 };
 
-inline ManType* Manager::getManType() const{
+inline ManType Manager::getManType() const{
 	return manType;
 }
 
-inline UsrMatric* Manager::getUsrMatric() const{
+inline UsrMatric Manager::getUsrMatric() const{
 	return usrMatric;
 }
 
@@ -179,56 +180,55 @@ class Payment{
 	private:
 		/** Número de conta associada.
 			O número de conta associará a que conta este pagamento está vinculado. */
-		AccNumber *accNumber;
+		AccNumber accNumber;
 		/** O código de pagamento é a chave de identificação do Payment dentro do sistema.
 			Nenhum pagamento terá um código igual a outro. */
-		PayCode *payCode;
+		PayCode payCode;
 		/** Armazena a data em que foi agendada o pagamento.
 			Datas anteriores a 2013 (ano de produção desta biblioteca) não serão considerados. */
-		PayDay *payDay;
+		PayDay payDay;
 		/** Armazena o valor do pagamento em si. */
-		Money *payValue;				
+		Money payValue;				
 
 	public:
 		/** Construtor base de Payment.
 			Define todos os atributos internos à classe automaticamente. */
-		Payment (AccNumber*&, PayDay*&, Money*&) throw (invalid_argument);
+		Payment (const AccNumber&, const PayDay&, const Money&);
 
 		/** Método que recupera o valor contido no atributo payCode.
 			O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. */
-		PayCode* getPayCode () const;
+		PayCode getPayCode () const;
 		/** Método que define o valor no atributo payCode. */
-		const PayCode setPayCode (PayCode*&);
+		const PayCode setPayCode (const PayCode&);
 
 		/** Método que recupera o valor contido no atributo accNumber.
 			O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. */
-		AccNumber* getAccNumber () const;
+		AccNumber getAccNumber () const;
 		/** Método que define o valor no atributo payCode. */
-		void setAccNumber (AccNumber*&);
+		void setAccNumber (const AccNumber&);
 
 		/** Método que recupera o valor contido no atributo payDay.
 			O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. */
-
-		PayDay* getPayDay () const;
+		PayDay getPayDay () const;
 		/** Método que define o valor no atributo payCode. */
-		void setPayDay (PayDay*&);
+		void setPayDay (const PayDay&);
 
 		/** Método que recupera o valor contido no atributo payValue.
 			O valor será retornado e o atributo não sofrerá nenhum tipo de alteração. */
-		Money* getPayValue () const;
+		Money getPayValue () const;
 		/** Método que define o valor no atributo payCode. */
-		void setPayValue (Money*&);
+		void setPayValue (const Money&);
 };
 
-inline AccNumber* Payment::getAccNumber() const{
+inline AccNumber Payment::getAccNumber() const{
 	return accNumber;
 }
 
-inline PayCode* Payment::getPayCode() const{
+inline PayCode Payment::getPayCode() const{
 	return payCode;
 }
 
-inline PayDay* Payment::getPayDay() const{
+inline PayDay Payment::getPayDay() const{
 	return payDay;
 }
 
