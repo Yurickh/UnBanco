@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['unblockaccount',['unblockAccount',['../dd/d35/classUserAccAdm.html#ae179b3e21f336b325452eb3c0981b0d9',1,'UserAccAdm']]],
   ['unitbase',['UnitBase',['../d5/db5/classUnitBase.html',1,'']]],
   ['unitbase_3c_20bool_20_3e',['UnitBase&lt; bool &gt;',['../d5/db5/classUnitBase.html',1,'']]],
   ['unitbase_3c_20float_20_3e',['UnitBase&lt; float &gt;',['../d5/db5/classUnitBase.html',1,'']]],

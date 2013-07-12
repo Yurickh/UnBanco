@@ -1,33 +1,140 @@
-\hypertarget{classUserManAdm}{\section{User\-Man\-Adm Class Reference}
+\hypertarget{classUserManAdm}{\subsection{User\-Man\-Adm Class Reference}
 \label{da/d86/classUserManAdm}\index{User\-Man\-Adm@{User\-Man\-Adm}}
 }
+
+
+Interface de interação entre a camada de apresentação e a camada de negócio responsável pela administração de dados de gerentes ou administradores.  
+
+
+
+
+{\ttfamily \#include $<$User\-Unit.\-h$>$}
+
 Inheritance diagram for User\-Man\-Adm\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{da/d86/classUserManAdm}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classUserManAdm_a75006ea396a6384bbf47918fe9316bce}{virtual void {\bfseries change\-Password} (\hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (\-Pers\-Error)}\label{da/d86/classUserManAdm_a75006ea396a6384bbf47918fe9316bce}
+virtual void \hyperlink{classUserManAdm_a75006ea396a6384bbf47918fe9316bce}{change\-Password} (\hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Modifica a senha do usuário. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserManAdm_a4c1d61e8190867eb786cdf97083ba289}{create\-Manager} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Cria um novo Gerente. \end{DoxyCompactList}\item 
+virtual list$<$ \hyperlink{classManager}{Manager} $>$ \hyperlink{classUserManAdm_a05b8b4f5b1e42b7b9f77d6a40b90dbb2}{fetch\-Manager} (void)=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera uma lista com todos os gerentes registrados no sistema. \end{DoxyCompactList}\item 
+virtual \hyperlink{classManager}{Manager} \hyperlink{classUserManAdm_a62e826d1c11061df021016e94e88f9ba}{fetch\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric})=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera os dados de um gerente em específico. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserManAdm_a0440de1c9d712a8dac1aa4e526d0fe9b}{edit\-Man\-Name} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrName}{Usr\-Name} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Edita o nome de um gerente. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserManAdm_a3fd6ddb6b71743fe5ece3100206023c3}{delete\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Deleta os dados de um gerente. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\item 
-\hypertarget{classUserManAdm_a4c1d61e8190867eb786cdf97083ba289}{virtual void {\bfseries create\-Manager} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (\-Pers\-Error)}\label{da/d86/classUserManAdm_a4c1d61e8190867eb786cdf97083ba289}
 
-\item 
-\hypertarget{classUserManAdm_a05b8b4f5b1e42b7b9f77d6a40b90dbb2}{virtual list$<$ \hyperlink{classManager}{Manager} $>$ {\bfseries fetch\-Manager} (void)=0  throw (\-Pers\-Error)}\label{da/d86/classUserManAdm_a05b8b4f5b1e42b7b9f77d6a40b90dbb2}
+\subsubsection{Detailed Description}
+Interface de interação entre a camada de apresentação e a camada de negócio responsável pela administração de dados de gerentes ou administradores. 
 
-\item 
-\hypertarget{classUserManAdm_a62e826d1c11061df021016e94e88f9ba}{virtual \hyperlink{classManager}{Manager} {\bfseries fetch\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric})=0  throw (\-Pers\-Error)}\label{da/d86/classUserManAdm_a62e826d1c11061df021016e94e88f9ba}
 
-\item 
-\hypertarget{classUserManAdm_a0440de1c9d712a8dac1aa4e526d0fe9b}{virtual void {\bfseries edit\-Man\-Name} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrName}{Usr\-Name} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{da/d86/classUserManAdm_a0440de1c9d712a8dac1aa4e526d0fe9b}
 
-\item 
-\hypertarget{classUserManAdm_a3fd6ddb6b71743fe5ece3100206023c3}{virtual void {\bfseries delete\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{da/d86/classUserManAdm_a3fd6ddb6b71743fe5ece3100206023c3}
+Definition at line 71 of file User\-Unit.\-h.
 
-\end{DoxyCompactItemize}
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classUserManAdm_a75006ea396a6384bbf47918fe9316bce}{\index{User\-Man\-Adm@{User\-Man\-Adm}!change\-Password@{change\-Password}}
+\index{change\-Password@{change\-Password}!UserManAdm@{User\-Man\-Adm}}
+\paragraph[{change\-Password}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Man\-Adm\-::change\-Password (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/d86/classUserManAdm_a75006ea396a6384bbf47918fe9316bce}
+
+
+Modifica a senha do usuário. 
+
+
+
+Implemented in \hyperlink{classStubUserManAdm_a63130507e95ab092b0bf09704b13b6ec}{Stub\-User\-Man\-Adm}.
+
+\hypertarget{classUserManAdm_a4c1d61e8190867eb786cdf97083ba289}{\index{User\-Man\-Adm@{User\-Man\-Adm}!create\-Manager@{create\-Manager}}
+\index{create\-Manager@{create\-Manager}!UserManAdm@{User\-Man\-Adm}}
+\paragraph[{create\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Man\-Adm\-::create\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Name} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/d86/classUserManAdm_a4c1d61e8190867eb786cdf97083ba289}
+
+
+Cria um novo Gerente. 
+
+
+
+Implemented in \hyperlink{classStubUserManAdm_ac833e3729b1adf46edf78376719acde5}{Stub\-User\-Man\-Adm}.
+
+\hypertarget{classUserManAdm_a3fd6ddb6b71743fe5ece3100206023c3}{\index{User\-Man\-Adm@{User\-Man\-Adm}!delete\-Manager@{delete\-Manager}}
+\index{delete\-Manager@{delete\-Manager}!UserManAdm@{User\-Man\-Adm}}
+\paragraph[{delete\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Man\-Adm\-::delete\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/d86/classUserManAdm_a3fd6ddb6b71743fe5ece3100206023c3}
+
+
+Deleta os dados de um gerente. 
+
+
+
+Implemented in \hyperlink{classStubUserManAdm_a45f93196f3de7a92ebd0688007b47e5f}{Stub\-User\-Man\-Adm}.
+
+\hypertarget{classUserManAdm_a0440de1c9d712a8dac1aa4e526d0fe9b}{\index{User\-Man\-Adm@{User\-Man\-Adm}!edit\-Man\-Name@{edit\-Man\-Name}}
+\index{edit\-Man\-Name@{edit\-Man\-Name}!UserManAdm@{User\-Man\-Adm}}
+\paragraph[{edit\-Man\-Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Man\-Adm\-::edit\-Man\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric} $\ast$}]{, }
+\item[{{\bf Usr\-Name} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/d86/classUserManAdm_a0440de1c9d712a8dac1aa4e526d0fe9b}
+
+
+Edita o nome de um gerente. 
+
+Sua matrícula não será afetada 
+
+Implemented in \hyperlink{classStubUserManAdm_ac1da713638e441434c8ec426be495a0b}{Stub\-User\-Man\-Adm}.
+
+\hypertarget{classUserManAdm_a05b8b4f5b1e42b7b9f77d6a40b90dbb2}{\index{User\-Man\-Adm@{User\-Man\-Adm}!fetch\-Manager@{fetch\-Manager}}
+\index{fetch\-Manager@{fetch\-Manager}!UserManAdm@{User\-Man\-Adm}}
+\paragraph[{fetch\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}virtual list$<${\bf Manager}$>$ User\-Man\-Adm\-::fetch\-Manager (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/d86/classUserManAdm_a05b8b4f5b1e42b7b9f77d6a40b90dbb2}
+
+
+Recupera uma lista com todos os gerentes registrados no sistema. 
+
+
+
+Implemented in \hyperlink{classStubUserManAdm_a5aa1a8d94912f9971f17bcd8a52dfa7c}{Stub\-User\-Man\-Adm}.
+
+\hypertarget{classUserManAdm_a62e826d1c11061df021016e94e88f9ba}{\index{User\-Man\-Adm@{User\-Man\-Adm}!fetch\-Manager@{fetch\-Manager}}
+\index{fetch\-Manager@{fetch\-Manager}!UserManAdm@{User\-Man\-Adm}}
+\paragraph[{fetch\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Manager} User\-Man\-Adm\-::fetch\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric}}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/d86/classUserManAdm_a62e826d1c11061df021016e94e88f9ba}
+
+
+Recupera os dados de um gerente em específico. 
+
+
+
+Implemented in \hyperlink{classStubUserManAdm_a66bdd469d275154728c929e0581aaa71}{Stub\-User\-Man\-Adm}.
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

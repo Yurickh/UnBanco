@@ -1,27 +1,106 @@
-\hypertarget{classUserCusAdm}{\section{User\-Cus\-Adm Class Reference}
+\hypertarget{classUserCusAdm}{\subsection{User\-Cus\-Adm Class Reference}
 \label{d1/d48/classUserCusAdm}\index{User\-Cus\-Adm@{User\-Cus\-Adm}}
 }
+
+
+Interface de interação entre a camada de apresentação e a camada de negócio responsável pela administração de dados de clientes.  
+
+
+
+
+{\ttfamily \#include $<$User\-Unit.\-h$>$}
+
 Inheritance diagram for User\-Cus\-Adm\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{d1/d48/classUserCusAdm}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classUserCusAdm_aa78ba1b0eb4f14ca68f8ef2318e9c3d1}{virtual void {\bfseries change\-Password} (\hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (\-Pers\-Error)}\label{d1/d48/classUserCusAdm_aa78ba1b0eb4f14ca68f8ef2318e9c3d1}
+virtual void \hyperlink{classUserCusAdm_aa78ba1b0eb4f14ca68f8ef2318e9c3d1}{change\-Password} (\hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Modifica a senha do cliente. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserCusAdm_afc190444ef3834236b8057bc876ee106}{create\-Customer} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Cria um cliente. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserCusAdm_a6105bcc548efb475bae0bc36b58743a2}{edit\-Cus\-Name} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrName}{Usr\-Name} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Edita o nome do cliente. \end{DoxyCompactList}\item 
+virtual \hyperlink{classCustomer}{Customer} \hyperlink{classUserCusAdm_a8a67bf25c965e931be912f33449e0f8a}{fetch\-Customer} (\hyperlink{classUsrId}{Usr\-Id})=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera so dados do cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\item 
-\hypertarget{classUserCusAdm_afc190444ef3834236b8057bc876ee106}{virtual void {\bfseries create\-Customer} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{d1/d48/classUserCusAdm_afc190444ef3834236b8057bc876ee106}
 
-\item 
-\hypertarget{classUserCusAdm_a6105bcc548efb475bae0bc36b58743a2}{virtual void {\bfseries edit\-Cus\-Name} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrName}{Usr\-Name} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{d1/d48/classUserCusAdm_a6105bcc548efb475bae0bc36b58743a2}
+\subsubsection{Detailed Description}
+Interface de interação entre a camada de apresentação e a camada de negócio responsável pela administração de dados de clientes. 
 
-\item 
-\hypertarget{classUserCusAdm_a8a67bf25c965e931be912f33449e0f8a}{virtual \hyperlink{classCustomer}{Customer} {\bfseries fetch\-Customer} (\hyperlink{classUsrId}{Usr\-Id})=0  throw (\-Pers\-Error)}\label{d1/d48/classUserCusAdm_a8a67bf25c965e931be912f33449e0f8a}
 
-\end{DoxyCompactItemize}
+
+Definition at line 105 of file User\-Unit.\-h.
+
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classUserCusAdm_aa78ba1b0eb4f14ca68f8ef2318e9c3d1}{\index{User\-Cus\-Adm@{User\-Cus\-Adm}!change\-Password@{change\-Password}}
+\index{change\-Password@{change\-Password}!UserCusAdm@{User\-Cus\-Adm}}
+\paragraph[{change\-Password}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Cus\-Adm\-::change\-Password (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d1/d48/classUserCusAdm_aa78ba1b0eb4f14ca68f8ef2318e9c3d1}
+
+
+Modifica a senha do cliente. 
+
+
+
+Implemented in \hyperlink{classStubUserCusAdm_a7e44bec3dc4fb0640e6eb418dd8e8320}{Stub\-User\-Cus\-Adm}.
+
+\hypertarget{classUserCusAdm_afc190444ef3834236b8057bc876ee106}{\index{User\-Cus\-Adm@{User\-Cus\-Adm}!create\-Customer@{create\-Customer}}
+\index{create\-Customer@{create\-Customer}!UserCusAdm@{User\-Cus\-Adm}}
+\paragraph[{create\-Customer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Cus\-Adm\-::create\-Customer (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Name} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d1/d48/classUserCusAdm_afc190444ef3834236b8057bc876ee106}
+
+
+Cria um cliente. 
+
+
+
+Implemented in \hyperlink{classStubUserCusAdm_a53dc0deb3cf26a09c2814504b0daab63}{Stub\-User\-Cus\-Adm}.
+
+\hypertarget{classUserCusAdm_a6105bcc548efb475bae0bc36b58743a2}{\index{User\-Cus\-Adm@{User\-Cus\-Adm}!edit\-Cus\-Name@{edit\-Cus\-Name}}
+\index{edit\-Cus\-Name@{edit\-Cus\-Name}!UserCusAdm@{User\-Cus\-Adm}}
+\paragraph[{edit\-Cus\-Name}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Cus\-Adm\-::edit\-Cus\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{, }
+\item[{{\bf Usr\-Name} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d1/d48/classUserCusAdm_a6105bcc548efb475bae0bc36b58743a2}
+
+
+Edita o nome do cliente. 
+
+
+
+Implemented in \hyperlink{classStubUserCusAdm_a84ca3047ccb0ac2e371a23c4e4fcdba0}{Stub\-User\-Cus\-Adm}.
+
+\hypertarget{classUserCusAdm_a8a67bf25c965e931be912f33449e0f8a}{\index{User\-Cus\-Adm@{User\-Cus\-Adm}!fetch\-Customer@{fetch\-Customer}}
+\index{fetch\-Customer@{fetch\-Customer}!UserCusAdm@{User\-Cus\-Adm}}
+\paragraph[{fetch\-Customer}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Customer} User\-Cus\-Adm\-::fetch\-Customer (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Id}}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d1/d48/classUserCusAdm_a8a67bf25c965e931be912f33449e0f8a}
+
+
+Recupera so dados do cliente. 
+
+
+
+Implemented in \hyperlink{classStubUserCusAdm_aac14b018a6284211b1c83c48a9529efe}{Stub\-User\-Cus\-Adm}.
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

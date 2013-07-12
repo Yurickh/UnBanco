@@ -1,21 +1,72 @@
-\hypertarget{classUserLogin}{\section{User\-Login Class Reference}
+\hypertarget{classUserLogin}{\subsection{User\-Login Class Reference}
 \label{d4/de1/classUserLogin}\index{User\-Login@{User\-Login}}
 }
+
+
+Interface de interação da camada de apresentação com a camada de negócio responsável pelo login do usuário.  
+
+
+
+
+{\ttfamily \#include $<$User\-Unit.\-h$>$}
+
 Inheritance diagram for User\-Login\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{d4/de1/classUserLogin}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classUserLogin_a15141f463faedae30e40115658fcc0b9}{virtual \hyperlink{classUsrType}{Man\-Type} {\bfseries autent} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{d4/de1/classUserLogin_a15141f463faedae30e40115658fcc0b9}
+virtual \hyperlink{classUsrType}{Man\-Type} \hyperlink{classUserLogin_a15141f463faedae30e40115658fcc0b9}{autent} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Autentica um administrador / gerente. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserLogin_a7163b2b97915fd0e3e5d3f76c2af44da}{autent} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Autentica um cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\item 
-\hypertarget{classUserLogin_a7163b2b97915fd0e3e5d3f76c2af44da}{virtual void {\bfseries autent} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{d4/de1/classUserLogin_a7163b2b97915fd0e3e5d3f76c2af44da}
 
-\end{DoxyCompactItemize}
+\subsubsection{Detailed Description}
+Interface de interação da camada de apresentação com a camada de negócio responsável pelo login do usuário. 
+
+
+
+Definition at line 11 of file User\-Unit.\-h.
+
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classUserLogin_a15141f463faedae30e40115658fcc0b9}{\index{User\-Login@{User\-Login}!autent@{autent}}
+\index{autent@{autent}!UserLogin@{User\-Login}}
+\paragraph[{autent}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Man\-Type} User\-Login\-::autent (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d4/de1/classUserLogin_a15141f463faedae30e40115658fcc0b9}
+
+
+Autentica um administrador / gerente. 
+
+
+
+Implemented in \hyperlink{classStubUserLogin_a9d84171d20e4e5dd9efb24cec9e61928}{Stub\-User\-Login}.
+
+\hypertarget{classUserLogin_a7163b2b97915fd0e3e5d3f76c2af44da}{\index{User\-Login@{User\-Login}!autent@{autent}}
+\index{autent@{autent}!UserLogin@{User\-Login}}
+\paragraph[{autent}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Login\-::autent (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{d4/de1/classUserLogin_a7163b2b97915fd0e3e5d3f76c2af44da}
+
+
+Autentica um cliente. 
+
+
+
+Implemented in \hyperlink{classStubUserLogin_a27bea5e442f63d62863ea4db5553d5cd}{Stub\-User\-Login}.
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">UnBanco
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">1.3</span>
    </div>
    <div id="projectbrief">Projeto de Banco para a disciplina de Programação Orientada a Objeto (2013.1)</div>
   </td>
@@ -62,7 +62,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="../../hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
@@ -90,50 +89,295 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">UserAccAdm Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for UserAccAdm:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="../../dd/d35/classUserAccAdm.png" usemap="#UserAccAdm_map" alt=""/>
-  <map id="UserAccAdm_map" name="UserAccAdm_map">
-<area href="../../d3/d88/classStubUserAccAdm.html" alt="StubUserAccAdm" shape="rect" coords="0,56,111,80"/>
-</map>
- </div></div>
+
+<p>Interface de interação da camada de apresentação com a camada de negócio responsável pela administração dos dados de Contas.  
+ <a href="../../dd/d35/classUserAccAdm.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a23b313ce179890606746ab3a279bd833"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23b313ce179890606746ab3a279bd833"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>createAccount</b> (<a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)=0  throw (PersError)</td></tr>
+<tr class="memitem:a23b313ce179890606746ab3a279bd833"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#a23b313ce179890606746ab3a279bd833">createAccount</a> (<a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)=0  throw (PersError)</td></tr>
+<tr class="memdesc:a23b313ce179890606746ab3a279bd833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma conta.  <a href="#a23b313ce179890606746ab3a279bd833">More...</a><br/></td></tr>
 <tr class="separator:a23b313ce179890606746ab3a279bd833"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8257788e5e7d125b7482e490a6d71550"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8257788e5e7d125b7482e490a6d71550"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteAccount</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:a8257788e5e7d125b7482e490a6d71550"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#a8257788e5e7d125b7482e490a6d71550">deleteAccount</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:a8257788e5e7d125b7482e490a6d71550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleta uma conta.  <a href="#a8257788e5e7d125b7482e490a6d71550">More...</a><br/></td></tr>
 <tr class="separator:a8257788e5e7d125b7482e490a6d71550"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9cdd01395ad7dd1b2c0887fe12b71b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9cdd01395ad7dd1b2c0887fe12b71b8"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>blockAccount</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:ad9cdd01395ad7dd1b2c0887fe12b71b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#ad9cdd01395ad7dd1b2c0887fe12b71b8">blockAccount</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:ad9cdd01395ad7dd1b2c0887fe12b71b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bloqueia uma conta.  <a href="#ad9cdd01395ad7dd1b2c0887fe12b71b8">More...</a><br/></td></tr>
 <tr class="separator:ad9cdd01395ad7dd1b2c0887fe12b71b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae179b3e21f336b325452eb3c0981b0d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae179b3e21f336b325452eb3c0981b0d9"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>unblockAccount</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:ae179b3e21f336b325452eb3c0981b0d9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#ae179b3e21f336b325452eb3c0981b0d9">unblockAccount</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:ae179b3e21f336b325452eb3c0981b0d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desbloqueia uma conta.  <a href="#ae179b3e21f336b325452eb3c0981b0d9">More...</a><br/></td></tr>
 <tr class="separator:ae179b3e21f336b325452eb3c0981b0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa84b9df92ad9e11b1d9c71e9350efdc7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa84b9df92ad9e11b1d9c71e9350efdc7"></a>
-virtual list&lt; <a class="el" href="../../d7/d10/classAccount.html">Account</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>fetchAccount</b> (void)=0  throw (PersError)</td></tr>
+<tr class="memitem:aa84b9df92ad9e11b1d9c71e9350efdc7"><td class="memItemLeft" align="right" valign="top">virtual list&lt; <a class="el" href="../../d7/d10/classAccount.html">Account</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#aa84b9df92ad9e11b1d9c71e9350efdc7">fetchAccount</a> (void)=0  throw (PersError)</td></tr>
+<tr class="memdesc:aa84b9df92ad9e11b1d9c71e9350efdc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera uma lista com todas as contas registradas.  <a href="#aa84b9df92ad9e11b1d9c71e9350efdc7">More...</a><br/></td></tr>
 <tr class="separator:aa84b9df92ad9e11b1d9c71e9350efdc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5957dcbf58d30b171a6ca0967dacf2d9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5957dcbf58d30b171a6ca0967dacf2d9"></a>
-virtual <a class="el" href="../../d7/d10/classAccount.html">Account</a>&#160;</td><td class="memItemRight" valign="bottom"><b>fetchAccount</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>)=0  throw (PersError)</td></tr>
+<tr class="memitem:a5957dcbf58d30b171a6ca0967dacf2d9"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d7/d10/classAccount.html">Account</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#a5957dcbf58d30b171a6ca0967dacf2d9">fetchAccount</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>)=0  throw (PersError)</td></tr>
+<tr class="memdesc:a5957dcbf58d30b171a6ca0967dacf2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera os dados da conta de uma conta em específico.  <a href="#a5957dcbf58d30b171a6ca0967dacf2d9">More...</a><br/></td></tr>
 <tr class="separator:a5957dcbf58d30b171a6ca0967dacf2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80d61347b448e3ae9bdca4e02e65bcd1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a80d61347b448e3ae9bdca4e02e65bcd1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>editAccType</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:a80d61347b448e3ae9bdca4e02e65bcd1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#a80d61347b448e3ae9bdca4e02e65bcd1">editAccType</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:a80d61347b448e3ae9bdca4e02e65bcd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita o tipo de um conta.  <a href="#a80d61347b448e3ae9bdca4e02e65bcd1">More...</a><br/></td></tr>
 <tr class="separator:a80d61347b448e3ae9bdca4e02e65bcd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43f0bb580d63a9c782e8c83417562a17"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43f0bb580d63a9c782e8c83417562a17"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>editAccLimit</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:a43f0bb580d63a9c782e8c83417562a17"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#a43f0bb580d63a9c782e8c83417562a17">editAccLimit</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:a43f0bb580d63a9c782e8c83417562a17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita o Lilimite de uma conta.  <a href="#a43f0bb580d63a9c782e8c83417562a17">More...</a><br/></td></tr>
 <tr class="separator:a43f0bb580d63a9c782e8c83417562a17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface de interação da camada de apresentação com a camada de negócio responsável pela administração dos dados de Contas. </p>
+
+<p>Definition at line <a class="el" href="../../d5/dfb/UserUnit_8h_source.html#l00029">29</a> of file <a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad9cdd01395ad7dd1b2c0887fe12b71b8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserAccAdm::blockAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bloqueia uma conta. </p>
+
+</div>
+</div>
+<a class="anchor" id="a23b313ce179890606746ab3a279bd833"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserAccAdm::createAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (<a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cria uma conta. </p>
+
+</div>
+</div>
+<a class="anchor" id="a8257788e5e7d125b7482e490a6d71550"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserAccAdm::deleteAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deleta uma conta. </p>
+
+</div>
+</div>
+<a class="anchor" id="a43f0bb580d63a9c782e8c83417562a17"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserAccAdm::editAccLimit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Edita o Lilimite de uma conta. </p>
+
+</div>
+</div>
+<a class="anchor" id="a80d61347b448e3ae9bdca4e02e65bcd1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserAccAdm::editAccType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Edita o tipo de um conta. </p>
+
+</div>
+</div>
+<a class="anchor" id="aa84b9df92ad9e11b1d9c71e9350efdc7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual list&lt;<a class="el" href="../../d7/d10/classAccount.html">Account</a>&gt; UserAccAdm::fetchAccount </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (<a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recupera uma lista com todas as contas registradas. </p>
+
+</div>
+</div>
+<a class="anchor" id="a5957dcbf58d30b171a6ca0967dacf2d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../d7/d10/classAccount.html">Account</a> UserAccAdm::fetchAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (<a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recupera os dados da conta de uma conta em específico. </p>
+
+</div>
+</div>
+<a class="anchor" id="ae179b3e21f336b325452eb3c0981b0d9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserAccAdm::unblockAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Desbloqueia uma conta. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2013 10:29:12 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 10 2013 01:58:41 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

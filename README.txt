@@ -4,6 +4,8 @@ UnBanco v1.0
 
 Autores:
 	Yurick Hauschild Caetano da Costa (12/0024136)
+
+Co-autores da questao 1:
 	Andre Accioly Lima (12/0059908)
 
 Projeto:

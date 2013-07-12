@@ -14,3 +14,8 @@ string PersError::what()
 {
 	return info;
 }
+
+void StubPersGetBalance :: configure(AccNumber accNumber)
+{
+	if
+}

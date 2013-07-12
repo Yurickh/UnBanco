@@ -1,4 +1,4 @@
-\hypertarget{classAccount}{\section{Account Class Reference}
+\hypertarget{classAccount}{\subsection{Account Class Reference}
 \label{d7/d10/classAccount}\index{Account@{Account}}
 }
 
@@ -10,7 +10,7 @@ Conta; Onde ficarão armazenados os dados de conta de um cliente.
 
 {\ttfamily \#include $<$Entity\-Unit.\-h$>$}
 
-\subsection*{Public Member Functions}
+\subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classAccount_a94113be123fc89c3de8461cbb8251c83}{Account} (const \hyperlink{classAccNumber}{Acc\-Number} \&, const \hyperlink{classUsrType}{Acc\-Type} \&, const \hyperlink{classMoney}{Money} \&, const \hyperlink{classMoney}{Money} \&, const \hyperlink{classUsrId}{Usr\-Id} \&)
@@ -37,15 +37,19 @@ void \hyperlink{classAccount_a97146ede9747001294bcd41c74abd67a}{set\-Usr\-Id} (c
 \begin{DoxyCompactList}\small\item\em Método que define o valor do atributo usr\-Id. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
+\subsubsection{Detailed Description}
 Conta; Onde ficarão armazenados os dados de conta de um cliente. 
 
 Através de uma conta é possível acessar o módulo de Transações. 
 
-\subsection{Constructor \& Destructor Documentation}
+Definition at line 66 of file Entity\-Unit.\-h.
+
+
+
+\subsubsection{Constructor \& Destructor Documentation}
 \hypertarget{classAccount_a94113be123fc89c3de8461cbb8251c83}{\index{Account@{Account}!Account@{Account}}
 \index{Account@{Account}!Account@{Account}}
-\subsubsection[{Account}]{\setlength{\rightskip}{0pt plus 5cm}Account\-::\-Account (
+\paragraph[{Account}]{\setlength{\rightskip}{0pt plus 5cm}Account\-::\-Account (
 \begin{DoxyParamCaption}
 \item[{const {\bf Acc\-Number} \&}]{acc\-Number, }
 \item[{const {\bf Acc\-Type} \&}]{acc\-Type, }
@@ -60,10 +64,14 @@ Construtor base de \hyperlink{classAccount}{Account}.
 
 Define os valores internos da classe automaticamente. 
 
-\subsection{Member Function Documentation}
+Definition at line 30 of file Entity\-Unit.\-cpp.
+
+
+
+\subsubsection{Member Function Documentation}
 \hypertarget{classAccount_a74f26f24e13e66a055bb8441dfb3d881}{\index{Account@{Account}!get\-Acc\-Number@{get\-Acc\-Number}}
 \index{get\-Acc\-Number@{get\-Acc\-Number}!Account@{Account}}
-\subsubsection[{get\-Acc\-Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Acc\-Number} Account\-::get\-Acc\-Number (
+\paragraph[{get\-Acc\-Number}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Acc\-Number} Account\-::get\-Acc\-Number (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -72,9 +80,13 @@ Define os valores internos da classe automaticamente.
 
 Método que retorna o valor contido no atributo acc\-Number. 
 
-O valor será retornado e o atributo não será modificado. \hypertarget{classAccount_a34e1f7e507d7abdf575e4833d6f8d36b}{\index{Account@{Account}!get\-Acc\-Type@{get\-Acc\-Type}}
+O valor será retornado e o atributo não será modificado. 
+
+Definition at line 133 of file Entity\-Unit.\-h.
+
+\hypertarget{classAccount_a34e1f7e507d7abdf575e4833d6f8d36b}{\index{Account@{Account}!get\-Acc\-Type@{get\-Acc\-Type}}
 \index{get\-Acc\-Type@{get\-Acc\-Type}!Account@{Account}}
-\subsubsection[{get\-Acc\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Acc\-Type} Account\-::get\-Acc\-Type (
+\paragraph[{get\-Acc\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Acc\-Type} Account\-::get\-Acc\-Type (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -83,9 +95,13 @@ O valor será retornado e o atributo não será modificado. \hypertarget{classAc
 
 Método que retorna o valor contido no atributo acc\-Type. 
 
-O valor será retornado e o atributo não será modificado. \hypertarget{classAccount_af9414bc748bf1923b2308544bbfd8b82}{\index{Account@{Account}!get\-Balance@{get\-Balance}}
+O valor será retornado e o atributo não será modificado. 
+
+Definition at line 121 of file Entity\-Unit.\-h.
+
+\hypertarget{classAccount_af9414bc748bf1923b2308544bbfd8b82}{\index{Account@{Account}!get\-Balance@{get\-Balance}}
 \index{get\-Balance@{get\-Balance}!Account@{Account}}
-\subsubsection[{get\-Balance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Money} Account\-::get\-Balance (
+\paragraph[{get\-Balance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Money} Account\-::get\-Balance (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -94,9 +110,13 @@ O valor será retornado e o atributo não será modificado. \hypertarget{classAc
 
 Método que retorna o valor contido no atributo balance. 
 
-O valor será retornado e o atributo não será modificado. \hypertarget{classAccount_ac67a380f5f320a44f9bb464f6efd59f7}{\index{Account@{Account}!get\-Limit@{get\-Limit}}
+O valor será retornado e o atributo não será modificado. 
+
+Definition at line 129 of file Entity\-Unit.\-h.
+
+\hypertarget{classAccount_ac67a380f5f320a44f9bb464f6efd59f7}{\index{Account@{Account}!get\-Limit@{get\-Limit}}
 \index{get\-Limit@{get\-Limit}!Account@{Account}}
-\subsubsection[{get\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Money} Account\-::get\-Limit (
+\paragraph[{get\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Money} Account\-::get\-Limit (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -105,9 +125,13 @@ O valor será retornado e o atributo não será modificado. \hypertarget{classAc
 
 Método que retorna o valor contido no atributo limit. 
 
-O valor será retornado e o atributo não será modificado. \hypertarget{classAccount_a59a83e5c5142f79402e79a8d42b36aed}{\index{Account@{Account}!get\-Usr\-Id@{get\-Usr\-Id}}
+O valor será retornado e o atributo não será modificado. 
+
+Definition at line 125 of file Entity\-Unit.\-h.
+
+\hypertarget{classAccount_a59a83e5c5142f79402e79a8d42b36aed}{\index{Account@{Account}!get\-Usr\-Id@{get\-Usr\-Id}}
 \index{get\-Usr\-Id@{get\-Usr\-Id}!Account@{Account}}
-\subsubsection[{get\-Usr\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usr\-Id} Account\-::get\-Usr\-Id (
+\paragraph[{get\-Usr\-Id}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Usr\-Id} Account\-::get\-Usr\-Id (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -116,9 +140,13 @@ O valor será retornado e o atributo não será modificado. \hypertarget{classAc
 
 Método que retorna o valor contido no atributo usr\-Id. 
 
-O valor será retornado e o atributo não será modificado. \hypertarget{classAccount_a3e669090168f13d2a8269af456546a1e}{\index{Account@{Account}!set\-Acc\-Number@{set\-Acc\-Number}}
+O valor será retornado e o atributo não será modificado. 
+
+Definition at line 117 of file Entity\-Unit.\-h.
+
+\hypertarget{classAccount_a3e669090168f13d2a8269af456546a1e}{\index{Account@{Account}!set\-Acc\-Number@{set\-Acc\-Number}}
 \index{set\-Acc\-Number@{set\-Acc\-Number}!Account@{Account}}
-\subsubsection[{set\-Acc\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Acc\-Number (
+\paragraph[{set\-Acc\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Acc\-Number (
 \begin{DoxyParamCaption}
 \item[{const {\bf Acc\-Number} \&}]{acc\-Number}
 \end{DoxyParamCaption}
@@ -127,9 +155,13 @@ O valor será retornado e o atributo não será modificado. \hypertarget{classAc
 
 Método que define o valor do atributo acc\-Number. 
 
+
+
+Definition at line 39 of file Entity\-Unit.\-cpp.
+
 \hypertarget{classAccount_a3a8e8aa0094b2af0496d45714f694256}{\index{Account@{Account}!set\-Acc\-Type@{set\-Acc\-Type}}
 \index{set\-Acc\-Type@{set\-Acc\-Type}!Account@{Account}}
-\subsubsection[{set\-Acc\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Acc\-Type (
+\paragraph[{set\-Acc\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Acc\-Type (
 \begin{DoxyParamCaption}
 \item[{const {\bf Acc\-Type} \&}]{acc\-Type}
 \end{DoxyParamCaption}
@@ -138,9 +170,13 @@ Método que define o valor do atributo acc\-Number.
 
 Método que define o valor do atributo acc\-Type. 
 
+
+
+Definition at line 43 of file Entity\-Unit.\-cpp.
+
 \hypertarget{classAccount_a0c54b27c54fd64b93d31aecdf7f3f302}{\index{Account@{Account}!set\-Balance@{set\-Balance}}
 \index{set\-Balance@{set\-Balance}!Account@{Account}}
-\subsubsection[{set\-Balance}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Balance (
+\paragraph[{set\-Balance}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Balance (
 \begin{DoxyParamCaption}
 \item[{const {\bf Money} \&}]{balance}
 \end{DoxyParamCaption}
@@ -149,9 +185,13 @@ Método que define o valor do atributo acc\-Type.
 
 Método que define o valor do atributo balance. 
 
+
+
+Definition at line 53 of file Entity\-Unit.\-cpp.
+
 \hypertarget{classAccount_ada9bd7d0aee82d5b6c8f9831eb6fd8d5}{\index{Account@{Account}!set\-Limit@{set\-Limit}}
 \index{set\-Limit@{set\-Limit}!Account@{Account}}
-\subsubsection[{set\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Limit (
+\paragraph[{set\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Limit (
 \begin{DoxyParamCaption}
 \item[{const {\bf Money} \&}]{limit}
 \end{DoxyParamCaption}
@@ -160,9 +200,13 @@ Método que define o valor do atributo balance.
 
 Método que define o valor do atributo limit. 
 
+
+
+Definition at line 48 of file Entity\-Unit.\-cpp.
+
 \hypertarget{classAccount_a97146ede9747001294bcd41c74abd67a}{\index{Account@{Account}!set\-Usr\-Id@{set\-Usr\-Id}}
 \index{set\-Usr\-Id@{set\-Usr\-Id}!Account@{Account}}
-\subsubsection[{set\-Usr\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Usr\-Id (
+\paragraph[{set\-Usr\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void Account\-::set\-Usr\-Id (
 \begin{DoxyParamCaption}
 \item[{const {\bf Usr\-Id} \&}]{usr\-Id}
 \end{DoxyParamCaption}
@@ -170,6 +214,10 @@ Método que define o valor do atributo limit.
 
 
 Método que define o valor do atributo usr\-Id. 
+
+
+
+Definition at line 58 of file Entity\-Unit.\-cpp.
 
 
 

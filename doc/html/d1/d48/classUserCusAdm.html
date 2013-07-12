@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">UnBanco
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">1.3</span>
    </div>
    <div id="projectbrief">Projeto de Banco para a disciplina de Programação Orientada a Objeto (2013.1)</div>
   </td>
@@ -62,7 +62,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="../../hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
@@ -90,38 +89,180 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">UserCusAdm Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Interface de interação entre a camada de apresentação e a camada de negócio responsável pela administração de dados de clientes.  
+ <a href="../../d1/d48/classUserCusAdm.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for UserCusAdm:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="../../d1/d48/classUserCusAdm.png" usemap="#UserCusAdm_map" alt=""/>
   <map id="UserCusAdm_map" name="UserCusAdm_map">
-<area href="../../d1/d9d/classStubUserCusAdm.html" alt="StubUserCusAdm" shape="rect" coords="0,56,110,80"/>
+<area href="../../d1/d9d/classStubUserCusAdm.html" title="Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração de da..." alt="StubUserCusAdm" shape="rect" coords="0,56,110,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa78ba1b0eb4f14ca68f8ef2318e9c3d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa78ba1b0eb4f14ca68f8ef2318e9c3d1"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>changePassword</b> (<a class="el" href="../../d9/d39/classUsrPassword.html">UsrPassword</a> *)=0  throw (PersError)</td></tr>
+<tr class="memitem:aa78ba1b0eb4f14ca68f8ef2318e9c3d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/classUserCusAdm.html#aa78ba1b0eb4f14ca68f8ef2318e9c3d1">changePassword</a> (<a class="el" href="../../d9/d39/classUsrPassword.html">UsrPassword</a> *)=0  throw (PersError)</td></tr>
+<tr class="memdesc:aa78ba1b0eb4f14ca68f8ef2318e9c3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica a senha do cliente.  <a href="#aa78ba1b0eb4f14ca68f8ef2318e9c3d1">More...</a><br/></td></tr>
 <tr class="separator:aa78ba1b0eb4f14ca68f8ef2318e9c3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc190444ef3834236b8057bc876ee106"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc190444ef3834236b8057bc876ee106"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>createCustomer</b> (<a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *, <a class="el" href="../../d9/d39/classUsrPassword.html">UsrPassword</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:afc190444ef3834236b8057bc876ee106"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/classUserCusAdm.html#afc190444ef3834236b8057bc876ee106">createCustomer</a> (<a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *, <a class="el" href="../../d9/d39/classUsrPassword.html">UsrPassword</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:afc190444ef3834236b8057bc876ee106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um cliente.  <a href="#afc190444ef3834236b8057bc876ee106">More...</a><br/></td></tr>
 <tr class="separator:afc190444ef3834236b8057bc876ee106"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6105bcc548efb475bae0bc36b58743a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6105bcc548efb475bae0bc36b58743a2"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>editCusName</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:a6105bcc548efb475bae0bc36b58743a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/classUserCusAdm.html#a6105bcc548efb475bae0bc36b58743a2">editCusName</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:a6105bcc548efb475bae0bc36b58743a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita o nome do cliente.  <a href="#a6105bcc548efb475bae0bc36b58743a2">More...</a><br/></td></tr>
 <tr class="separator:a6105bcc548efb475bae0bc36b58743a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a67bf25c965e931be912f33449e0f8a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8a67bf25c965e931be912f33449e0f8a"></a>
-virtual <a class="el" href="../../d9/d12/classCustomer.html">Customer</a>&#160;</td><td class="memItemRight" valign="bottom"><b>fetchCustomer</b> (<a class="el" href="../../d8/dc7/classUsrId.html">UsrId</a>)=0  throw (PersError)</td></tr>
+<tr class="memitem:a8a67bf25c965e931be912f33449e0f8a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d9/d12/classCustomer.html">Customer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/classUserCusAdm.html#a8a67bf25c965e931be912f33449e0f8a">fetchCustomer</a> (<a class="el" href="../../d8/dc7/classUsrId.html">UsrId</a>)=0  throw (PersError)</td></tr>
+<tr class="memdesc:a8a67bf25c965e931be912f33449e0f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera so dados do cliente.  <a href="#a8a67bf25c965e931be912f33449e0f8a">More...</a><br/></td></tr>
 <tr class="separator:a8a67bf25c965e931be912f33449e0f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface de interação entre a camada de apresentação e a camada de negócio responsável pela administração de dados de clientes. </p>
+
+<p>Definition at line <a class="el" href="../../d5/dfb/UserUnit_8h_source.html#l00105">105</a> of file <a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aa78ba1b0eb4f14ca68f8ef2318e9c3d1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserCusAdm::changePassword </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/d39/classUsrPassword.html">UsrPassword</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (<a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modifica a senha do cliente. </p>
+
+<p>Implemented in <a class="el" href="../../d1/d9d/classStubUserCusAdm.html#a7e44bec3dc4fb0640e6eb418dd8e8320">StubUserCusAdm</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc190444ef3834236b8057bc876ee106"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserCusAdm::createCustomer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d39/classUsrPassword.html">UsrPassword</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cria um cliente. </p>
+
+<p>Implemented in <a class="el" href="../../d1/d9d/classStubUserCusAdm.html#a53dc0deb3cf26a09c2814504b0daab63">StubUserCusAdm</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6105bcc548efb475bae0bc36b58743a2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void UserCusAdm::editCusName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Edita o nome do cliente. </p>
+
+<p>Implemented in <a class="el" href="../../d1/d9d/classStubUserCusAdm.html#a84ca3047ccb0ac2e371a23c4e4fcdba0">StubUserCusAdm</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8a67bf25c965e931be912f33449e0f8a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="../../d9/d12/classCustomer.html">Customer</a> UserCusAdm::fetchCustomer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d8/dc7/classUsrId.html">UsrId</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (<a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recupera so dados do cliente. </p>
+
+<p>Implemented in <a class="el" href="../../d1/d9d/classStubUserCusAdm.html#aac14b018a6284211b1c83c48a9529efe">StubUserCusAdm</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2013 10:29:12 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 10 2013 01:58:41 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

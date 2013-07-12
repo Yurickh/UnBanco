@@ -1,30 +1,125 @@
-\hypertarget{classTransacAdm}{\section{Transac\-Adm Class Reference}
+\hypertarget{classTransacAdm}{\subsection{Transac\-Adm Class Reference}
 \label{da/deb/classTransacAdm}\index{Transac\-Adm@{Transac\-Adm}}
 }
+
+
+Interface da camada de apresentação com o negócio responsável pela administração de dados de transação.  
+
+
+
+
+{\ttfamily \#include $<$Transac\-Unit.\-h$>$}
+
 Inheritance diagram for Transac\-Adm\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{da/deb/classTransacAdm}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classTransacAdm_a128750caeeec2cd48a4a01e6ce9f701c}{virtual void {\bfseries withdraw} (\hyperlink{classAccNumber}{Acc\-Number}, \hyperlink{classMoney}{Money} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{da/deb/classTransacAdm_a128750caeeec2cd48a4a01e6ce9f701c}
+virtual void \hyperlink{classTransacAdm_a128750caeeec2cd48a4a01e6ce9f701c}{withdraw} (\hyperlink{classAccNumber}{Acc\-Number}, \hyperlink{classMoney}{Money} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Executa a retirada de dinheiro. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classTransacAdm_a9b6ffc8a521600094eb13510edcb33d7}{deposit} (\hyperlink{classAccNumber}{Acc\-Number}, \hyperlink{classMoney}{Money} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Executa um depósito. \end{DoxyCompactList}\item 
+virtual \hyperlink{classPayCode}{Pay\-Code} $\ast$ \hyperlink{classTransacAdm_a6f350bc661f1a6460a31a0b02ccb8d3f}{schedule\-Payment} (\hyperlink{classAccNumber}{Acc\-Number}, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classPayDay}{Pay\-Day} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Agenda um pagamento. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classTransacAdm_a76f27b0fc9e604695c4c601839d3b441}{delete\-Payment} (\hyperlink{classPayCode}{Pay\-Code} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Deleta um pagamento agendado. \end{DoxyCompactList}\item 
+virtual list$<$ \hyperlink{classPayment}{Payment} $>$ \hyperlink{classTransacAdm_ab3c02884c14540c1f520339581e88371}{fetch\-Payment} (void)=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera uma lista de todos os pagamentos registrados. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\item 
-\hypertarget{classTransacAdm_a9b6ffc8a521600094eb13510edcb33d7}{virtual void {\bfseries deposit} (\hyperlink{classAccNumber}{Acc\-Number}, \hyperlink{classMoney}{Money} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{da/deb/classTransacAdm_a9b6ffc8a521600094eb13510edcb33d7}
 
-\item 
-\hypertarget{classTransacAdm_a6f350bc661f1a6460a31a0b02ccb8d3f}{virtual \hyperlink{classPayCode}{Pay\-Code} $\ast$ {\bfseries schedule\-Payment} (\hyperlink{classAccNumber}{Acc\-Number}, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classPayDay}{Pay\-Day} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{da/deb/classTransacAdm_a6f350bc661f1a6460a31a0b02ccb8d3f}
+\subsubsection{Detailed Description}
+Interface da camada de apresentação com o negócio responsável pela administração de dados de transação. 
 
-\item 
-\hypertarget{classTransacAdm_a76f27b0fc9e604695c4c601839d3b441}{virtual void {\bfseries delete\-Payment} (\hyperlink{classPayCode}{Pay\-Code} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{da/deb/classTransacAdm_a76f27b0fc9e604695c4c601839d3b441}
 
-\item 
-\hypertarget{classTransacAdm_ab3c02884c14540c1f520339581e88371}{virtual list$<$ \hyperlink{classPayment}{Payment} $>$ {\bfseries fetch\-Payment} (void)=0  throw (\-Pers\-Error)}\label{da/deb/classTransacAdm_ab3c02884c14540c1f520339581e88371}
 
-\end{DoxyCompactItemize}
+Definition at line 13 of file Transac\-Unit.\-h.
+
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classTransacAdm_a76f27b0fc9e604695c4c601839d3b441}{\index{Transac\-Adm@{Transac\-Adm}!delete\-Payment@{delete\-Payment}}
+\index{delete\-Payment@{delete\-Payment}!TransacAdm@{Transac\-Adm}}
+\paragraph[{delete\-Payment}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Transac\-Adm\-::delete\-Payment (
+\begin{DoxyParamCaption}
+\item[{{\bf Pay\-Code} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/deb/classTransacAdm_a76f27b0fc9e604695c4c601839d3b441}
+
+
+Deleta um pagamento agendado. 
+
+
+
+Implemented in \hyperlink{classStubTransacAdm_a734de9620871592c6d40b2c819c69650}{Stub\-Transac\-Adm}.
+
+\hypertarget{classTransacAdm_a9b6ffc8a521600094eb13510edcb33d7}{\index{Transac\-Adm@{Transac\-Adm}!deposit@{deposit}}
+\index{deposit@{deposit}!TransacAdm@{Transac\-Adm}}
+\paragraph[{deposit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Transac\-Adm\-::deposit (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number}}]{, }
+\item[{{\bf Money} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/deb/classTransacAdm_a9b6ffc8a521600094eb13510edcb33d7}
+
+
+Executa um depósito. 
+
+
+
+Implemented in \hyperlink{classStubTransacAdm_afc25824382e5ce8cd491a573b557bbc1}{Stub\-Transac\-Adm}.
+
+\hypertarget{classTransacAdm_ab3c02884c14540c1f520339581e88371}{\index{Transac\-Adm@{Transac\-Adm}!fetch\-Payment@{fetch\-Payment}}
+\index{fetch\-Payment@{fetch\-Payment}!TransacAdm@{Transac\-Adm}}
+\paragraph[{fetch\-Payment}]{\setlength{\rightskip}{0pt plus 5cm}virtual list$<${\bf Payment}$>$ Transac\-Adm\-::fetch\-Payment (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/deb/classTransacAdm_ab3c02884c14540c1f520339581e88371}
+
+
+Recupera uma lista de todos os pagamentos registrados. 
+
+
+
+Implemented in \hyperlink{classStubTransacAdm_a0896f821752fc696322bd58444a1d5ab}{Stub\-Transac\-Adm}.
+
+\hypertarget{classTransacAdm_a6f350bc661f1a6460a31a0b02ccb8d3f}{\index{Transac\-Adm@{Transac\-Adm}!schedule\-Payment@{schedule\-Payment}}
+\index{schedule\-Payment@{schedule\-Payment}!TransacAdm@{Transac\-Adm}}
+\paragraph[{schedule\-Payment}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Pay\-Code}$\ast$ Transac\-Adm\-::schedule\-Payment (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number}}]{, }
+\item[{{\bf Money} $\ast$}]{, }
+\item[{{\bf Pay\-Day} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/deb/classTransacAdm_a6f350bc661f1a6460a31a0b02ccb8d3f}
+
+
+Agenda um pagamento. 
+
+
+
+Implemented in \hyperlink{classStubTransacAdm_ad794a9d6f46b1f4d62aef292f8fed5f4}{Stub\-Transac\-Adm}.
+
+\hypertarget{classTransacAdm_a128750caeeec2cd48a4a01e6ce9f701c}{\index{Transac\-Adm@{Transac\-Adm}!withdraw@{withdraw}}
+\index{withdraw@{withdraw}!TransacAdm@{Transac\-Adm}}
+\paragraph[{withdraw}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Transac\-Adm\-::withdraw (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number}}]{, }
+\item[{{\bf Money} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/deb/classTransacAdm_a128750caeeec2cd48a4a01e6ce9f701c}
+
+
+Executa a retirada de dinheiro. 
+
+
+
+Implemented in \hyperlink{classStubTransacAdm_aa411e937e159c26aa50901aad504db42}{Stub\-Transac\-Adm}.
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

@@ -1,5 +1,7 @@
 #include "BaseTestUnit.h"
 
+/** Builder.
+	Cria e define as devidas ligações entre as camadas.*/
 int main()
 {
 	Test<string, UsrName> 		usrName;

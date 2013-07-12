@@ -1,33 +1,162 @@
-\hypertarget{classStubUserManAdm}{\section{Stub\-User\-Man\-Adm Class Reference}
+\hypertarget{classStubUserManAdm}{\subsection{Stub\-User\-Man\-Adm Class Reference}
 \label{dd/dfd/classStubUserManAdm}\index{Stub\-User\-Man\-Adm@{Stub\-User\-Man\-Adm}}
 }
+
+
+Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração de dados de gerentes.  
+
+
+
+
+{\ttfamily \#include $<$User\-Unit.\-h$>$}
+
 Inheritance diagram for Stub\-User\-Man\-Adm\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{dd/dfd/classStubUserManAdm}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classStubUserManAdm_a63130507e95ab092b0bf09704b13b6ec}{void {\bfseries change\-Password} (\hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (\-Pers\-Error)}\label{dd/dfd/classStubUserManAdm_a63130507e95ab092b0bf09704b13b6ec}
+void \hyperlink{classStubUserManAdm_a63130507e95ab092b0bf09704b13b6ec}{change\-Password} (\hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Modifica a senha do usuário. \end{DoxyCompactList}\item 
+void \hyperlink{classStubUserManAdm_ac833e3729b1adf46edf78376719acde5}{create\-Manager} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Cria um novo Gerente. \end{DoxyCompactList}\item 
+list$<$ \hyperlink{classManager}{Manager} $>$ \hyperlink{classStubUserManAdm_a5aa1a8d94912f9971f17bcd8a52dfa7c}{fetch\-Manager} (void)  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera uma lista com todos os gerentes registrados no sistema. \end{DoxyCompactList}\item 
+\hyperlink{classManager}{Manager} \hyperlink{classStubUserManAdm_a66bdd469d275154728c929e0581aaa71}{fetch\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric})  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera os dados de um gerente em específico. \end{DoxyCompactList}\item 
+void \hyperlink{classStubUserManAdm_ac1da713638e441434c8ec426be495a0b}{edit\-Man\-Name} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrName}{Usr\-Name} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Edita o nome de um gerente. \end{DoxyCompactList}\item 
+void \hyperlink{classStubUserManAdm_a45f93196f3de7a92ebd0688007b47e5f}{delete\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Deleta os dados de um gerente. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\item 
-\hypertarget{classStubUserManAdm_ac833e3729b1adf46edf78376719acde5}{void {\bfseries create\-Manager} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (\-Pers\-Error)}\label{dd/dfd/classStubUserManAdm_ac833e3729b1adf46edf78376719acde5}
 
-\item 
-\hypertarget{classStubUserManAdm_a5aa1a8d94912f9971f17bcd8a52dfa7c}{list$<$ \hyperlink{classManager}{Manager} $>$ {\bfseries fetch\-Manager} (void)  throw (\-Pers\-Error)}\label{dd/dfd/classStubUserManAdm_a5aa1a8d94912f9971f17bcd8a52dfa7c}
+\subsubsection{Detailed Description}
+Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração de dados de gerentes. 
 
-\item 
-\hypertarget{classStubUserManAdm_a66bdd469d275154728c929e0581aaa71}{\hyperlink{classManager}{Manager} {\bfseries fetch\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric})  throw (\-Pers\-Error)}\label{dd/dfd/classStubUserManAdm_a66bdd469d275154728c929e0581aaa71}
+Definition at line 91 of file User\-Unit.\-h.
 
-\item 
-\hypertarget{classStubUserManAdm_ac1da713638e441434c8ec426be495a0b}{void {\bfseries edit\-Man\-Name} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrName}{Usr\-Name} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)}\label{dd/dfd/classStubUserManAdm_ac1da713638e441434c8ec426be495a0b}
 
-\item 
-\hypertarget{classStubUserManAdm_a45f93196f3de7a92ebd0688007b47e5f}{void {\bfseries delete\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)}\label{dd/dfd/classStubUserManAdm_a45f93196f3de7a92ebd0688007b47e5f}
 
-\end{DoxyCompactItemize}
+\subsubsection{Member Function Documentation}
+\hypertarget{classStubUserManAdm_a63130507e95ab092b0bf09704b13b6ec}{\index{Stub\-User\-Man\-Adm@{Stub\-User\-Man\-Adm}!change\-Password@{change\-Password}}
+\index{change\-Password@{change\-Password}!StubUserManAdm@{Stub\-User\-Man\-Adm}}
+\paragraph[{change\-Password}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Man\-Adm\-::change\-Password (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dfd/classStubUserManAdm_a63130507e95ab092b0bf09704b13b6ec}
+
+
+Modifica a senha do usuário. 
+
+
+
+Implements \hyperlink{classUserManAdm_a75006ea396a6384bbf47918fe9316bce}{User\-Man\-Adm}.
+
+
+
+Definition at line 126 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserManAdm_ac833e3729b1adf46edf78376719acde5}{\index{Stub\-User\-Man\-Adm@{Stub\-User\-Man\-Adm}!create\-Manager@{create\-Manager}}
+\index{create\-Manager@{create\-Manager}!StubUserManAdm@{Stub\-User\-Man\-Adm}}
+\paragraph[{create\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Man\-Adm\-::create\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Name} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dfd/classStubUserManAdm_ac833e3729b1adf46edf78376719acde5}
+
+
+Cria um novo Gerente. 
+
+
+
+Implements \hyperlink{classUserManAdm_a4c1d61e8190867eb786cdf97083ba289}{User\-Man\-Adm}.
+
+
+
+Definition at line 133 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserManAdm_a45f93196f3de7a92ebd0688007b47e5f}{\index{Stub\-User\-Man\-Adm@{Stub\-User\-Man\-Adm}!delete\-Manager@{delete\-Manager}}
+\index{delete\-Manager@{delete\-Manager}!StubUserManAdm@{Stub\-User\-Man\-Adm}}
+\paragraph[{delete\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Man\-Adm\-::delete\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dfd/classStubUserManAdm_a45f93196f3de7a92ebd0688007b47e5f}
+
+
+Deleta os dados de um gerente. 
+
+
+
+Implements \hyperlink{classUserManAdm_a3fd6ddb6b71743fe5ece3100206023c3}{User\-Man\-Adm}.
+
+
+
+Definition at line 185 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserManAdm_ac1da713638e441434c8ec426be495a0b}{\index{Stub\-User\-Man\-Adm@{Stub\-User\-Man\-Adm}!edit\-Man\-Name@{edit\-Man\-Name}}
+\index{edit\-Man\-Name@{edit\-Man\-Name}!StubUserManAdm@{Stub\-User\-Man\-Adm}}
+\paragraph[{edit\-Man\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Man\-Adm\-::edit\-Man\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric} $\ast$}]{, }
+\item[{{\bf Usr\-Name} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dfd/classStubUserManAdm_ac1da713638e441434c8ec426be495a0b}
+
+
+Edita o nome de um gerente. 
+
+Sua matrícula não será afetada 
+
+Implements \hyperlink{classUserManAdm_a0440de1c9d712a8dac1aa4e526d0fe9b}{User\-Man\-Adm}.
+
+
+
+Definition at line 177 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserManAdm_a5aa1a8d94912f9971f17bcd8a52dfa7c}{\index{Stub\-User\-Man\-Adm@{Stub\-User\-Man\-Adm}!fetch\-Manager@{fetch\-Manager}}
+\index{fetch\-Manager@{fetch\-Manager}!StubUserManAdm@{Stub\-User\-Man\-Adm}}
+\paragraph[{fetch\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf Manager} $>$ Stub\-User\-Man\-Adm\-::fetch\-Manager (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dfd/classStubUserManAdm_a5aa1a8d94912f9971f17bcd8a52dfa7c}
+
+
+Recupera uma lista com todos os gerentes registrados no sistema. 
+
+
+
+Implements \hyperlink{classUserManAdm_a05b8b4f5b1e42b7b9f77d6a40b90dbb2}{User\-Man\-Adm}.
+
+
+
+Definition at line 139 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserManAdm_a66bdd469d275154728c929e0581aaa71}{\index{Stub\-User\-Man\-Adm@{Stub\-User\-Man\-Adm}!fetch\-Manager@{fetch\-Manager}}
+\index{fetch\-Manager@{fetch\-Manager}!StubUserManAdm@{Stub\-User\-Man\-Adm}}
+\paragraph[{fetch\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Manager} Stub\-User\-Man\-Adm\-::fetch\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric}}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{dd/dfd/classStubUserManAdm_a66bdd469d275154728c929e0581aaa71}
+
+
+Recupera os dados de um gerente em específico. 
+
+
+
+Implements \hyperlink{classUserManAdm_a62e826d1c11061df021016e94e88f9ba}{User\-Man\-Adm}.
+
+
+
+Definition at line 162 of file User\-Unit.\-cpp.
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}

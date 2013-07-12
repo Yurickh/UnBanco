@@ -1,39 +1,136 @@
-\hypertarget{classUserAccAdm}{\section{User\-Acc\-Adm Class Reference}
+\hypertarget{classUserAccAdm}{\subsection{User\-Acc\-Adm Class Reference}
 \label{dd/d35/classUserAccAdm}\index{User\-Acc\-Adm@{User\-Acc\-Adm}}
 }
-Inheritance diagram for User\-Acc\-Adm\-:\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=2.000000cm]{dd/d35/classUserAccAdm}
-\end{center}
-\end{figure}
-\subsection*{Public Member Functions}
+
+
+Interface de interação da camada de apresentação com a camada de negócio responsável pela administração dos dados de Contas.  
+
+
+
+
+{\ttfamily \#include $<$User\-Unit.\-h$>$}
+
+\subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classUserAccAdm_a23b313ce179890606746ab3a279bd833}{virtual void {\bfseries create\-Account} (\hyperlink{classUsrType}{Acc\-Type} $\ast$, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classMoney}{Money} $\ast$)=0  throw (\-Pers\-Error)}\label{dd/d35/classUserAccAdm_a23b313ce179890606746ab3a279bd833}
+virtual void \hyperlink{classUserAccAdm_a23b313ce179890606746ab3a279bd833}{create\-Account} (\hyperlink{classUsrType}{Acc\-Type} $\ast$, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classMoney}{Money} $\ast$)=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Cria uma conta. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserAccAdm_a8257788e5e7d125b7482e490a6d71550}{delete\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Deleta uma conta. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserAccAdm_ad9cdd01395ad7dd1b2c0887fe12b71b8}{block\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Bloqueia uma conta. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserAccAdm_ae179b3e21f336b325452eb3c0981b0d9}{unblock\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Desbloqueia uma conta. \end{DoxyCompactList}\item 
+virtual list$<$ \hyperlink{classAccount}{Account} $>$ \hyperlink{classUserAccAdm_aa84b9df92ad9e11b1d9c71e9350efdc7}{fetch\-Account} (void)=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera uma lista com todas as contas registradas. \end{DoxyCompactList}\item 
+virtual \hyperlink{classAccount}{Account} \hyperlink{classUserAccAdm_a5957dcbf58d30b171a6ca0967dacf2d9}{fetch\-Account} (\hyperlink{classAccNumber}{Acc\-Number})=0  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera os dados da conta de uma conta em específico. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserAccAdm_a80d61347b448e3ae9bdca4e02e65bcd1}{edit\-Acc\-Type} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrType}{Acc\-Type} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Edita o tipo de um conta. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classUserAccAdm_a43f0bb580d63a9c782e8c83417562a17}{edit\-Acc\-Limit} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classMoney}{Money} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Edita o Lilimite de uma conta. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\item 
-\hypertarget{classUserAccAdm_a8257788e5e7d125b7482e490a6d71550}{virtual void {\bfseries delete\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{dd/d35/classUserAccAdm_a8257788e5e7d125b7482e490a6d71550}
 
-\item 
-\hypertarget{classUserAccAdm_ad9cdd01395ad7dd1b2c0887fe12b71b8}{virtual void {\bfseries block\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{dd/d35/classUserAccAdm_ad9cdd01395ad7dd1b2c0887fe12b71b8}
+\subsubsection{Detailed Description}
+Interface de interação da camada de apresentação com a camada de negócio responsável pela administração dos dados de Contas. 
 
-\item 
-\hypertarget{classUserAccAdm_ae179b3e21f336b325452eb3c0981b0d9}{virtual void {\bfseries unblock\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{dd/d35/classUserAccAdm_ae179b3e21f336b325452eb3c0981b0d9}
+Definition at line 29 of file User\-Unit.\-h.
 
-\item 
-\hypertarget{classUserAccAdm_aa84b9df92ad9e11b1d9c71e9350efdc7}{virtual list$<$ \hyperlink{classAccount}{Account} $>$ {\bfseries fetch\-Account} (void)=0  throw (\-Pers\-Error)}\label{dd/d35/classUserAccAdm_aa84b9df92ad9e11b1d9c71e9350efdc7}
 
-\item 
-\hypertarget{classUserAccAdm_a5957dcbf58d30b171a6ca0967dacf2d9}{virtual \hyperlink{classAccount}{Account} {\bfseries fetch\-Account} (\hyperlink{classAccNumber}{Acc\-Number})=0  throw (\-Pers\-Error)}\label{dd/d35/classUserAccAdm_a5957dcbf58d30b171a6ca0967dacf2d9}
 
-\item 
-\hypertarget{classUserAccAdm_a80d61347b448e3ae9bdca4e02e65bcd1}{virtual void {\bfseries edit\-Acc\-Type} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrType}{Acc\-Type} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{dd/d35/classUserAccAdm_a80d61347b448e3ae9bdca4e02e65bcd1}
+\subsubsection{Member Function Documentation}
+\hypertarget{classUserAccAdm_ad9cdd01395ad7dd1b2c0887fe12b71b8}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!block\-Account@{block\-Account}}
+\index{block\-Account@{block\-Account}!UserAccAdm@{User\-Acc\-Adm}}
+\paragraph[{block\-Account}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Acc\-Adm\-::block\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_ad9cdd01395ad7dd1b2c0887fe12b71b8}
 
-\item 
-\hypertarget{classUserAccAdm_a43f0bb580d63a9c782e8c83417562a17}{virtual void {\bfseries edit\-Acc\-Limit} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classMoney}{Money} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)}\label{dd/d35/classUserAccAdm_a43f0bb580d63a9c782e8c83417562a17}
 
-\end{DoxyCompactItemize}
+Bloqueia uma conta. 
+
+\hypertarget{classUserAccAdm_a23b313ce179890606746ab3a279bd833}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!create\-Account@{create\-Account}}
+\index{create\-Account@{create\-Account}!UserAccAdm@{User\-Acc\-Adm}}
+\paragraph[{create\-Account}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Acc\-Adm\-::create\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Type} $\ast$}]{, }
+\item[{{\bf Money} $\ast$}]{, }
+\item[{{\bf Money} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_a23b313ce179890606746ab3a279bd833}
+
+
+Cria uma conta. 
+
+\hypertarget{classUserAccAdm_a8257788e5e7d125b7482e490a6d71550}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!delete\-Account@{delete\-Account}}
+\index{delete\-Account@{delete\-Account}!UserAccAdm@{User\-Acc\-Adm}}
+\paragraph[{delete\-Account}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Acc\-Adm\-::delete\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_a8257788e5e7d125b7482e490a6d71550}
+
+
+Deleta uma conta. 
+
+\hypertarget{classUserAccAdm_a43f0bb580d63a9c782e8c83417562a17}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!edit\-Acc\-Limit@{edit\-Acc\-Limit}}
+\index{edit\-Acc\-Limit@{edit\-Acc\-Limit}!UserAccAdm@{User\-Acc\-Adm}}
+\paragraph[{edit\-Acc\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Acc\-Adm\-::edit\-Acc\-Limit (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{, }
+\item[{{\bf Money} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_a43f0bb580d63a9c782e8c83417562a17}
+
+
+Edita o Lilimite de uma conta. 
+
+\hypertarget{classUserAccAdm_a80d61347b448e3ae9bdca4e02e65bcd1}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!edit\-Acc\-Type@{edit\-Acc\-Type}}
+\index{edit\-Acc\-Type@{edit\-Acc\-Type}!UserAccAdm@{User\-Acc\-Adm}}
+\paragraph[{edit\-Acc\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Acc\-Adm\-::edit\-Acc\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{, }
+\item[{{\bf Acc\-Type} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_a80d61347b448e3ae9bdca4e02e65bcd1}
+
+
+Edita o tipo de um conta. 
+
+\hypertarget{classUserAccAdm_aa84b9df92ad9e11b1d9c71e9350efdc7}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!fetch\-Account@{fetch\-Account}}
+\index{fetch\-Account@{fetch\-Account}!UserAccAdm@{User\-Acc\-Adm}}
+\paragraph[{fetch\-Account}]{\setlength{\rightskip}{0pt plus 5cm}virtual list$<${\bf Account}$>$ User\-Acc\-Adm\-::fetch\-Account (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_aa84b9df92ad9e11b1d9c71e9350efdc7}
+
+
+Recupera uma lista com todas as contas registradas. 
+
+\hypertarget{classUserAccAdm_a5957dcbf58d30b171a6ca0967dacf2d9}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!fetch\-Account@{fetch\-Account}}
+\index{fetch\-Account@{fetch\-Account}!UserAccAdm@{User\-Acc\-Adm}}
+\paragraph[{fetch\-Account}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Account} User\-Acc\-Adm\-::fetch\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number}}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_a5957dcbf58d30b171a6ca0967dacf2d9}
+
+
+Recupera os dados da conta de uma conta em específico. 
+
+\hypertarget{classUserAccAdm_ae179b3e21f336b325452eb3c0981b0d9}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!unblock\-Account@{unblock\-Account}}
+\index{unblock\-Account@{unblock\-Account}!UserAccAdm@{User\-Acc\-Adm}}
+\paragraph[{unblock\-Account}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Acc\-Adm\-::unblock\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_ae179b3e21f336b325452eb3c0981b0d9}
+
+
+Desbloqueia uma conta. 
+
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

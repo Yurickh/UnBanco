@@ -23,7 +23,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">UnBanco
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">1.3</span>
    </div>
    <div id="projectbrief">Projeto de Banco para a disciplina de Programação Orientada a Objeto (2013.1)</div>
   </td>
@@ -62,7 +62,6 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="../../annotated.html"><span>Class&#160;List</span></a></li>
-      <li><a href="../../classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="../../hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
       <li><a href="../../functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
@@ -90,42 +89,238 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="title">StubTransacAdm Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Stub utilizado para simular o funcionamento da camada de negócio.  
+ <a href="../../d9/d0f/classStubTransacAdm.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/d51/TransacUnit_8h_source.html">TransacUnit.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for StubTransacAdm:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="../../d9/d0f/classStubTransacAdm.png" usemap="#StubTransacAdm_map" alt=""/>
   <map id="StubTransacAdm_map" name="StubTransacAdm_map">
-<area href="../../da/deb/classTransacAdm.html" alt="TransacAdm" shape="rect" coords="0,0,108,24"/>
+<area href="../../da/deb/classTransacAdm.html" title="Interface da camada de apresentação com o negócio responsável pela administração de dados de transaçã..." alt="TransacAdm" shape="rect" coords="0,0,108,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa411e937e159c26aa50901aad504db42"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa411e937e159c26aa50901aad504db42"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>withdraw</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:aa411e937e159c26aa50901aad504db42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0f/classStubTransacAdm.html#aa411e937e159c26aa50901aad504db42">withdraw</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:aa411e937e159c26aa50901aad504db42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa a retirada de dinheiro.  <a href="#aa411e937e159c26aa50901aad504db42">More...</a><br/></td></tr>
 <tr class="separator:aa411e937e159c26aa50901aad504db42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc25824382e5ce8cd491a573b557bbc1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc25824382e5ce8cd491a573b557bbc1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deposit</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:afc25824382e5ce8cd491a573b557bbc1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0f/classStubTransacAdm.html#afc25824382e5ce8cd491a573b557bbc1">deposit</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:afc25824382e5ce8cd491a573b557bbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executa um depósito.  <a href="#afc25824382e5ce8cd491a573b557bbc1">More...</a><br/></td></tr>
 <tr class="separator:afc25824382e5ce8cd491a573b557bbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad794a9d6f46b1f4d62aef292f8fed5f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad794a9d6f46b1f4d62aef292f8fed5f4"></a>
-<a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>schedulePayment</b> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../dc/d17/classPayDay.html">PayDay</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:ad794a9d6f46b1f4d62aef292f8fed5f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0f/classStubTransacAdm.html#ad794a9d6f46b1f4d62aef292f8fed5f4">schedulePayment</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../dc/d17/classPayDay.html">PayDay</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:ad794a9d6f46b1f4d62aef292f8fed5f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agenda um pagamento.  <a href="#ad794a9d6f46b1f4d62aef292f8fed5f4">More...</a><br/></td></tr>
 <tr class="separator:ad794a9d6f46b1f4d62aef292f8fed5f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a734de9620871592c6d40b2c819c69650"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a734de9620871592c6d40b2c819c69650"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>deletePayment</b> (<a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memitem:a734de9620871592c6d40b2c819c69650"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0f/classStubTransacAdm.html#a734de9620871592c6d40b2c819c69650">deletePayment</a> (<a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:a734de9620871592c6d40b2c819c69650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleta um pagamento agendado.  <a href="#a734de9620871592c6d40b2c819c69650">More...</a><br/></td></tr>
 <tr class="separator:a734de9620871592c6d40b2c819c69650"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0896f821752fc696322bd58444a1d5ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0896f821752fc696322bd58444a1d5ab"></a>
-list&lt; <a class="el" href="../../d5/d5e/classPayment.html">Payment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>fetchPayment</b> (void)  throw (PersError)</td></tr>
+<tr class="memitem:a0896f821752fc696322bd58444a1d5ab"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="../../d5/d5e/classPayment.html">Payment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d0f/classStubTransacAdm.html#a0896f821752fc696322bd58444a1d5ab">fetchPayment</a> (void)  throw (PersError)</td></tr>
+<tr class="memdesc:a0896f821752fc696322bd58444a1d5ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera uma lista de todos os pagamentos registrados.  <a href="#a0896f821752fc696322bd58444a1d5ab">More...</a><br/></td></tr>
 <tr class="separator:a0896f821752fc696322bd58444a1d5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Stub utilizado para simular o funcionamento da camada de negócio. </p>
+
+<p>Definition at line <a class="el" href="../../db/d51/TransacUnit_8h_source.html#l00031">31</a> of file <a class="el" href="../../db/d51/TransacUnit_8h_source.html">TransacUnit.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a734de9620871592c6d40b2c819c69650"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubTransacAdm::deletePayment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deleta um pagamento agendado. </p>
+
+<p>Implements <a class="el" href="../../da/deb/classTransacAdm.html#a76f27b0fc9e604695c4c601839d3b441">TransacAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html">TransacUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afc25824382e5ce8cd491a573b557bbc1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubTransacAdm::deposit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executa um depósito. </p>
+
+<p>Implements <a class="el" href="../../da/deb/classTransacAdm.html#a9b6ffc8a521600094eb13510edcb33d7">TransacAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html#l00011">11</a> of file <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html">TransacUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0896f821752fc696322bd58444a1d5ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">list&lt; <a class="el" href="../../d5/d5e/classPayment.html">Payment</a> &gt; StubTransacAdm::fetchPayment </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (<a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recupera uma lista de todos os pagamentos registrados. </p>
+
+<p>Implements <a class="el" href="../../da/deb/classTransacAdm.html#ab3c02884c14540c1f520339581e88371">TransacAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html#l00037">37</a> of file <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html">TransacUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad794a9d6f46b1f4d62aef292f8fed5f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/d34/classPayCode.html">PayCode</a> * StubTransacAdm::schedulePayment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dc/d17/classPayDay.html">PayDay</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Agenda um pagamento. </p>
+
+<p>Implements <a class="el" href="../../da/deb/classTransacAdm.html#a6f350bc661f1a6460a31a0b02ccb8d3f">TransacAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html#l00019">19</a> of file <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html">TransacUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa411e937e159c26aa50901aad504db42"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubTransacAdm::withdraw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executa a retirada de dinheiro. </p>
+
+<p>Implements <a class="el" href="../../da/deb/classTransacAdm.html#a128750caeeec2cd48a4a01e6ce9f701c">TransacAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html#l00003">3</a> of file <a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html">TransacUnit.cpp</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="../../db/d51/TransacUnit_8h_source.html">TransacUnit.h</a></li>
-<li>TransacUnit.cpp</li>
+<li><a class="el" href="../../da/d4a/TransacUnit_8cpp_source.html">TransacUnit.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jul 6 2013 10:29:12 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Jul 10 2013 01:58:40 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

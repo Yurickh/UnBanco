@@ -1,21 +1,78 @@
-\hypertarget{classStubUserLogin}{\section{Stub\-User\-Login Class Reference}
+\hypertarget{classStubUserLogin}{\subsection{Stub\-User\-Login Class Reference}
 \label{d1/dbd/classStubUserLogin}\index{Stub\-User\-Login@{Stub\-User\-Login}}
 }
+
+
+Stub utilizado para simular o funcionamento da camada de negócio de login.  
+
+
+
+
+{\ttfamily \#include $<$User\-Unit.\-h$>$}
+
 Inheritance diagram for Stub\-User\-Login\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{d1/dbd/classStubUserLogin}
 \end{center}
 \end{figure}
-\subsection*{Public Member Functions}
+\subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classStubUserLogin_a9d84171d20e4e5dd9efb24cec9e61928}{\hyperlink{classUsrType}{Man\-Type} {\bfseries autent} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)}\label{d1/dbd/classStubUserLogin_a9d84171d20e4e5dd9efb24cec9e61928}
+\hyperlink{classUsrType}{Man\-Type} \hyperlink{classStubUserLogin_a9d84171d20e4e5dd9efb24cec9e61928}{autent} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Autentica um administrador / gerente. \end{DoxyCompactList}\item 
+void \hyperlink{classStubUserLogin_a27bea5e442f63d62863ea4db5553d5cd}{autent} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Autentica um cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
-\item 
-\hypertarget{classStubUserLogin_a27bea5e442f63d62863ea4db5553d5cd}{void {\bfseries autent} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)}\label{d1/dbd/classStubUserLogin_a27bea5e442f63d62863ea4db5553d5cd}
 
-\end{DoxyCompactItemize}
+\subsubsection{Detailed Description}
+Stub utilizado para simular o funcionamento da camada de negócio de login. 
+
+Definition at line 21 of file User\-Unit.\-h.
+
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classStubUserLogin_a9d84171d20e4e5dd9efb24cec9e61928}{\index{Stub\-User\-Login@{Stub\-User\-Login}!autent@{autent}}
+\index{autent@{autent}!StubUserLogin@{Stub\-User\-Login}}
+\paragraph[{autent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Man\-Type} Stub\-User\-Login\-::autent (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/dbd/classStubUserLogin_a9d84171d20e4e5dd9efb24cec9e61928}
+
+
+Autentica um administrador / gerente. 
+
+
+
+Implements \hyperlink{classUserLogin_a15141f463faedae30e40115658fcc0b9}{User\-Login}.
+
+
+
+Definition at line 7 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserLogin_a27bea5e442f63d62863ea4db5553d5cd}{\index{Stub\-User\-Login@{Stub\-User\-Login}!autent@{autent}}
+\index{autent@{autent}!StubUserLogin@{Stub\-User\-Login}}
+\paragraph[{autent}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Login\-::autent (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/dbd/classStubUserLogin_a27bea5e442f63d62863ea4db5553d5cd}
+
+
+Autentica um cliente. 
+
+
+
+Implements \hyperlink{classUserLogin_a7163b2b97915fd0e3e5d3f76c2af44da}{User\-Login}.
+
+
+
+Definition at line 23 of file User\-Unit.\-cpp.
+
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
