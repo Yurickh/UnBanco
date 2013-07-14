@@ -285,7 +285,7 @@ void MainAdmMenu::changePassword()
 
 		try
 		{
-			userAdm->changePassword(newPass);
+			userAdm->changePassword(session->getUsrMatric(), newPass);
 			session->setUsrPassword(newPass);
 			win->success("Senha modificada com sucesso.");
 			win->pause();
@@ -597,7 +597,7 @@ void MainManMenu::changePassword()
 
 		try
 		{
-			userAdm->changePassword(newPass);
+			userAdm->changePassword(session->getUsrMatric(), newPass);
 			session->setUsrPassword(newPass);
 			win->success("Senha modificada com sucesso.");
 			win->pause();
@@ -994,7 +994,8 @@ void MainManMenu::changeAccount()
 						}
 					} while (invalidNew);
 
-					cusAdm->editCusName(accNum, usrName);
+					UsrId usrId(accAdm->fetchAccount(session->getAccNumber()).getUsrId());
+					cusAdm->editCusName(&usrId, usrName);
 					delete usrName;
 				}
 				break;
@@ -1186,7 +1187,8 @@ void MainCusMenu::changePassword()
 
 		try
 		{
-			userAdm->changePassword(newPass);
+			UsrId usrId(accAdm->fetchAccount(session->getAccNumber()).getUsrId());
+			userAdm->changePassword(usrId, newPass);
 			session->setUsrPassword(newPass);
 			win->success("Senha modificada com sucesso.");
 			invalidEnd = false;

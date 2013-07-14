@@ -19,7 +19,7 @@ Inheritance diagram for User\-Man\-Adm\-:\begin{figure}[H]
 \subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{classUserManAdm_a75006ea396a6384bbf47918fe9316bce}{change\-Password} (\hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (\-Pers\-Error)
+virtual void \hyperlink{classUserManAdm_a063745d21053a5e071ce1f4c6a1c3c55}{change\-Password} (\hyperlink{classUsrMatric}{Usr\-Matric}, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (\-Pers\-Error)
 \begin{DoxyCompactList}\small\item\em Modifica a senha do usuário. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classUserManAdm_a4c1d61e8190867eb786cdf97083ba289}{create\-Manager} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)=0  throw (\-Pers\-Error)
 \begin{DoxyCompactList}\small\item\em Cria um novo Gerente. \end{DoxyCompactList}\item 
@@ -43,20 +43,21 @@ Definition at line 97 of file User\-Unit.\-h.
 
 
 \subsubsection{Member Function Documentation}
-\hypertarget{classUserManAdm_a75006ea396a6384bbf47918fe9316bce}{\index{User\-Man\-Adm@{User\-Man\-Adm}!change\-Password@{change\-Password}}
+\hypertarget{classUserManAdm_a063745d21053a5e071ce1f4c6a1c3c55}{\index{User\-Man\-Adm@{User\-Man\-Adm}!change\-Password@{change\-Password}}
 \index{change\-Password@{change\-Password}!UserManAdm@{User\-Man\-Adm}}
 \paragraph[{change\-Password}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Man\-Adm\-::change\-Password (
 \begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric}}]{, }
 \item[{{\bf Usr\-Password} $\ast$}]{}
 \end{DoxyParamCaption}
-)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/d86/classUserManAdm_a75006ea396a6384bbf47918fe9316bce}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{da/d86/classUserManAdm_a063745d21053a5e071ce1f4c6a1c3c55}
 
 
 Modifica a senha do usuário. 
 
 
 
-Implemented in \hyperlink{classStubUserManAdm_a63130507e95ab092b0bf09704b13b6ec}{Stub\-User\-Man\-Adm}.
+Implemented in \hyperlink{classStubUserManAdm_ab1f051d16d9284a2f7a5869afb85cd1a}{Stub\-User\-Man\-Adm}, and \hyperlink{classCtrlUserManAdm_a90fe4e0ab40e70992e28b0f56bcd76ac}{Ctrl\-User\-Man\-Adm}.
 
 \hypertarget{classUserManAdm_a4c1d61e8190867eb786cdf97083ba289}{\index{User\-Man\-Adm@{User\-Man\-Adm}!create\-Manager@{create\-Manager}}
 \index{create\-Manager@{create\-Manager}!UserManAdm@{User\-Man\-Adm}}
@@ -72,7 +73,7 @@ Cria um novo Gerente.
 
 
 
-Implemented in \hyperlink{classStubUserManAdm_ac833e3729b1adf46edf78376719acde5}{Stub\-User\-Man\-Adm}.
+Implemented in \hyperlink{classStubUserManAdm_ac833e3729b1adf46edf78376719acde5}{Stub\-User\-Man\-Adm}, and \hyperlink{classCtrlUserManAdm_ade392e40cc2b451590ef12b2af83674a}{Ctrl\-User\-Man\-Adm}.
 
 \hypertarget{classUserManAdm_a3fd6ddb6b71743fe5ece3100206023c3}{\index{User\-Man\-Adm@{User\-Man\-Adm}!delete\-Manager@{delete\-Manager}}
 \index{delete\-Manager@{delete\-Manager}!UserManAdm@{User\-Man\-Adm}}
@@ -87,7 +88,7 @@ Deleta os dados de um gerente.
 
 
 
-Implemented in \hyperlink{classStubUserManAdm_a45f93196f3de7a92ebd0688007b47e5f}{Stub\-User\-Man\-Adm}.
+Implemented in \hyperlink{classStubUserManAdm_a45f93196f3de7a92ebd0688007b47e5f}{Stub\-User\-Man\-Adm}, and \hyperlink{classCtrlUserManAdm_ab8a2c5188f0f90de9bf86d0e50a726e5}{Ctrl\-User\-Man\-Adm}.
 
 \hypertarget{classUserManAdm_a0440de1c9d712a8dac1aa4e526d0fe9b}{\index{User\-Man\-Adm@{User\-Man\-Adm}!edit\-Man\-Name@{edit\-Man\-Name}}
 \index{edit\-Man\-Name@{edit\-Man\-Name}!UserManAdm@{User\-Man\-Adm}}
@@ -103,7 +104,7 @@ Edita o nome de um gerente.
 
 Sua matrícula não será afetada 
 
-Implemented in \hyperlink{classStubUserManAdm_ac1da713638e441434c8ec426be495a0b}{Stub\-User\-Man\-Adm}.
+Implemented in \hyperlink{classStubUserManAdm_ac1da713638e441434c8ec426be495a0b}{Stub\-User\-Man\-Adm}, and \hyperlink{classCtrlUserManAdm_a114bc87d024079d6670f8880bd41c908}{Ctrl\-User\-Man\-Adm}.
 
 \hypertarget{classUserManAdm_a05b8b4f5b1e42b7b9f77d6a40b90dbb2}{\index{User\-Man\-Adm@{User\-Man\-Adm}!fetch\-Manager@{fetch\-Manager}}
 \index{fetch\-Manager@{fetch\-Manager}!UserManAdm@{User\-Man\-Adm}}
@@ -118,7 +119,7 @@ Recupera uma lista com todos os gerentes registrados no sistema.
 
 
 
-Implemented in \hyperlink{classStubUserManAdm_a5aa1a8d94912f9971f17bcd8a52dfa7c}{Stub\-User\-Man\-Adm}.
+Implemented in \hyperlink{classStubUserManAdm_a5aa1a8d94912f9971f17bcd8a52dfa7c}{Stub\-User\-Man\-Adm}, and \hyperlink{classCtrlUserManAdm_a65dc2eb59bff96b49f6b3bb06ee52fba}{Ctrl\-User\-Man\-Adm}.
 
 \hypertarget{classUserManAdm_a62e826d1c11061df021016e94e88f9ba}{\index{User\-Man\-Adm@{User\-Man\-Adm}!fetch\-Manager@{fetch\-Manager}}
 \index{fetch\-Manager@{fetch\-Manager}!UserManAdm@{User\-Man\-Adm}}
@@ -133,7 +134,7 @@ Recupera os dados de um gerente em específico.
 
 
 
-Implemented in \hyperlink{classStubUserManAdm_a66bdd469d275154728c929e0581aaa71}{Stub\-User\-Man\-Adm}.
+Implemented in \hyperlink{classStubUserManAdm_a66bdd469d275154728c929e0581aaa71}{Stub\-User\-Man\-Adm}, and \hyperlink{classCtrlUserManAdm_a45eba11162e5e9090575a8189184bb74}{Ctrl\-User\-Man\-Adm}.
 
 
 

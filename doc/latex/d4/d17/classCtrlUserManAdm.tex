@@ -1,0 +1,166 @@
+\hypertarget{classCtrlUserManAdm}{\subsection{Ctrl\-User\-Man\-Adm Class Reference}
+\label{d4/d17/classCtrlUserManAdm}\index{Ctrl\-User\-Man\-Adm@{Ctrl\-User\-Man\-Adm}}
+}
+
+
+Classe de negócio para administração de dados de Gerentes e Administradores.  
+
+
+
+
+{\ttfamily \#include $<$User\-Unit.\-h$>$}
+
+Inheritance diagram for Ctrl\-User\-Man\-Adm\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/d17/classCtrlUserManAdm}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCtrlUserManAdm_a90fe4e0ab40e70992e28b0f56bcd76ac}{change\-Password} (\hyperlink{classUsrMatric}{Usr\-Matric}, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Modifica a senha do usuário. \end{DoxyCompactList}\item 
+void \hyperlink{classCtrlUserManAdm_ade392e40cc2b451590ef12b2af83674a}{create\-Manager} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Cria um novo Gerente. \end{DoxyCompactList}\item 
+list$<$ \hyperlink{classManager}{Manager} $>$ \hyperlink{classCtrlUserManAdm_a65dc2eb59bff96b49f6b3bb06ee52fba}{fetch\-Manager} (void)  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera uma lista com todos os gerentes registrados no sistema. \end{DoxyCompactList}\item 
+\hyperlink{classManager}{Manager} \hyperlink{classCtrlUserManAdm_a45eba11162e5e9090575a8189184bb74}{fetch\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric})  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera os dados de um gerente em específico. \end{DoxyCompactList}\item 
+void \hyperlink{classCtrlUserManAdm_a114bc87d024079d6670f8880bd41c908}{edit\-Man\-Name} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrName}{Usr\-Name} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Edita o nome de um gerente. \end{DoxyCompactList}\item 
+void \hyperlink{classCtrlUserManAdm_ab8a2c5188f0f90de9bf86d0e50a726e5}{delete\-Manager} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Deleta os dados de um gerente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Classe de negócio para administração de dados de Gerentes e Administradores. 
+
+Definition at line 117 of file User\-Unit.\-h.
+
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classCtrlUserManAdm_a90fe4e0ab40e70992e28b0f56bcd76ac}{\index{Ctrl\-User\-Man\-Adm@{Ctrl\-User\-Man\-Adm}!change\-Password@{change\-Password}}
+\index{change\-Password@{change\-Password}!CtrlUserManAdm@{Ctrl\-User\-Man\-Adm}}
+\paragraph[{change\-Password}]{\setlength{\rightskip}{0pt plus 5cm}void Ctrl\-User\-Man\-Adm\-::change\-Password (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric}}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d4/d17/classCtrlUserManAdm_a90fe4e0ab40e70992e28b0f56bcd76ac}
+
+
+Modifica a senha do usuário. 
+
+
+
+Implements \hyperlink{classUserManAdm_a063745d21053a5e071ce1f4c6a1c3c55}{User\-Man\-Adm}.
+
+
+
+Definition at line 264 of file User\-Unit.\-cpp.
+
+\hypertarget{classCtrlUserManAdm_ade392e40cc2b451590ef12b2af83674a}{\index{Ctrl\-User\-Man\-Adm@{Ctrl\-User\-Man\-Adm}!create\-Manager@{create\-Manager}}
+\index{create\-Manager@{create\-Manager}!CtrlUserManAdm@{Ctrl\-User\-Man\-Adm}}
+\paragraph[{create\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}void Ctrl\-User\-Man\-Adm\-::create\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Name} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d4/d17/classCtrlUserManAdm_ade392e40cc2b451590ef12b2af83674a}
+
+
+Cria um novo Gerente. 
+
+
+
+Implements \hyperlink{classUserManAdm_a4c1d61e8190867eb786cdf97083ba289}{User\-Man\-Adm}.
+
+
+
+Definition at line 271 of file User\-Unit.\-cpp.
+
+\hypertarget{classCtrlUserManAdm_ab8a2c5188f0f90de9bf86d0e50a726e5}{\index{Ctrl\-User\-Man\-Adm@{Ctrl\-User\-Man\-Adm}!delete\-Manager@{delete\-Manager}}
+\index{delete\-Manager@{delete\-Manager}!CtrlUserManAdm@{Ctrl\-User\-Man\-Adm}}
+\paragraph[{delete\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}void Ctrl\-User\-Man\-Adm\-::delete\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d4/d17/classCtrlUserManAdm_ab8a2c5188f0f90de9bf86d0e50a726e5}
+
+
+Deleta os dados de um gerente. 
+
+
+
+Implements \hyperlink{classUserManAdm_a3fd6ddb6b71743fe5ece3100206023c3}{User\-Man\-Adm}.
+
+
+
+Definition at line 319 of file User\-Unit.\-cpp.
+
+\hypertarget{classCtrlUserManAdm_a114bc87d024079d6670f8880bd41c908}{\index{Ctrl\-User\-Man\-Adm@{Ctrl\-User\-Man\-Adm}!edit\-Man\-Name@{edit\-Man\-Name}}
+\index{edit\-Man\-Name@{edit\-Man\-Name}!CtrlUserManAdm@{Ctrl\-User\-Man\-Adm}}
+\paragraph[{edit\-Man\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Ctrl\-User\-Man\-Adm\-::edit\-Man\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric} $\ast$}]{, }
+\item[{{\bf Usr\-Name} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d4/d17/classCtrlUserManAdm_a114bc87d024079d6670f8880bd41c908}
+
+
+Edita o nome de um gerente. 
+
+Sua matrícula não será afetada 
+
+Implements \hyperlink{classUserManAdm_a0440de1c9d712a8dac1aa4e526d0fe9b}{User\-Man\-Adm}.
+
+
+
+Definition at line 306 of file User\-Unit.\-cpp.
+
+\hypertarget{classCtrlUserManAdm_a65dc2eb59bff96b49f6b3bb06ee52fba}{\index{Ctrl\-User\-Man\-Adm@{Ctrl\-User\-Man\-Adm}!fetch\-Manager@{fetch\-Manager}}
+\index{fetch\-Manager@{fetch\-Manager}!CtrlUserManAdm@{Ctrl\-User\-Man\-Adm}}
+\paragraph[{fetch\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf Manager} $>$ Ctrl\-User\-Man\-Adm\-::fetch\-Manager (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d4/d17/classCtrlUserManAdm_a65dc2eb59bff96b49f6b3bb06ee52fba}
+
+
+Recupera uma lista com todos os gerentes registrados no sistema. 
+
+
+
+Implements \hyperlink{classUserManAdm_a05b8b4f5b1e42b7b9f77d6a40b90dbb2}{User\-Man\-Adm}.
+
+
+
+Definition at line 288 of file User\-Unit.\-cpp.
+
+\hypertarget{classCtrlUserManAdm_a45eba11162e5e9090575a8189184bb74}{\index{Ctrl\-User\-Man\-Adm@{Ctrl\-User\-Man\-Adm}!fetch\-Manager@{fetch\-Manager}}
+\index{fetch\-Manager@{fetch\-Manager}!CtrlUserManAdm@{Ctrl\-User\-Man\-Adm}}
+\paragraph[{fetch\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Manager} Ctrl\-User\-Man\-Adm\-::fetch\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric}}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d4/d17/classCtrlUserManAdm_a45eba11162e5e9090575a8189184bb74}
+
+
+Recupera os dados de um gerente em específico. 
+
+
+
+Implements \hyperlink{classUserManAdm_a62e826d1c11061df021016e94e88f9ba}{User\-Man\-Adm}.
+
+
+
+Definition at line 297 of file User\-Unit.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+User\-Unit.\-h\item 
+User\-Unit.\-cpp\end{DoxyCompactItemize}

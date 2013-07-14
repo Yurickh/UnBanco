@@ -293,3 +293,97 @@ void PersEdtAccount :: execute(AccNumber* accNumber, Money* limit) throw (PersEr
 	if(accNumber->getValue() == 5)
 		throw PersError(PERS_ERROR_MSG);
 }
+
+void PersGetLatestMatric :: execute() throw (PersError)
+{
+	if(rand() % 2)
+		throw PersError(PERS_ERROR_MSG);
+
+	UsrMatric usrMatric(2);
+
+	returnList.push_back(usrMatric);
+}
+
+void PersNewManager :: execute(Manager* man) throw (PersError)
+{
+	if(man->getUsrMatric().getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersFetchManager :: execute() throw (PersError)
+{
+	if( rand() % 2)
+		throw PersError(PERS_ERROR_MSG);
+
+	UsrName n1Name("Giovana"), n2Name("Yurick"), n3Name("Andre");
+	UsrPassword n1Password("s2"), n2Password("eu"), n3Password("outro");
+	UsrMatric n1Matric(1), n2Matric(2), n3Matric(24);
+	ManType n1Type(NORMAL), n2Type(NORMAL), n3Type(NORMAL);
+
+	Manager n1(n1Name, n1Password, n1Type, n1Matric);
+	Manager n2(n2Name, n2Password, n2Type, n2Matric);
+	Manager n3(n3Name, n3Password, n3Type, n3Matric);
+
+	returnList.push_back(n1);
+	returnList.push_back(n2);
+	returnList.push_back(n3);
+}
+
+void PersEdtManager :: execute(UsrMatric* usrMatric, UsrName* newName) throw (PersError)
+{
+	if(usrMatric->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersDelManager :: execute(UsrMatric* usrMatric) throw (PersError)
+{
+	if(usrMatric->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersEdtManager :: execute(UsrMatric* usrMatric, UsrPassword* usrPassword) throw (PersError)
+{
+	if(usrMatric->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersGetCustomer :: execute(UsrName* usrName) throw (PersError)
+{
+	if(usrName->getValue() == "abacate")
+		throw PersError(PERS_ERROR_MSG);
+
+	UsrPassword usrPassword("senha");
+	UsrId usrId(4);
+
+	Customer cus(*usrName, usrPassword, usrId);
+
+	returnList.push_back(cus);
+}
+
+void PersNewCustomer :: execute(Customer* cus) throw (PersError)
+{
+	if(cus->getUsrId().getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersGetLatestId :: execute() throw (PersError)
+{
+	if(rand() % 2)
+		throw PersError(PERS_ERROR_MSG);
+
+	UsrId usrId(5);
+
+	returnList.push_back(usrId);
+}
+
+void PersEdtCustomer :: execute(UsrId* usrId, UsrName* usrName) throw (PersError)
+{
+	if(usrId->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersEdtCustomer :: execute(UsrId& usrId, UsrPassword& newPassword) throw (PersError)
+{
+	if(usrId.getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}

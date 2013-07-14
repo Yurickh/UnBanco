@@ -259,9 +259,78 @@ void StubUserAccAdm :: editAccLimit( AccNumber* accNumber, Money* accLimit ) thr
 		throw PersError(PERS_ERROR_MSG);
 }
 
+//=================CtrlUserManAdm======================
+
+void CtrlUserManAdm :: changePassword(UsrMatric usrMatric, UsrPassword* newPassword) throw (PersError)
+{
+	PersEdtManager edtManager;
+
+	edtManager.execute(&usrMatric, newPassword);
+}
+
+void CtrlUserManAdm :: createManager(UsrName* usrName, UsrPassword* usrPassword) throw (PersError)
+{
+	PersGetLatestMatric getLatestMatric;
+	PersNewManager newManager;
+
+	UsrMatric* usrMatric;
+	Manager* man;
+	ManType manType(NORMAL);
+
+	getLatestMatric.execute();
+	usrMatric = &(getLatestMatric.getResult().front());
+
+	man = new Manager(*usrName, *usrPassword, manType, *usrMatric);
+
+	newManager.execute(man);
+}
+
+list<Manager> CtrlUserManAdm :: fetchManager() throw (PersError)
+{
+	PersFetchManager fetchManager;
+
+	fetchManager.execute();
+
+	return fetchManager.getResult();
+}
+
+Manager CtrlUserManAdm :: fetchManager(UsrMatric matric) throw (PersError)
+{
+	PersGetManager getManager;
+
+	getManager.execute(&matric);
+
+	return getManager.getResult().front();
+}
+
+void CtrlUserManAdm :: editManName(UsrMatric* usrMatric, UsrName* usrName) throw (invalid_argument, PersError)
+{
+	PersGetManager getManager;
+	PersEdtManager edtManager;
+
+	getManager.execute(usrMatric);
+
+	if(getManager.getResult().empty())
+		throw invalid_argument("O gerente requisitado nao existe.");
+
+	edtManager.execute(usrMatric, usrName);
+}
+
+void CtrlUserManAdm :: deleteManager(UsrMatric* usrMatric) throw (invalid_argument, PersError)
+{
+	PersGetManager getManager;
+	PersDelManager delManager;
+
+	getManager.execute(usrMatric);
+
+	if(getManager.getResult().empty())
+		throw invalid_argument("O gerente requisitado nao existe.");
+
+	delManager.execute(usrMatric);
+}
 //=================StubUserManAdm======================
 
-void StubUserManAdm::changePassword(UsrPassword* newPassword) throw (PersError)
+void StubUserManAdm::changePassword(UsrMatric usrMatric, UsrPassword* newPassword) throw (PersError)
 {
 	if(newPassword->getValue() == "2")
 		throw PersError(PERS_ERROR_MSG);
@@ -328,9 +397,65 @@ void StubUserManAdm :: deleteManager(UsrMatric* usrMatric) throw (invalid_argume
 		throw PersError(PERS_ERROR_MSG);
 }
 
+
+//================CtrlUserCusAdm============================
+
+void CtrlUserCusAdm :: changePassword(UsrId usrId, UsrPassword* newPassword) throw (PersError)
+{
+	PersEdtCustomer edtCustomer;
+
+	edtCustomer.execute(usrId, *newPassword);
+}
+
+UsrId CtrlUserCusAdm :: createCustomer(UsrName* name, UsrPassword* pass) throw (invalid_argument, PersError)
+{
+	PersGetCustomer getCustomer;
+	PersNewCustomer newCustomer;
+	PersGetLatestId getLatestId;
+
+	UsrId* usrId;
+	Customer* cus;
+
+	getCustomer.execute(name);
+	if(!getCustomer.getResult().empty())
+		throw invalid_argument("Ja existe um cliente cadastrado com o nome requisitado");
+
+	getLatestId.execute();
+	usrId = &(getLatestId.getResult().front());
+
+	cus = new Customer(*name, *pass, *usrId);
+
+	newCustomer.execute(cus);
+
+	delete cus;
+
+	return *usrId;
+}
+
+void CtrlUserCusAdm :: editCusName(UsrId* usrId, UsrName* usrName) throw (invalid_argument, PersError)
+{
+	PersGetCustomer getCustomer;
+	PersEdtCustomer edtCustomer;
+
+	getCustomer.execute(*usrId);
+	if(getCustomer.getResult().empty())
+		throw invalid_argument("O usuario requisitado nao existe");
+
+	edtCustomer.execute(usrId, usrName);
+}
+
+Customer CtrlUserCusAdm :: fetchCustomer(UsrId id) throw (PersError)
+{
+	PersGetCustomer getCustomer;
+
+	getCustomer.execute(id);
+
+	return getCustomer.getResult().front();
+}
+
 //================StubUserCusAdm============================
 
-void StubUserCusAdm :: changePassword(UsrPassword* newPassword) throw (PersError)
+void StubUserCusAdm :: changePassword(UsrId usrId, UsrPassword* newPassword) throw (PersError)
 {
 	if(newPassword->getValue() == "2")
 		throw PersError(PERS_ERROR_MSG);
@@ -348,11 +473,11 @@ UsrId StubUserCusAdm :: createCustomer(UsrName* name, UsrPassword* pass) throw (
 	return usrId;
 }
 
-void StubUserCusAdm :: editCusName(AccNumber* accNumber, UsrName*  usrName) throw (invalid_argument, PersError)
+void StubUserCusAdm :: editCusName(UsrId* usrId, UsrName*  usrName) throw (invalid_argument, PersError)
 {
-	if(accNumber->getValue() == 1)
+	if(usrId->getValue() == 1)
 		throw invalid_argument("A conta requisitada nao existe");
-	if(accNumber->getValue() == 2)
+	if(usrId->getValue() == 2)
 		throw PersError(PERS_ERROR_MSG);
 }
 

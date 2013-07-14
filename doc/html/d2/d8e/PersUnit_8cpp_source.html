@@ -379,10 +379,104 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordflow">if</span>(accNumber-&gt;<a class="code" href="../../d5/db5/classUnitBase.html#a6b4041c7176acb6c4956e085603449d1" title="Método que recupera o valor do atributo value.">getValue</a>() == 5)</div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="keywordtype">void</span> PersGetLatestMatric :: execute() throw (PersError)</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;{</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">if</span>(rand() % 2)</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <a class="code" href="../../d4/d69/classUsrMatric.html" title="Define a matrícula de um Manager.">UsrMatric</a> usrMatric(2);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    returnList.push_back(usrMatric);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keywordtype">void</span> PersNewManager :: execute(<a class="code" href="../../dd/dcd/classManager.html" title="Gerente; Onde ficarão armazenados os dados de usuários com privilégios administrativos sobre o sistem...">Manager</a>* man) <span class="keywordflow">throw</span> (PersError)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordflow">if</span>(man-&gt;getUsrMatric().getValue() == 5)</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;}</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="keywordtype">void</span> PersFetchManager :: execute() throw (PersError)</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;{</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">if</span>( rand() % 2)</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="../../da/df7/classUsrName.html" title="Define o nome de um User (Customer ou Manager).">UsrName</a> n1Name(<span class="stringliteral">&quot;Giovana&quot;</span>), n2Name(<span class="stringliteral">&quot;Yurick&quot;</span>), n3Name(<span class="stringliteral">&quot;Andre&quot;</span>);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <a class="code" href="../../d9/d39/classUsrPassword.html" title="Define a senha de um User (Customer ou Manager).">UsrPassword</a> n1Password(<span class="stringliteral">&quot;s2&quot;</span>), n2Password(<span class="stringliteral">&quot;eu&quot;</span>), n3Password(<span class="stringliteral">&quot;outro&quot;</span>);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <a class="code" href="../../d4/d69/classUsrMatric.html" title="Define a matrícula de um Manager.">UsrMatric</a> n1Matric(1), n2Matric(2), n3Matric(24);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <a class="code" href="../../d1/dd4/classUsrType.html" title="Codifica tipos de conta.">ManType</a> n1Type(NORMAL), n2Type(NORMAL), n3Type(NORMAL);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="../../dd/dcd/classManager.html" title="Gerente; Onde ficarão armazenados os dados de usuários com privilégios administrativos sobre o sistem...">Manager</a> n1(n1Name, n1Password, n1Type, n1Matric);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="../../dd/dcd/classManager.html" title="Gerente; Onde ficarão armazenados os dados de usuários com privilégios administrativos sobre o sistem...">Manager</a> n2(n2Name, n2Password, n2Type, n2Matric);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="../../dd/dcd/classManager.html" title="Gerente; Onde ficarão armazenados os dados de usuários com privilégios administrativos sobre o sistem...">Manager</a> n3(n3Name, n3Password, n3Type, n3Matric);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    returnList.push_back(n1);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    returnList.push_back(n2);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    returnList.push_back(n3);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;}</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<span class="keywordtype">void</span> PersEdtManager :: execute(<a class="code" href="../../d4/d69/classUsrMatric.html" title="Define a matrícula de um Manager.">UsrMatric</a>* usrMatric, <a class="code" href="../../da/df7/classUsrName.html" title="Define o nome de um User (Customer ou Manager).">UsrName</a>* newName) <span class="keywordflow">throw</span> (PersError)</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;{</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keywordflow">if</span>(usrMatric-&gt;getValue() == 5)</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keywordtype">void</span> PersDelManager :: execute(<a class="code" href="../../d4/d69/classUsrMatric.html" title="Define a matrícula de um Manager.">UsrMatric</a>* usrMatric) <span class="keywordflow">throw</span> (PersError)</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="keywordflow">if</span>(usrMatric-&gt;getValue() == 5)</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;<span class="keywordtype">void</span> PersEdtManager :: execute(<a class="code" href="../../d4/d69/classUsrMatric.html" title="Define a matrícula de um Manager.">UsrMatric</a>* usrMatric, <a class="code" href="../../d9/d39/classUsrPassword.html" title="Define a senha de um User (Customer ou Manager).">UsrPassword</a>* usrPassword) <span class="keywordflow">throw</span> (PersError)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;{</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="keywordflow">if</span>(usrMatric-&gt;getValue() == 5)</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keywordtype">void</span> PersGetCustomer :: execute(<a class="code" href="../../da/df7/classUsrName.html" title="Define o nome de um User (Customer ou Manager).">UsrName</a>* usrName) <span class="keywordflow">throw</span> (PersError)</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;{</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordflow">if</span>(usrName-&gt;getValue() == <span class="stringliteral">&quot;abacate&quot;</span>)</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <a class="code" href="../../d9/d39/classUsrPassword.html" title="Define a senha de um User (Customer ou Manager).">UsrPassword</a> usrPassword(<span class="stringliteral">&quot;senha&quot;</span>);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <a class="code" href="../../d8/dc7/classUsrId.html" title="Define o ID de um Customer.">UsrId</a> usrId(4);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <a class="code" href="../../d9/d12/classCustomer.html" title="Cliente; Onde ficarão armazenados os dados do usuário padrão do sistema.">Customer</a> cus(*usrName, usrPassword, usrId);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    returnList.push_back(cus);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;}</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;<span class="keywordtype">void</span> PersNewCustomer :: execute(<a class="code" href="../../d9/d12/classCustomer.html" title="Cliente; Onde ficarão armazenados os dados do usuário padrão do sistema.">Customer</a>* cus) <span class="keywordflow">throw</span> (PersError)</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;{</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">if</span>(cus-&gt;getUsrId().getValue() == 5)</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="keywordtype">void</span> PersGetLatestId :: execute() throw (PersError)</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;{</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">if</span>(rand() % 2)</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <a class="code" href="../../d8/dc7/classUsrId.html" title="Define o ID de um Customer.">UsrId</a> usrId(5);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    returnList.push_back(usrId);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;<span class="keywordtype">void</span> PersEdtCustomer :: execute(<a class="code" href="../../d8/dc7/classUsrId.html" title="Define o ID de um Customer.">UsrId</a>* usrId, <a class="code" href="../../da/df7/classUsrName.html" title="Define o nome de um User (Customer ou Manager).">UsrName</a>* usrName) <span class="keywordflow">throw</span> (PersError)</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;{</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordflow">if</span>(usrId-&gt;<a class="code" href="../../d5/db5/classUnitBase.html#a6b4041c7176acb6c4956e085603449d1" title="Método que recupera o valor do atributo value.">getValue</a>() == 5)</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;<span class="keywordtype">void</span> PersEdtCustomer :: execute(<a class="code" href="../../d8/dc7/classUsrId.html" title="Define o ID de um Customer.">UsrId</a>&amp; usrId, <a class="code" href="../../d9/d39/classUsrPassword.html" title="Define a senha de um User (Customer ou Manager).">UsrPassword</a>&amp; newPassword) <span class="keywordflow">throw</span> (PersError)</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;{</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">if</span>(usrId.<a class="code" href="../../d5/db5/classUnitBase.html#a6b4041c7176acb6c4956e085603449d1" title="Método que recupera o valor do atributo value.">getValue</a>() == 5)</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 08:29:31 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 14 2013 11:25:44 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

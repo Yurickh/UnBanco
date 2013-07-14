@@ -19,11 +19,11 @@ Inheritance diagram for Stub\-User\-Cus\-Adm\-:\begin{figure}[H]
 \subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classStubUserCusAdm_a7e44bec3dc4fb0640e6eb418dd8e8320}{change\-Password} (\hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (\-Pers\-Error)
+void \hyperlink{classStubUserCusAdm_a2786aaadaffac84a859f992159ebecf8}{change\-Password} (\hyperlink{classUsrId}{Usr\-Id}, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (\-Pers\-Error)
 \begin{DoxyCompactList}\small\item\em Modifica a senha do cliente. \end{DoxyCompactList}\item 
 \hyperlink{classUsrId}{Usr\-Id} \hyperlink{classStubUserCusAdm_a6b0c9fc7280045d06bf263d7286b37e9}{create\-Customer} (\hyperlink{classUsrName}{Usr\-Name} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
 \begin{DoxyCompactList}\small\item\em Cria um cliente. \end{DoxyCompactList}\item 
-void \hyperlink{classStubUserCusAdm_a84ca3047ccb0ac2e371a23c4e4fcdba0}{edit\-Cus\-Name} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrName}{Usr\-Name} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+void \hyperlink{classStubUserCusAdm_a09db6dc02a43ff702efdc2341038df8e}{edit\-Cus\-Name} (\hyperlink{classUsrId}{Usr\-Id} $\ast$, \hyperlink{classUsrName}{Usr\-Name} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
 \begin{DoxyCompactList}\small\item\em Edita o nome do cliente. \end{DoxyCompactList}\item 
 \hyperlink{classCustomer}{Customer} \hyperlink{classStubUserCusAdm_aac14b018a6284211b1c83c48a9529efe}{fetch\-Customer} (\hyperlink{classUsrId}{Usr\-Id})  throw (\-Pers\-Error)
 \begin{DoxyCompactList}\small\item\em Recupera so dados do cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -32,29 +32,30 @@ void \hyperlink{classStubUserCusAdm_a84ca3047ccb0ac2e371a23c4e4fcdba0}{edit\-Cus
 \subsubsection{Detailed Description}
 Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração de dados de clientes. 
 
-Definition at line 145 of file User\-Unit.\-h.
+Definition at line 169 of file User\-Unit.\-h.
 
 
 
 \subsubsection{Member Function Documentation}
-\hypertarget{classStubUserCusAdm_a7e44bec3dc4fb0640e6eb418dd8e8320}{\index{Stub\-User\-Cus\-Adm@{Stub\-User\-Cus\-Adm}!change\-Password@{change\-Password}}
+\hypertarget{classStubUserCusAdm_a2786aaadaffac84a859f992159ebecf8}{\index{Stub\-User\-Cus\-Adm@{Stub\-User\-Cus\-Adm}!change\-Password@{change\-Password}}
 \index{change\-Password@{change\-Password}!StubUserCusAdm@{Stub\-User\-Cus\-Adm}}
 \paragraph[{change\-Password}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Cus\-Adm\-::change\-Password (
 \begin{DoxyParamCaption}
+\item[{{\bf Usr\-Id}}]{, }
 \item[{{\bf Usr\-Password} $\ast$}]{}
 \end{DoxyParamCaption}
-)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d9d/classStubUserCusAdm_a7e44bec3dc4fb0640e6eb418dd8e8320}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d9d/classStubUserCusAdm_a2786aaadaffac84a859f992159ebecf8}
 
 
 Modifica a senha do cliente. 
 
 
 
-Implements \hyperlink{classUserCusAdm_aa78ba1b0eb4f14ca68f8ef2318e9c3d1}{User\-Cus\-Adm}.
+Implements \hyperlink{classUserCusAdm_aed6d785e91a48c205df8c64736dbf3cf}{User\-Cus\-Adm}.
 
 
 
-Definition at line 333 of file User\-Unit.\-cpp.
+Definition at line 458 of file User\-Unit.\-cpp.
 
 \hypertarget{classStubUserCusAdm_a6b0c9fc7280045d06bf263d7286b37e9}{\index{Stub\-User\-Cus\-Adm@{Stub\-User\-Cus\-Adm}!create\-Customer@{create\-Customer}}
 \index{create\-Customer@{create\-Customer}!StubUserCusAdm@{Stub\-User\-Cus\-Adm}}
@@ -74,27 +75,27 @@ Implements \hyperlink{classUserCusAdm_a4775bb30caf44192349db204b95b2b2f}{User\-C
 
 
 
-Definition at line 339 of file User\-Unit.\-cpp.
+Definition at line 464 of file User\-Unit.\-cpp.
 
-\hypertarget{classStubUserCusAdm_a84ca3047ccb0ac2e371a23c4e4fcdba0}{\index{Stub\-User\-Cus\-Adm@{Stub\-User\-Cus\-Adm}!edit\-Cus\-Name@{edit\-Cus\-Name}}
+\hypertarget{classStubUserCusAdm_a09db6dc02a43ff702efdc2341038df8e}{\index{Stub\-User\-Cus\-Adm@{Stub\-User\-Cus\-Adm}!edit\-Cus\-Name@{edit\-Cus\-Name}}
 \index{edit\-Cus\-Name@{edit\-Cus\-Name}!StubUserCusAdm@{Stub\-User\-Cus\-Adm}}
 \paragraph[{edit\-Cus\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Cus\-Adm\-::edit\-Cus\-Name (
 \begin{DoxyParamCaption}
-\item[{{\bf Acc\-Number} $\ast$}]{, }
+\item[{{\bf Usr\-Id} $\ast$}]{, }
 \item[{{\bf Usr\-Name} $\ast$}]{}
 \end{DoxyParamCaption}
-)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d9d/classStubUserCusAdm_a84ca3047ccb0ac2e371a23c4e4fcdba0}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d1/d9d/classStubUserCusAdm_a09db6dc02a43ff702efdc2341038df8e}
 
 
 Edita o nome do cliente. 
 
 
 
-Implements \hyperlink{classUserCusAdm_a6105bcc548efb475bae0bc36b58743a2}{User\-Cus\-Adm}.
+Implements \hyperlink{classUserCusAdm_a2fffe3697904fb67ca285261276e1252}{User\-Cus\-Adm}.
 
 
 
-Definition at line 351 of file User\-Unit.\-cpp.
+Definition at line 476 of file User\-Unit.\-cpp.
 
 \hypertarget{classStubUserCusAdm_aac14b018a6284211b1c83c48a9529efe}{\index{Stub\-User\-Cus\-Adm@{Stub\-User\-Cus\-Adm}!fetch\-Customer@{fetch\-Customer}}
 \index{fetch\-Customer@{fetch\-Customer}!StubUserCusAdm@{Stub\-User\-Cus\-Adm}}
@@ -113,7 +114,7 @@ Implements \hyperlink{classUserCusAdm_a8a67bf25c965e931be912f33449e0f8a}{User\-C
 
 
 
-Definition at line 359 of file User\-Unit.\-cpp.
+Definition at line 484 of file User\-Unit.\-cpp.
 
 
 

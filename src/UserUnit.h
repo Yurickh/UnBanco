@@ -54,7 +54,7 @@ class UserAccAdm
 
 		/** Edita o tipo de um conta */
 		virtual void editAccType(AccNumber*, AccType*) throw (invalid_argument, PersError) = 0;
-		/** Edita o Lilimite de uma conta */
+		/** Edita o Limite de uma conta */
 		virtual void editAccLimit(AccNumber*, Money*) throw (invalid_argument, PersError) = 0;
 };
 
@@ -98,7 +98,7 @@ class UserManAdm
 {
 	public:
 		/** Modifica a senha do usuário */
-		virtual void changePassword(UsrPassword*) throw (PersError) = 0;
+		virtual void changePassword(UsrMatric, UsrPassword*) throw (PersError) = 0;
 		/** Cria um novo Gerente */
 		virtual void createManager(UsrName*, UsrPassword*) throw (PersError) = 0;
 
@@ -113,11 +113,25 @@ class UserManAdm
 		virtual void deleteManager(UsrMatric*) throw (invalid_argument, PersError) = 0;
 };
 
+/** Classe de negócio para administração de dados de Gerentes e Administradores */
+class CtrlUserManAdm : public UserManAdm
+{
+	public:
+		void changePassword(UsrMatric, UsrPassword*) throw (PersError);
+		void createManager(UsrName*, UsrPassword*) throw (PersError);
+
+		list<Manager> fetchManager(void) throw (PersError);
+		Manager fetchManager(UsrMatric) throw (PersError);
+
+		void editManName(UsrMatric*, UsrName*) throw (invalid_argument, PersError);
+		void deleteManager(UsrMatric*) throw (invalid_argument, PersError);
+};
+
 /** Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração de dados de gerentes*/
 class StubUserManAdm : public UserManAdm
 {
 	public:
-		void changePassword(UsrPassword*) throw (PersError);
+		void changePassword(UsrMatric, UsrPassword*) throw (PersError);
 		void createManager(UsrName*, UsrPassword*) throw (PersError);
 
 		list<Manager> fetchManager(void) throw (PersError);
@@ -132,22 +146,32 @@ class UserCusAdm
 {
 	public:
 		/** Modifica a senha do cliente */
-		virtual void changePassword(UsrPassword*) throw (PersError) = 0;
+		virtual void changePassword(UsrId, UsrPassword*) throw (PersError) = 0;
 		/** Cria um cliente. */
 		virtual UsrId createCustomer(UsrName*, UsrPassword*) throw (invalid_argument, PersError) = 0;
 		/** Edita o nome do cliente */		
-		virtual void editCusName(AccNumber*, UsrName*) throw (invalid_argument, PersError) = 0;
+		virtual void editCusName(UsrId*, UsrName*) throw (invalid_argument, PersError) = 0;
 		/** Recupera so dados do cliente */
 		virtual Customer fetchCustomer(UsrId) throw (PersError) = 0;
+};
+
+/** Classe de negócio responsável por administrar dados de clientes */
+class CtrlUserCusAdm : public UserCusAdm
+{
+	public:
+		void changePassword(UsrId, UsrPassword*) throw (PersError);
+		UsrId createCustomer(UsrName*, UsrPassword*) throw (invalid_argument, PersError);
+		void editCusName(UsrId*, UsrName*) throw (invalid_argument, PersError);
+		Customer fetchCustomer(UsrId) throw (PersError);
 };
 
 /** Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração de dados de clientes */
 class StubUserCusAdm : public UserCusAdm
 {
 	public:
-		void changePassword(UsrPassword*) throw (PersError);
+		void changePassword(UsrId, UsrPassword*) throw (PersError);
 		UsrId createCustomer(UsrName*, UsrPassword*) throw (invalid_argument, PersError);
-		void editCusName(AccNumber*, UsrName*) throw (invalid_argument, PersError);
+		void editCusName(UsrId*, UsrName*) throw (invalid_argument, PersError);
 		Customer fetchCustomer(UsrId) throw (PersError);
 };
 

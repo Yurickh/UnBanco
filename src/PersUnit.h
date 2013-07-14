@@ -102,12 +102,6 @@ class PersGetAccount : public StubPersUnit<Account>
 		void execute(AccNumber*) throw (PersError);
 };
 
-class PersGetCustomer : public StubPersUnit<Customer>
-{
-	public:
-		void execute(UsrId) throw (PersError);
-};
-
 class PersGetLatestNum : public StubPersUnit<AccNumber>
 {
 	public:
@@ -149,6 +143,63 @@ class PersEdtAccount : public StubPersUnit<Account>
 	public:
 		void execute(AccNumber*, AccType*) throw (PersError);
 		void execute(AccNumber*, Money*) throw (PersError);
+};
+
+class PersGetLatestMatric : public StubPersUnit<UsrMatric>
+{
+	public:
+		void execute() throw (PersError);
+};
+
+class PersNewManager : public StubPersUnit<Manager>
+{
+	public:
+		void execute(Manager*) throw (PersError);
+};
+
+class PersFetchManager : public StubPersUnit<Manager>
+{
+	public:
+		void execute() throw (PersError);
+};
+
+class PersEdtManager : public StubPersUnit<Manager>
+{
+	public:
+		void execute(UsrMatric*, UsrName*) throw (PersError);
+		void execute(UsrMatric*, UsrPassword*) throw (PersError);
+};
+
+class PersDelManager : public StubPersUnit<Manager>
+{
+	public:
+		void execute(UsrMatric*) throw (PersError);
+};
+
+class PersGetCustomer : public StubPersUnit<Customer>
+{
+	public:
+		void execute(UsrId) throw (PersError);
+		void execute(UsrName*) throw (PersError);
+};
+
+class PersNewCustomer : public StubPersUnit<Customer>
+{
+	public:
+		void execute(Customer*) throw (PersError);
+};
+
+class PersGetLatestId : public StubPersUnit<UsrId>
+{
+	public:
+		void execute() throw (PersError);
+};
+
+class PersEdtCustomer : public StubPersUnit<Customer>
+{
+	public:
+		void execute(UsrId*, UsrName*) throw (PersError);
+		void execute(UsrId&, UsrPassword&) throw (PersError);
 };
 
 #endif
