@@ -1,0 +1,81 @@
+\hypertarget{classCtrlUserLogin}{\subsection{Ctrl\-User\-Login Class Reference}
+\label{d0/d43/classCtrlUserLogin}\index{Ctrl\-User\-Login@{Ctrl\-User\-Login}}
+}
+
+
+Classe de negócio responsável por controlar os dados de login.  
+
+
+
+
+{\ttfamily \#include $<$User\-Unit.\-h$>$}
+
+Inheritance diagram for Ctrl\-User\-Login\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d0/d43/classCtrlUserLogin}
+\end{center}
+\end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUsrType}{Man\-Type} \hyperlink{classCtrlUserLogin_a023e4356e844e4824158ece586dbb07f}{autent} (\hyperlink{classUsrMatric}{Usr\-Matric} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Autentica um administrador / gerente. \end{DoxyCompactList}\item 
+void \hyperlink{classCtrlUserLogin_ae590a9174f5519037f92a7de7a2f9784}{autent} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrPassword}{Usr\-Password} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Autentica um cliente. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Classe de negócio responsável por controlar os dados de login. 
+
+Definition at line 21 of file User\-Unit.\-h.
+
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classCtrlUserLogin_a023e4356e844e4824158ece586dbb07f}{\index{Ctrl\-User\-Login@{Ctrl\-User\-Login}!autent@{autent}}
+\index{autent@{autent}!CtrlUserLogin@{Ctrl\-User\-Login}}
+\paragraph[{autent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Man\-Type} Ctrl\-User\-Login\-::autent (
+\begin{DoxyParamCaption}
+\item[{{\bf Usr\-Matric} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/d43/classCtrlUserLogin_a023e4356e844e4824158ece586dbb07f}
+
+
+Autentica um administrador / gerente. 
+
+
+
+Implements \hyperlink{classUserLogin_a15141f463faedae30e40115658fcc0b9}{User\-Login}.
+
+
+
+Definition at line 7 of file User\-Unit.\-cpp.
+
+\hypertarget{classCtrlUserLogin_ae590a9174f5519037f92a7de7a2f9784}{\index{Ctrl\-User\-Login@{Ctrl\-User\-Login}!autent@{autent}}
+\index{autent@{autent}!CtrlUserLogin@{Ctrl\-User\-Login}}
+\paragraph[{autent}]{\setlength{\rightskip}{0pt plus 5cm}void Ctrl\-User\-Login\-::autent (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{, }
+\item[{{\bf Usr\-Password} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d0/d43/classCtrlUserLogin_ae590a9174f5519037f92a7de7a2f9784}
+
+
+Autentica um cliente. 
+
+
+
+Implements \hyperlink{classUserLogin_a7163b2b97915fd0e3e5d3f76c2af44da}{User\-Login}.
+
+
+
+Definition at line 22 of file User\-Unit.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+User\-Unit.\-h\item 
+User\-Unit.\-cpp\end{DoxyCompactItemize}

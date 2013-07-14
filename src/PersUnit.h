@@ -89,4 +89,23 @@ class PersFetchPayment : public StubPersUnit<Payment>
 		void execute() throw (PersError);
 };
 
+/** Classe Command que retorna o Gerente/Administrador correspondente cadastrado sob a matrícula fornecida */
+class PersGetManager : public StubPersUnit<Manager>
+{
+	public:
+		void execute(UsrMatric*) throw (PersError);
+};
+
+class PersGetAccount : public StubPersUnit<Account>
+{
+	public:
+		void execute(AccNumber*) throw (PersError);
+};
+
+class PersGetCustomer : public StubPersUnit<Customer>
+{
+	public:
+		void execute(UsrId) throw (PersError);
+};
+
 #endif

@@ -17,6 +17,14 @@ class UserLogin
 		virtual void autent(AccNumber*, UsrPassword*) throw (invalid_argument, PersError) = 0;
 };
 
+/** Classe de negócio responsável por controlar os dados de login */
+class CtrlUserLogin : public UserLogin
+{
+	public:
+		ManType autent(UsrMatric*, UsrPassword*) throw (invalid_argument, PersError);
+		void autent(AccNumber*, UsrPassword*) throw (invalid_argument, PersError);
+};
+
 /** Stub utilizado para simular o funcionamento da camada de negócio de login */
 class StubUserLogin : public UserLogin
 {

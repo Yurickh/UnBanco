@@ -2,6 +2,9 @@ var searchData=
 [
   ['session',['Session',['../de/d41/classSession.html',1,'']]],
   ['stubpersunit',['StubPersUnit',['../d5/dfd/classStubPersUnit.html',1,'']]],
+  ['stubpersunit_3c_20account_20_3e',['StubPersUnit&lt; Account &gt;',['../d5/dfd/classStubPersUnit.html',1,'']]],
+  ['stubpersunit_3c_20customer_20_3e',['StubPersUnit&lt; Customer &gt;',['../d5/dfd/classStubPersUnit.html',1,'']]],
+  ['stubpersunit_3c_20manager_20_3e',['StubPersUnit&lt; Manager &gt;',['../d5/dfd/classStubPersUnit.html',1,'']]],
   ['stubpersunit_3c_20money_20_3e',['StubPersUnit&lt; Money &gt;',['../d5/dfd/classStubPersUnit.html',1,'']]],
   ['stubpersunit_3c_20paycode_20_3e',['StubPersUnit&lt; PayCode &gt;',['../d5/dfd/classStubPersUnit.html',1,'']]],
   ['stubpersunit_3c_20payment_20_3e',['StubPersUnit&lt; Payment &gt;',['../d5/dfd/classStubPersUnit.html',1,'']]],

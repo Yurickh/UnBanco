@@ -116,3 +116,59 @@ void PersFetchPayment :: execute() throw (PersError)
 	returnList.push_back(*pay2);
 	returnList.push_back(*pay3);
 }
+
+void PersGetManager :: execute(UsrMatric* usrMatric) throw (PersError)
+{
+	if(usrMatric->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+
+	UsrName usrName("Yurick");
+	UsrPassword usrPassword("senha");
+	ManType* manType;
+
+	if(usrMatric->getValue() == 3)
+		manType = new ManType(ADMIN);
+	else
+		manType = new ManType(NORMAL);
+
+	Manager man(usrName, usrPassword, *manType, *usrMatric);
+
+	returnList.push_back(man);
+
+	delete manType;
+}
+
+void PersGetAccount :: execute(AccNumber* accNumber) throw (PersError)
+{
+	if(accNumber->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+
+	AccType* accType;
+	Money limit(400);
+	Money balance(200);
+	UsrId usrId(accNumber->getValue());
+
+	if(accNumber->getValue() == 3)
+		accType = new AccType(SPECIAL);
+	else
+		accType = new AccType(NORMAL);
+
+	Account acc(*accNumber, *accType, limit, balance, usrId);
+
+	returnList.push_back(acc);
+
+	delete accType;
+}
+
+void PersGetCustomer :: execute(UsrId usrId) throw (PersError)
+{
+	if(usrId.getValue() == 6)
+		throw PersError(PERS_ERROR_MSG);
+
+	UsrName usrName("Yurick");
+	UsrPassword usrPassword("senha");
+
+	Customer cus(usrName, usrPassword, usrId);
+
+	returnList.push_back(cus);
+}

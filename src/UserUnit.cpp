@@ -2,6 +2,41 @@
 
 #include <iostream>
 
+//===============CtrlUserLogin=====================
+
+ManType CtrlUserLogin::autent(UsrMatric* usrMatric, UsrPassword* usrPassword) throw (invalid_argument, PersError)
+{
+	Manager* man;
+
+	PersGetManager getManager;
+
+	getManager.execute(usrMatric);
+	man = &(getManager.getResult().front());
+
+	if(man->getPassword().getValue() != usrPassword->getValue())
+		throw invalid_argument("Login ou Senha incorretos");
+
+	return man->getManType();
+}
+
+void CtrlUserLogin :: autent(AccNumber* accNumber, UsrPassword* usrPassword) throw (invalid_argument, PersError)
+{
+	Customer* cus;
+	Account* acc;
+
+	PersGetAccount getAccount;
+	PersGetCustomer getCustomer;
+
+	getAccount.execute(accNumber);
+	acc = &(getAccount.getResult().front());
+
+	getCustomer.execute(acc->getUsrId());
+	cus = &(getCustomer.getResult().front());
+
+	if(cus->getPassword().getValue() != usrPassword->getValue())
+		throw invalid_argument("Login ou Senha incorretos");
+}
+
 //===============StubUserLogin=====================
 
 ManType StubUserLogin::autent(UsrMatric* usrMatric, UsrPassword* usrPassword) throw (invalid_argument, PersError)
