@@ -19,7 +19,7 @@ Inheritance diagram for User\-Acc\-Adm\-:\begin{figure}[H]
 \subsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{classUserAccAdm_a23b313ce179890606746ab3a279bd833}{create\-Account} (\hyperlink{classUsrType}{Acc\-Type} $\ast$, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classMoney}{Money} $\ast$)=0  throw (\-Pers\-Error)
+virtual void \hyperlink{classUserAccAdm_a8bf3fc2dc45a1f13dbd8388cc37a26a2}{create\-Account} (\hyperlink{classUsrType}{Acc\-Type} $\ast$, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classUsrId}{Usr\-Id})=0  throw (\-Pers\-Error)
 \begin{DoxyCompactList}\small\item\em Cria uma conta. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classUserAccAdm_a8257788e5e7d125b7482e490a6d71550}{delete\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
 \begin{DoxyCompactList}\small\item\em Deleta uma conta. \end{DoxyCompactList}\item 
@@ -56,18 +56,27 @@ Definition at line 37 of file User\-Unit.\-h.
 
 Bloqueia uma conta. 
 
-\hypertarget{classUserAccAdm_a23b313ce179890606746ab3a279bd833}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!create\-Account@{create\-Account}}
+
+
+Implemented in \hyperlink{classStubUserAccAdm_ac13ca4505d670a7bbb7c75d01b41a6d7}{Stub\-User\-Acc\-Adm}, and \hyperlink{classCtrlUserAccAdm_a31433e164de26c03becbc04f57c029ea}{Ctrl\-User\-Acc\-Adm}.
+
+\hypertarget{classUserAccAdm_a8bf3fc2dc45a1f13dbd8388cc37a26a2}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!create\-Account@{create\-Account}}
 \index{create\-Account@{create\-Account}!UserAccAdm@{User\-Acc\-Adm}}
 \paragraph[{create\-Account}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Acc\-Adm\-::create\-Account (
 \begin{DoxyParamCaption}
 \item[{{\bf Acc\-Type} $\ast$}]{, }
 \item[{{\bf Money} $\ast$}]{, }
-\item[{{\bf Money} $\ast$}]{}
+\item[{{\bf Money} $\ast$}]{, }
+\item[{{\bf Usr\-Id}}]{}
 \end{DoxyParamCaption}
-)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_a23b313ce179890606746ab3a279bd833}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{dd/d35/classUserAccAdm_a8bf3fc2dc45a1f13dbd8388cc37a26a2}
 
 
 Cria uma conta. 
+
+
+
+Implemented in \hyperlink{classStubUserAccAdm_ad6104bb252dd2627c42b65c47d026021}{Stub\-User\-Acc\-Adm}, and \hyperlink{classCtrlUserAccAdm_aa08ff58074dc0cb37c4d878e04b34adc}{Ctrl\-User\-Acc\-Adm}.
 
 \hypertarget{classUserAccAdm_a8257788e5e7d125b7482e490a6d71550}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!delete\-Account@{delete\-Account}}
 \index{delete\-Account@{delete\-Account}!UserAccAdm@{User\-Acc\-Adm}}
@@ -79,6 +88,10 @@ Cria uma conta.
 
 
 Deleta uma conta. 
+
+
+
+Implemented in \hyperlink{classStubUserAccAdm_a6e95d2e9e35d658e581742e2d5e2fb60}{Stub\-User\-Acc\-Adm}, and \hyperlink{classCtrlUserAccAdm_aff45f0827b96208a4ccd6ae22610c5e3}{Ctrl\-User\-Acc\-Adm}.
 
 \hypertarget{classUserAccAdm_a43f0bb580d63a9c782e8c83417562a17}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!edit\-Acc\-Limit@{edit\-Acc\-Limit}}
 \index{edit\-Acc\-Limit@{edit\-Acc\-Limit}!UserAccAdm@{User\-Acc\-Adm}}
@@ -92,6 +105,10 @@ Deleta uma conta.
 
 Edita o Lilimite de uma conta. 
 
+
+
+Implemented in \hyperlink{classStubUserAccAdm_aecabe86701249ca43bf17b99425d778e}{Stub\-User\-Acc\-Adm}, and \hyperlink{classCtrlUserAccAdm_a91d3db6c6233065aff60cbc679116467}{Ctrl\-User\-Acc\-Adm}.
+
 \hypertarget{classUserAccAdm_a80d61347b448e3ae9bdca4e02e65bcd1}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!edit\-Acc\-Type@{edit\-Acc\-Type}}
 \index{edit\-Acc\-Type@{edit\-Acc\-Type}!UserAccAdm@{User\-Acc\-Adm}}
 \paragraph[{edit\-Acc\-Type}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Acc\-Adm\-::edit\-Acc\-Type (
@@ -104,6 +121,10 @@ Edita o Lilimite de uma conta.
 
 Edita o tipo de um conta. 
 
+
+
+Implemented in \hyperlink{classStubUserAccAdm_a87d5b9af315af47b0f47baf66f75d9f0}{Stub\-User\-Acc\-Adm}, and \hyperlink{classCtrlUserAccAdm_a76260af4ccd5301504a50adbead90129}{Ctrl\-User\-Acc\-Adm}.
+
 \hypertarget{classUserAccAdm_aa84b9df92ad9e11b1d9c71e9350efdc7}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!fetch\-Account@{fetch\-Account}}
 \index{fetch\-Account@{fetch\-Account}!UserAccAdm@{User\-Acc\-Adm}}
 \paragraph[{fetch\-Account}]{\setlength{\rightskip}{0pt plus 5cm}virtual list$<${\bf Account}$>$ User\-Acc\-Adm\-::fetch\-Account (
@@ -114,6 +135,10 @@ Edita o tipo de um conta.
 
 
 Recupera uma lista com todas as contas registradas. 
+
+
+
+Implemented in \hyperlink{classStubUserAccAdm_a29ba751355628d3e3a7ef1596b9b5108}{Stub\-User\-Acc\-Adm}, and \hyperlink{classCtrlUserAccAdm_a42e34f0780b86f393c25010e693450c2}{Ctrl\-User\-Acc\-Adm}.
 
 \hypertarget{classUserAccAdm_a5957dcbf58d30b171a6ca0967dacf2d9}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!fetch\-Account@{fetch\-Account}}
 \index{fetch\-Account@{fetch\-Account}!UserAccAdm@{User\-Acc\-Adm}}
@@ -126,6 +151,10 @@ Recupera uma lista com todas as contas registradas.
 
 Recupera os dados da conta de uma conta em específico. 
 
+
+
+Implemented in \hyperlink{classStubUserAccAdm_a05a1719f0ebfe4a2a7aed81505c82aba}{Stub\-User\-Acc\-Adm}, and \hyperlink{classCtrlUserAccAdm_a94e2637bedec766614095eee44bc9f38}{Ctrl\-User\-Acc\-Adm}.
+
 \hypertarget{classUserAccAdm_ae179b3e21f336b325452eb3c0981b0d9}{\index{User\-Acc\-Adm@{User\-Acc\-Adm}!unblock\-Account@{unblock\-Account}}
 \index{unblock\-Account@{unblock\-Account}!UserAccAdm@{User\-Acc\-Adm}}
 \paragraph[{unblock\-Account}]{\setlength{\rightskip}{0pt plus 5cm}virtual void User\-Acc\-Adm\-::unblock\-Account (
@@ -136,6 +165,10 @@ Recupera os dados da conta de uma conta em específico.
 
 
 Desbloqueia uma conta. 
+
+
+
+Implemented in \hyperlink{classStubUserAccAdm_ad21405e80f7a8a2ea6a094363d4819d4}{Stub\-User\-Acc\-Adm}, and \hyperlink{classCtrlUserAccAdm_ad129cb69fc2a73cfb40bd52063d4369e}{Ctrl\-User\-Acc\-Adm}.
 
 
 

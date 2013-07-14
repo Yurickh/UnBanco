@@ -64,9 +64,112 @@ void StubUserLogin::autent(AccNumber* accNumber, UsrPassword* usrPassword) throw
 		throw PersError(PERS_ERROR_MSG);
 }
 
+
+//=================CtrlUserAccAdm======================
+
+void CtrlUserAccAdm :: createAccount( AccType* accType, Money* limit, Money* balance, UsrId usrId) throw (PersError)
+{
+	PersGetLatestNum getLatestNum;
+	PersNewAccount newAccount;
+	AccNumber* accNumber;
+	Account* acc;
+
+	getLatestNum.execute();
+	accNumber = &(getLatestNum.getResult().front());
+
+	acc = new Account(*accNumber, *accType, *limit, *balance, usrId);
+
+	newAccount.execute(acc);
+
+	delete acc;
+}
+
+void CtrlUserAccAdm :: deleteAccount( AccNumber* accNumber ) throw (invalid_argument, PersError)
+{
+	PersDelAccount delAccount;
+	PersGetAccount getAccount;
+
+	getAccount.execute(accNumber);
+
+	if(getAccount.getResult().empty())
+		throw invalid_argument("A conta requisitada nao existe");
+
+	delAccount.execute(accNumber);
+}
+
+void CtrlUserAccAdm :: blockAccount(AccNumber* accNumber) throw (invalid_argument, PersError)
+{
+	PersBlkAccount blkAccount;
+	PersGetAccount getAccount;
+
+	getAccount.execute(accNumber);
+
+	if(getAccount.getResult().empty())
+		throw invalid_argument("A conta requisitada nao existe");
+
+	blkAccount.execute(accNumber);
+}
+
+list<Account> CtrlUserAccAdm :: fetchAccount() throw (PersError)
+{
+	PersFetchAccount fetchAccount;
+
+	fetchAccount.execute();
+
+	return fetchAccount.getResult();
+}
+
+Account CtrlUserAccAdm :: fetchAccount(AccNumber number) throw (PersError)
+{
+	PersGetAccount getAccount;
+
+	getAccount.execute(&number);
+
+	return getAccount.getResult().front();
+}
+
+void CtrlUserAccAdm :: unblockAccount( AccNumber* accNumber ) throw (invalid_argument, PersError)
+{
+	PersUblkAccount ublkAccount;
+	PersGetAccount getAccount;
+
+	getAccount.execute(accNumber);
+
+	if(getAccount.getResult().empty())
+		throw invalid_argument("A conta requisitada nao existe");
+
+	ublkAccount.execute(accNumber);
+}
+
+void CtrlUserAccAdm :: editAccType( AccNumber* accNumber, AccType* accType ) throw (invalid_argument, PersError )
+{
+	PersGetAccount getAccount;
+	PersEdtAccount edtAccount;
+
+	getAccount.execute(accNumber);
+
+	if(getAccount.getResult().empty())
+		throw invalid_argument("A conta requisitada nao existe");
+
+	edtAccount.execute(accNumber, accType);
+}
+
+void CtrlUserAccAdm :: editAccLimit( AccNumber* accNumber, Money* accLimit ) throw (invalid_argument, PersError )
+{
+	PersGetAccount getAccount;
+	PersEdtAccount edtAccount;
+
+	getAccount.execute(accNumber);
+
+	if(getAccount.getResult().empty())
+		throw invalid_argument("A conta requisitada nao existe");
+
+	edtAccount.execute(accNumber, accLimit);
+}
+
 //=================StubUserAccAdm======================
 
-void StubUserAccAdm :: createAccount( AccType* accType, Money* limit, Money* balance) throw (PersError)
+void StubUserAccAdm :: createAccount( AccType* accType, Money* limit, Money* balance, UsrId usrId) throw (PersError)
 {
 	if(limit->getValue() <= 100)
 		throw PersError(PERS_ERROR_MSG);
@@ -75,7 +178,7 @@ void StubUserAccAdm :: createAccount( AccType* accType, Money* limit, Money* bal
 void StubUserAccAdm :: deleteAccount( AccNumber* accNumber ) throw (invalid_argument, PersError)
 {
 	if(accNumber->getValue() == 1)
-		throw invalid_argument("A conta requisitada não existe");
+		throw invalid_argument("A conta requisitada nao existe");
 	if(accNumber->getValue() == 2)
 		throw PersError(PERS_ERROR_MSG);
 }
@@ -83,14 +186,14 @@ void StubUserAccAdm :: deleteAccount( AccNumber* accNumber ) throw (invalid_argu
 void StubUserAccAdm :: blockAccount( AccNumber* accNumber ) throw (invalid_argument, PersError)
 {
 	if(accNumber->getValue() == 1)
-		throw invalid_argument("A conta requisitada não existe");
+		throw invalid_argument("A conta requisitada nao existe");
 	if(accNumber->getValue() == 2)
 		throw PersError(PERS_ERROR_MSG);
 	if(accNumber->getValue() == 3)
 		throw invalid_argument("A conta requisitada ja esta bloqueada");
 }
 
-list<Account> StubUserAccAdm :: fetchAccount(void) throw (PersError)
+list<Account> StubUserAccAdm :: fetchAccount() throw (PersError)
 {
 	list<Account> accList;
 
@@ -233,12 +336,16 @@ void StubUserCusAdm :: changePassword(UsrPassword* newPassword) throw (PersError
 		throw PersError(PERS_ERROR_MSG);
 }
 
-void StubUserCusAdm :: createCustomer(UsrName* name, UsrPassword* pass) throw (invalid_argument, PersError)
+UsrId StubUserCusAdm :: createCustomer(UsrName* name, UsrPassword* pass) throw (invalid_argument, PersError)
 {
 	if(name->getValue() == "A")
 		throw invalid_argument("Este nome de usuario ja esta em uso");
 	if(name->getValue() == "B")
 		throw PersError(PERS_ERROR_MSG);
+
+	UsrId usrId(5);
+
+	return usrId;
 }
 
 void StubUserCusAdm :: editCusName(AccNumber* accNumber, UsrName*  usrName) throw (invalid_argument, PersError)

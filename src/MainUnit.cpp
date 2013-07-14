@@ -718,8 +718,7 @@ void MainManMenu::newAccount()
 
 		try
 		{
-			accAdm->createAccount(accType, accLim, accBal);
-			cusAdm->createCustomer(cusName, cusPass);
+			accAdm->createAccount(accType, accLim, accBal, cusAdm->createCustomer(cusName, cusPass));
 			invalidEnd = false;
 		} catch (invalid_argument except)
 		{

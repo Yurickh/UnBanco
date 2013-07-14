@@ -16,12 +16,191 @@ Inheritance diagram for Stub\-User\-Acc\-Adm\-:\begin{figure}[H]
 \includegraphics[height=2.000000cm]{d3/d88/classStubUserAccAdm}
 \end{center}
 \end{figure}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classStubUserAccAdm_ad6104bb252dd2627c42b65c47d026021}{create\-Account} (\hyperlink{classUsrType}{Acc\-Type} $\ast$, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classMoney}{Money} $\ast$, \hyperlink{classUsrId}{Usr\-Id})  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Cria uma conta. \end{DoxyCompactList}\item 
+void \hyperlink{classStubUserAccAdm_a6e95d2e9e35d658e581742e2d5e2fb60}{delete\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Deleta uma conta. \end{DoxyCompactList}\item 
+void \hyperlink{classStubUserAccAdm_ac13ca4505d670a7bbb7c75d01b41a6d7}{block\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Bloqueia uma conta. \end{DoxyCompactList}\item 
+void \hyperlink{classStubUserAccAdm_ad21405e80f7a8a2ea6a094363d4819d4}{unblock\-Account} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Desbloqueia uma conta. \end{DoxyCompactList}\item 
+list$<$ \hyperlink{classAccount}{Account} $>$ \hyperlink{classStubUserAccAdm_a29ba751355628d3e3a7ef1596b9b5108}{fetch\-Account} (void)  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera uma lista com todas as contas registradas. \end{DoxyCompactList}\item 
+\hyperlink{classAccount}{Account} \hyperlink{classStubUserAccAdm_a05a1719f0ebfe4a2a7aed81505c82aba}{fetch\-Account} (\hyperlink{classAccNumber}{Acc\-Number})  throw (\-Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Recupera os dados da conta de uma conta em específico. \end{DoxyCompactList}\item 
+void \hyperlink{classStubUserAccAdm_a87d5b9af315af47b0f47baf66f75d9f0}{edit\-Acc\-Type} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classUsrType}{Acc\-Type} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Edita o tipo de um conta. \end{DoxyCompactList}\item 
+void \hyperlink{classStubUserAccAdm_aecabe86701249ca43bf17b99425d778e}{edit\-Acc\-Limit} (\hyperlink{classAccNumber}{Acc\-Number} $\ast$, \hyperlink{classMoney}{Money} $\ast$)  throw (invalid\-\_\-argument, Pers\-Error)
+\begin{DoxyCompactList}\small\item\em Edita o Lilimite de uma conta. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsubsection{Detailed Description}
 Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração dos dados de contas. 
 
-Definition at line 62 of file User\-Unit.\-h.
+Definition at line 79 of file User\-Unit.\-h.
+
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classStubUserAccAdm_ac13ca4505d670a7bbb7c75d01b41a6d7}{\index{Stub\-User\-Acc\-Adm@{Stub\-User\-Acc\-Adm}!block\-Account@{block\-Account}}
+\index{block\-Account@{block\-Account}!StubUserAccAdm@{Stub\-User\-Acc\-Adm}}
+\paragraph[{block\-Account}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Acc\-Adm\-::block\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d88/classStubUserAccAdm_ac13ca4505d670a7bbb7c75d01b41a6d7}
+
+
+Bloqueia uma conta. 
+
+
+
+Implements \hyperlink{classUserAccAdm_ad9cdd01395ad7dd1b2c0887fe12b71b8}{User\-Acc\-Adm}.
+
+
+
+Definition at line 186 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserAccAdm_ad6104bb252dd2627c42b65c47d026021}{\index{Stub\-User\-Acc\-Adm@{Stub\-User\-Acc\-Adm}!create\-Account@{create\-Account}}
+\index{create\-Account@{create\-Account}!StubUserAccAdm@{Stub\-User\-Acc\-Adm}}
+\paragraph[{create\-Account}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Acc\-Adm\-::create\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Type} $\ast$}]{, }
+\item[{{\bf Money} $\ast$}]{, }
+\item[{{\bf Money} $\ast$}]{, }
+\item[{{\bf Usr\-Id}}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d88/classStubUserAccAdm_ad6104bb252dd2627c42b65c47d026021}
+
+
+Cria uma conta. 
+
+
+
+Implements \hyperlink{classUserAccAdm_a8bf3fc2dc45a1f13dbd8388cc37a26a2}{User\-Acc\-Adm}.
+
+
+
+Definition at line 172 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserAccAdm_a6e95d2e9e35d658e581742e2d5e2fb60}{\index{Stub\-User\-Acc\-Adm@{Stub\-User\-Acc\-Adm}!delete\-Account@{delete\-Account}}
+\index{delete\-Account@{delete\-Account}!StubUserAccAdm@{Stub\-User\-Acc\-Adm}}
+\paragraph[{delete\-Account}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Acc\-Adm\-::delete\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d88/classStubUserAccAdm_a6e95d2e9e35d658e581742e2d5e2fb60}
+
+
+Deleta uma conta. 
+
+
+
+Implements \hyperlink{classUserAccAdm_a8257788e5e7d125b7482e490a6d71550}{User\-Acc\-Adm}.
+
+
+
+Definition at line 178 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserAccAdm_aecabe86701249ca43bf17b99425d778e}{\index{Stub\-User\-Acc\-Adm@{Stub\-User\-Acc\-Adm}!edit\-Acc\-Limit@{edit\-Acc\-Limit}}
+\index{edit\-Acc\-Limit@{edit\-Acc\-Limit}!StubUserAccAdm@{Stub\-User\-Acc\-Adm}}
+\paragraph[{edit\-Acc\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Acc\-Adm\-::edit\-Acc\-Limit (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{, }
+\item[{{\bf Money} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d88/classStubUserAccAdm_aecabe86701249ca43bf17b99425d778e}
+
+
+Edita o Lilimite de uma conta. 
+
+
+
+Implements \hyperlink{classUserAccAdm_a43f0bb580d63a9c782e8c83417562a17}{User\-Acc\-Adm}.
+
+
+
+Definition at line 254 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserAccAdm_a87d5b9af315af47b0f47baf66f75d9f0}{\index{Stub\-User\-Acc\-Adm@{Stub\-User\-Acc\-Adm}!edit\-Acc\-Type@{edit\-Acc\-Type}}
+\index{edit\-Acc\-Type@{edit\-Acc\-Type}!StubUserAccAdm@{Stub\-User\-Acc\-Adm}}
+\paragraph[{edit\-Acc\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Acc\-Adm\-::edit\-Acc\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{, }
+\item[{{\bf Acc\-Type} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d88/classStubUserAccAdm_a87d5b9af315af47b0f47baf66f75d9f0}
+
+
+Edita o tipo de um conta. 
+
+
+
+Implements \hyperlink{classUserAccAdm_a80d61347b448e3ae9bdca4e02e65bcd1}{User\-Acc\-Adm}.
+
+
+
+Definition at line 246 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserAccAdm_a29ba751355628d3e3a7ef1596b9b5108}{\index{Stub\-User\-Acc\-Adm@{Stub\-User\-Acc\-Adm}!fetch\-Account@{fetch\-Account}}
+\index{fetch\-Account@{fetch\-Account}!StubUserAccAdm@{Stub\-User\-Acc\-Adm}}
+\paragraph[{fetch\-Account}]{\setlength{\rightskip}{0pt plus 5cm}list$<$ {\bf Account} $>$ Stub\-User\-Acc\-Adm\-::fetch\-Account (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d88/classStubUserAccAdm_a29ba751355628d3e3a7ef1596b9b5108}
+
+
+Recupera uma lista com todas as contas registradas. 
+
+
+
+Implements \hyperlink{classUserAccAdm_aa84b9df92ad9e11b1d9c71e9350efdc7}{User\-Acc\-Adm}.
+
+
+
+Definition at line 196 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserAccAdm_a05a1719f0ebfe4a2a7aed81505c82aba}{\index{Stub\-User\-Acc\-Adm@{Stub\-User\-Acc\-Adm}!fetch\-Account@{fetch\-Account}}
+\index{fetch\-Account@{fetch\-Account}!StubUserAccAdm@{Stub\-User\-Acc\-Adm}}
+\paragraph[{fetch\-Account}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Account} Stub\-User\-Acc\-Adm\-::fetch\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number}}]{}
+\end{DoxyParamCaption}
+)  throw ({\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d88/classStubUserAccAdm_a05a1719f0ebfe4a2a7aed81505c82aba}
+
+
+Recupera os dados da conta de uma conta em específico. 
+
+
+
+Implements \hyperlink{classUserAccAdm_a5957dcbf58d30b171a6ca0967dacf2d9}{User\-Acc\-Adm}.
+
+
+
+Definition at line 220 of file User\-Unit.\-cpp.
+
+\hypertarget{classStubUserAccAdm_ad21405e80f7a8a2ea6a094363d4819d4}{\index{Stub\-User\-Acc\-Adm@{Stub\-User\-Acc\-Adm}!unblock\-Account@{unblock\-Account}}
+\index{unblock\-Account@{unblock\-Account}!StubUserAccAdm@{Stub\-User\-Acc\-Adm}}
+\paragraph[{unblock\-Account}]{\setlength{\rightskip}{0pt plus 5cm}void Stub\-User\-Acc\-Adm\-::unblock\-Account (
+\begin{DoxyParamCaption}
+\item[{{\bf Acc\-Number} $\ast$}]{}
+\end{DoxyParamCaption}
+)  throw (invalid\-\_\-argument, {\bf Pers\-Error})\hspace{0.3cm}{\ttfamily [virtual]}}}\label{d3/d88/classStubUserAccAdm_ad21405e80f7a8a2ea6a094363d4819d4}
+
+
+Desbloqueia uma conta. 
+
+
+
+Implements \hyperlink{classUserAccAdm_ae179b3e21f336b325452eb3c0981b0d9}{User\-Acc\-Adm}.
+
+
+
+Definition at line 236 of file User\-Unit.\-cpp.
 
 
 

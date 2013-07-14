@@ -38,7 +38,7 @@ class UserAccAdm
 {
 	public:
 		/** Cria uma conta. */
-		virtual void createAccount(AccType*, Money*, Money*) throw (PersError) = 0;
+		virtual void createAccount(AccType*, Money*, Money*, UsrId) throw (PersError) = 0;
 		/** Deleta uma conta */
 		virtual void deleteAccount(AccNumber*) throw (invalid_argument, PersError) = 0;
 
@@ -58,10 +58,28 @@ class UserAccAdm
 		virtual void editAccLimit(AccNumber*, Money*) throw (invalid_argument, PersError) = 0;
 };
 
+/** Classe de negócio responsável pela administração de dados de contas */
+class CtrlUserAccAdm : public UserAccAdm
+{
+	public:
+		void createAccount(AccType*, Money*, Money*, UsrId) throw (PersError);
+		void deleteAccount(AccNumber*) throw (invalid_argument, PersError);
+
+		void blockAccount(AccNumber*) throw (invalid_argument, PersError);
+		void unblockAccount(AccNumber*) throw (invalid_argument, PersError);
+
+		list<Account> fetchAccount(void) throw (PersError);
+		Account fetchAccount(AccNumber) throw (PersError);
+
+		void editAccType(AccNumber*, AccType*) throw (invalid_argument, PersError);
+		void editAccLimit(AccNumber*, Money*) throw (invalid_argument, PersError);
+};
+
 /** Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração dos dados de contas */
 class StubUserAccAdm : public UserAccAdm
 {
-		void createAccount(AccType*, Money*, Money*) throw (PersError);
+	public:
+		void createAccount(AccType*, Money*, Money*, UsrId) throw (PersError);
 		void deleteAccount(AccNumber*) throw (invalid_argument, PersError);
 
 		void blockAccount(AccNumber*) throw (invalid_argument, PersError);
@@ -116,7 +134,7 @@ class UserCusAdm
 		/** Modifica a senha do cliente */
 		virtual void changePassword(UsrPassword*) throw (PersError) = 0;
 		/** Cria um cliente. */
-		virtual void createCustomer(UsrName*, UsrPassword*) throw (invalid_argument, PersError) = 0;
+		virtual UsrId createCustomer(UsrName*, UsrPassword*) throw (invalid_argument, PersError) = 0;
 		/** Edita o nome do cliente */		
 		virtual void editCusName(AccNumber*, UsrName*) throw (invalid_argument, PersError) = 0;
 		/** Recupera so dados do cliente */
@@ -128,7 +146,7 @@ class StubUserCusAdm : public UserCusAdm
 {
 	public:
 		void changePassword(UsrPassword*) throw (PersError);
-		void createCustomer(UsrName*, UsrPassword*) throw (invalid_argument, PersError);
+		UsrId createCustomer(UsrName*, UsrPassword*) throw (invalid_argument, PersError);
 		void editCusName(AccNumber*, UsrName*) throw (invalid_argument, PersError);
 		Customer fetchCustomer(UsrId) throw (PersError);
 };

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['editacclimit',['editAccLimit',['../dd/d35/classUserAccAdm.html#a43f0bb580d63a9c782e8c83417562a17',1,'UserAccAdm']]],
-  ['editacctype',['editAccType',['../dd/d35/classUserAccAdm.html#a80d61347b448e3ae9bdca4e02e65bcd1',1,'UserAccAdm']]],
+  ['editacclimit',['editAccLimit',['../dd/d35/classUserAccAdm.html#a43f0bb580d63a9c782e8c83417562a17',1,'UserAccAdm::editAccLimit()'],['../db/d93/classCtrlUserAccAdm.html#a91d3db6c6233065aff60cbc679116467',1,'CtrlUserAccAdm::editAccLimit()'],['../d3/d88/classStubUserAccAdm.html#aecabe86701249ca43bf17b99425d778e',1,'StubUserAccAdm::editAccLimit()']]],
+  ['editacctype',['editAccType',['../dd/d35/classUserAccAdm.html#a80d61347b448e3ae9bdca4e02e65bcd1',1,'UserAccAdm::editAccType()'],['../db/d93/classCtrlUserAccAdm.html#a76260af4ccd5301504a50adbead90129',1,'CtrlUserAccAdm::editAccType()'],['../d3/d88/classStubUserAccAdm.html#a87d5b9af315af47b0f47baf66f75d9f0',1,'StubUserAccAdm::editAccType()']]],
   ['editcusname',['editCusName',['../d1/d48/classUserCusAdm.html#a6105bcc548efb475bae0bc36b58743a2',1,'UserCusAdm::editCusName()'],['../d1/d9d/classStubUserCusAdm.html#a84ca3047ccb0ac2e371a23c4e4fcdba0',1,'StubUserCusAdm::editCusName()']]],
   ['editmanname',['editManName',['../da/d86/classUserManAdm.html#a0440de1c9d712a8dac1aa4e526d0fe9b',1,'UserManAdm::editManName()'],['../dd/dfd/classStubUserManAdm.html#ac1da713638e441434c8ec426be495a0b',1,'StubUserManAdm::editManName()']]],
   ['error',['error',['../dc/dc4/classWindow.html#a2e661d42cd6e7b9c737530f4e34c87f1',1,'Window::error()'],['../de/da3/classTextual.html#a42ebc971370c4de20314ee33cd863cb3',1,'Textual::error()']]],

@@ -108,4 +108,47 @@ class PersGetCustomer : public StubPersUnit<Customer>
 		void execute(UsrId) throw (PersError);
 };
 
+class PersGetLatestNum : public StubPersUnit<AccNumber>
+{
+	public:
+		void execute() throw (PersError);
+};
+
+class PersNewAccount : public StubPersUnit<Account>
+{
+	public:
+		void execute(Account*) throw (PersError);
+};
+
+class PersDelAccount : public StubPersUnit<Account>
+{
+	public:
+		void execute(AccNumber*) throw (PersError);
+};
+
+class PersBlkAccount : public StubPersUnit<Account>
+{
+	public:
+		void execute(AccNumber*) throw (PersError);
+};
+
+class PersFetchAccount : public StubPersUnit<Account>
+{
+	public:
+		void execute() throw (PersError);
+};
+
+class PersUblkAccount : public StubPersUnit<Account>
+{
+	public:
+		void execute(AccNumber*) throw (PersError);
+};
+
+class PersEdtAccount : public StubPersUnit<Account>
+{
+	public:
+		void execute(AccNumber*, AccType*) throw (PersError);
+		void execute(AccNumber*, Money*) throw (PersError);
+};
+
 #endif

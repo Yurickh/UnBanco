@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unblockaccount',['unblockAccount',['../dd/d35/classUserAccAdm.html#ae179b3e21f336b325452eb3c0981b0d9',1,'UserAccAdm']]],
+  ['unblockaccount',['unblockAccount',['../dd/d35/classUserAccAdm.html#ae179b3e21f336b325452eb3c0981b0d9',1,'UserAccAdm::unblockAccount()'],['../db/d93/classCtrlUserAccAdm.html#ad129cb69fc2a73cfb40bd52063d4369e',1,'CtrlUserAccAdm::unblockAccount()'],['../d3/d88/classStubUserAccAdm.html#ad21405e80f7a8a2ea6a094363d4819d4',1,'StubUserAccAdm::unblockAccount()']]],
   ['unitbase',['UnitBase',['../d5/db5/classUnitBase.html',1,'']]],
   ['unitbase_3c_20bool_20_3e',['UnitBase&lt; bool &gt;',['../d5/db5/classUnitBase.html',1,'']]],
   ['unitbase_3c_20float_20_3e',['UnitBase&lt; float &gt;',['../d5/db5/classUnitBase.html',1,'']]],

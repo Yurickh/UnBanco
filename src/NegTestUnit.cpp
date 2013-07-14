@@ -28,7 +28,7 @@ int main()
 	admMenu		= new MainAdmMenu;
 	userLogin	= new CtrlUserLogin;
 	userManAdm	= new StubUserManAdm;
-	userAccAdm	= new StubUserAccAdm;
+	userAccAdm	= new CtrlUserAccAdm;
 	userCusAdm	= new StubUserCusAdm;
 	transacAdm	= new CtrlTransacAdm;
 

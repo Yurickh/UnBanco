@@ -100,15 +100,16 @@ Inheritance diagram for UserAccAdm:</div>
  <div class="center">
   <img src="../../dd/d35/classUserAccAdm.png" usemap="#UserAccAdm_map" alt=""/>
   <map id="UserAccAdm_map" name="UserAccAdm_map">
-<area href="../../d3/d88/classStubUserAccAdm.html" title="Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração dos d..." alt="StubUserAccAdm" shape="rect" coords="0,56,111,80"/>
+<area href="../../db/d93/classCtrlUserAccAdm.html" title="Classe de negócio responsável pela administração de dados de contas." alt="CtrlUserAccAdm" shape="rect" coords="0,56,111,80"/>
+<area href="../../d3/d88/classStubUserAccAdm.html" title="Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração dos d..." alt="StubUserAccAdm" shape="rect" coords="121,56,232,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a23b313ce179890606746ab3a279bd833"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#a23b313ce179890606746ab3a279bd833">createAccount</a> (<a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)=0  throw (PersError)</td></tr>
-<tr class="memdesc:a23b313ce179890606746ab3a279bd833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma conta.  <a href="#a23b313ce179890606746ab3a279bd833">More...</a><br/></td></tr>
-<tr class="separator:a23b313ce179890606746ab3a279bd833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf3fc2dc45a1f13dbd8388cc37a26a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#a8bf3fc2dc45a1f13dbd8388cc37a26a2">createAccount</a> (<a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../d8/dc7/classUsrId.html">UsrId</a>)=0  throw (PersError)</td></tr>
+<tr class="memdesc:a8bf3fc2dc45a1f13dbd8388cc37a26a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma conta.  <a href="#a8bf3fc2dc45a1f13dbd8388cc37a26a2">More...</a><br/></td></tr>
+<tr class="separator:a8bf3fc2dc45a1f13dbd8388cc37a26a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8257788e5e7d125b7482e490a6d71550"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d35/classUserAccAdm.html#a8257788e5e7d125b7482e490a6d71550">deleteAccount</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)=0  throw (invalid_argument, PersError)</td></tr>
 <tr class="memdesc:a8257788e5e7d125b7482e490a6d71550"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleta uma conta.  <a href="#a8257788e5e7d125b7482e490a6d71550">More...</a><br/></td></tr>
 <tr class="separator:a8257788e5e7d125b7482e490a6d71550"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,9 +161,11 @@ Public Member Functions</h2></td></tr>
 
 <p>Bloqueia uma conta. </p>
 
+<p>Implemented in <a class="el" href="../../d3/d88/classStubUserAccAdm.html#ac13ca4505d670a7bbb7c75d01b41a6d7">StubUserAccAdm</a>, and <a class="el" href="../../db/d93/classCtrlUserAccAdm.html#a31433e164de26c03becbc04f57c029ea">CtrlUserAccAdm</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a23b313ce179890606746ab3a279bd833"></a>
+<a class="anchor" id="a8bf3fc2dc45a1f13dbd8388cc37a26a2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -185,6 +188,12 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/dc7/classUsrId.html">UsrId</a>&#160;</td>
           <td class="paramname">&#160;</td>
         </tr>
         <tr>
@@ -201,6 +210,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Cria uma conta. </p>
+
+<p>Implemented in <a class="el" href="../../d3/d88/classStubUserAccAdm.html#ad6104bb252dd2627c42b65c47d026021">StubUserAccAdm</a>, and <a class="el" href="../../db/d93/classCtrlUserAccAdm.html#aa08ff58074dc0cb37c4d878e04b34adc">CtrlUserAccAdm</a>.</p>
 
 </div>
 </div>
@@ -227,6 +238,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Deleta uma conta. </p>
+
+<p>Implemented in <a class="el" href="../../d3/d88/classStubUserAccAdm.html#a6e95d2e9e35d658e581742e2d5e2fb60">StubUserAccAdm</a>, and <a class="el" href="../../db/d93/classCtrlUserAccAdm.html#aff45f0827b96208a4ccd6ae22610c5e3">CtrlUserAccAdm</a>.</p>
 
 </div>
 </div>
@@ -264,6 +277,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Edita o Lilimite de uma conta. </p>
 
+<p>Implemented in <a class="el" href="../../d3/d88/classStubUserAccAdm.html#aecabe86701249ca43bf17b99425d778e">StubUserAccAdm</a>, and <a class="el" href="../../db/d93/classCtrlUserAccAdm.html#a91d3db6c6233065aff60cbc679116467">CtrlUserAccAdm</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="a80d61347b448e3ae9bdca4e02e65bcd1"></a>
@@ -300,6 +315,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Edita o tipo de um conta. </p>
 
+<p>Implemented in <a class="el" href="../../d3/d88/classStubUserAccAdm.html#a87d5b9af315af47b0f47baf66f75d9f0">StubUserAccAdm</a>, and <a class="el" href="../../db/d93/classCtrlUserAccAdm.html#a76260af4ccd5301504a50adbead90129">CtrlUserAccAdm</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="aa84b9df92ad9e11b1d9c71e9350efdc7"></a>
@@ -325,6 +342,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Recupera uma lista com todas as contas registradas. </p>
+
+<p>Implemented in <a class="el" href="../../d3/d88/classStubUserAccAdm.html#a29ba751355628d3e3a7ef1596b9b5108">StubUserAccAdm</a>, and <a class="el" href="../../db/d93/classCtrlUserAccAdm.html#a42e34f0780b86f393c25010e693450c2">CtrlUserAccAdm</a>.</p>
 
 </div>
 </div>
@@ -352,6 +371,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Recupera os dados da conta de uma conta em específico. </p>
 
+<p>Implemented in <a class="el" href="../../d3/d88/classStubUserAccAdm.html#a05a1719f0ebfe4a2a7aed81505c82aba">StubUserAccAdm</a>, and <a class="el" href="../../db/d93/classCtrlUserAccAdm.html#a94e2637bedec766614095eee44bc9f38">CtrlUserAccAdm</a>.</p>
+
 </div>
 </div>
 <a class="anchor" id="ae179b3e21f336b325452eb3c0981b0d9"></a>
@@ -378,6 +399,8 @@ Public Member Functions</h2></td></tr>
 
 <p>Desbloqueia uma conta. </p>
 
+<p>Implemented in <a class="el" href="../../d3/d88/classStubUserAccAdm.html#ad21405e80f7a8a2ea6a094363d4819d4">StubUserAccAdm</a>, and <a class="el" href="../../db/d93/classCtrlUserAccAdm.html#ad129cb69fc2a73cfb40bd52063d4369e">CtrlUserAccAdm</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -386,7 +409,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 07:09:34 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 14 2013 08:29:31 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

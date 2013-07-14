@@ -177,54 +177,55 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="../../da/d8c/classPersDelPayment.html" title="Classe Command que deleta o registro de Payment relativo ao PayCode recebido.">PersDelPayment</a> delPayment;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    delPayment.execute(payCode);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="code" href="../../d9/d0f/classStubTransacAdm.html#a734de9620871592c6d40b2c819c69650">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d0f/classStubTransacAdm.html#a734de9620871592c6d40b2c819c69650" title="Deleta um pagamento agendado.">StubTransacAdm :: deletePayment</a>(<a class="code" href="../../d0/d34/classPayCode.html" title="Define um número de identificação para cada pagamento.">PayCode</a>* payCode) <span class="keywordflow">throw</span> (invalid_argument, <a class="code" href="../../da/dcf/classPersError.html" title="Classe de exceção para falhas de conexão ao database.">PersError</a>)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span>(payCode-&gt;getValue() == 2)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">throw</span> invalid_argument(<span class="stringliteral">&quot;O pagamento solicitado nao esta registrado.&quot;</span>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span>(payCode-&gt;getValue() == 1)</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/dcf/classPersError.html" title="Classe de exceção para falhas de conexão ao database.">PersError</a>(PERS_ERROR_MSG);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="code" href="../../db/d25/classCtrlTransacAdm.html#aa7e00879d0ad01b7cd6b3ad61d4d8c65">  104</a></span>&#160;list&lt;Payment&gt; <a class="code" href="../../db/d25/classCtrlTransacAdm.html#aa7e00879d0ad01b7cd6b3ad61d4d8c65" title="Recupera uma lista de todos os pagamentos registrados.">CtrlTransacAdm :: fetchPayment</a>() throw (<a class="code" href="../../da/dcf/classPersError.html" title="Classe de exceção para falhas de conexão ao database.">PersError</a>)</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    list&lt;Payment&gt; payList;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="../../d6/d08/classPersFetchPayment.html" title="Classe Command que retorna uma lista de pagamentos cadastrados no banco de dados.">PersFetchPayment</a> <a class="code" href="../../db/d25/classCtrlTransacAdm.html#aa7e00879d0ad01b7cd6b3ad61d4d8c65" title="Recupera uma lista de todos os pagamentos registrados.">fetchPayment</a>;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    fetchPayment.execute();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    payList = fetchPayment.getResult();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">return</span> payList;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="../../d9/d0f/classStubTransacAdm.html#a0896f821752fc696322bd58444a1d5ab">  116</a></span>&#160;list&lt;Payment&gt; <a class="code" href="../../d9/d0f/classStubTransacAdm.html#a0896f821752fc696322bd58444a1d5ab" title="Recupera uma lista de todos os pagamentos registrados.">StubTransacAdm :: fetchPayment</a>() throw (<a class="code" href="../../da/dcf/classPersError.html" title="Classe de exceção para falhas de conexão ao database.">PersError</a>)</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    list&lt;Payment&gt; payList;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="../../df/d00/classAccNumber.html" title="Define o número da conta de um Customer (Cliente).">AccNumber</a> accNum1(1), accNum2(2), accNum3(3);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="../../d0/d34/classPayCode.html" title="Define um número de identificação para cada pagamento.">PayCode</a>   payCode1(1), payCode2(2), payCode3(3);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="../../dc/d17/classPayDay.html" title="Define a data do pagamento.">PayDay</a> payDay1(4122017), payDay2(21042017), payDay3(25112017);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="../../d7/d9a/classMoney.html" title="Define o limite da conta de um Customer (Cliente).">Money</a> payVal1(10.25), payVal2(100.0), payVal3(318);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="../../d5/d5e/classPayment.html" title="Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.">Payment</a> n1(accNum1, payCode1, payDay1, payVal1);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="../../d5/d5e/classPayment.html" title="Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.">Payment</a> n2(accNum2, payCode2, payDay2, payVal2);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="../../d5/d5e/classPayment.html" title="Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.">Payment</a> n3(accNum3, payCode3, payDay3, payVal3);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">if</span>(!(rand()%2))</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    payList.push_back(n1);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    payList.push_back(n2);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    payList.push_back(n3);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">return</span> payList;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span>(delPayment.getResult().empty())</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">throw</span> invalid_argument(<span class="stringliteral">&quot;A conta requisitada nao existe&quot;</span>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="../../d9/d0f/classStubTransacAdm.html#a734de9620871592c6d40b2c819c69650">   99</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d9/d0f/classStubTransacAdm.html#a734de9620871592c6d40b2c819c69650" title="Deleta um pagamento agendado.">StubTransacAdm :: deletePayment</a>(<a class="code" href="../../d0/d34/classPayCode.html" title="Define um número de identificação para cada pagamento.">PayCode</a>* payCode) <span class="keywordflow">throw</span> (invalid_argument, <a class="code" href="../../da/dcf/classPersError.html" title="Classe de exceção para falhas de conexão ao database.">PersError</a>)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span>(payCode-&gt;getValue() == 2)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">throw</span> invalid_argument(<span class="stringliteral">&quot;O pagamento solicitado nao esta registrado.&quot;</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">if</span>(payCode-&gt;getValue() == 1)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../da/dcf/classPersError.html" title="Classe de exceção para falhas de conexão ao database.">PersError</a>(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="code" href="../../db/d25/classCtrlTransacAdm.html#aa7e00879d0ad01b7cd6b3ad61d4d8c65">  107</a></span>&#160;list&lt;Payment&gt; <a class="code" href="../../db/d25/classCtrlTransacAdm.html#aa7e00879d0ad01b7cd6b3ad61d4d8c65" title="Recupera uma lista de todos os pagamentos registrados.">CtrlTransacAdm :: fetchPayment</a>() throw (<a class="code" href="../../da/dcf/classPersError.html" title="Classe de exceção para falhas de conexão ao database.">PersError</a>)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="../../d6/d08/classPersFetchPayment.html" title="Classe Command que retorna uma lista de pagamentos cadastrados no banco de dados.">PersFetchPayment</a> <a class="code" href="../../db/d25/classCtrlTransacAdm.html#aa7e00879d0ad01b7cd6b3ad61d4d8c65" title="Recupera uma lista de todos os pagamentos registrados.">fetchPayment</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    fetchPayment.execute();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> fetchPayment.getResult();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="../../d9/d0f/classStubTransacAdm.html#a0896f821752fc696322bd58444a1d5ab">  117</a></span>&#160;list&lt;Payment&gt; <a class="code" href="../../d9/d0f/classStubTransacAdm.html#a0896f821752fc696322bd58444a1d5ab" title="Recupera uma lista de todos os pagamentos registrados.">StubTransacAdm :: fetchPayment</a>() throw (<a class="code" href="../../da/dcf/classPersError.html" title="Classe de exceção para falhas de conexão ao database.">PersError</a>)</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    list&lt;Payment&gt; payList;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="../../df/d00/classAccNumber.html" title="Define o número da conta de um Customer (Cliente).">AccNumber</a> accNum1(1), accNum2(2), accNum3(3);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="../../d0/d34/classPayCode.html" title="Define um número de identificação para cada pagamento.">PayCode</a>   payCode1(1), payCode2(2), payCode3(3);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="../../dc/d17/classPayDay.html" title="Define a data do pagamento.">PayDay</a> payDay1(4122017), payDay2(21042017), payDay3(25112017);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <a class="code" href="../../d7/d9a/classMoney.html" title="Define o limite da conta de um Customer (Cliente).">Money</a> payVal1(10.25), payVal2(100.0), payVal3(318);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="../../d5/d5e/classPayment.html" title="Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.">Payment</a> n1(accNum1, payCode1, payDay1, payVal1);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="../../d5/d5e/classPayment.html" title="Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.">Payment</a> n2(accNum2, payCode2, payDay2, payVal2);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <a class="code" href="../../d5/d5e/classPayment.html" title="Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados.">Payment</a> n3(accNum3, payCode3, payDay3, payVal3);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span>(!(rand()%2))</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">throw</span> PersError(PERS_ERROR_MSG);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    payList.push_back(n1);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    payList.push_back(n2);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    payList.push_back(n3);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">return</span> payList;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 07:09:28 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 14 2013 08:29:31 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

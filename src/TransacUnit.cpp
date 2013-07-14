@@ -91,6 +91,9 @@ void CtrlTransacAdm :: deletePayment(PayCode* payCode) throw (invalid_argument, 
 	PersDelPayment delPayment;
 
 	delPayment.execute(payCode);
+
+	if(delPayment.getResult().empty())
+		throw invalid_argument("A conta requisitada nao existe");
 }
 
 void StubTransacAdm :: deletePayment(PayCode* payCode) throw (invalid_argument, PersError)
@@ -103,13 +106,11 @@ void StubTransacAdm :: deletePayment(PayCode* payCode) throw (invalid_argument, 
 
 list<Payment> CtrlTransacAdm :: fetchPayment() throw (PersError)
 {
-	list<Payment> payList;
-
 	PersFetchPayment fetchPayment;
 
 	fetchPayment.execute();
-	payList = fetchPayment.getResult();
-	return payList;
+
+	return fetchPayment.getResult();
 
 }
 

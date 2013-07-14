@@ -61,6 +61,17 @@ void PersDelPayment :: execute(PayCode* payCode) throw (PersError)
 	{
 		throw PersError(PERS_ERROR_MSG);
 	}
+
+	if(payCode->getValue() != 5)
+	{
+		AccNumber accNumber(1);
+		PayDay payDay(4122015);
+		Money payValue(10.0);
+
+		Payment payment(accNumber, *payCode, payDay, payValue);
+
+		returnList.push_back(payment);
+	}
 }
 
 void PersFetchPayment :: execute() throw (PersError)
@@ -171,4 +182,114 @@ void PersGetCustomer :: execute(UsrId usrId) throw (PersError)
 	Customer cus(usrName, usrPassword, usrId);
 
 	returnList.push_back(cus);
+}
+
+void PersGetLatestNum :: execute() throw (PersError)
+{
+	AccNumber accNumber(4);
+
+	if(rand() % 2)
+		throw PersError(PERS_ERROR_MSG);
+
+	returnList.push_back(accNumber);
+}
+
+void PersNewAccount :: execute(Account* acc) throw (PersError)
+{
+	if(acc->getAccNumber().getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersDelAccount :: execute(AccNumber* accNumber) throw (PersError)
+{
+	if(accNumber->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersBlkAccount :: execute(AccNumber* accNumber) throw (PersError)
+{
+	if(accNumber->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersFetchAccount :: execute() throw (PersError)
+{
+	if(rand() % 2)
+		throw PersError(PERS_ERROR_MSG);
+
+	AccNumber* accNumber;
+	AccType* accType;
+	Money* limit;
+	Money* balance;
+	UsrId* usrId;
+
+	Account *acc1, *acc2, *acc3;
+
+	accNumber = new AccNumber(1);
+	accType = new AccType(NORMAL);
+	limit = new Money(100);
+	balance = new Money(40);
+	usrId = new UsrId(1);
+
+	acc1 = new Account(*accNumber, *accType, *limit, *balance, *usrId);
+
+	delete accNumber;
+	delete accType;
+	delete limit;
+	delete balance;
+	delete usrId;
+
+	accNumber = new AccNumber(2);
+	accType = new AccType(NORMAL);
+	limit = new Money(150);
+	balance = new Money(15);
+	usrId = new UsrId(2);
+
+	acc2 = new Account(*accNumber, *accType, *limit, *balance, *usrId);
+
+	delete accNumber;
+	delete accType;
+	delete limit;
+	delete balance;
+	delete usrId;
+
+	accNumber = new AccNumber(3);
+	accType = new AccType(SPECIAL);
+	limit = new Money(200);
+	balance = new Money(20);
+	usrId = new UsrId(3);
+
+	acc3 = new Account(*accNumber, *accType, *limit, *balance, *usrId);
+
+	delete accNumber;
+	delete accType;
+	delete limit;
+	delete balance;
+	delete usrId;
+
+	returnList.push_back(*acc1);
+	returnList.push_back(*acc2);
+	returnList.push_back(*acc3);
+
+	delete acc1;
+	delete acc2;
+	delete acc3;
+}
+
+void PersUblkAccount :: execute(AccNumber* accNumber) throw (PersError)
+{
+	if(accNumber->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersEdtAccount :: execute(AccNumber* accNumber, AccType* accType) throw (PersError)
+{
+	if(accNumber->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
+}
+
+void PersEdtAccount :: execute(AccNumber* accNumber, Money* limit) throw (PersError)
+{
+	if(accNumber->getValue() == 5)
+		throw PersError(PERS_ERROR_MSG);
 }

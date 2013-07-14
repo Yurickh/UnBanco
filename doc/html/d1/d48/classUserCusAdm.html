@@ -109,9 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa78ba1b0eb4f14ca68f8ef2318e9c3d1"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/classUserCusAdm.html#aa78ba1b0eb4f14ca68f8ef2318e9c3d1">changePassword</a> (<a class="el" href="../../d9/d39/classUsrPassword.html">UsrPassword</a> *)=0  throw (PersError)</td></tr>
 <tr class="memdesc:aa78ba1b0eb4f14ca68f8ef2318e9c3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modifica a senha do cliente.  <a href="#aa78ba1b0eb4f14ca68f8ef2318e9c3d1">More...</a><br/></td></tr>
 <tr class="separator:aa78ba1b0eb4f14ca68f8ef2318e9c3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc190444ef3834236b8057bc876ee106"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/classUserCusAdm.html#afc190444ef3834236b8057bc876ee106">createCustomer</a> (<a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *, <a class="el" href="../../d9/d39/classUsrPassword.html">UsrPassword</a> *)=0  throw (invalid_argument, PersError)</td></tr>
-<tr class="memdesc:afc190444ef3834236b8057bc876ee106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um cliente.  <a href="#afc190444ef3834236b8057bc876ee106">More...</a><br/></td></tr>
-<tr class="separator:afc190444ef3834236b8057bc876ee106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4775bb30caf44192349db204b95b2b2f"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="../../d8/dc7/classUsrId.html">UsrId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/classUserCusAdm.html#a4775bb30caf44192349db204b95b2b2f">createCustomer</a> (<a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *, <a class="el" href="../../d9/d39/classUsrPassword.html">UsrPassword</a> *)=0  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:a4775bb30caf44192349db204b95b2b2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria um cliente.  <a href="#a4775bb30caf44192349db204b95b2b2f">More...</a><br/></td></tr>
+<tr class="separator:a4775bb30caf44192349db204b95b2b2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6105bcc548efb475bae0bc36b58743a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d48/classUserCusAdm.html#a6105bcc548efb475bae0bc36b58743a2">editCusName</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *)=0  throw (invalid_argument, PersError)</td></tr>
 <tr class="memdesc:a6105bcc548efb475bae0bc36b58743a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita o nome do cliente.  <a href="#a6105bcc548efb475bae0bc36b58743a2">More...</a><br/></td></tr>
 <tr class="separator:a6105bcc548efb475bae0bc36b58743a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,7 +122,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface de interação entre a camada de apresentação e a camada de negócio responsável pela administração de dados de clientes. </p>
 
-<p>Definition at line <a class="el" href="../../d5/dfb/UserUnit_8h_source.html#l00113">113</a> of file <a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/dfb/UserUnit_8h_source.html#l00131">131</a> of file <a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aa78ba1b0eb4f14ca68f8ef2318e9c3d1"></a>
 <div class="memitem">
@@ -152,7 +152,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="afc190444ef3834236b8057bc876ee106"></a>
+<a class="anchor" id="a4775bb30caf44192349db204b95b2b2f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -160,7 +160,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void UserCusAdm::createCustomer </td>
+          <td class="memname">virtual <a class="el" href="../../d8/dc7/classUsrId.html">UsrId</a> UserCusAdm::createCustomer </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../da/df7/classUsrName.html">UsrName</a> *&#160;</td>
           <td class="paramname">, </td>
@@ -186,7 +186,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Cria um cliente. </p>
 
-<p>Implemented in <a class="el" href="../../d1/d9d/classStubUserCusAdm.html#a53dc0deb3cf26a09c2814504b0daab63">StubUserCusAdm</a>.</p>
+<p>Implemented in <a class="el" href="../../d1/d9d/classStubUserCusAdm.html#a6b0c9fc7280045d06bf263d7286b37e9">StubUserCusAdm</a>.</p>
 
 </div>
 </div>
@@ -262,7 +262,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 07:09:34 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 14 2013 08:29:31 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

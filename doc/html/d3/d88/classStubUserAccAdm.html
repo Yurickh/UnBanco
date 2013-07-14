@@ -83,6 +83,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../de/d0d/classStubUserAccAdm-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">StubUserAccAdm Class Reference</div>  </div>
@@ -102,18 +103,329 @@ Inheritance diagram for StubUserAccAdm:</div>
 <area href="../../dd/d35/classUserAccAdm.html" title="Interface de interação da camada de apresentação com a camada de negócio responsável pela administraç..." alt="UserAccAdm" shape="rect" coords="0,0,111,24"/>
 </map>
  </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ad6104bb252dd2627c42b65c47d026021"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d88/classStubUserAccAdm.html#ad6104bb252dd2627c42b65c47d026021">createAccount</a> (<a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *, <a class="el" href="../../d8/dc7/classUsrId.html">UsrId</a>)  throw (PersError)</td></tr>
+<tr class="memdesc:ad6104bb252dd2627c42b65c47d026021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria uma conta.  <a href="#ad6104bb252dd2627c42b65c47d026021">More...</a><br/></td></tr>
+<tr class="separator:ad6104bb252dd2627c42b65c47d026021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e95d2e9e35d658e581742e2d5e2fb60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d88/classStubUserAccAdm.html#a6e95d2e9e35d658e581742e2d5e2fb60">deleteAccount</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:a6e95d2e9e35d658e581742e2d5e2fb60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deleta uma conta.  <a href="#a6e95d2e9e35d658e581742e2d5e2fb60">More...</a><br/></td></tr>
+<tr class="separator:a6e95d2e9e35d658e581742e2d5e2fb60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac13ca4505d670a7bbb7c75d01b41a6d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d88/classStubUserAccAdm.html#ac13ca4505d670a7bbb7c75d01b41a6d7">blockAccount</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:ac13ca4505d670a7bbb7c75d01b41a6d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bloqueia uma conta.  <a href="#ac13ca4505d670a7bbb7c75d01b41a6d7">More...</a><br/></td></tr>
+<tr class="separator:ac13ca4505d670a7bbb7c75d01b41a6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad21405e80f7a8a2ea6a094363d4819d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d88/classStubUserAccAdm.html#ad21405e80f7a8a2ea6a094363d4819d4">unblockAccount</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:ad21405e80f7a8a2ea6a094363d4819d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Desbloqueia uma conta.  <a href="#ad21405e80f7a8a2ea6a094363d4819d4">More...</a><br/></td></tr>
+<tr class="separator:ad21405e80f7a8a2ea6a094363d4819d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ba751355628d3e3a7ef1596b9b5108"><td class="memItemLeft" align="right" valign="top">list&lt; <a class="el" href="../../d7/d10/classAccount.html">Account</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d88/classStubUserAccAdm.html#a29ba751355628d3e3a7ef1596b9b5108">fetchAccount</a> (void)  throw (PersError)</td></tr>
+<tr class="memdesc:a29ba751355628d3e3a7ef1596b9b5108"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera uma lista com todas as contas registradas.  <a href="#a29ba751355628d3e3a7ef1596b9b5108">More...</a><br/></td></tr>
+<tr class="separator:a29ba751355628d3e3a7ef1596b9b5108"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05a1719f0ebfe4a2a7aed81505c82aba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d10/classAccount.html">Account</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d88/classStubUserAccAdm.html#a05a1719f0ebfe4a2a7aed81505c82aba">fetchAccount</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>)  throw (PersError)</td></tr>
+<tr class="memdesc:a05a1719f0ebfe4a2a7aed81505c82aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera os dados da conta de uma conta em específico.  <a href="#a05a1719f0ebfe4a2a7aed81505c82aba">More...</a><br/></td></tr>
+<tr class="separator:a05a1719f0ebfe4a2a7aed81505c82aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d5b9af315af47b0f47baf66f75d9f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d88/classStubUserAccAdm.html#a87d5b9af315af47b0f47baf66f75d9f0">editAccType</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:a87d5b9af315af47b0f47baf66f75d9f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita o tipo de um conta.  <a href="#a87d5b9af315af47b0f47baf66f75d9f0">More...</a><br/></td></tr>
+<tr class="separator:a87d5b9af315af47b0f47baf66f75d9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecabe86701249ca43bf17b99425d778e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d88/classStubUserAccAdm.html#aecabe86701249ca43bf17b99425d778e">editAccLimit</a> (<a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *, <a class="el" href="../../d7/d9a/classMoney.html">Money</a> *)  throw (invalid_argument, PersError)</td></tr>
+<tr class="memdesc:aecabe86701249ca43bf17b99425d778e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edita o Lilimite de uma conta.  <a href="#aecabe86701249ca43bf17b99425d778e">More...</a><br/></td></tr>
+<tr class="separator:aecabe86701249ca43bf17b99425d778e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração dos dados de contas. </p>
 
-<p>Definition at line <a class="el" href="../../d5/dfb/UserUnit_8h_source.html#l00062">62</a> of file <a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+<p>Definition at line <a class="el" href="../../d5/dfb/UserUnit_8h_source.html#l00079">79</a> of file <a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac13ca4505d670a7bbb7c75d01b41a6d7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubUserAccAdm::blockAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Bloqueia uma conta. </p>
+
+<p>Implements <a class="el" href="../../dd/d35/classUserAccAdm.html#ad9cdd01395ad7dd1b2c0887fe12b71b8">UserAccAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/da6/UserUnit_8cpp_source.html#l00186">186</a> of file <a class="el" href="../../df/da6/UserUnit_8cpp_source.html">UserUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad6104bb252dd2627c42b65c47d026021"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubUserAccAdm::createAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/dc7/classUsrId.html">UsrId</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (<a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cria uma conta. </p>
+
+<p>Implements <a class="el" href="../../dd/d35/classUserAccAdm.html#a8bf3fc2dc45a1f13dbd8388cc37a26a2">UserAccAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/da6/UserUnit_8cpp_source.html#l00172">172</a> of file <a class="el" href="../../df/da6/UserUnit_8cpp_source.html">UserUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e95d2e9e35d658e581742e2d5e2fb60"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubUserAccAdm::deleteAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deleta uma conta. </p>
+
+<p>Implements <a class="el" href="../../dd/d35/classUserAccAdm.html#a8257788e5e7d125b7482e490a6d71550">UserAccAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/da6/UserUnit_8cpp_source.html#l00178">178</a> of file <a class="el" href="../../df/da6/UserUnit_8cpp_source.html">UserUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aecabe86701249ca43bf17b99425d778e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubUserAccAdm::editAccLimit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d9a/classMoney.html">Money</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Edita o Lilimite de uma conta. </p>
+
+<p>Implements <a class="el" href="../../dd/d35/classUserAccAdm.html#a43f0bb580d63a9c782e8c83417562a17">UserAccAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/da6/UserUnit_8cpp_source.html#l00254">254</a> of file <a class="el" href="../../df/da6/UserUnit_8cpp_source.html">UserUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a87d5b9af315af47b0f47baf66f75d9f0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubUserAccAdm::editAccType </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/dd4/classUsrType.html">AccType</a> *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Edita o tipo de um conta. </p>
+
+<p>Implements <a class="el" href="../../dd/d35/classUserAccAdm.html#a80d61347b448e3ae9bdca4e02e65bcd1">UserAccAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/da6/UserUnit_8cpp_source.html#l00246">246</a> of file <a class="el" href="../../df/da6/UserUnit_8cpp_source.html">UserUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29ba751355628d3e3a7ef1596b9b5108"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">list&lt; <a class="el" href="../../d7/d10/classAccount.html">Account</a> &gt; StubUserAccAdm::fetchAccount </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (<a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recupera uma lista com todas as contas registradas. </p>
+
+<p>Implements <a class="el" href="../../dd/d35/classUserAccAdm.html#aa84b9df92ad9e11b1d9c71e9350efdc7">UserAccAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/da6/UserUnit_8cpp_source.html#l00196">196</a> of file <a class="el" href="../../df/da6/UserUnit_8cpp_source.html">UserUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a05a1719f0ebfe4a2a7aed81505c82aba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d10/classAccount.html">Account</a> StubUserAccAdm::fetchAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (<a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recupera os dados da conta de uma conta em específico. </p>
+
+<p>Implements <a class="el" href="../../dd/d35/classUserAccAdm.html#a5957dcbf58d30b171a6ca0967dacf2d9">UserAccAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/da6/UserUnit_8cpp_source.html#l00220">220</a> of file <a class="el" href="../../df/da6/UserUnit_8cpp_source.html">UserUnit.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad21405e80f7a8a2ea6a094363d4819d4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StubUserAccAdm::unblockAccount </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d00/classAccNumber.html">AccNumber</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td>  throw (invalid_argument, <a class="el" href="../../da/dcf/classPersError.html">PersError</a>)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Desbloqueia uma conta. </p>
+
+<p>Implements <a class="el" href="../../dd/d35/classUserAccAdm.html#ae179b3e21f336b325452eb3c0981b0d9">UserAccAdm</a>.</p>
+
+<p>Definition at line <a class="el" href="../../df/da6/UserUnit_8cpp_source.html#l00236">236</a> of file <a class="el" href="../../df/da6/UserUnit_8cpp_source.html">UserUnit.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="../../d5/dfb/UserUnit_8h_source.html">UserUnit.h</a></li>
 <li><a class="el" href="../../df/da6/UserUnit_8cpp_source.html">UserUnit.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 14 2013 07:09:33 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 14 2013 08:29:31 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
