@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['schedulepayment',['schedulePayment',['../da/deb/classTransacAdm.html#a6f350bc661f1a6460a31a0b02ccb8d3f',1,'TransacAdm::schedulePayment()'],['../d9/d0f/classStubTransacAdm.html#ad794a9d6f46b1f4d62aef292f8fed5f4',1,'StubTransacAdm::schedulePayment()']]],
+  ['schedulepayment',['schedulePayment',['../da/deb/classTransacAdm.html#a6f350bc661f1a6460a31a0b02ccb8d3f',1,'TransacAdm::schedulePayment()'],['../db/d25/classCtrlTransacAdm.html#a1c10db63c827ee8071d7dc839154382a',1,'CtrlTransacAdm::schedulePayment()'],['../d9/d0f/classStubTransacAdm.html#ad794a9d6f46b1f4d62aef292f8fed5f4',1,'StubTransacAdm::schedulePayment()']]],
   ['session',['Session',['../de/d41/classSession.html',1,'Session'],['../de/d41/classSession.html#a216a4f17b0c16bd7e2e5ace3c5500efa',1,'Session::Session(UsrMatric *, UsrPassword *)'],['../de/d41/classSession.html#ad94e7557f00ffe2abd64acf12d6f79d4',1,'Session::Session(AccNumber *, UsrPassword *)']]],
   ['setaccadm',['setAccAdm',['../d0/d1d/classMainManMenu.html#a507ebea41371d58e137ece5a11bb63bf',1,'MainManMenu::setAccAdm()'],['../dc/d35/classMainCusMenu.html#acaa0828f9ac38816e5a6068f1781f9be',1,'MainCusMenu::setAccAdm()']]],
   ['setaccnumber',['setAccNumber',['../d7/d10/classAccount.html#a3e669090168f13d2a8269af456546a1e',1,'Account::setAccNumber()'],['../d5/d5e/classPayment.html#a5d0e83f83f090acf4b33bc81f5391ca0',1,'Payment::setAccNumber()']]],
@@ -23,7 +23,12 @@ var searchData=
   ['setusrname',['setUsrName',['../d9/dc0/classUser.html#ac20aab332b1debfd3b94aa4fb7825b07',1,'User']]],
   ['setusrpassword',['setUsrPassword',['../d9/dc0/classUser.html#ad36ece3d4decfd7f3db7f15c96eec99b',1,'User']]],
   ['setvalue',['setValue',['../d5/db5/classUnitBase.html#a9cd392786b8078ab713045a8d1dece52',1,'UnitBase']]],
+  ['stubpersunit',['StubPersUnit',['../d5/dfd/classStubPersUnit.html',1,'']]],
+  ['stubpersunit_3c_20money_20_3e',['StubPersUnit&lt; Money &gt;',['../d5/dfd/classStubPersUnit.html',1,'']]],
+  ['stubpersunit_3c_20paycode_20_3e',['StubPersUnit&lt; PayCode &gt;',['../d5/dfd/classStubPersUnit.html',1,'']]],
+  ['stubpersunit_3c_20payment_20_3e',['StubPersUnit&lt; Payment &gt;',['../d5/dfd/classStubPersUnit.html',1,'']]],
   ['stubtransacadm',['StubTransacAdm',['../d9/d0f/classStubTransacAdm.html',1,'']]],
+  ['stubuseraccadm',['StubUserAccAdm',['../d3/d88/classStubUserAccAdm.html',1,'']]],
   ['stubusercusadm',['StubUserCusAdm',['../d1/d9d/classStubUserCusAdm.html',1,'']]],
   ['stubuserlogin',['StubUserLogin',['../d1/dbd/classStubUserLogin.html',1,'']]],
   ['stubusermanadm',['StubUserManAdm',['../dd/dfd/classStubUserManAdm.html',1,'']]],

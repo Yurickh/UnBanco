@@ -12,10 +12,6 @@ using namespace std;
 /** Interface da camada de apresentação com o negócio responsável pela administração de dados de transação. */
 class TransacAdm
 {
-	private:
-		PersGetBalance* getBalance;
-		PersSetBalance* setBalance;
-
 	public:
 		/** Executa a retirada de dinheiro */
 		virtual void withdraw(AccNumber, Money*) throw (invalid_argument, PersError) = 0;

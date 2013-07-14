@@ -28,7 +28,13 @@ virtual \hyperlink{classPayCode}{Pay\-Code} $\ast$ \hyperlink{classTransacAdm_a6
 virtual void \hyperlink{classTransacAdm_a76f27b0fc9e604695c4c601839d3b441}{delete\-Payment} (\hyperlink{classPayCode}{Pay\-Code} $\ast$)=0  throw (invalid\-\_\-argument, Pers\-Error)
 \begin{DoxyCompactList}\small\item\em Deleta um pagamento agendado. \end{DoxyCompactList}\item 
 virtual list$<$ \hyperlink{classPayment}{Payment} $>$ \hyperlink{classTransacAdm_ab3c02884c14540c1f520339581e88371}{fetch\-Payment} (void)=0  throw (\-Pers\-Error)
-\begin{DoxyCompactList}\small\item\em Recupera uma lista de todos os pagamentos registrados. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Recupera uma lista de todos os pagamentos registrados. \end{DoxyCompactList}\item 
+\hypertarget{classTransacAdm_a618e67e64948b4e81857bf32446c02ba}{void {\bfseries set\-Get\-Balance} (\hyperlink{classPersGetBalance}{Pers\-Get\-Balance} $\ast$)}\label{da/deb/classTransacAdm_a618e67e64948b4e81857bf32446c02ba}
+
+\item 
+\hypertarget{classTransacAdm_a27e93efe0101fcf9f569f4b900a38f91}{void {\bfseries set\-Set\-Balance} (\hyperlink{classPersSetBalance}{Pers\-Set\-Balance} $\ast$)}\label{da/deb/classTransacAdm_a27e93efe0101fcf9f569f4b900a38f91}
+
+\end{DoxyCompactItemize}
 
 
 \subsubsection{Detailed Description}
@@ -54,7 +60,7 @@ Deleta um pagamento agendado.
 
 
 
-Implemented in \hyperlink{classStubTransacAdm_a734de9620871592c6d40b2c819c69650}{Stub\-Transac\-Adm}.
+Implemented in \hyperlink{classStubTransacAdm_a734de9620871592c6d40b2c819c69650}{Stub\-Transac\-Adm}, and \hyperlink{classCtrlTransacAdm_a3c2d1900a471725e5e5122de9fa30a35}{Ctrl\-Transac\-Adm}.
 
 \hypertarget{classTransacAdm_a9b6ffc8a521600094eb13510edcb33d7}{\index{Transac\-Adm@{Transac\-Adm}!deposit@{deposit}}
 \index{deposit@{deposit}!TransacAdm@{Transac\-Adm}}
@@ -70,7 +76,7 @@ Executa um depósito.
 
 
 
-Implemented in \hyperlink{classStubTransacAdm_afc25824382e5ce8cd491a573b557bbc1}{Stub\-Transac\-Adm}.
+Implemented in \hyperlink{classStubTransacAdm_afc25824382e5ce8cd491a573b557bbc1}{Stub\-Transac\-Adm}, and \hyperlink{classCtrlTransacAdm_a1e4a7b8ca4c50eb9a31371a28ffa00ff}{Ctrl\-Transac\-Adm}.
 
 \hypertarget{classTransacAdm_ab3c02884c14540c1f520339581e88371}{\index{Transac\-Adm@{Transac\-Adm}!fetch\-Payment@{fetch\-Payment}}
 \index{fetch\-Payment@{fetch\-Payment}!TransacAdm@{Transac\-Adm}}
@@ -85,7 +91,7 @@ Recupera uma lista de todos os pagamentos registrados.
 
 
 
-Implemented in \hyperlink{classStubTransacAdm_a0896f821752fc696322bd58444a1d5ab}{Stub\-Transac\-Adm}.
+Implemented in \hyperlink{classStubTransacAdm_a0896f821752fc696322bd58444a1d5ab}{Stub\-Transac\-Adm}, and \hyperlink{classCtrlTransacAdm_aa7e00879d0ad01b7cd6b3ad61d4d8c65}{Ctrl\-Transac\-Adm}.
 
 \hypertarget{classTransacAdm_a6f350bc661f1a6460a31a0b02ccb8d3f}{\index{Transac\-Adm@{Transac\-Adm}!schedule\-Payment@{schedule\-Payment}}
 \index{schedule\-Payment@{schedule\-Payment}!TransacAdm@{Transac\-Adm}}
@@ -102,7 +108,7 @@ Agenda um pagamento.
 
 
 
-Implemented in \hyperlink{classStubTransacAdm_ad794a9d6f46b1f4d62aef292f8fed5f4}{Stub\-Transac\-Adm}.
+Implemented in \hyperlink{classStubTransacAdm_ad794a9d6f46b1f4d62aef292f8fed5f4}{Stub\-Transac\-Adm}, and \hyperlink{classCtrlTransacAdm_a1c10db63c827ee8071d7dc839154382a}{Ctrl\-Transac\-Adm}.
 
 \hypertarget{classTransacAdm_a128750caeeec2cd48a4a01e6ce9f701c}{\index{Transac\-Adm@{Transac\-Adm}!withdraw@{withdraw}}
 \index{withdraw@{withdraw}!TransacAdm@{Transac\-Adm}}
@@ -118,7 +124,7 @@ Executa a retirada de dinheiro.
 
 
 
-Implemented in \hyperlink{classStubTransacAdm_aa411e937e159c26aa50901aad504db42}{Stub\-Transac\-Adm}.
+Implemented in \hyperlink{classStubTransacAdm_aa411e937e159c26aa50901aad504db42}{Stub\-Transac\-Adm}, and \hyperlink{classCtrlTransacAdm_a694267772d5ea46f715b8c3586d9b5fa}{Ctrl\-Transac\-Adm}.
 
 
 

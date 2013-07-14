@@ -65,9 +65,7 @@ UsrId::UsrId (const int& usrId) throw (invalid_argument)
 
 void UsrId::validate (const int& usrId) throw (invalid_argument)
 {
-	if(usrId == 0)
-		throw invalid_argument ("Valor de ID nao inicializado. ");
-	if(usrId < 0)
+	if(usrId <= 0)
 		throw invalid_argument ("O ID do usuário deve ser maior do que zero.");
 }
 
@@ -84,9 +82,7 @@ UsrMatric::UsrMatric (const int& matric) throw (invalid_argument)
 
 void UsrMatric::validate(const int& matric) throw (invalid_argument)
 {
-	if (matric == 0)
-		throw invalid_argument ("Valor de matricula nao inicializado");
-	if (matric < 0 || matric > 99999)
+	if (matric <= 0 || matric > 99999)
 		throw invalid_argument ("Matricula invalida, numero fora do alcance.");
 }
 
@@ -121,9 +117,7 @@ AccNumber::AccNumber (const int& accNumber) throw (invalid_argument)
 
 void AccNumber::validate (const int& accNumber) throw (invalid_argument)
 {
-	if(accNumber == 0)
-		throw invalid_argument ("Numero de conta nao inicializado.");
-	if(accNumber < 0 || accNumber > 9999)
+	if(accNumber <= 0 || accNumber > 9999)
 		throw invalid_argument ("Numero de conta invalido.");
 }
 
@@ -140,9 +134,6 @@ Money::Money (const float& money) throw (invalid_argument)
 
 void Money::validate (const float& money) throw (invalid_argument)
 {
-	if(money == 0)
-		throw invalid_argument ("Valor para dinheiro nao inicializado.");
-
 	if(!(std::isnormal(money)))
 		throw invalid_argument ("Nao e possivel executar esta operacao com a dada quantidade de dinheiro.");
 
@@ -163,10 +154,7 @@ PayCode::PayCode (const int& payNumber) throw (invalid_argument)
 
 void PayCode::validate (const int& payNumber) throw (invalid_argument)
 {
-	if(payNumber == 0)
-		throw invalid_argument("Numero de pagamento nao inicializado.");
-
-	if(payNumber <0 || payNumber > 999999)
+	if(payNumber <=0 || payNumber > 999999)
 		throw invalid_argument("Numero do pagamento invalido.");
 }
 
@@ -190,7 +178,7 @@ void PayDay::validate (const int& date) throw (invalid_argument)
 	month = (date/10000)%100;
 
 	if(date == 0)
-		throw invalid_argument("Data nao inicializada.");
+		throw invalid_argument("Data invalida.");
 
 	if(year<2013)
 		throw invalid_argument("Ano invalido");

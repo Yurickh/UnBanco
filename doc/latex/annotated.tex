@@ -2,6 +2,7 @@
 Here are the classes, structs, unions and interfaces with brief descriptions\-:\begin{DoxyCompactList}
 \item\contentsline{section}{\hyperlink{classAccNumber}{Acc\-Number} \\*Define o número da conta de um \hyperlink{classCustomer}{Customer} (Cliente) }{\pageref{df/d00/classAccNumber}}{}
 \item\contentsline{section}{\hyperlink{classAccount}{Account} \\*Conta; Onde ficarão armazenados os dados de conta de um cliente }{\pageref{d7/d10/classAccount}}{}
+\item\contentsline{section}{\hyperlink{classCtrlTransacAdm}{Ctrl\-Transac\-Adm} \\*Classe de negócio responsável pela administração de dados de pegamento e transações }{\pageref{db/d25/classCtrlTransacAdm}}{}
 \item\contentsline{section}{\hyperlink{classCustomer}{Customer} \\*Cliente; Onde ficarão armazenados os dados do usuário padrão do sistema }{\pageref{d9/d12/classCustomer}}{}
 \item\contentsline{section}{\hyperlink{classMainAdmMenu}{Main\-Adm\-Menu} \\*Menu principal para administradores }{\pageref{d9/d86/classMainAdmMenu}}{}
 \item\contentsline{section}{\hyperlink{classMainCusMenu}{Main\-Cus\-Menu} \\*Menu principal para Clientes }{\pageref{dc/d35/classMainCusMenu}}{}
@@ -13,9 +14,17 @@ Here are the classes, structs, unions and interfaces with brief descriptions\-:\
 \item\contentsline{section}{\hyperlink{classPayCode}{Pay\-Code} \\*Define um número de identificação para cada pagamento }{\pageref{d0/d34/classPayCode}}{}
 \item\contentsline{section}{\hyperlink{classPayDay}{Pay\-Day} \\*Define a data do pagamento }{\pageref{dc/d17/classPayDay}}{}
 \item\contentsline{section}{\hyperlink{classPayment}{Payment} \\*Pagamento; Onde ficarão armazenados dados sobre pagamentos a serem realizados }{\pageref{d5/d5e/classPayment}}{}
+\item\contentsline{section}{\hyperlink{classPersDelPayment}{Pers\-Del\-Payment} \\*Classe Command que deleta o registro de \hyperlink{classPayment}{Payment} relativo ao \hyperlink{classPayCode}{Pay\-Code} recebido }{\pageref{da/d8c/classPersDelPayment}}{}
 \item\contentsline{section}{\hyperlink{classPersError}{Pers\-Error} \\*Classe de exceção para falhas de conexão ao database }{\pageref{da/dcf/classPersError}}{}
+\item\contentsline{section}{\hyperlink{classPersFetchPayment}{Pers\-Fetch\-Payment} \\*Classe Command que retorna uma lista de pagamentos cadastrados no banco de dados }{\pageref{d6/d08/classPersFetchPayment}}{}
+\item\contentsline{section}{\hyperlink{classPersGetBalance}{Pers\-Get\-Balance} \\*Classe Command que retorna o Balance de uma conta de número \hyperlink{classAccNumber}{Acc\-Number} }{\pageref{d3/d71/classPersGetBalance}}{}
+\item\contentsline{section}{\hyperlink{classPersGetLatestCode}{Pers\-Get\-Latest\-Code} \\*Classe Command que retorna o menor \hyperlink{classPayCode}{Pay\-Code} disponível para criação de contas }{\pageref{d8/d77/classPersGetLatestCode}}{}
+\item\contentsline{section}{\hyperlink{classPersNewPayment}{Pers\-New\-Payment} \\*Classe Command que cria um novo registro de \hyperlink{classPayment}{Payment} }{\pageref{d5/d21/classPersNewPayment}}{}
+\item\contentsline{section}{\hyperlink{classPersSetBalance}{Pers\-Set\-Balance} \\*Classe Command que define no database o Balance da conta de número \hyperlink{classAccNumber}{Acc\-Number} }{\pageref{d9/d6f/classPersSetBalance}}{}
 \item\contentsline{section}{\hyperlink{classSession}{Session} \\*Classe que armazena, monitora e administra os dados de sessão }{\pageref{de/d41/classSession}}{}
+\item\contentsline{section}{\hyperlink{classStubPersUnit}{Stub\-Pers\-Unit$<$ Return\-Class $>$} \\*Stub da camada de persistência }{\pageref{d5/dfd/classStubPersUnit}}{}
 \item\contentsline{section}{\hyperlink{classStubTransacAdm}{Stub\-Transac\-Adm} \\*Stub utilizado para simular o funcionamento da camada de negócio }{\pageref{d9/d0f/classStubTransacAdm}}{}
+\item\contentsline{section}{\hyperlink{classStubUserAccAdm}{Stub\-User\-Acc\-Adm} \\*Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração dos dados de contas }{\pageref{d3/d88/classStubUserAccAdm}}{}
 \item\contentsline{section}{\hyperlink{classStubUserCusAdm}{Stub\-User\-Cus\-Adm} \\*Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração de dados de clientes }{\pageref{d1/d9d/classStubUserCusAdm}}{}
 \item\contentsline{section}{\hyperlink{classStubUserLogin}{Stub\-User\-Login} \\*Stub utilizado para simular o funcionamento da camada de negócio de login }{\pageref{d1/dbd/classStubUserLogin}}{}
 \item\contentsline{section}{\hyperlink{classStubUserManAdm}{Stub\-User\-Man\-Adm} \\*Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração de dados de gerentes }{\pageref{dd/dfd/classStubUserManAdm}}{}

@@ -100,7 +100,8 @@ Inheritance diagram for TransacAdm:</div>
  <div class="center">
   <img src="../../da/deb/classTransacAdm.png" usemap="#TransacAdm_map" alt=""/>
   <map id="TransacAdm_map" name="TransacAdm_map">
-<area href="../../d9/d0f/classStubTransacAdm.html" title="Stub utilizado para simular o funcionamento da camada de negócio." alt="StubTransacAdm" shape="rect" coords="0,56,108,80"/>
+<area href="../../db/d25/classCtrlTransacAdm.html" title="Classe de negócio responsável pela administração de dados de pegamento e transações." alt="CtrlTransacAdm" shape="rect" coords="0,56,108,80"/>
+<area href="../../d9/d0f/classStubTransacAdm.html" title="Stub utilizado para simular o funcionamento da camada de negócio." alt="StubTransacAdm" shape="rect" coords="118,56,226,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -121,6 +122,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab3c02884c14540c1f520339581e88371"><td class="memItemLeft" align="right" valign="top">virtual list&lt; <a class="el" href="../../d5/d5e/classPayment.html">Payment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/deb/classTransacAdm.html#ab3c02884c14540c1f520339581e88371">fetchPayment</a> (void)=0  throw (PersError)</td></tr>
 <tr class="memdesc:ab3c02884c14540c1f520339581e88371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recupera uma lista de todos os pagamentos registrados.  <a href="#ab3c02884c14540c1f520339581e88371">More...</a><br/></td></tr>
 <tr class="separator:ab3c02884c14540c1f520339581e88371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a618e67e64948b4e81857bf32446c02ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a618e67e64948b4e81857bf32446c02ba"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setGetBalance</b> (<a class="el" href="../../d3/d71/classPersGetBalance.html">PersGetBalance</a> *)</td></tr>
+<tr class="separator:a618e67e64948b4e81857bf32446c02ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27e93efe0101fcf9f569f4b900a38f91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a27e93efe0101fcf9f569f4b900a38f91"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSetBalance</b> (<a class="el" href="../../d9/d6f/classPersSetBalance.html">PersSetBalance</a> *)</td></tr>
+<tr class="separator:a27e93efe0101fcf9f569f4b900a38f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface da camada de apresentação com o negócio responsável pela administração de dados de transação. </p>
@@ -151,7 +158,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Deleta um pagamento agendado. </p>
 
-<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#a734de9620871592c6d40b2c819c69650">StubTransacAdm</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#a734de9620871592c6d40b2c819c69650">StubTransacAdm</a>, and <a class="el" href="../../db/d25/classCtrlTransacAdm.html#a3c2d1900a471725e5e5122de9fa30a35">CtrlTransacAdm</a>.</p>
 
 </div>
 </div>
@@ -189,7 +196,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Executa um depósito. </p>
 
-<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#afc25824382e5ce8cd491a573b557bbc1">StubTransacAdm</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#afc25824382e5ce8cd491a573b557bbc1">StubTransacAdm</a>, and <a class="el" href="../../db/d25/classCtrlTransacAdm.html#a1e4a7b8ca4c50eb9a31371a28ffa00ff">CtrlTransacAdm</a>.</p>
 
 </div>
 </div>
@@ -217,7 +224,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Recupera uma lista de todos os pagamentos registrados. </p>
 
-<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#a0896f821752fc696322bd58444a1d5ab">StubTransacAdm</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#a0896f821752fc696322bd58444a1d5ab">StubTransacAdm</a>, and <a class="el" href="../../db/d25/classCtrlTransacAdm.html#aa7e00879d0ad01b7cd6b3ad61d4d8c65">CtrlTransacAdm</a>.</p>
 
 </div>
 </div>
@@ -261,7 +268,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Agenda um pagamento. </p>
 
-<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#ad794a9d6f46b1f4d62aef292f8fed5f4">StubTransacAdm</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#ad794a9d6f46b1f4d62aef292f8fed5f4">StubTransacAdm</a>, and <a class="el" href="../../db/d25/classCtrlTransacAdm.html#a1c10db63c827ee8071d7dc839154382a">CtrlTransacAdm</a>.</p>
 
 </div>
 </div>
@@ -299,7 +306,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Executa a retirada de dinheiro. </p>
 
-<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#aa411e937e159c26aa50901aad504db42">StubTransacAdm</a>.</p>
+<p>Implemented in <a class="el" href="../../d9/d0f/classStubTransacAdm.html#aa411e937e159c26aa50901aad504db42">StubTransacAdm</a>, and <a class="el" href="../../db/d25/classCtrlTransacAdm.html#a694267772d5ea46f715b8c3586d9b5fa">CtrlTransacAdm</a>.</p>
 
 </div>
 </div>
@@ -309,7 +316,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 10 2013 01:58:41 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jul 14 2013 06:17:54 for UnBanco by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -6,11 +6,17 @@ base_test: BaseTestUnit.o BaseUnit.o
 login_test: InterTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o
 	g++ InterTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o -o teste
 
+neg_test: NegTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o
+	g++ NegTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o -o teste
+
 BaseTestUnit.o: BaseTestUnit.cpp BaseTestUnit.h
 	g++ -ansi -Wall -g BaseTestUnit.cpp -c
 
 InterTestUnit.o: InterTestUnit.cpp
 	g++ -ansi -Wall -g InterTestUnit.cpp -c
+
+NegTestUnit.o: NegTestUnit.cpp
+	g++ -ansi -Wall -g NegTestUnit.cpp -c
 
 MainUnit.o: MainUnit.cpp MainUnit.h
 	g++ -ansi -Wall -g MainUnit.cpp -c

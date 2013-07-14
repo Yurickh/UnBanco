@@ -2,7 +2,9 @@
 #define PERS_UNIT_H
 
 #include <string>
-#include <sqlite3.h>
+#include <list>
+#include <cstdlib>
+#include "EntityUnit.h"
 
 using namespace std;
 
@@ -24,131 +26,67 @@ class PersError
 		string what();
 };
 
-/** Classe que contém as informações necessárias à conexão com o database */
-class Command<class ReturnClass>
+/** Stub da camada de persistência */
+template <class ReturnClass>
+class StubPersUnit
 {
 	private:
-		string dataBaseName;
-		/** Objeto database */
-		sqlite3 *db;
-		/** Mensagem de log de conexão. */
-		char *message;
-		/** Código de retorno */
-		int rc;
+		string dbName;
 
 	protected:
-		/** Lista que contém as informações de retorno */
-		static list<ReturnClass> returnList;
-		/** Código SQL */
-		string sqlCode;
-
-
-	private:
-		/** Conecta ao database */
-		void connect() throw (PersError);
-		/** Desconecta do database */
-		void disconnect() throw (PersError);
-		static int callback (void*, int, char**, char**);
+		list<ReturnClass> returnList;
 
 	public:
-		/** Faz a conexão com o database e monta o ambiente necessário */
-		Command(string) throw (PersError);
-		/** Desfaz a conexão com o database */
-		~Command() throw (PersError);
-
-		/** Retorna a lista de retornos */
-		inline list<ReturnClass> getResult();
-
-		/** Executa o código SQL */
-		void execute() throw (PersError);
+		void setDBName(string name)
+		{
+			dbName = name;
+		}
+		list<ReturnClass> getResult()
+		{
+			return returnList;
+		}
 };
 
-void Command<class ReturnClass> :: connect()
-{
-	rc = sqlite3_open(dataBaseName, &db);
-
-	if(rc)
-	{
-		sqlite3_close(db);
-		throw PersError(PERS_ERROR_MSG);
-	}
-}
-
-void Command<class ReturnClass> :: disconnect()
-{
-	sqlite3_close(db);
-}
-
-int Command<class ReturnClass> :: callback(void* NotUsed, int argc, char** argv, char** azColName)
-{
-	list<ReturnClass> returnList;
-
-	for(int i=0; i<argc; ++i)
-	{
-		if(argv[i])
-		{
-			try{
-				ReturnClass curr(argv[i]);
-				returnList.push_back(curr);
-			} catch (invalid_argument except)
-			{
-				throw PersError("Valor inesperado para campo em database. Erro na leitura");
-			}
-		}
-	}
-
-	this->returnList = returnList;
-}
-
-Command<class ReturnClass> :: Command(string dbName)
-{
-	dataBaseName = dbName;
-	connect();
-}
-
-Command<class ReturnClass> :: ~Command()
-{
-	disconnect();
-}
-
-Command<class ReturnClass> :: execute()
-{
-	rc = sqlite3_exec(db, sqlCode, callback, &message);
-	if(rc != SQLITE_OK)
-	{
-		sqlite3_free(message);
-		throw PersError("Ocorreu um erro ao tentar executar o codigo SQL.");
-	}
-}
-
-//========================== Interfaces PERS =====================================
-
 /** Classe Command que retorna o Balance de uma conta de número AccNumber */
-class PersGetBalance : public Command<Money>
+class PersGetBalance : public StubPersUnit<Money>
 {
 	public:
-		virtual void configure(AccNumber);
+		void execute(AccNumber) throw (PersError);
 };
 
 /** Classe Command que define no database o Balance da conta de número AccNumber */
-class PersSetBalance : public Command<Money>
+class PersSetBalance : public StubPersUnit<Money>
 {
 	public:
-		virtual void configure(AccNumber, Money*);
-}
+		void execute(AccNumber, Money*) throw (PersError);
+};
 
-//===============================Stubs============================================
-
-class StubPersGetBalance : public PersGetBalance
+/** Classe Command que retorna o menor PayCode disponível para criação de contas */
+class PersGetLatestCode : public StubPersUnit<PayCode>
 {
 	public:
-		void configure(AccNumber);
-}
+		void execute() throw (PersError);
+};
 
-class StubPersGetBalance : public PersGetBalance
+/** Classe Command que cria um novo registro de Payment */
+class PersNewPayment : public StubPersUnit<Payment>
 {
 	public:
-		void configure(AccNumber, Money*);
-}
+		void execute(Payment*) throw (PersError);
+};
+
+/** Classe Command que deleta o registro de Payment relativo ao PayCode recebido */
+class PersDelPayment : public StubPersUnit<Payment>
+{
+	public:
+		void execute(PayCode*) throw (PersError);
+};
+
+/** Classe Command que retorna uma lista de pagamentos cadastrados no banco de dados */
+class PersFetchPayment : public StubPersUnit<Payment>
+{
+	public:
+		void execute() throw (PersError);
+};
 
 #endif

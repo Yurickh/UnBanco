@@ -52,8 +52,8 @@ class UserAccAdm
 
 /** Stub utilizado para simular o funcionamento da camada de negócio responsável pela administração dos dados de contas */
 class StubUserAccAdm : public UserAccAdm
-		void createAccount(AccType*, Money*, Money*) throw (PersError);
 {
+		void createAccount(AccType*, Money*, Money*) throw (PersError);
 		void deleteAccount(AccNumber*) throw (invalid_argument, PersError);
 
 		void blockAccount(AccNumber*) throw (invalid_argument, PersError);

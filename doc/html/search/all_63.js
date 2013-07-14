@@ -4,5 +4,6 @@ var searchData=
   ['createaccount',['createAccount',['../dd/d35/classUserAccAdm.html#a23b313ce179890606746ab3a279bd833',1,'UserAccAdm']]],
   ['createcustomer',['createCustomer',['../d1/d48/classUserCusAdm.html#afc190444ef3834236b8057bc876ee106',1,'UserCusAdm::createCustomer()'],['../d1/d9d/classStubUserCusAdm.html#a53dc0deb3cf26a09c2814504b0daab63',1,'StubUserCusAdm::createCustomer()']]],
   ['createmanager',['createManager',['../da/d86/classUserManAdm.html#a4c1d61e8190867eb786cdf97083ba289',1,'UserManAdm::createManager()'],['../dd/dfd/classStubUserManAdm.html#ac833e3729b1adf46edf78376719acde5',1,'StubUserManAdm::createManager()']]],
+  ['ctrltransacadm',['CtrlTransacAdm',['../db/d25/classCtrlTransacAdm.html',1,'']]],
   ['customer',['Customer',['../d9/d12/classCustomer.html',1,'Customer'],['../d9/d12/classCustomer.html#a3f3be282d21b234e1e72f645d8fdc362',1,'Customer::Customer()']]]
 ];
