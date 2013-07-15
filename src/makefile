@@ -6,8 +6,8 @@ base_test: BaseTestUnit.o BaseUnit.o
 login_test: InterTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o
 	g++ InterTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o -o teste
 
-neg_test: NegTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o
-	g++ NegTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o -o teste
+neg_test: sqlite3.o NegTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o
+	g++ sqlite3.o NegTestUnit.o MainUnit.o UserUnit.o TransacUnit.o PersUnit.o EntityUnit.o BaseUnit.o EngineUnit.o -o teste -lpthread -ldl
 
 BaseTestUnit.o: BaseTestUnit.cpp BaseTestUnit.h
 	g++ -ansi -Wall -g BaseTestUnit.cpp -c
@@ -17,6 +17,9 @@ InterTestUnit.o: InterTestUnit.cpp
 
 NegTestUnit.o: NegTestUnit.cpp
 	g++ -ansi -Wall -g NegTestUnit.cpp -c
+
+sqlite3.o: ../include/sqlite3/sqlite3.c
+	gcc ../include/sqlite3/shell.c ../include/sqlite3/sqlite3.c -c
 
 MainUnit.o: MainUnit.cpp MainUnit.h
 	g++ -ansi -Wall -g MainUnit.cpp -c

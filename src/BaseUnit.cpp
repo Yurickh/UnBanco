@@ -78,8 +78,8 @@ UsrMatric::UsrMatric (const int& matric) throw (invalid_argument)
 {
 	validate(matric);
 	this->value = matric;
-}
 
+}
 void UsrMatric::validate(const int& matric) throw (invalid_argument)
 {
 	if (matric <= 0 || matric > 99999)
@@ -97,6 +97,7 @@ UsrType::UsrType (const bool& usrType) throw (invalid_argument)
 	validate (usrType);
 	this->value = usrType;
 }
+
 
 void UsrType::validate (const bool& usrType) throw (invalid_argument)
 {

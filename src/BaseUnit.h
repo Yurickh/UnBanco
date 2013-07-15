@@ -7,6 +7,7 @@
 
 #include <string>
 #include <stdexcept>
+#include <cstdlib>
 #include <cmath>
 
 using namespace std;

@@ -30,5 +30,6 @@ var searchData=
   ['persnewpayment',['PersNewPayment',['../d5/d21/classPersNewPayment.html',1,'']]],
   ['perssetbalance',['PersSetBalance',['../d9/d6f/classPersSetBalance.html',1,'']]],
   ['persublkaccount',['PersUblkAccount',['../d6/d3f/classPersUblkAccount.html',1,'']]],
+  ['persunit',['PersUnit',['../dc/d66/classPersUnit.html',1,'']]],
   ['print',['print',['../dc/dc4/classWindow.html#a4fd86bca046073b3429f221c2f3bb690',1,'Window::print(string)=0'],['../dc/dc4/classWindow.html#aa0a1210e72a63332e49722f1f878ea94',1,'Window::print(int)=0'],['../dc/dc4/classWindow.html#a08f0e967158988de3cf9eb08a7823585',1,'Window::print(float)=0'],['../de/da3/classTextual.html#a79264d4c405089034447a553cd3859e5',1,'Textual::print(string)'],['../de/da3/classTextual.html#aab79476a2e99375655df0bc3d8738536',1,'Textual::print(int)'],['../de/da3/classTextual.html#a5558fc2f9db356453e60dbe6fc0e5dba',1,'Textual::print(float)']]]
 ];

@@ -27,5 +27,6 @@ var searchData=
   ['persnewmanager',['PersNewManager',['../d5/d99/classPersNewManager.html',1,'']]],
   ['persnewpayment',['PersNewPayment',['../d5/d21/classPersNewPayment.html',1,'']]],
   ['perssetbalance',['PersSetBalance',['../d9/d6f/classPersSetBalance.html',1,'']]],
-  ['persublkaccount',['PersUblkAccount',['../d6/d3f/classPersUblkAccount.html',1,'']]]
+  ['persublkaccount',['PersUblkAccount',['../d6/d3f/classPersUblkAccount.html',1,'']]],
+  ['persunit',['PersUnit',['../dc/d66/classPersUnit.html',1,'']]]
 ];

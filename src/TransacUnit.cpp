@@ -2,8 +2,6 @@
 
 void CtrlTransacAdm :: withdraw(AccNumber accNumber, Money* with) throw (invalid_argument, PersError)
 {
-	Money* actMoney;
-
 	PersSetBalance setBalance;
 	PersGetBalance getBalance;
 
@@ -11,16 +9,15 @@ void CtrlTransacAdm :: withdraw(AccNumber accNumber, Money* with) throw (invalid
 		throw invalid_argument("Nao e possivel retirar quantidades nulas ou negativas de dinheiro");
 
 	getBalance.execute(accNumber);
+	Money actMoney(getBalance.getResult());
 
-	actMoney = &(getBalance.getResult().front());
-
-	if(actMoney->getValue() < with->getValue())
+	if(actMoney.getValue() < with->getValue())
 	{
 		throw invalid_argument("Voce nao tem dinheiro o suficiente");
 	}
 
-	actMoney->setValue(actMoney->getValue() - with->getValue());
-	setBalance.execute(accNumber, actMoney);
+	actMoney.setValue(actMoney.getValue() - with->getValue());
+	setBalance.execute(accNumber, &actMoney);
 }
 
 void StubTransacAdm :: withdraw(AccNumber accNumber, Money* with) throw (invalid_argument, PersError)
@@ -33,8 +30,6 @@ void StubTransacAdm :: withdraw(AccNumber accNumber, Money* with) throw (invalid
 
 void CtrlTransacAdm :: deposit(AccNumber accNumber, Money* dep) throw (invalid_argument, PersError)
 {
-	Money* actMoney;
-
 	PersSetBalance setBalance;
 	PersGetBalance getBalance;
 
@@ -42,12 +37,10 @@ void CtrlTransacAdm :: deposit(AccNumber accNumber, Money* dep) throw (invalid_a
 		throw invalid_argument("Nao e possivel depositar quantidades nulas ou negativas de dinheiro");
 
 	getBalance.execute(accNumber);
+	Money actMoney(getBalance.getResult());
 
-	actMoney = &(getBalance.getResult().front());
-
-	actMoney->setValue(actMoney->getValue() + dep->getValue());
-
-	setBalance.execute(accNumber, actMoney);
+	actMoney.setValue(actMoney.getValue() + dep->getValue());
+	setBalance.execute(accNumber, &actMoney);
 }
 
 void StubTransacAdm :: deposit(AccNumber accNumber, Money* dep) throw (invalid_argument, PersError)
@@ -70,7 +63,8 @@ PayCode* CtrlTransacAdm :: schedulePayment(AccNumber accNumber, Money* payValue,
 		throw invalid_argument("Nao e possivel realizar pagamentos com quantidades nulas ou negativas de dinheiro");
 
 	getLatestCode.execute();
-	payCode = &(getLatestCode.getResult().front());
+	payCode = new PayCode(getLatestCode.getResult());
+
 	payment = new Payment(accNumber, *payCode, *date, *payValue);
 	newPayment.execute(payment);
 	return payCode;
@@ -91,9 +85,6 @@ void CtrlTransacAdm :: deletePayment(PayCode* payCode) throw (invalid_argument, 
 	PersDelPayment delPayment;
 
 	delPayment.execute(payCode);
-
-	if(delPayment.getResult().empty())
-		throw invalid_argument("A conta requisitada nao existe");
 }
 
 void StubTransacAdm :: deletePayment(PayCode* payCode) throw (invalid_argument, PersError)
@@ -111,7 +102,6 @@ list<Payment> CtrlTransacAdm :: fetchPayment() throw (PersError)
 	fetchPayment.execute();
 
 	return fetchPayment.getResult();
-
 }
 
 list<Payment> StubTransacAdm :: fetchPayment() throw (PersError)

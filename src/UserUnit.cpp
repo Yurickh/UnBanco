@@ -2,38 +2,35 @@
 
 #include <iostream>
 
+extern list<TableClass> PersUnit::returnList;
+
 //===============CtrlUserLogin=====================
 
 ManType CtrlUserLogin::autent(UsrMatric* usrMatric, UsrPassword* usrPassword) throw (invalid_argument, PersError)
 {
-	Manager* man;
-
 	PersGetManager getManager;
 
 	getManager.execute(usrMatric);
-	man = &(getManager.getResult().front());
+	Manager man(getManager.getResult());
 
-	if(man->getPassword().getValue() != usrPassword->getValue())
+	if(man.getPassword().getValue() != usrPassword->getValue())
 		throw invalid_argument("Login ou Senha incorretos");
 
-	return man->getManType();
+	return man.getManType();
 }
 
 void CtrlUserLogin :: autent(AccNumber* accNumber, UsrPassword* usrPassword) throw (invalid_argument, PersError)
 {
-	Customer* cus;
-	Account* acc;
-
 	PersGetAccount getAccount;
 	PersGetCustomer getCustomer;
 
 	getAccount.execute(accNumber);
-	acc = &(getAccount.getResult().front());
+	Account acc(getAccount.getResult());
 
-	getCustomer.execute(acc->getUsrId());
-	cus = &(getCustomer.getResult().front());
+	getCustomer.execute(acc.getUsrId());
+	Customer cus(getCustomer.getResult());
 
-	if(cus->getPassword().getValue() != usrPassword->getValue())
+	if(cus.getPassword().getValue() != usrPassword->getValue())
 		throw invalid_argument("Login ou Senha incorretos");
 }
 
@@ -71,13 +68,12 @@ void CtrlUserAccAdm :: createAccount( AccType* accType, Money* limit, Money* bal
 {
 	PersGetLatestNum getLatestNum;
 	PersNewAccount newAccount;
-	AccNumber* accNumber;
 	Account* acc;
 
 	getLatestNum.execute();
-	accNumber = &(getLatestNum.getResult().front());
+	AccNumber accNumber(getLatestNum.getResult());
 
-	acc = new Account(*accNumber, *accType, *limit, *balance, usrId);
+	acc = new Account(accNumber, *accType, *limit, *balance, usrId);
 
 	newAccount.execute(acc);
 
@@ -91,9 +87,6 @@ void CtrlUserAccAdm :: deleteAccount( AccNumber* accNumber ) throw (invalid_argu
 
 	getAccount.execute(accNumber);
 
-	if(getAccount.getResult().empty())
-		throw invalid_argument("A conta requisitada nao existe");
-
 	delAccount.execute(accNumber);
 }
 
@@ -103,9 +96,6 @@ void CtrlUserAccAdm :: blockAccount(AccNumber* accNumber) throw (invalid_argumen
 	PersGetAccount getAccount;
 
 	getAccount.execute(accNumber);
-
-	if(getAccount.getResult().empty())
-		throw invalid_argument("A conta requisitada nao existe");
 
 	blkAccount.execute(accNumber);
 }
@@ -125,7 +115,7 @@ Account CtrlUserAccAdm :: fetchAccount(AccNumber number) throw (PersError)
 
 	getAccount.execute(&number);
 
-	return getAccount.getResult().front();
+	return getAccount.getResult();
 }
 
 void CtrlUserAccAdm :: unblockAccount( AccNumber* accNumber ) throw (invalid_argument, PersError)
@@ -134,9 +124,6 @@ void CtrlUserAccAdm :: unblockAccount( AccNumber* accNumber ) throw (invalid_arg
 	PersGetAccount getAccount;
 
 	getAccount.execute(accNumber);
-
-	if(getAccount.getResult().empty())
-		throw invalid_argument("A conta requisitada nao existe");
 
 	ublkAccount.execute(accNumber);
 }
@@ -148,9 +135,6 @@ void CtrlUserAccAdm :: editAccType( AccNumber* accNumber, AccType* accType ) thr
 
 	getAccount.execute(accNumber);
 
-	if(getAccount.getResult().empty())
-		throw invalid_argument("A conta requisitada nao existe");
-
 	edtAccount.execute(accNumber, accType);
 }
 
@@ -160,9 +144,6 @@ void CtrlUserAccAdm :: editAccLimit( AccNumber* accNumber, Money* accLimit ) thr
 	PersEdtAccount edtAccount;
 
 	getAccount.execute(accNumber);
-
-	if(getAccount.getResult().empty())
-		throw invalid_argument("A conta requisitada nao existe");
 
 	edtAccount.execute(accNumber, accLimit);
 }
@@ -273,16 +254,17 @@ void CtrlUserManAdm :: createManager(UsrName* usrName, UsrPassword* usrPassword)
 	PersGetLatestMatric getLatestMatric;
 	PersNewManager newManager;
 
-	UsrMatric* usrMatric;
 	Manager* man;
 	ManType manType(NORMAL);
 
 	getLatestMatric.execute();
-	usrMatric = &(getLatestMatric.getResult().front());
+	UsrMatric usrMatric(getLatestMatric.getResult());
 
-	man = new Manager(*usrName, *usrPassword, manType, *usrMatric);
+	man = new Manager(*usrName, *usrPassword, manType, usrMatric);
 
 	newManager.execute(man);
+
+	delete man;
 }
 
 list<Manager> CtrlUserManAdm :: fetchManager() throw (PersError)
@@ -300,7 +282,7 @@ Manager CtrlUserManAdm :: fetchManager(UsrMatric matric) throw (PersError)
 
 	getManager.execute(&matric);
 
-	return getManager.getResult().front();
+	return getManager.getResult();
 }
 
 void CtrlUserManAdm :: editManName(UsrMatric* usrMatric, UsrName* usrName) throw (invalid_argument, PersError)
@@ -309,9 +291,6 @@ void CtrlUserManAdm :: editManName(UsrMatric* usrMatric, UsrName* usrName) throw
 	PersEdtManager edtManager;
 
 	getManager.execute(usrMatric);
-
-	if(getManager.getResult().empty())
-		throw invalid_argument("O gerente requisitado nao existe.");
 
 	edtManager.execute(usrMatric, usrName);
 }
@@ -322,9 +301,6 @@ void CtrlUserManAdm :: deleteManager(UsrMatric* usrMatric) throw (invalid_argume
 	PersDelManager delManager;
 
 	getManager.execute(usrMatric);
-
-	if(getManager.getResult().empty())
-		throw invalid_argument("O gerente requisitado nao existe.");
 
 	delManager.execute(usrMatric);
 }
@@ -413,23 +389,28 @@ UsrId CtrlUserCusAdm :: createCustomer(UsrName* name, UsrPassword* pass) throw (
 	PersNewCustomer newCustomer;
 	PersGetLatestId getLatestId;
 
-	UsrId* usrId;
 	Customer* cus;
 
-	getCustomer.execute(name);
-	if(!getCustomer.getResult().empty())
-		throw invalid_argument("Ja existe um cliente cadastrado com o nome requisitado");
+	try
+	{
+		getCustomer.execute(name);
+		throw PersError("temp");
+	} catch(invalid_argument except) {}
+	catch (PersError except)
+	{
+		throw invalid_argument("A conta requisitada ja existe");
+	}
 
 	getLatestId.execute();
-	usrId = &(getLatestId.getResult().front());
+	UsrId usrId (getLatestId.getResult());
 
-	cus = new Customer(*name, *pass, *usrId);
+	cus = new Customer(*name, *pass, usrId);
 
 	newCustomer.execute(cus);
 
 	delete cus;
 
-	return *usrId;
+	return usrId;
 }
 
 void CtrlUserCusAdm :: editCusName(UsrId* usrId, UsrName* usrName) throw (invalid_argument, PersError)
@@ -438,8 +419,6 @@ void CtrlUserCusAdm :: editCusName(UsrId* usrId, UsrName* usrName) throw (invali
 	PersEdtCustomer edtCustomer;
 
 	getCustomer.execute(*usrId);
-	if(getCustomer.getResult().empty())
-		throw invalid_argument("O usuario requisitado nao existe");
 
 	edtCustomer.execute(usrId, usrName);
 }
@@ -450,7 +429,7 @@ Customer CtrlUserCusAdm :: fetchCustomer(UsrId id) throw (PersError)
 
 	getCustomer.execute(id);
 
-	return getCustomer.getResult().front();
+	return getCustomer.getResult();
 }
 
 //================StubUserCusAdm============================
